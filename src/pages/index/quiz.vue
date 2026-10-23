@@ -173,6 +173,25 @@
             <q-icon name="lightbulb" color="amber-7" size="xs" class="q-mr-xs" />
             <span class="text-caption">{{ quizStore.currentQuestion.notes }}</span>
           </div>
+
+          <!-- Mistake reason picker (wrong answers only) -->
+          <div v-if="!isCorrect" class="mistake-row q-mt-sm">
+            <div class="text-caption text-grey-6 q-mb-xs">Why did you miss this?</div>
+            <div class="row q-gutter-xs">
+              <q-btn
+                v-for="r in MISTAKE_REASONS"
+                :key="r.value"
+                :label="r.label"
+                :color="selectedMistakeReason === r.value ? 'negative' : 'grey-2'"
+                :text-color="selectedMistakeReason === r.value ? 'white' : 'grey-7'"
+                unelevated
+                no-caps
+                size="sm"
+                style="flex: 1; min-height: 32px"
+                @click="logMistake(r.value)"
+              />
+            </div>
+          </div>
         </div>
       </transition>
 
@@ -213,17 +232,29 @@
 </template>
 
 <script setup lang="ts">
-import { computed, watch, onMounted } from 'vue';
+import { computed, watch, onMounted, ref } from 'vue';
 import { useQuizStore } from '@/stores/quizStore';
 import { useProgressStore } from '@/stores/progressStore';
+import { useMistakeJournalStore } from '@/stores/mistakeJournalStore';
 import { useTimer } from '@/composables/useTimer';
 import { useKeyboardShortcuts } from '@/composables/useKeyboardShortcuts';
 import type { ChoiceKey } from '@/types/question';
+import type { MistakeReason } from '@/types/notes';
 
 const CONFIDENCE_LABELS = ['Not sure', 'OK', 'Confident'] as const;
 
+const MISTAKE_REASONS: { value: MistakeReason; label: string }[] = [
+  { value: 'knowledge-gap', label: 'Knowledge gap' },
+  { value: 'misread', label: 'Misread' },
+  { value: 'careless', label: 'Careless' },
+  { value: 'mixed-up', label: 'Mixed up' },
+];
+
 const quizStore = useQuizStore();
 const progressStore = useProgressStore();
+const mistakeStore = useMistakeJournalStore();
+
+const selectedMistakeReason = ref<MistakeReason | null>(null);
 
 const timeLimitSeconds = computed(() => quizStore.scope?.timeLimitSeconds ?? 0);
 const timer = useTimer(timeLimitSeconds.value);
@@ -279,7 +310,16 @@ function submitAnswer(choice: ChoiceKey) {
 }
 
 function advanceNext() {
+  selectedMistakeReason.value = null;
   void quizStore.next();
+}
+
+function logMistake(reason: MistakeReason) {
+  const q = quizStore.currentQuestion;
+  if (!q || selectedMistakeReason.value === reason) return;
+  selectedMistakeReason.value = reason;
+  const eventId = quizStore.pendingEvent?.id;
+  void mistakeStore.addEntry(q.id, reason, undefined, eventId);
 }
 
 // Keyboard shortcuts: 1-4 → choice A-D; Space/Enter → next
@@ -424,5 +464,11 @@ function choiceOutline(key: ChoiceKey): boolean {
 .body--dark .confidence-row {
   background: #1e293b;
   border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Mistake reason row ───────────────────────────────────────── */
+.mistake-row {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 10px;
 }
 </style>

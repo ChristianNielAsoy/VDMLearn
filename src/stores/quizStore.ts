@@ -133,6 +133,7 @@ export const useQuizStore = defineStore('quiz', () => {
     isFinished,
     sessionScore,
     pendingConfidence,
+    pendingEvent,
     startQuiz,
     submitAnswer,
     setConfidence,
