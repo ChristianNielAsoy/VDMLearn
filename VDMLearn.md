@@ -10,7 +10,7 @@
 # Requires Node ≥ 22.22.0
 npm install
 quasar dev        # dev server at http://localhost:9000
-npm test          # 108 unit/integration tests
+npm test          # 156 unit/integration tests
 npm run lint      # ESLint + vue-tsc
 npm run build     # production SPA (dist/spa/)
 ```
@@ -39,7 +39,7 @@ npm run build     # production SPA (dist/spa/)
 
 ```
 src/
-├── __tests__/                 Unit and integration tests (108 total)
+├── __tests__/                 Unit and integration tests (156 total)
 │   ├── srs.test.ts            SM-2 algorithm (10 tests)
 │   ├── scoring.test.ts        isCorrect() helper (2 tests)
 │   ├── importer.test.ts       Zod question validator (14 tests)
@@ -52,7 +52,11 @@ src/
 │   ├── scheduler.test.ts      SM-2 Scheduler wrapper (7 tests)  [M1.4]
 │   ├── fsrs.test.ts           FSRS Scheduler (ts-fsrs, 11 tests)  [M1.4]
 │   ├── contentPack.test.ts    Content pack install/update/remove (8 tests)  [M1.5]
-│   └── backup.test.ts         BackupFileV2 type guards + v1→v2 (5 tests)  [M1.6]
+│   ├── backup.test.ts         BackupFileV2 type guards + v1→v2 (5 tests)  [M1.6]
+│   ├── mastery.test.ts        computeMemoryStrength/Accuracy/Coverage/Mastery (18 tests) [M2.1]
+│   ├── itemPriority.test.ts   detectLeeches + scoreItems + buildInterleaved (15 tests) [M2.2]
+│   ├── sessionBuilder.test.ts buildSession filters + caps + duration map (8 tests) [M2.3]
+│   └── bloomAnalytics.test.ts computeBloomPerformance + BLOOM_LABELS (7 tests) [M2.4]
 │
 ├── components/
 │   └── MermaidDiagram.vue     Lazy-loaded Mermaid renderer
@@ -113,6 +117,10 @@ src/
 │   ├── mockDraw.ts            TOS-weighted question draw logic
 │   ├── backup.ts              Export/import/clear all local data (v2 format)
 │   ├── contentPack.ts         Content pack pure logic (install/update/remove) [M1.5]
+│   ├── mastery.ts             computeMemoryStrength, computeRecentAccuracy, computeMastery → ReadinessReport [M2.1]
+│   ├── itemPriority.ts        detectLeeches, scoreItems, buildInterleaved [M2.2]
+│   ├── sessionBuilder.ts      buildSession — duration→count map, category filters [M2.3]
+│   ├── bloomAnalytics.ts      computeBloomPerformance, BLOOM_LABELS, getTosBloomTargets [M2.4]
 │   └── scheduler/             Scheduler implementations [M1.4]
 │       ├── index.ts           getActiveScheduler() — reads localStorage flag
 │       ├── sm2.ts             SM-2 Scheduler (wraps srs.ts; fixes first-wrong dueAt)
@@ -120,18 +128,21 @@ src/
 │
 ├── stores/
 │   ├── questionStore.ts       Loads + caches all questions (seed + imported)
-│   ├── quizStore.ts           Active quiz queue, answer submission, SRS update
+│   ├── quizStore.ts           Active quiz queue, answer submission, confidence tap, SRS update
 │   ├── progressStore.ts       Per-subject accuracy, due queue, bookmarks, flags
 │   ├── lessonStore.ts         Lesson list + per-lesson read/reviewed status
 │   ├── flashcardStore.ts      Flip-card deck state (known/unknown/done)
-│   └── plannerStore.ts        Tasks (CRUD), planner settings, weekly stats
+│   ├── plannerStore.ts        Tasks (CRUD), planner settings, weekly stats
+│   ├── masteryStore.ts        Loads + caches ReadinessReport from computeMastery() [M2.7]
+│   └── onboardingStore.ts     OnboardingProfile (target school, pass rules) [M2.5]
 │
 └── types/
-    ├── question.ts            Question, Attempt, VmleSubject, VMLE_SUBJECTS[]
+    ├── question.ts            Question, Attempt, VmleSubject, VMLE_SUBJECTS[], BloomLevel [M2.4]
     ├── progress.ts            SrsProgress (+ optional FSRS fields)
     ├── curriculum.ts          TosData, TosSubject, TosSection, TosCompetency, …
     ├── lesson.ts              Lesson, LessonStatus, UserLessonStatus, LessonNote
     ├── task.ts                SchoolTask, PlannerSettings, TaskType, TaskStatus
+    ├── onboarding.ts          OnboardingProfile, DEFAULT_PASS_RULES [M2.5]
     ├── learningObject.ts      LearningObject base interface, CourseRef, OriginInfo [M1.1]
     ├── activity.ts            GradeResult, ActivityDefinition<T>, ActivityRegistry [M1.2]
     ├── review.ts              ReviewEvent, RatingConfig, deriveRating() [M1.3]
@@ -263,7 +274,7 @@ interface SrsProgress {
 
 ---
 
-## IndexedDB Schema (Dexie v1–v8)
+## IndexedDB Schema (Dexie v1–v9)
 
 | Version | Tables Added / Changed              | Key / Index                                                |
 | ------- | ----------------------------------- | ---------------------------------------------------------- |
@@ -275,6 +286,7 @@ interface SrsProgress {
 | v6      | `flags`                             | `&questionId` (unique)                                     |
 | v7      | `reviewEvents`                      | `++id`, indexed: `objectId, sessionId, ts, activityType`   |
 | v8      | `contentPacks`; re-index `importedQuestions` | `contentPacks: &packId`; `importedQuestions` gains `*competencyIds, packId`; upgrade populates `competencyIds` |
+| v9      | `onboardingProfile` [M2.5]          | `&id` (singleton row: `id: 'singleton'`)                   |
 
 ---
 
@@ -310,6 +322,24 @@ All 6 M1 items implemented across 6 commits (C1–C6). Tests: 60 → 108.
 | C4 | M1.4 Scheduler | `Scheduler` interface; SM-2 wrapper (fixes first-wrong `intervalDays: 0`); full FSRS via ts-fsrs; `localStorage dvmr-scheduler` feature flag; `quizStore` uses `getActiveScheduler()` |
 | C5 | M1.5 Content packs | `ContentPackManifest`, `InstalledPack`; `applyInstall/Update/Remove` with user-modified-row protection; Dexie v8 (`contentPacks` + `*competencyIds` index); repository methods |
 | C6 | M1.6 Backup v2 + clearAll fix | `BackupFileV2` (adds `flags`, `reviewEvents`, `contentPacks`); `importBackup` accepts v1 or v2; `backup.ts` uses repository only; `clearAll` covers 10 tables |
+
+---
+
+## M2 Learning Logic + UX Shell (completed 2026-10-23)
+
+All 9 M2 items across 9 commits (C1–C9). Tests: 108 → 156.
+
+| Commit | Item | Key deliverable |
+|--------|------|-----------------|
+| C1 | M2.1 Mastery engine | `computeMemoryStrength` (SM-2 + FSRS forgetting curves), `computeRecentAccuracy`, `computeCoverage`, `computeMastery` → `ReadinessReport` (always `isEstimate: true`). 18 tests. |
+| C2 | M2.2 Item priority | `detectLeeches` (consecutive-wrong streak), `scoreItems` (overdue+weakness+exam−new penalty), `buildInterleaved` (no consecutive same-subject). 15 tests. |
+| C3 | M2.3 Session builder | `ITEMS_PER_DURATION` (10/20/45 min → 20/40/90 items), `buildSession` with category filters (includeNew/Weak/Due). 8 tests. |
+| C4 | M2.4 Bloom analytics | `BloomLevel` ('R'\|'U'\|'Ap'\|'An'\|'E'\|'C') added to `Question`; `computeBloomPerformance` aggregates per-level accuracy vs TOS targets. 7 tests. |
+| C5 | M2.5 Dexie v9 + onboarding | `OnboardingProfile` type (pass rules, target school); Dexie v9 `onboardingProfile` table; `onboardingStore` Pinia store with reactive pass rules. |
+| C6 | M2.6 Navigation redesign | `src/css/tokens.css` (spacing, radius, shadows, subject/Bloom/mastery palettes); 6-tab layout (Today/Learn/Practice/Visual/Progress/More); stub pages today/visual/more. |
+| C7 | M2.7 Today screen + masteryStore | `masteryStore` wires `computeMastery` to live data (5-min stale cache); `today.vue` — due-item card, readiness ring, exam countdown, subject mastery bars, quick actions. |
+| C8 | M2.8 Focus mode | `useKeyboardShortcuts` (1-4/a-d select choice, Space/Enter next); confidence-tap row in quiz.vue (Not sure/OK/Confident); `quizStore.setConfidence()` defers review event write to `next()`; `onboarding.vue` 3-step wizard. |
+| C9 | M2.9 Progress screen + docs | progress.vue rebuilt as 4-tab page: Overview (accuracy + bookmarks), Mastery (heatmap + per-subject bars), Bloom (accuracy vs TOS targets), Coverage (fraction of TOS items seen). VDMLearn.md updated. |
 
 ## Known Issues
 
