@@ -1,0 +1,61 @@
+/* ── VDMLearn design tokens ────────────────────────────────────────────
+   Single source of truth for CSS custom properties.
+   Imported by src/css/app.css — do not import this file elsewhere.
+   ─────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Spacing scale */
+  --dvmr-space-xs: 4px;
+  --dvmr-space-sm: 8px;
+  --dvmr-space-md: 16px;
+  --dvmr-space-lg: 24px;
+  --dvmr-space-xl: 40px;
+
+  /* Border radius */
+  --dvmr-radius-sm: 6px;
+  --dvmr-radius:    10px;
+  --dvmr-radius-lg: 16px;
+  --dvmr-radius-xl: 24px;
+
+  /* Shadows */
+  --dvmr-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --dvmr-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --dvmr-shadow:    0 4px 8px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05);
+  --dvmr-shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.05);
+
+  /* Borders */
+  --dvmr-border: rgba(0, 0, 0, 0.08);
+  --dvmr-border-dark: rgba(255, 255, 255, 0.08);
+
+  /* Transitions */
+  --dvmr-transition-fast: 0.1s ease;
+  --dvmr-transition:      0.15s ease;
+  --dvmr-transition-slow: 0.25s ease;
+
+  /* Bottom nav height (matches Quasar q-tabs min-height) */
+  --dvmr-nav-height: 56px;
+
+  /* VMLE subject palette — one hue per subject */
+  --sub-anatomy:    #6366f1;
+  --sub-physiology: #0ea5e9;
+  --sub-zoo:        #10b981;
+  --sub-path:       #f43f5e;
+  --sub-pharma:     #a855f7;
+  --sub-medicine:   #3b82f6;
+  --sub-micro:      #f59e0b;
+  --sub-para:       #22c55e;
+  --sub-surgery:    #ef4444;
+
+  /* Bloom level palette */
+  --bloom-R:  #94a3b8;
+  --bloom-U:  #60a5fa;
+  --bloom-Ap: #34d399;
+  --bloom-An: #fbbf24;
+  --bloom-E:  #f87171;
+  --bloom-C:  #c084fc;
+
+  /* Mastery thresholds */
+  --mastery-low:    #f43f5e;
+  --mastery-mid:    #f59e0b;
+  --mastery-high:   #10b981;
+}

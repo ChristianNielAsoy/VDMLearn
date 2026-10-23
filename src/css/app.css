@@ -1,0 +1,89 @@
+/* ── Design tokens (single source of truth) ──────────────────────────── */
+@import './tokens.css';
+
+/* ── Inter font ──────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Base typography ─────────────────────────────────────────────────── */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Card helper ─────────────────────────────────────────────────────── */
+.dvmr-card {
+  border-radius: var(--dvmr-radius) !important;
+  box-shadow: var(--dvmr-shadow-sm) !important;
+  border: 1px solid var(--dvmr-border) !important;
+  transition: box-shadow 0.15s ease !important;
+}
+
+/* ── Subject item cards (Browse page) ───────────────────────────────── */
+.dvmr-subject-item {
+  border-radius: var(--dvmr-radius) !important;
+  box-shadow: var(--dvmr-shadow-sm) !important;
+  border: 1px solid var(--dvmr-border) !important;
+  border-left-width: 3px !important;   /* color set inline per subject */
+  overflow: hidden !important;
+  background: #ffffff;
+  transition: box-shadow 0.15s ease !important;
+  margin-bottom: 6px;
+}
+
+.dvmr-subject-item:hover {
+  box-shadow: var(--dvmr-shadow) !important;
+}
+
+.body--dark .dvmr-subject-item {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  border-left-color: inherit !important; /* keep the subject color */
+}
+
+/* ── Progress bar ────────────────────────────────────────────────────── */
+.dvmr-progress {
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* ── Choice buttons (Quiz page) ──────────────────────────────────────── */
+.choice-btn {
+  transition: box-shadow 0.1s ease, transform 0.1s ease !important;
+  border-radius: var(--dvmr-radius-sm) !important;
+}
+
+.choice-btn:not(.q-btn--disable):hover {
+  box-shadow: var(--dvmr-shadow) !important;
+  transform: translateY(-1px);
+}
+
+/* ── Bottom nav active pill indicator ───────────────────────────────── */
+.q-tab--active .q-tab__indicator {
+  height: 3px;
+  border-radius: 999px;
+}
+
+/* ── Scrollbars (WebKit) ─────────────────────────────────────────────── */
+::-webkit-scrollbar           { width: 5px; height: 5px; }
+::-webkit-scrollbar-track     { background: transparent; }
+::-webkit-scrollbar-thumb     { background: rgba(0, 0, 0, 0.15); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.25); }
+
+/* ── Keyboard focus ring ─────────────────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--q-primary, #0d9488);
+  outline-offset: 2px;
+  border-radius: var(--dvmr-radius-sm);
+}
+
+/* ── Page fade transition ────────────────────────────────────────────── */
+.dvmr-fade-enter-active,
+.dvmr-fade-leave-active {
+  transition: opacity 0.12s ease;
+}
+
+.dvmr-fade-enter-from,
+.dvmr-fade-leave-to {
+  opacity: 0;
+}
