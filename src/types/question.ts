@@ -25,7 +25,7 @@ export const VMLE_SUBJECTS: VmleSubject[] = [
 
 export type ChoiceKey = 'A' | 'B' | 'C' | 'D';
 export type QuestionStatus = 'unverified' | 'verified' | 'flagged';
-export type SourceType = 'own-notes' | 'ai-draft' | 'open-reference' | 'hand-written';
+export type SourceType = 'own-notes' | 'ai-draft' | 'open-reference' | 'hand-written' | 'content-pack' | 'imported';
 export type School = 'UPLB' | 'CLSU' | 'PSAU' | 'CHED';
 
 export interface Question {

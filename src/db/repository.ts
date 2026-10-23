@@ -3,6 +3,8 @@ import type { SrsProgress } from '@/types/progress';
 import type { LessonStatus, UserLessonStatus, LessonNote } from '@/types/lesson';
 import type { SchoolTask, PlannerSettings } from '@/types/task';
 import type { ReviewEvent } from '@/types/review';
+import type { InstalledPack, InstallResult, UpdateResult, RemoveResult, ContentPackManifest } from '@/types/contentPack';
+import { applyInstall, applyUpdate, applyRemove, buildInstalledPack } from '@/services/contentPack';
 import { db } from './dexie';
 
 const DEFAULT_PLANNER_SETTINGS: PlannerSettings = {
@@ -56,6 +58,11 @@ export interface QuestionRepository {
   appendReviewEvent(event: ReviewEvent): Promise<void>;
   getReviewEvents(since?: number): Promise<ReviewEvent[]>;
   getReviewEventsForObject(objectId: string): Promise<ReviewEvent[]>;
+
+  installContentPack(manifest: ContentPackManifest, questions: Question[]): Promise<InstallResult>;
+  updateContentPack(manifest: ContentPackManifest, questions: Question[]): Promise<UpdateResult>;
+  removeContentPack(packId: string): Promise<RemoveResult>;
+  getInstalledPacks(): Promise<InstalledPack[]>;
 }
 
 export const localRepository: QuestionRepository = {
@@ -207,5 +214,39 @@ export const localRepository: QuestionRepository = {
 
   async getReviewEventsForObject(objectId) {
     return db.reviewEvents.where('objectId').equals(objectId).toArray();
+  },
+
+  async installContentPack(manifest, questions) {
+    const existingArr = await db.importedQuestions.toArray();
+    const existingMap = new Map(existingArr.map((q) => [q.id, q]));
+    const { toAdd, skipped } = applyInstall(questions, existingMap);
+    await db.importedQuestions.bulkPut(toAdd);
+    const pack = buildInstalledPack(manifest, toAdd.length + skipped);
+    await db.contentPacks.put(pack);
+    return { packId: manifest.packId, added: toAdd.length, skipped };
+  },
+
+  async updateContentPack(manifest, questions) {
+    const existingArr = await db.importedQuestions.toArray();
+    const existingMap = new Map(existingArr.map((q) => [q.id, q]));
+    const { toUpdate, skipped } = applyUpdate(questions, existingMap, manifest.packId);
+    await db.importedQuestions.bulkPut(toUpdate);
+    const existing = await db.contentPacks.get(manifest.packId);
+    if (existing) {
+      await db.contentPacks.put({ ...existing, version: manifest.version, questionCount: toUpdate.length + skipped });
+    }
+    return { packId: manifest.packId, updated: toUpdate.length, skipped };
+  },
+
+  async removeContentPack(packId) {
+    const allQuestions = await db.importedQuestions.toArray();
+    const { toDelete, kept } = applyRemove(allQuestions, packId);
+    await db.importedQuestions.bulkDelete(toDelete);
+    await db.contentPacks.delete(packId);
+    return { packId, deleted: toDelete.length, kept };
+  },
+
+  async getInstalledPacks() {
+    return db.contentPacks.toArray();
   },
 };

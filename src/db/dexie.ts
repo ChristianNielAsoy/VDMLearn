@@ -4,6 +4,7 @@ import type { SrsProgress } from '@/types/progress';
 import type { UserLessonStatus, LessonNote } from '@/types/lesson';
 import type { SchoolTask, PlannerSettings } from '@/types/task';
 import type { ReviewEvent } from '@/types/review';
+import type { InstalledPack } from '@/types/contentPack';
 
 interface Bookmark {
   questionId: string;
@@ -24,6 +25,7 @@ class DvmReviewerDb extends Dexie {
   tasks!: Table<SchoolTask, string>;
   plannerSettings!: Table<PlannerSettings, string>;
   reviewEvents!: Table<ReviewEvent, number>;
+  contentPacks!: Table<InstalledPack, string>;
 
   constructor() {
     super('dvm-reviewer');
@@ -58,6 +60,24 @@ class DvmReviewerDb extends Dexie {
     this.version(7).stores({
       reviewEvents: '++id, objectId, sessionId, ts, activityType',
     });
+
+    this.version(8)
+      .stores({
+        contentPacks: '&packId',
+        importedQuestions: '&id, vmleSubject, competencyId, *competencyIds, packId',
+      })
+      .upgrade(async (tx) => {
+        await tx
+          .table('importedQuestions')
+          .toCollection()
+          .modify((q: Question) => {
+            if (!q.competencyIds || q.competencyIds.length === 0) {
+              q.competencyIds = [q.competencyId];
+            }
+            if (!q.updatedAt) q.updatedAt = 0;
+            if (!q.version) q.version = 1;
+          });
+      });
   }
 }
 
