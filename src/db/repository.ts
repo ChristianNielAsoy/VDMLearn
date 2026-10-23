@@ -7,6 +7,20 @@ import type { InstalledPack, InstallResult, UpdateResult, RemoveResult, ContentP
 import { applyInstall, applyUpdate, applyRemove, buildInstalledPack } from '@/services/contentPack';
 import { db } from './dexie';
 
+export interface BackupData {
+  attempts: Attempt[];
+  progress: SrsProgress[];
+  bookmarks: { questionId: string }[];
+  flags: { questionId: string }[];
+  importedQuestions: Question[];
+  lessonStatus: UserLessonStatus[];
+  lessonNotes: LessonNote[];
+  tasks: SchoolTask[];
+  plannerSettings: PlannerSettings[];
+  reviewEvents: ReviewEvent[];
+  contentPacks: InstalledPack[];
+}
+
 const DEFAULT_PLANNER_SETTINGS: PlannerSettings = {
   id: 'singleton',
   examDate: new Date('2026-11-04').getTime(),
@@ -63,6 +77,9 @@ export interface QuestionRepository {
   updateContentPack(manifest: ContentPackManifest, questions: Question[]): Promise<UpdateResult>;
   removeContentPack(packId: string): Promise<RemoveResult>;
   getInstalledPacks(): Promise<InstalledPack[]>;
+
+  exportAll(): Promise<BackupData>;
+  importAll(data: Partial<BackupData>): Promise<void>;
 }
 
 export const localRepository: QuestionRepository = {
@@ -83,9 +100,19 @@ export const localRepository: QuestionRepository = {
   },
 
   async clearAll() {
-    await db.attempts.clear();
-    await db.progress.clear();
-    await db.bookmarks.clear();
+    await Promise.all([
+      db.attempts.clear(),
+      db.progress.clear(),
+      db.bookmarks.clear(),
+      db.flags.clear(),
+      db.importedQuestions.clear(),
+      db.lessonStatus.clear(),
+      db.lessonNotes.clear(),
+      db.tasks.clear(),
+      db.plannerSettings.clear(),
+      db.reviewEvents.clear(),
+      // contentPacks intentionally excluded — user must uninstall packs explicitly
+    ]);
   },
 
   async upsertProgress(progress) {
@@ -248,5 +275,39 @@ export const localRepository: QuestionRepository = {
 
   async getInstalledPacks() {
     return db.contentPacks.toArray();
+  },
+
+  async exportAll(): Promise<BackupData> {
+    const [attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks] =
+      await Promise.all([
+        db.attempts.toArray(),
+        db.progress.toArray(),
+        db.bookmarks.toArray(),
+        db.flags.toArray(),
+        db.importedQuestions.toArray(),
+        db.lessonStatus.toArray(),
+        db.lessonNotes.toArray(),
+        db.tasks.toArray(),
+        db.plannerSettings.toArray(),
+        db.reviewEvents.toArray(),
+        db.contentPacks.toArray(),
+      ]);
+    return { attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks };
+  },
+
+  async importAll(data: Partial<BackupData>): Promise<void> {
+    const ops: Promise<unknown>[] = [];
+    if (data.attempts?.length) ops.push(db.attempts.bulkPut(data.attempts));
+    if (data.progress?.length) ops.push(db.progress.bulkPut(data.progress));
+    if (data.bookmarks?.length) ops.push(db.bookmarks.bulkPut(data.bookmarks));
+    if (data.flags?.length) ops.push(db.flags.bulkPut(data.flags));
+    if (data.importedQuestions?.length) ops.push(db.importedQuestions.bulkPut(data.importedQuestions));
+    if (data.lessonStatus?.length) ops.push(db.lessonStatus.bulkPut(data.lessonStatus));
+    if (data.lessonNotes?.length) ops.push(db.lessonNotes.bulkPut(data.lessonNotes));
+    if (data.tasks?.length) ops.push(db.tasks.bulkPut(data.tasks));
+    if (data.plannerSettings?.length) ops.push(db.plannerSettings.bulkPut(data.plannerSettings));
+    if (data.reviewEvents?.length) ops.push(db.reviewEvents.bulkPut(data.reviewEvents));
+    if (data.contentPacks?.length) ops.push(db.contentPacks.bulkPut(data.contentPacks));
+    await Promise.all(ops);
   },
 };
