@@ -28,6 +28,10 @@ export type QuestionStatus = 'unverified' | 'verified' | 'flagged';
 export type SourceType = 'own-notes' | 'ai-draft' | 'open-reference' | 'hand-written' | 'content-pack' | 'imported';
 export type School = 'UPLB' | 'CLSU' | 'PSAU' | 'CHED';
 
+// Bloom's taxonomy levels used in the VMLE TOS bloom totals
+// R=Remembering U=Understanding Ap=Applying An=Analyzing E=Evaluating C=Creating
+export type BloomLevel = 'R' | 'U' | 'Ap' | 'An' | 'E' | 'C';
+
 export interface Question {
   // ── LearningObject base fields (M1) ──────────────────────────────────
   // New fields are synthesized by loaders; existing DB rows get them in the
@@ -56,6 +60,7 @@ export interface Question {
   sourceType: SourceType; // kept for backward compat; mirrors origin.type
   source: string; // kept for backward compat; mirrors origin.ref
   status: QuestionStatus;
+  bloomLevel?: BloomLevel; // optional; set during content authoring
   notes?: string;
   approvals?: { userId: string; source: string; at: number }[];
 }
