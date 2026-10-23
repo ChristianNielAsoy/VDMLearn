@@ -6,6 +6,7 @@ import type { SchoolTask, PlannerSettings } from '@/types/task';
 import type { ReviewEvent } from '@/types/review';
 import type { InstalledPack } from '@/types/contentPack';
 import type { OnboardingProfile } from '@/types/onboarding';
+import type { MistakeEntry, CompetencyNote, ClozeCard, BlurtSession } from '@/types/notes';
 
 interface Bookmark {
   questionId: string;
@@ -28,6 +29,10 @@ class DvmReviewerDb extends Dexie {
   reviewEvents!: Table<ReviewEvent, number>;
   contentPacks!: Table<InstalledPack, string>;
   onboardingProfile!: Table<OnboardingProfile, string>;
+  mistakeEntries!: Table<MistakeEntry, number>;
+  competencyNotes!: Table<CompetencyNote, string>;
+  clozeCards!: Table<ClozeCard, number>;
+  blurtSessions!: Table<BlurtSession, number>;
 
   constructor() {
     super('dvm-reviewer');
@@ -83,6 +88,13 @@ class DvmReviewerDb extends Dexie {
 
     this.version(9).stores({
       onboardingProfile: '&id',
+    });
+
+    this.version(10).stores({
+      mistakeEntries: '++id, questionId, ts',
+      competencyNotes: '&competencyId, updatedAt',
+      clozeCards: '++id, competencyId, createdAt',
+      blurtSessions: '++id, competencyId, ts',
     });
   }
 }
