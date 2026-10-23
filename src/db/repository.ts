@@ -5,6 +5,7 @@ import type { SchoolTask, PlannerSettings } from '@/types/task';
 import type { ReviewEvent } from '@/types/review';
 import type { InstalledPack, InstallResult, UpdateResult, RemoveResult, ContentPackManifest } from '@/types/contentPack';
 import type { OnboardingProfile } from '@/types/onboarding';
+import type { MistakeEntry } from '@/types/notes';
 import { applyInstall, applyUpdate, applyRemove, buildInstalledPack } from '@/services/contentPack';
 import { db } from './dexie';
 
@@ -21,6 +22,7 @@ export interface BackupData {
   reviewEvents: ReviewEvent[];
   contentPacks: InstalledPack[];
   onboardingProfile?: OnboardingProfile;
+  mistakeEntries?: MistakeEntry[];
 }
 
 const DEFAULT_PLANNER_SETTINGS: PlannerSettings = {
@@ -83,6 +85,12 @@ export interface QuestionRepository {
   getOnboardingProfile(): Promise<OnboardingProfile | undefined>;
   saveOnboardingProfile(profile: OnboardingProfile): Promise<void>;
 
+  appendMistakeEntry(entry: Omit<MistakeEntry, 'id'>): Promise<number>;
+  getMistakeEntries(since?: number): Promise<MistakeEntry[]>;
+  getMistakeEntriesForQuestion(questionId: string): Promise<MistakeEntry[]>;
+  deleteMistakeEntry(id: number): Promise<void>;
+  clearMistakeEntries(): Promise<void>;
+
   exportAll(): Promise<BackupData>;
   importAll(data: Partial<BackupData>): Promise<void>;
 }
@@ -116,6 +124,7 @@ export const localRepository: QuestionRepository = {
       db.tasks.clear(),
       db.plannerSettings.clear(),
       db.reviewEvents.clear(),
+      db.mistakeEntries.clear(),
       // contentPacks intentionally excluded — user must uninstall packs explicitly
     ]);
   },
@@ -290,8 +299,31 @@ export const localRepository: QuestionRepository = {
     await db.onboardingProfile.put(profile);
   },
 
+  async appendMistakeEntry(entry) {
+    return db.mistakeEntries.add(entry as MistakeEntry);
+  },
+
+  async getMistakeEntries(since) {
+    if (since !== undefined) {
+      return db.mistakeEntries.where('ts').aboveOrEqual(since).toArray();
+    }
+    return db.mistakeEntries.toArray();
+  },
+
+  async getMistakeEntriesForQuestion(questionId) {
+    return db.mistakeEntries.where('questionId').equals(questionId).toArray();
+  },
+
+  async deleteMistakeEntry(id) {
+    await db.mistakeEntries.delete(id);
+  },
+
+  async clearMistakeEntries() {
+    await db.mistakeEntries.clear();
+  },
+
   async exportAll(): Promise<BackupData> {
-    const [attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks, onboardingArr] =
+    const [attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks, onboardingArr, mistakeEntries] =
       await Promise.all([
         db.attempts.toArray(),
         db.progress.toArray(),
@@ -305,10 +337,12 @@ export const localRepository: QuestionRepository = {
         db.reviewEvents.toArray(),
         db.contentPacks.toArray(),
         db.onboardingProfile.toArray(),
+        db.mistakeEntries.toArray(),
       ]);
     const result: BackupData = { attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks };
     const onboarding = onboardingArr[0];
     if (onboarding) result.onboardingProfile = onboarding;
+    if (mistakeEntries.length > 0) result.mistakeEntries = mistakeEntries;
     return result;
   },
 
@@ -326,6 +360,7 @@ export const localRepository: QuestionRepository = {
     if (data.reviewEvents?.length) ops.push(db.reviewEvents.bulkPut(data.reviewEvents));
     if (data.contentPacks?.length) ops.push(db.contentPacks.bulkPut(data.contentPacks));
     if (data.onboardingProfile) ops.push(db.onboardingProfile.put(data.onboardingProfile));
+    if (data.mistakeEntries?.length) ops.push(db.mistakeEntries.bulkPut(data.mistakeEntries));
     await Promise.all(ops);
   },
 };
