@@ -3,7 +3,7 @@ import { ref, computed } from 'vue';
 import type { Question, ChoiceKey } from '@/types/question';
 import { isCorrect } from '@/types/question';
 import { localRepository } from '@/db/repository';
-import { computeNextReview } from '@/services/srs';
+import { getActiveScheduler } from '@/services/scheduler';
 import { mcqActivity } from '@/activities/mcq';
 
 export interface QuizScope {
@@ -58,11 +58,13 @@ export const useQuizStore = defineStore('quiz', () => {
 
     await localRepository.saveAttempt(q.id, choice, correct);
 
-    const prev = await localRepository.getProgress(q.id);
-    const next = computeNextReview(prev ?? null, q.id, correct);
-    await localRepository.upsertProgress(next);
-
     const gradeResult = mcqActivity.grade(q, choice, startMs);
+    const scheduler = getActiveScheduler();
+    const prevProgress = await localRepository.getProgress(q.id);
+    const prevState = prevProgress ? scheduler.fromLegacyProgress(prevProgress) : null;
+    const nextState = scheduler.computeNextState(prevState, { objectId: q.id, rating: gradeResult.rating }, Date.now());
+    await localRepository.upsertProgress(scheduler.toSrsProgress(nextState));
+
     const event = mcqActivity.toEvent(q, gradeResult, {
       sessionId: sessionId.value,
       mode: scope.value?.type ?? 'competency',
