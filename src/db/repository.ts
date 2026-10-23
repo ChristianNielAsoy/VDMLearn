@@ -5,7 +5,7 @@ import type { SchoolTask, PlannerSettings } from '@/types/task';
 import type { ReviewEvent } from '@/types/review';
 import type { InstalledPack, InstallResult, UpdateResult, RemoveResult, ContentPackManifest } from '@/types/contentPack';
 import type { OnboardingProfile } from '@/types/onboarding';
-import type { MistakeEntry } from '@/types/notes';
+import type { MistakeEntry, CompetencyNote, ClozeCard, BlurtSession } from '@/types/notes';
 import { applyInstall, applyUpdate, applyRemove, buildInstalledPack } from '@/services/contentPack';
 import { db } from './dexie';
 
@@ -23,6 +23,9 @@ export interface BackupData {
   contentPacks: InstalledPack[];
   onboardingProfile?: OnboardingProfile;
   mistakeEntries?: MistakeEntry[];
+  competencyNotes?: CompetencyNote[];
+  clozeCards?: ClozeCard[];
+  blurtSessions?: BlurtSession[];
 }
 
 const DEFAULT_PLANNER_SETTINGS: PlannerSettings = {
@@ -91,6 +94,21 @@ export interface QuestionRepository {
   deleteMistakeEntry(id: number): Promise<void>;
   clearMistakeEntries(): Promise<void>;
 
+  getCompetencyNote(competencyId: string): Promise<CompetencyNote | undefined>;
+  saveCompetencyNote(competencyId: string, bodyMd: string): Promise<void>;
+  getAllCompetencyNotes(): Promise<CompetencyNote[]>;
+  deleteCompetencyNote(competencyId: string): Promise<void>;
+
+  appendClozeCard(card: Omit<ClozeCard, 'id'>): Promise<number>;
+  getClozeCardsForCompetency(competencyId: string): Promise<ClozeCard[]>;
+  getAllClozeCards(): Promise<ClozeCard[]>;
+  deleteClozeCard(id: number): Promise<void>;
+  clearClozeCardsForCompetency(competencyId: string): Promise<void>;
+
+  appendBlurtSession(session: Omit<BlurtSession, 'id'>): Promise<number>;
+  getBlurtSessionsForCompetency(competencyId: string): Promise<BlurtSession[]>;
+  getBlurtSessions(since?: number): Promise<BlurtSession[]>;
+
   exportAll(): Promise<BackupData>;
   importAll(data: Partial<BackupData>): Promise<void>;
 }
@@ -125,6 +143,9 @@ export const localRepository: QuestionRepository = {
       db.plannerSettings.clear(),
       db.reviewEvents.clear(),
       db.mistakeEntries.clear(),
+      db.competencyNotes.clear(),
+      db.clozeCards.clear(),
+      db.blurtSessions.clear(),
       // contentPacks intentionally excluded — user must uninstall packs explicitly
     ]);
   },
@@ -322,8 +343,59 @@ export const localRepository: QuestionRepository = {
     await db.mistakeEntries.clear();
   },
 
+  async getCompetencyNote(competencyId) {
+    return db.competencyNotes.get(competencyId);
+  },
+
+  async saveCompetencyNote(competencyId, bodyMd) {
+    await db.competencyNotes.put({ competencyId, bodyMd, updatedAt: Date.now() });
+  },
+
+  async getAllCompetencyNotes() {
+    return db.competencyNotes.toArray();
+  },
+
+  async deleteCompetencyNote(competencyId) {
+    await db.competencyNotes.delete(competencyId);
+  },
+
+  async appendClozeCard(card) {
+    return db.clozeCards.add(card as ClozeCard);
+  },
+
+  async getClozeCardsForCompetency(competencyId) {
+    return db.clozeCards.where('competencyId').equals(competencyId).toArray();
+  },
+
+  async getAllClozeCards() {
+    return db.clozeCards.toArray();
+  },
+
+  async deleteClozeCard(id) {
+    await db.clozeCards.delete(id);
+  },
+
+  async clearClozeCardsForCompetency(competencyId) {
+    await db.clozeCards.where('competencyId').equals(competencyId).delete();
+  },
+
+  async appendBlurtSession(session) {
+    return db.blurtSessions.add(session as BlurtSession);
+  },
+
+  async getBlurtSessionsForCompetency(competencyId) {
+    return db.blurtSessions.where('competencyId').equals(competencyId).toArray();
+  },
+
+  async getBlurtSessions(since) {
+    if (since !== undefined) {
+      return db.blurtSessions.where('ts').aboveOrEqual(since).toArray();
+    }
+    return db.blurtSessions.toArray();
+  },
+
   async exportAll(): Promise<BackupData> {
-    const [attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks, onboardingArr, mistakeEntries] =
+    const [attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks, onboardingArr, mistakeEntries, competencyNotes, clozeCards, blurtSessions] =
       await Promise.all([
         db.attempts.toArray(),
         db.progress.toArray(),
@@ -338,11 +410,17 @@ export const localRepository: QuestionRepository = {
         db.contentPacks.toArray(),
         db.onboardingProfile.toArray(),
         db.mistakeEntries.toArray(),
+        db.competencyNotes.toArray(),
+        db.clozeCards.toArray(),
+        db.blurtSessions.toArray(),
       ]);
     const result: BackupData = { attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks };
     const onboarding = onboardingArr[0];
     if (onboarding) result.onboardingProfile = onboarding;
     if (mistakeEntries.length > 0) result.mistakeEntries = mistakeEntries;
+    if (competencyNotes.length > 0) result.competencyNotes = competencyNotes;
+    if (clozeCards.length > 0) result.clozeCards = clozeCards;
+    if (blurtSessions.length > 0) result.blurtSessions = blurtSessions;
     return result;
   },
 
@@ -361,6 +439,9 @@ export const localRepository: QuestionRepository = {
     if (data.contentPacks?.length) ops.push(db.contentPacks.bulkPut(data.contentPacks));
     if (data.onboardingProfile) ops.push(db.onboardingProfile.put(data.onboardingProfile));
     if (data.mistakeEntries?.length) ops.push(db.mistakeEntries.bulkPut(data.mistakeEntries));
+    if (data.competencyNotes?.length) ops.push(db.competencyNotes.bulkPut(data.competencyNotes));
+    if (data.clozeCards?.length) ops.push(db.clozeCards.bulkPut(data.clozeCards));
+    if (data.blurtSessions?.length) ops.push(db.blurtSessions.bulkPut(data.blurtSessions));
     await Promise.all(ops);
   },
 };
