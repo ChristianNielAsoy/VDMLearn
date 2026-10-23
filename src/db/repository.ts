@@ -4,6 +4,7 @@ import type { LessonStatus, UserLessonStatus, LessonNote } from '@/types/lesson'
 import type { SchoolTask, PlannerSettings } from '@/types/task';
 import type { ReviewEvent } from '@/types/review';
 import type { InstalledPack, InstallResult, UpdateResult, RemoveResult, ContentPackManifest } from '@/types/contentPack';
+import type { OnboardingProfile } from '@/types/onboarding';
 import { applyInstall, applyUpdate, applyRemove, buildInstalledPack } from '@/services/contentPack';
 import { db } from './dexie';
 
@@ -19,6 +20,7 @@ export interface BackupData {
   plannerSettings: PlannerSettings[];
   reviewEvents: ReviewEvent[];
   contentPacks: InstalledPack[];
+  onboardingProfile?: OnboardingProfile;
 }
 
 const DEFAULT_PLANNER_SETTINGS: PlannerSettings = {
@@ -77,6 +79,9 @@ export interface QuestionRepository {
   updateContentPack(manifest: ContentPackManifest, questions: Question[]): Promise<UpdateResult>;
   removeContentPack(packId: string): Promise<RemoveResult>;
   getInstalledPacks(): Promise<InstalledPack[]>;
+
+  getOnboardingProfile(): Promise<OnboardingProfile | undefined>;
+  saveOnboardingProfile(profile: OnboardingProfile): Promise<void>;
 
   exportAll(): Promise<BackupData>;
   importAll(data: Partial<BackupData>): Promise<void>;
@@ -277,8 +282,16 @@ export const localRepository: QuestionRepository = {
     return db.contentPacks.toArray();
   },
 
+  async getOnboardingProfile() {
+    return db.onboardingProfile.get('singleton');
+  },
+
+  async saveOnboardingProfile(profile) {
+    await db.onboardingProfile.put(profile);
+  },
+
   async exportAll(): Promise<BackupData> {
-    const [attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks] =
+    const [attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks, onboardingArr] =
       await Promise.all([
         db.attempts.toArray(),
         db.progress.toArray(),
@@ -291,8 +304,12 @@ export const localRepository: QuestionRepository = {
         db.plannerSettings.toArray(),
         db.reviewEvents.toArray(),
         db.contentPacks.toArray(),
+        db.onboardingProfile.toArray(),
       ]);
-    return { attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks };
+    const result: BackupData = { attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks };
+    const onboarding = onboardingArr[0];
+    if (onboarding) result.onboardingProfile = onboarding;
+    return result;
   },
 
   async importAll(data: Partial<BackupData>): Promise<void> {
@@ -308,6 +325,7 @@ export const localRepository: QuestionRepository = {
     if (data.plannerSettings?.length) ops.push(db.plannerSettings.bulkPut(data.plannerSettings));
     if (data.reviewEvents?.length) ops.push(db.reviewEvents.bulkPut(data.reviewEvents));
     if (data.contentPacks?.length) ops.push(db.contentPacks.bulkPut(data.contentPacks));
+    if (data.onboardingProfile) ops.push(db.onboardingProfile.put(data.onboardingProfile));
     await Promise.all(ops);
   },
 };

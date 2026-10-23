@@ -5,6 +5,7 @@ import type { UserLessonStatus, LessonNote } from '@/types/lesson';
 import type { SchoolTask, PlannerSettings } from '@/types/task';
 import type { ReviewEvent } from '@/types/review';
 import type { InstalledPack } from '@/types/contentPack';
+import type { OnboardingProfile } from '@/types/onboarding';
 
 interface Bookmark {
   questionId: string;
@@ -26,6 +27,7 @@ class DvmReviewerDb extends Dexie {
   plannerSettings!: Table<PlannerSettings, string>;
   reviewEvents!: Table<ReviewEvent, number>;
   contentPacks!: Table<InstalledPack, string>;
+  onboardingProfile!: Table<OnboardingProfile, string>;
 
   constructor() {
     super('dvm-reviewer');
@@ -78,6 +80,10 @@ class DvmReviewerDb extends Dexie {
             if (!q.version) q.version = 1;
           });
       });
+
+    this.version(9).stores({
+      onboardingProfile: '&id',
+    });
   }
 }
 

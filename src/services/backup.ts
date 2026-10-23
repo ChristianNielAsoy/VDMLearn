@@ -68,7 +68,8 @@ export async function importBackup(file: File): Promise<{ summary: string[] }> {
   await localRepository.importAll(data);
 
   const summary: string[] = [];
-  const counts: [keyof BackupData, string][] = [
+  type ArrayKey = Exclude<keyof BackupData, 'onboardingProfile'>;
+  const counts: [ArrayKey, string][] = [
     ['attempts', 'quiz attempts'],
     ['progress', 'SRS records'],
     ['bookmarks', 'bookmarks'],
@@ -85,6 +86,7 @@ export async function importBackup(file: File): Promise<{ summary: string[] }> {
     const arr = data[key];
     if (arr && arr.length > 0) summary.push(`${arr.length} ${label}`);
   }
+  if (data.onboardingProfile) summary.push('onboarding profile');
 
   return { summary };
 }
