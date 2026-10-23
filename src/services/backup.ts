@@ -81,6 +81,10 @@ export async function importBackup(file: File): Promise<{ summary: string[] }> {
     ['plannerSettings', 'settings'],
     ['reviewEvents', 'review events'],
     ['contentPacks', 'content packs'],
+    ['mistakeEntries', 'mistake entries'],
+    ['competencyNotes', 'competency notes'],
+    ['clozeCards', 'cloze cards'],
+    ['blurtSessions', 'blurt sessions'],
   ];
   for (const [key, label] of counts) {
     const arr = data[key];

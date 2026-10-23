@@ -151,7 +151,11 @@
           <div class="text-caption q-mt-xs">Use ==highlight== syntax in your notes to auto-generate cards.</div>
         </div>
         <template v-else>
-          <div class="text-caption text-grey-6 q-mb-sm">{{ clozeCards.length }} card{{ clozeCards.length !== 1 ? 's' : '' }}</div>
+          <div class="row items-center q-mb-sm">
+            <div class="text-caption text-grey-6 col">{{ clozeCards.length }} card{{ clozeCards.length !== 1 ? 's' : '' }}</div>
+            <q-btn flat no-caps color="primary" label="Drill Cards" icon="flash_on" size="sm"
+              @click="router.push(`/cloze/${encodeURIComponent(competencyId)}`)" />
+          </div>
           <q-card
             v-for="card in clozeCards"
             :key="card.id"
