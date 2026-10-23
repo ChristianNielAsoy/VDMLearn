@@ -3,6 +3,17 @@
     <div class="text-h6 q-mb-md">More</div>
 
     <q-list separator bordered class="dvmr-card">
+      <q-item clickable v-ripple to="/notes">
+        <q-item-section avatar>
+          <q-icon name="edit_note" color="primary" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>My Notes</q-item-label>
+          <q-item-label caption>Competency notes, cloze cards, blurt mode</q-item-label>
+        </q-item-section>
+        <q-item-section side><q-icon name="chevron_right" /></q-item-section>
+      </q-item>
+
       <q-item clickable v-ripple to="/planner">
         <q-item-section avatar>
           <q-icon name="calendar_month" color="primary" />
