@@ -8,6 +8,7 @@ import type { OnboardingProfile } from '@/types/onboarding';
 import type { MistakeEntry, CompetencyNote, ClozeCard, BlurtSession } from '@/types/notes';
 import type { ResourceEntry } from '@/types/resource';
 import type { ChecklistProgress } from '@/types/checklist';
+import type { CaseSession } from '@/types/case';
 import { applyInstall, applyUpdate, applyRemove, buildInstalledPack } from '@/services/contentPack';
 import { db } from './dexie';
 
@@ -29,6 +30,7 @@ export interface BackupData {
   clozeCards?: ClozeCard[];
   blurtSessions?: BlurtSession[];
   resources?: ResourceEntry[];
+  caseSessions?: CaseSession[];
 }
 
 const DEFAULT_PLANNER_SETTINGS: PlannerSettings = {
@@ -120,6 +122,11 @@ export interface QuestionRepository {
   saveChecklistProgress(progress: ChecklistProgress): Promise<void>;
   getAllChecklistProgress(): Promise<ChecklistProgress[]>;
 
+  saveCaseSession(session: Omit<CaseSession, 'id'>): Promise<number>;
+  getCaseSessionsForCase(caseId: string): Promise<CaseSession[]>;
+  getAllCaseSessions(): Promise<CaseSession[]>;
+  deleteCaseSession(id: number): Promise<void>;
+
   exportAll(): Promise<BackupData>;
   importAll(data: Partial<BackupData>): Promise<void>;
 }
@@ -159,6 +166,7 @@ export const localRepository: QuestionRepository = {
       db.blurtSessions.clear(),
       db.resources.clear(),
       db.checklistProgress.clear(),
+      db.caseSessions.clear(),
       // contentPacks intentionally excluded — user must uninstall packs explicitly
     ]);
   },
@@ -431,8 +439,24 @@ export const localRepository: QuestionRepository = {
     return db.checklistProgress.toArray();
   },
 
+  async saveCaseSession(session) {
+    return db.caseSessions.add(session);
+  },
+
+  async getCaseSessionsForCase(caseId) {
+    return db.caseSessions.where('caseId').equals(caseId).sortBy('startedAt');
+  },
+
+  async getAllCaseSessions() {
+    return db.caseSessions.toArray();
+  },
+
+  async deleteCaseSession(id) {
+    await db.caseSessions.delete(id);
+  },
+
   async exportAll(): Promise<BackupData> {
-    const [attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks, onboardingArr, mistakeEntries, competencyNotes, clozeCards, blurtSessions, resources] =
+    const [attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks, onboardingArr, mistakeEntries, competencyNotes, clozeCards, blurtSessions, resources, caseSessions] =
       await Promise.all([
         db.attempts.toArray(),
         db.progress.toArray(),
@@ -451,6 +475,7 @@ export const localRepository: QuestionRepository = {
         db.clozeCards.toArray(),
         db.blurtSessions.toArray(),
         db.resources.toArray(),
+        db.caseSessions.toArray(),
       ]);
     const result: BackupData = { attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks };
     const onboarding = onboardingArr[0];
@@ -460,6 +485,7 @@ export const localRepository: QuestionRepository = {
     if (clozeCards.length > 0) result.clozeCards = clozeCards;
     if (blurtSessions.length > 0) result.blurtSessions = blurtSessions;
     if (resources.length > 0) result.resources = resources;
+    if (caseSessions.length > 0) result.caseSessions = caseSessions;
     return result;
   },
 
@@ -482,6 +508,7 @@ export const localRepository: QuestionRepository = {
     if (data.clozeCards?.length) ops.push(db.clozeCards.bulkPut(data.clozeCards));
     if (data.blurtSessions?.length) ops.push(db.blurtSessions.bulkPut(data.blurtSessions));
     if (data.resources?.length) ops.push(db.resources.bulkPut(data.resources));
+    if (data.caseSessions?.length) ops.push(db.caseSessions.bulkPut(data.caseSessions));
     await Promise.all(ops);
   },
 };

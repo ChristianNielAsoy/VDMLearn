@@ -80,6 +80,17 @@
         <q-item-section side><q-icon name="chevron_right" /></q-item-section>
       </q-item>
 
+      <q-item clickable v-ripple to="/cases">
+        <q-item-section avatar>
+          <q-icon name="medical_services" color="primary" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Virtual Patient Cases</q-item-label>
+          <q-item-label caption>Step-through clinical scenarios with branching decisions</q-item-label>
+        </q-item-section>
+        <q-item-section side><q-icon name="chevron_right" /></q-item-section>
+      </q-item>
+
       <q-item clickable v-ripple to="/import">
         <q-item-section avatar>
           <q-icon name="upload" color="primary" />
