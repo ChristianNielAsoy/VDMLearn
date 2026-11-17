@@ -17,7 +17,7 @@ function fsrsDataToCard(data: FSRSData, dueAt: number, lastSeenAt: number): Card
     scheduled_days: data.scheduledDays,
     reps: data.reps,
     lapses: data.lapses,
-    state: data.state as State,
+    state: data.state,
     last_review: lastSeenAt > 0 ? new Date(lastSeenAt) : undefined,
     learning_steps: data.learningSteps,
   } as Card;

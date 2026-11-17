@@ -7,24 +7,26 @@ function makeFakeRepo() {
   const store: MistakeEntry[] = [];
 
   return {
-    async appendMistakeEntry(entry: Omit<MistakeEntry, 'id'>): Promise<number> {
+    appendMistakeEntry(entry: Omit<MistakeEntry, 'id'>): Promise<number> {
       const id = nextId++;
       store.push({ ...entry, id });
-      return id;
+      return Promise.resolve(id);
     },
-    async getMistakeEntries(since?: number): Promise<MistakeEntry[]> {
-      if (since !== undefined) return store.filter((e) => e.ts >= since);
-      return [...store];
+    getMistakeEntries(since?: number): Promise<MistakeEntry[]> {
+      const result = since !== undefined ? store.filter((e) => e.ts >= since) : [...store];
+      return Promise.resolve(result);
     },
-    async getMistakeEntriesForQuestion(questionId: string): Promise<MistakeEntry[]> {
-      return store.filter((e) => e.questionId === questionId);
+    getMistakeEntriesForQuestion(questionId: string): Promise<MistakeEntry[]> {
+      return Promise.resolve(store.filter((e) => e.questionId === questionId));
     },
-    async deleteMistakeEntry(id: number): Promise<void> {
+    deleteMistakeEntry(id: number): Promise<void> {
       const idx = store.findIndex((e) => e.id === id);
       if (idx !== -1) store.splice(idx, 1);
+      return Promise.resolve();
     },
-    async clearMistakeEntries(): Promise<void> {
+    clearMistakeEntries(): Promise<void> {
       store.splice(0, store.length);
+      return Promise.resolve();
     },
   };
 }

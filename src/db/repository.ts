@@ -321,7 +321,7 @@ export const localRepository: QuestionRepository = {
   },
 
   async appendMistakeEntry(entry) {
-    return db.mistakeEntries.add(entry as MistakeEntry);
+    return db.mistakeEntries.add(entry);
   },
 
   async getMistakeEntries(since) {
@@ -360,7 +360,7 @@ export const localRepository: QuestionRepository = {
   },
 
   async appendClozeCard(card) {
-    return db.clozeCards.add(card as ClozeCard);
+    return db.clozeCards.add(card);
   },
 
   async getClozeCardsForCompetency(competencyId) {
@@ -380,7 +380,7 @@ export const localRepository: QuestionRepository = {
   },
 
   async appendBlurtSession(session) {
-    return db.blurtSessions.add(session as BlurtSession);
+    return db.blurtSessions.add(session);
   },
 
   async getBlurtSessionsForCompetency(competencyId) {

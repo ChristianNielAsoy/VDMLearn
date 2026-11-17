@@ -50,7 +50,7 @@ export function getTosBloomTargets(subject?: VmleSubject): Record<BloomLevel, nu
   for (const s of subjects) {
     for (const [key, val] of Object.entries(s.bloomTotals)) {
       if (key in totals) {
-        totals[key as BloomLevel] += val as number;
+        totals[key as BloomLevel] += val;
       }
     }
   }

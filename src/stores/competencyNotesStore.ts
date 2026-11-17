@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 import { localRepository } from '@/db/repository';
-import type { CompetencyNote, ClozeCard, BlurtSession } from '@/types/notes';
+import type { CompetencyNote, ClozeCard, BlurtSession, MistakeEntry } from '@/types/notes';
 import { extractAndConvert } from '@/services/clozeExtractor';
 import { buildBlurtSession, buildBlurtReviewEvent } from '@/services/blurtMode';
 import { buildReviewSheet } from '@/services/reviewSheet';
@@ -117,7 +117,7 @@ export const useCompetencyNotesStore = defineStore('competencyNotes', () => {
     return blurtSessions.value.get(competencyId) ?? [];
   }
 
-  function getReviewSheet(competencyId: string, mistakeEntries: import('@/types/notes').MistakeEntry[]): ReviewSheet | null {
+  function getReviewSheet(competencyId: string, mistakeEntries: MistakeEntry[]): ReviewSheet | null {
     const note = getNote(competencyId);
     if (!note) return null;
     return buildReviewSheet(note, getClozeCards(competencyId), mistakeEntries, getBlurtSessions(competencyId));

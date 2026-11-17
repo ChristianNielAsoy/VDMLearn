@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { activityRegistry } from '@/activities/registry';
 // Importing these modules triggers self-registration
 import { mcqActivity } from '@/activities/mcq';

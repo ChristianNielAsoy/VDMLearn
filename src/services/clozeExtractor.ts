@@ -15,15 +15,6 @@ export interface ExtractedCloze {
 }
 
 /**
- * Splits markdown into sentences naively (period/exclamation/question + space or EOL).
- * Keeps the delimiter attached to the sentence.
- */
-function splitSentences(text: string): string[] {
-  // Split on sentence-ending punctuation followed by whitespace or end-of-string
-  return text.split(/(?<=[.!?])\s+/).filter((s) => s.trim().length > 0);
-}
-
-/**
  * Extracts cloze pairs from a markdown body using ==highlight== syntax.
  * Each highlight becomes one cloze card. If a highlight spans multiple sentences,
  * the whole paragraph line is used as context.

@@ -210,13 +210,7 @@ const resolvedTitle = computed(() => {
 
 const clozeCards = computed(() => notesStore.getClozeCards(competencyId.value));
 
-const sheet = computed(() => {
-  const mistakes = mistakeStore.entries.filter((e) => {
-    const note = notesStore.getNote(competencyId.value);
-    return !!note;
-  });
-  return notesStore.getReviewSheet(competencyId.value, mistakeStore.entries);
-});
+const sheet = computed(() => notesStore.getReviewSheet(competencyId.value, mistakeStore.entries));
 
 onMounted(async () => {
   await Promise.all([
@@ -265,9 +259,8 @@ function confirmDelete() {
     message: 'This will also remove all auto-generated cloze cards for this competency.',
     cancel: true,
     persistent: true,
-  }).onOk(async () => {
-    await notesStore.deleteNote(competencyId.value);
-    router.back();
+  }).onOk(() => {
+    void notesStore.deleteNote(competencyId.value).then(() => { router.back(); });
   });
 }
 </script>

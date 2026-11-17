@@ -107,12 +107,12 @@ function openNote(competencyId: string) {
   void router.push(`/notes/${encodeURIComponent(competencyId)}`);
 }
 
-async function createNote() {
+function createNote() {
   const id = newCompetencyId.value.trim();
   if (!id) return;
   showNewDialog.value = false;
   newCompetencyId.value = '';
-  void router.push(`/notes/${encodeURIComponent(id)}`);
+  router.push(`/notes/${encodeURIComponent(id)}`).catch(() => undefined);
 }
 
 function preview(bodyMd: string): string {

@@ -10,53 +10,57 @@ function makeFakeRepo() {
   const blurtSessions: BlurtSession[] = [];
 
   return {
-    async getCompetencyNote(competencyId: string): Promise<CompetencyNote | undefined> {
-      return notes.get(competencyId);
+    getCompetencyNote(competencyId: string): Promise<CompetencyNote | undefined> {
+      return Promise.resolve(notes.get(competencyId));
     },
-    async saveCompetencyNote(competencyId: string, bodyMd: string): Promise<void> {
+    saveCompetencyNote(competencyId: string, bodyMd: string): Promise<void> {
       notes.set(competencyId, { competencyId, bodyMd, updatedAt: Date.now() });
+      return Promise.resolve();
     },
-    async getAllCompetencyNotes(): Promise<CompetencyNote[]> {
-      return [...notes.values()];
+    getAllCompetencyNotes(): Promise<CompetencyNote[]> {
+      return Promise.resolve([...notes.values()]);
     },
-    async deleteCompetencyNote(competencyId: string): Promise<void> {
+    deleteCompetencyNote(competencyId: string): Promise<void> {
       notes.delete(competencyId);
+      return Promise.resolve();
     },
 
-    async appendClozeCard(card: Omit<ClozeCard, 'id'>): Promise<number> {
+    appendClozeCard(card: Omit<ClozeCard, 'id'>): Promise<number> {
       const id = nextClozeId++;
       clozeCards.push({ ...card, id });
-      return id;
+      return Promise.resolve(id);
     },
-    async getClozeCardsForCompetency(competencyId: string): Promise<ClozeCard[]> {
-      return clozeCards.filter((c) => c.competencyId === competencyId);
+    getClozeCardsForCompetency(competencyId: string): Promise<ClozeCard[]> {
+      return Promise.resolve(clozeCards.filter((c) => c.competencyId === competencyId));
     },
-    async getAllClozeCards(): Promise<ClozeCard[]> {
-      return [...clozeCards];
+    getAllClozeCards(): Promise<ClozeCard[]> {
+      return Promise.resolve([...clozeCards]);
     },
-    async deleteClozeCard(id: number): Promise<void> {
+    deleteClozeCard(id: number): Promise<void> {
       const idx = clozeCards.findIndex((c) => c.id === id);
       if (idx !== -1) clozeCards.splice(idx, 1);
+      return Promise.resolve();
     },
-    async clearClozeCardsForCompetency(competencyId: string): Promise<void> {
+    clearClozeCardsForCompetency(competencyId: string): Promise<void> {
       const toRemove = clozeCards.filter((c) => c.competencyId === competencyId).map((c) => c.id);
       for (const id of toRemove) {
         const idx = clozeCards.findIndex((c) => c.id === id);
         if (idx !== -1) clozeCards.splice(idx, 1);
       }
+      return Promise.resolve();
     },
 
-    async appendBlurtSession(session: Omit<BlurtSession, 'id'>): Promise<number> {
+    appendBlurtSession(session: Omit<BlurtSession, 'id'>): Promise<number> {
       const id = nextBlurtId++;
       blurtSessions.push({ ...session, id });
-      return id;
+      return Promise.resolve(id);
     },
-    async getBlurtSessionsForCompetency(competencyId: string): Promise<BlurtSession[]> {
-      return blurtSessions.filter((s) => s.competencyId === competencyId);
+    getBlurtSessionsForCompetency(competencyId: string): Promise<BlurtSession[]> {
+      return Promise.resolve(blurtSessions.filter((s) => s.competencyId === competencyId));
     },
-    async getBlurtSessions(since?: number): Promise<BlurtSession[]> {
-      if (since !== undefined) return blurtSessions.filter((s) => s.ts >= since);
-      return [...blurtSessions];
+    getBlurtSessions(since?: number): Promise<BlurtSession[]> {
+      const result = since !== undefined ? blurtSessions.filter((s) => s.ts >= since) : [...blurtSessions];
+      return Promise.resolve(result);
     },
   };
 }

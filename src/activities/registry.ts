@@ -5,7 +5,7 @@ class ActivityRegistryImpl implements ActivityRegistry {
   private readonly _map = new Map<string, ActivityDefinition>();
 
   register<T extends LearningObject>(def: ActivityDefinition<T>): void {
-    this._map.set(def.type, def as ActivityDefinition);
+    this._map.set(def.type, def);
   }
 
   get(type: string): ActivityDefinition | undefined {

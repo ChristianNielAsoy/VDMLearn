@@ -84,7 +84,7 @@ export function buildBlurtReviewEvent(
     activityType: 'blurt',
     correct: selfScore >= 2,
     rating,
-    confidence: selfScore as 1 | 2 | 3,
+    confidence: selfScore,
     responseMs,
     mode: 'blurt',
     sessionId,

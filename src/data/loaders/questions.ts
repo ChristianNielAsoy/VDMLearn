@@ -1,4 +1,4 @@
-import type { Question, SourceType } from '@/types/question';
+import type { Question } from '@/types/question';
 import type { OriginInfo } from '@/types/learningObject';
 import sampleRaw from '../questions/sample.json';
 import { localRepository } from '@/db/repository';
@@ -10,7 +10,7 @@ type RawQuestion = Omit<Question, 'type' | 'competencyIds' | 'courseRefs' | 'lin
 // or pre-v8 DB rows. Called by the loader and by getImportedQuestions().
 export function hydrateLearningObjectFields(raw: RawQuestion): Question {
   const origin: OriginInfo = raw.origin ?? {
-    type: raw.sourceType as SourceType,
+    type: raw.sourceType,
     ref: raw.source,
   };
   return {
@@ -22,17 +22,17 @@ export function hydrateLearningObjectFields(raw: RawQuestion): Question {
     origin,
     updatedAt: raw.updatedAt ?? 0,
     version: raw.version ?? 1,
-  } as Question;
+  };
 }
 
-const seed = (sampleRaw as unknown as RawQuestion[]).map(hydrateLearningObjectFields);
+const seed = (sampleRaw as RawQuestion[]).map(hydrateLearningObjectFields);
 
 export async function loadAllQuestions(): Promise<Question[]> {
   const imported = await localRepository.getImportedQuestions();
   // seed first; imported questions override by id
   const byId = new Map<string, Question>(seed.map((q) => [q.id, q]));
   for (const raw of imported) {
-    byId.set(raw.id, hydrateLearningObjectFields(raw as RawQuestion));
+    byId.set(raw.id, hydrateLearningObjectFields(raw));
   }
   return [...byId.values()];
 }
