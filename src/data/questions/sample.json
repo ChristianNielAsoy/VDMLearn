@@ -1,0 +1,385 @@
+[
+  {
+    "id": "anat-0001",
+    "year": 2,
+    "subject": "Gross Anatomy",
+    "vmleSubject": "Veterinary Anatomy",
+    "competencyId": "Veterinary Anatomy:A.1.1",
+    "stem": "Which of the following bones forms the point of the elbow (olecranon process) in the dog?",
+    "choices": [
+      { "key": "A", "text": "Radius" },
+      { "key": "B", "text": "Ulna" },
+      { "key": "C", "text": "Humerus" },
+      { "key": "D", "text": "Carpal bone" }
+    ],
+    "answer": "B",
+    "explanation": "The olecranon process is the proximal projection of the ulna. It forms the point of the elbow and serves as the attachment site for the triceps brachii muscle.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Dyce, Sack & Wensing, Textbook of Veterinary Anatomy",
+    "status": "unverified"
+  },
+  {
+    "id": "anat-0002",
+    "year": 2,
+    "subject": "Gross Anatomy",
+    "vmleSubject": "Veterinary Anatomy",
+    "competencyId": "Veterinary Anatomy:A.1.2",
+    "stem": "The biceps brachii muscle in the dog primarily functions to:",
+    "choices": [
+      { "key": "A", "text": "Extend the stifle joint" },
+      { "key": "B", "text": "Flex the elbow joint" },
+      { "key": "C", "text": "Abduct the forelimb" },
+      { "key": "D", "text": "Rotate the radius outward" }
+    ],
+    "answer": "B",
+    "explanation": "The biceps brachii originates on the supraglenoid tubercle of the scapula and inserts on the radius and ulna. Its primary action is flexion of the elbow joint, and it also contributes to shoulder stabilization.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Dyce, Sack & Wensing, Textbook of Veterinary Anatomy",
+    "status": "unverified"
+  },
+  {
+    "id": "anat-0003",
+    "year": 2,
+    "subject": "Gross Anatomy",
+    "vmleSubject": "Veterinary Anatomy",
+    "competencyId": "Veterinary Anatomy:A.1.3",
+    "stem": "In dogs, the right atrioventricular valve (between the right atrium and right ventricle) is called the:",
+    "choices": [
+      { "key": "A", "text": "Mitral valve" },
+      { "key": "B", "text": "Aortic valve" },
+      { "key": "C", "text": "Tricuspid valve" },
+      { "key": "D", "text": "Pulmonic valve" }
+    ],
+    "answer": "C",
+    "explanation": "The tricuspid (right atrioventricular) valve separates the right atrium from the right ventricle. The mitral (bicuspid) valve is on the left side. The aortic and pulmonic valves are semilunar valves guarding the exit from each ventricle.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Dyce, Sack & Wensing, Textbook of Veterinary Anatomy",
+    "status": "unverified"
+  },
+  {
+    "id": "anat-0004",
+    "year": 2,
+    "subject": "Comparative Anatomy",
+    "vmleSubject": "Veterinary Anatomy",
+    "competencyId": "Veterinary Anatomy:B.1.1",
+    "stem": "Which domestic animal species has a pubic symphysis that typically does NOT fuse in adult life, an adaptation that facilitates parturition?",
+    "choices": [
+      { "key": "A", "text": "Dog" },
+      { "key": "B", "text": "Horse" },
+      { "key": "C", "text": "Guinea pig" },
+      { "key": "D", "text": "Cattle" }
+    ],
+    "answer": "C",
+    "explanation": "In guinea pigs (and to a lesser degree rabbits), the pubic symphysis remains cartilaginous and does not ossify, allowing it to widen during parturition. In dogs, cattle, and horses, the symphysis fuses with age, though the pelvis in cows does allow some flexibility.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Dyce, Sack & Wensing, Textbook of Veterinary Anatomy",
+    "status": "unverified"
+  },
+  {
+    "id": "anat-0005",
+    "year": 2,
+    "subject": "Embryology",
+    "vmleSubject": "Veterinary Anatomy",
+    "competencyId": "Veterinary Anatomy:C.1",
+    "stem": "The epithelial lining of the digestive tract (from the esophagus to the rectum) is derived primarily from which embryonic germ layer?",
+    "choices": [
+      { "key": "A", "text": "Mesoderm" },
+      { "key": "B", "text": "Ectoderm" },
+      { "key": "C", "text": "Endoderm" },
+      { "key": "D", "text": "Neural crest cells" }
+    ],
+    "answer": "C",
+    "explanation": "The endoderm gives rise to the epithelial lining of the gastrointestinal tract and its glands (liver, pancreas). The mesoderm forms the connective tissue and smooth muscle layers of the gut wall. Ectoderm forms skin and the nervous system.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Dyce, Sack & Wensing, Textbook of Veterinary Anatomy",
+    "status": "unverified"
+  },
+  {
+    "id": "phys-0001",
+    "year": 3,
+    "subject": "General Physiology",
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:A.7",
+    "stem": "The approximate lifespan of a normal canine erythrocyte (red blood cell) is:",
+    "choices": [
+      { "key": "A", "text": "30 days" },
+      { "key": "B", "text": "70 days" },
+      { "key": "C", "text": "110 days" },
+      { "key": "D", "text": "200 days" }
+    ],
+    "answer": "C",
+    "explanation": "Canine erythrocytes survive approximately 110 days before being removed by the spleen and other organs of the mononuclear phagocyte system. For comparison, feline erythrocytes live about 70 days and human erythrocytes about 120 days.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Reece, Dukes' Physiology of Domestic Animals",
+    "status": "unverified"
+  },
+  {
+    "id": "phys-0002",
+    "year": 3,
+    "subject": "General Physiology",
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:B.1",
+    "stem": "In ruminants, microbial fermentation of cellulose and other plant carbohydrates primarily occurs in the:",
+    "choices": [
+      { "key": "A", "text": "Omasum" },
+      { "key": "B", "text": "Abomasum" },
+      { "key": "C", "text": "Rumen" },
+      { "key": "D", "text": "Small intestine" }
+    ],
+    "answer": "C",
+    "explanation": "The rumen (first compartment) is the major fermentation vat where anaerobic microorganisms (bacteria, protozoa, fungi) break down cellulose into volatile fatty acids (acetate, propionate, butyrate) that serve as the primary energy source for ruminants. The abomasum is the 'true stomach' with acid-pepsin digestion.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Reece, Dukes' Physiology of Domestic Animals",
+    "status": "unverified"
+  },
+  {
+    "id": "phys-0003",
+    "year": 3,
+    "subject": "General Physiology",
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:B.5",
+    "stem": "The functional unit of the kidney responsible for filtration, reabsorption, and secretion is the:",
+    "choices": [
+      { "key": "A", "text": "Glomerulus" },
+      { "key": "B", "text": "Nephron" },
+      { "key": "C", "text": "Renal corpuscle" },
+      { "key": "D", "text": "Loop of Henle" }
+    ],
+    "answer": "B",
+    "explanation": "The nephron is the structural and functional unit of the kidney. It consists of the renal corpuscle (glomerulus + Bowman's capsule) and the renal tubule (proximal convoluted tubule, loop of Henle, distal convoluted tubule, collecting duct). The glomerulus alone is only the filtration capillary tuft.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Reece, Dukes' Physiology of Domestic Animals",
+    "status": "unverified"
+  },
+  {
+    "id": "phys-0004",
+    "year": 3,
+    "subject": "General Physiology",
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:C.1",
+    "stem": "Aldosterone, a mineralocorticoid that regulates sodium and potassium balance, is produced by which zone of the adrenal cortex?",
+    "choices": [
+      { "key": "A", "text": "Zona reticularis" },
+      { "key": "B", "text": "Zona fasciculata" },
+      { "key": "C", "text": "Zona glomerulosa" },
+      { "key": "D", "text": "Adrenal medulla" }
+    ],
+    "answer": "C",
+    "explanation": "The adrenal cortex has three zones (GFR — from outer to inner): zona Glomerulosa (mineralocorticoids: aldosterone), zona Fasciculata (glucocorticoids: cortisol), and zona Reticularis (androgens). The adrenal medulla produces catecholamines (epinephrine, norepinephrine).",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Reece, Dukes' Physiology of Domestic Animals",
+    "status": "unverified"
+  },
+  {
+    "id": "phys-0005",
+    "year": 3,
+    "subject": "Systemic Physiology",
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:C.3",
+    "stem": "The corpus luteum of the ovary in domestic animals is primarily responsible for secreting:",
+    "choices": [
+      { "key": "A", "text": "Estrogen" },
+      { "key": "B", "text": "Follicle-stimulating hormone (FSH)" },
+      { "key": "C", "text": "Luteinizing hormone (LH)" },
+      { "key": "D", "text": "Progesterone" }
+    ],
+    "answer": "D",
+    "explanation": "After ovulation, the ruptured follicle transforms into the corpus luteum under LH influence. The corpus luteum produces progesterone, which prepares the uterus for implantation and maintains pregnancy. FSH and LH are pituitary gonadotropins, not produced by the corpus luteum.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Reece, Dukes' Physiology of Domestic Animals",
+    "status": "unverified"
+  },
+  {
+    "id": "phrm-0001",
+    "year": 3,
+    "subject": "Basic Pharmacology",
+    "vmleSubject": "Veterinary Pharmacology",
+    "competencyId": "Veterinary Pharmacology:A.1.1",
+    "stem": "A drug that binds to a receptor and produces the maximum possible biological response (Emax) is classified as a:",
+    "choices": [
+      { "key": "A", "text": "Partial agonist" },
+      { "key": "B", "text": "Full agonist" },
+      { "key": "C", "text": "Competitive antagonist" },
+      { "key": "D", "text": "Non-competitive antagonist" }
+    ],
+    "answer": "B",
+    "explanation": "A full agonist binds to a receptor and produces the maximum efficacy (Emax) that the receptor system can generate. A partial agonist produces a submaximal response even at full receptor occupancy. Competitive antagonists block agonist binding but produce no response themselves.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Katzung, Basic and Clinical Pharmacology",
+    "status": "unverified"
+  },
+  {
+    "id": "phrm-0002",
+    "year": 4,
+    "subject": "Clinical Pharmacology",
+    "vmleSubject": "Veterinary Pharmacology",
+    "competencyId": "Veterinary Pharmacology:A.2.1",
+    "stem": "Which route of drug administration provides 100% bioavailability because it delivers the drug directly into the systemic circulation?",
+    "choices": [
+      { "key": "A", "text": "Oral (per os)" },
+      { "key": "B", "text": "Subcutaneous" },
+      { "key": "C", "text": "Intramuscular" },
+      { "key": "D", "text": "Intravenous" }
+    ],
+    "answer": "D",
+    "explanation": "Intravenous (IV) administration delivers the drug directly into the bloodstream, bypassing all absorption barriers, so bioavailability is 100% by definition. Oral drugs undergo first-pass metabolism in the liver and gut, and subcutaneous/intramuscular routes have variable absorption rates.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Katzung, Basic and Clinical Pharmacology",
+    "status": "unverified"
+  },
+  {
+    "id": "phrm-0003",
+    "year": 3,
+    "subject": "Basic Pharmacology",
+    "vmleSubject": "Veterinary Pharmacology",
+    "competencyId": "Veterinary Pharmacology:A.3",
+    "stem": "A drug is prescribed at 10 mg/kg for a patient weighing 30 kg. What is the total dose to be administered?",
+    "choices": [
+      { "key": "A", "text": "100 mg" },
+      { "key": "B", "text": "200 mg" },
+      { "key": "C", "text": "300 mg" },
+      { "key": "D", "text": "400 mg" }
+    ],
+    "answer": "C",
+    "explanation": "Total dose = dose rate × body weight = 10 mg/kg × 30 kg = 300 mg. Always confirm the calculation: multiply the per-kilogram dose by the animal's weight in kilograms.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use",
+    "status": "unverified"
+  },
+  {
+    "id": "phrm-0004",
+    "year": 4,
+    "subject": "Clinical Pharmacology",
+    "vmleSubject": "Veterinary Pharmacology",
+    "competencyId": "Veterinary Pharmacology:B.1.1",
+    "stem": "Beta-lactam antibiotics (penicillins and cephalosporins) exert their bactericidal effect primarily by:",
+    "choices": [
+      { "key": "A", "text": "Inhibiting bacterial cell wall synthesis" },
+      { "key": "B", "text": "Disrupting the bacterial cell membrane" },
+      { "key": "C", "text": "Inhibiting bacterial protein synthesis at the 30S ribosomal subunit" },
+      { "key": "D", "text": "Inhibiting bacterial nucleic acid synthesis" }
+    ],
+    "answer": "A",
+    "explanation": "Beta-lactams inhibit transpeptidase enzymes (penicillin-binding proteins) that cross-link peptidoglycan strands in the bacterial cell wall. This weakens the wall and leads to osmotic lysis. Aminoglycosides target the 30S subunit; fluoroquinolones inhibit DNA gyrase; polymyxins disrupt the cell membrane.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Katzung, Basic and Clinical Pharmacology",
+    "status": "unverified"
+  },
+  {
+    "id": "phrm-0005",
+    "year": 4,
+    "subject": "Clinical Pharmacology",
+    "vmleSubject": "Veterinary Pharmacology",
+    "competencyId": "Veterinary Pharmacology:B.4",
+    "stem": "The withdrawal period of a veterinary drug refers to the minimum time that must elapse after the last dose before:",
+    "choices": [
+      { "key": "A", "text": "The animal can receive another course of treatment" },
+      {
+        "key": "B",
+        "text": "Drug residues in edible tissues (meat, milk, eggs) fall to or below safe regulatory limits"
+      },
+      { "key": "C", "text": "The drug reaches its peak plasma concentration" },
+      { "key": "D", "text": "Observable side effects are expected to resolve" }
+    ],
+    "answer": "B",
+    "explanation": "The withdrawal period (meat/milk/egg withdrawal time) is the legally mandated interval to ensure drug residues in food-producing animals' edible products fall below the maximum residue limit (MRL) set by regulatory agencies. Selling animals for slaughter or using milk/eggs before the withdrawal period expires is illegal.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use",
+    "status": "unverified"
+  },
+  {
+    "id": "para-0001",
+    "year": 3,
+    "subject": "Entomology and Protozoology",
+    "vmleSubject": "Veterinary Parasitology",
+    "competencyId": "Veterinary Parasitology:A.1",
+    "stem": "Hard ticks (family Ixodidae) are distinguished from soft ticks (family Argasidae) by the presence of:",
+    "choices": [
+      { "key": "A", "text": "A capitulum (mouthparts) located on the ventral surface" },
+      { "key": "B", "text": "A hard dorsal shield (scutum) covering part or all of the dorsum" },
+      { "key": "C", "text": "Non-bloodsucking feeding behavior" },
+      { "key": "D", "text": "Very rapid feeding completed in less than one hour" }
+    ],
+    "answer": "B",
+    "explanation": "The defining characteristic of hard ticks (Ixodidae) is the presence of a scutum — a hard chitinous shield on the dorsal surface. In males it covers the entire dorsum; in females, nymphs, and larvae it covers only the anterior portion. Soft ticks (Argasidae) lack a scutum and have a leathery, wrinkled cuticle.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Urquhart et al., Veterinary Parasitology",
+    "status": "unverified"
+  },
+  {
+    "id": "para-0002",
+    "year": 3,
+    "subject": "Entomology and Protozoology",
+    "vmleSubject": "Veterinary Parasitology",
+    "competencyId": "Veterinary Parasitology:B.1",
+    "stem": "Babesia species, when observed inside the erythrocyte under light microscopy, characteristically appear as:",
+    "choices": [
+      { "key": "A", "text": "Large cysts containing multiple merozoites" },
+      { "key": "B", "text": "Pyriform (pear-shaped) forms, often in pairs" },
+      { "key": "C", "text": "Kidney-shaped trophozoites" },
+      { "key": "D", "text": "Crescent-shaped (falciform) gametocytes" }
+    ],
+    "answer": "B",
+    "explanation": "Babesia species appear as small or large pyriform (pear-shaped) forms within erythrocytes, often in pairs forming a 'Maltese cross' (tetrad) in some species. Crescent-shaped gametocytes are characteristic of Plasmodium species (malaria). Kidney-shaped forms describe Theileria in lymphocytes.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Urquhart et al., Veterinary Parasitology",
+    "status": "unverified"
+  },
+  {
+    "id": "para-0003",
+    "year": 3,
+    "subject": "Entomology and Protozoology",
+    "vmleSubject": "Veterinary Parasitology",
+    "competencyId": "Veterinary Parasitology:C.2",
+    "stem": "Tapeworms belong to which of the following phyla?",
+    "choices": [
+      { "key": "A", "text": "Nematoda" },
+      { "key": "B", "text": "Acanthocephala" },
+      { "key": "C", "text": "Platyhelminthes" },
+      { "key": "D", "text": "Arthropoda" }
+    ],
+    "answer": "C",
+    "explanation": "Tapeworms (class Cestoda) and flukes (class Trematoda) both belong to phylum Platyhelminthes (flatworms). Roundworms belong to Nematoda. Acanthocephala are thorny-headed worms. Arthropoda includes insects and arachnids.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Urquhart et al., Veterinary Parasitology",
+    "status": "unverified"
+  },
+  {
+    "id": "para-0004",
+    "year": 4,
+    "subject": "Helminthology",
+    "vmleSubject": "Veterinary Parasitology",
+    "competencyId": "Veterinary Parasitology:C.5",
+    "stem": "Visceral larva migrans (VLM) in humans, caused by migration of larvae through internal organs, is most commonly associated with accidental ingestion of embryonated eggs of:",
+    "choices": [
+      { "key": "A", "text": "Fasciola hepatica" },
+      { "key": "B", "text": "Toxocara canis" },
+      { "key": "C", "text": "Taenia solium" },
+      { "key": "D", "text": "Haemonchus contortus" }
+    ],
+    "answer": "B",
+    "explanation": "Toxocara canis (dog roundworm) eggs can be ingested by humans (especially children) from contaminated soil. In humans, the larvae hatch but cannot complete their life cycle; they migrate through tissues causing VLM (liver, lungs, brain). Fasciola causes liver fluke disease; Taenia solium causes cysticercosis; Haemonchus is a sheep/goat barber pole worm.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Urquhart et al., Veterinary Parasitology",
+    "status": "unverified"
+  },
+  {
+    "id": "para-0005",
+    "year": 4,
+    "subject": "Helminthology",
+    "vmleSubject": "Veterinary Parasitology",
+    "competencyId": "Veterinary Parasitology:C.7",
+    "stem": "A key strategic control measure for soil-transmitted (trichostrongyle) helminth infections in grazing livestock combines:",
+    "choices": [
+      { "key": "A", "text": "Vaccination of the entire herd" },
+      { "key": "B", "text": "Antibiotic treatment of all infected animals" },
+      { "key": "C", "text": "Pasture rotation combined with strategic anthelmintic treatment" },
+      { "key": "D", "text": "High-dose vitamin supplementation only" }
+    ],
+    "answer": "C",
+    "explanation": "Integrated control of trichostrongyle helminths (e.g., Haemonchus, Ostertagia) relies on reducing pasture larval contamination through rotational grazing and using anthelmintics strategically (targeted selective treatment or strategic timing) to slow the development of anthelmintic resistance. Vaccines exist only for Haemonchus in sheep in some countries; antibiotics have no effect on helminths.",
+    "sourceType": "ai-draft",
+    "source": "placeholder: verify before use — see Urquhart et al., Veterinary Parasitology",
+    "status": "unverified"
+  }
+]

@@ -1,38 +1,33 @@
-# VDMLearn ()
+# VDMLearn — DVM Reviewer
 
-## Install the dependencies
+Local-first study app for Philippine DVM students and VMLE (Veterinary Licensure Exam) board exam preparation. No AI API calls in the app; questions are generated offline and imported via JSON.
 
-```bash
-pnpm install
-# or: yarn/npm/bun install
-```
+## Prerequisites
 
-### Start the app in development mode (HMR, error reporting, etc.)
+- **Node.js >=22.22.0** (`nvm use` — see `.nvmrc`)
+- **Quasar CLI**: `npm install -g @quasar/cli`
 
-```bash
-quasar dev
-```
-
-### Format & Lint the files
+## Setup
 
 ```bash
-pnpm run lint
-# or: yarn/npm/bun run lint
+npm install
 ```
 
-...or just check formatting & linting:
+## Commands
 
-```bash
-pnpm run lint:check
-# or: yarn/npm/bun run lint:check
-```
+| Command              | Description                         |
+| -------------------- | ----------------------------------- |
+| `quasar dev`         | Dev server at http://localhost:9000 |
+| `npm run build`      | Production SPA → `dist/spa/`        |
+| `npm test`           | Run all unit/integration tests      |
+| `npm run typecheck`  | TypeScript check (vue-tsc)          |
+| `npm run lint`       | Fix lint + format                   |
+| `npm run lint:check` | Lint check only (no write)          |
 
-### Build the app for production
+## Importing questions
 
-```bash
-quasar build
-```
+1. Generate questions using the prompt in `docs/generate-questions-prompt.md`
+2. Go to **Import** tab in the app (upload icon in the header)
+3. Paste or upload the JSON; all questions are saved as `unverified`
 
-### Customize the configuration
-
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-file).
+See [VDMLearn.md](VDMLearn.md) for the full system overview, folder structure, and feature documentation.

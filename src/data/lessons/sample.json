@@ -1,0 +1,155 @@
+[
+  {
+    "id": "anat-lesson-osteology",
+    "year": 2,
+    "subject": "Gross Anatomy",
+    "topic": "Osteology",
+    "vmleSubject": "Veterinary Anatomy",
+    "objectives": [
+      "Classify bones by shape and developmental origin",
+      "Identify the major regions of the axial and appendicular skeleton in domestic animals",
+      "Distinguish between compact and cancellous bone structure"
+    ],
+    "overview": "**Osteology** is the study of bones — their structure, development, and function. In domestic animals the skeleton serves as a rigid framework, protects vital organs, enables locomotion, produces blood cells (in red marrow), and stores minerals (calcium, phosphorus).\n\nTotal bone counts vary by species: horse ~205, cattle ~207, dog ~319 (including sesamoids), cat ~230.",
+    "keyTerms": [
+      {
+        "term": "Diaphysis",
+        "definition": "The shaft of a long bone; composed mainly of compact bone surrounding the medullary cavity."
+      },
+      {
+        "term": "Epiphysis",
+        "definition": "The expanded end of a long bone, covered by articular cartilage; contains cancellous bone."
+      },
+      {
+        "term": "Physis (growth plate)",
+        "definition": "Cartilaginous disc between diaphysis and epiphysis; site of longitudinal growth until skeletal maturity."
+      },
+      {
+        "term": "Periosteum",
+        "definition": "Dense fibrous membrane covering the outer surface of bone (except articular surfaces); source of osteoprogenitor cells."
+      },
+      {
+        "term": "Medullary cavity",
+        "definition": "Central canal of the diaphysis containing bone marrow (red = hematopoietic; yellow = adipose in adults)."
+      },
+      {
+        "term": "Haversian system (osteon)",
+        "definition": "Structural unit of compact bone: concentric bony lamellae around a central (Haversian) canal carrying vessels and nerves."
+      },
+      {
+        "term": "Endosteum",
+        "definition": "Thin vascular membrane lining the medullary cavity and the trabeculae of cancellous bone."
+      }
+    ],
+    "content": "## Classification by Shape\n\n| Type | Description | Examples |\n|------|-------------|----------|\n| Long | Length > width; shaft + 2 epiphyses | Femur, humerus, radius |\n| Short | Similar length and width | Carpals, tarsals |\n| Flat | Thin, plate-like | Scapula, skull bones |\n| Irregular | Complex shape | Vertebrae, hip bones |\n| Sesamoid | Embedded in tendons | Patella, distal sesamoids |\n| Pneumatic | Contain air sinuses | Frontal bone (cattle/horse) |\n\n## Axial vs Appendicular\n\n**Axial skeleton:** skull, hyoid, vertebral column, ribs, sternum.\n\n**Appendicular skeleton:** pectoral girdle + forelimb, pelvic girdle + hindlimb.\n\n## Bone Development\n\n- **Intramembranous ossification:** flat bones of the skull form directly from condensed mesenchyme (no cartilage model).\n- **Endochondral ossification:** most bones replace a cartilage model. Growth plates (physes) allow lengthening until closure at skeletal maturity.\n\n## Species Notes\n\n- **Horse:** splint bones (Mc2/Mc4; Mt2/Mt4) are vestigial metacarpals/metatarsals. The proximal sesamoids and distal sesamoid (navicular bone) are clinically important.\n- **Cattle:** os cordis (heart bone) — a sesamoid-like ossification in the interventricular septum; unique to ruminants.\n- **Dog:** 5 metacarpals retained; dewclaw (digit I) varies by breed.",
+    "highYield": "- **PRC Anatomy A.1–A.2 (Osteology/Arthrology)** — expect 3–5 items per 100-item exam.\n- Know the bone classification table by shape — short-answer and MCQ staple.\n- **Os cordis** in cattle is a classic unique-feature question.\n- **Splint bone** questions: equine Mc2/Mc4 splints — periostitis causes 'splints' (exostosis), a lameness cause.\n- **Periosteum** contains osteoprogenitor cells critical for fracture healing — NSAIDs and corticosteroids impair this (links to Pharmacology).\n- Physis closure timing: earlier in small breeds; delayed by hypothyroidism, premature castration. A pathology and physiology cross-link.\n- Red marrow → yellow marrow conversion occurs during growth: starts in extremities, moves centrally. In severe anemia the conversion reverses.",
+    "mnemonics": "**Bone types — \"Lions Sometimes Fight In Small Pens\":**\n> **L**ong · **S**hort · **F**lat · **I**rregular · **S**esamoid · **P**neumatic\n\n**Axial vs Appendicular:**\n> **Axial** = along the **A**xis (skull, spine, ribs, sternum)\n> **App**endicular = **App**endages (limbs + girdles)\n\n**Bone layers outside → in:**\n> **P**eriosteum → **C**ompact bone → **C**ancellous bone → **E**ndosteum → **M**arrow\n> *\"Please Cook Carefully, Even Marrow\"*",
+    "checkQuestions": ["anat-0001", "anat-0002", "anat-0003"]
+  },
+  {
+    "id": "phys-lesson-cardiac",
+    "year": 3,
+    "subject": "Systemic Physiology",
+    "topic": "Cardiac Physiology",
+    "vmleSubject": "Veterinary Physiology",
+    "objectives": [
+      "Describe the phases of the cardiac cycle and their hemodynamic significance",
+      "Explain the generation and conduction of cardiac action potentials",
+      "Calculate cardiac output and explain how preload, afterload, and contractility affect it",
+      "Identify clinically relevant species differences in cardiac physiology"
+    ],
+    "overview": "The heart is a dual pump. The **right side** receives deoxygenated blood and drives it through the pulmonary circulation; the **left side** receives oxygenated blood and drives it through the systemic circulation.\n\nCardiac physiology is high-yield for both **Veterinary Physiology** (A.4 Cardiovascular) and **Veterinary Medicine** (arrhythmia, heart failure, shock) and underpins drug targets in **Pharmacology** (digitalis, antiarrhythmics, vasodilators).",
+    "keyTerms": [
+      {
+        "term": "Cardiac output (CO)",
+        "definition": "Volume of blood pumped per minute. CO = HR × SV. Normal dog CO ≈ 100 mL/kg/min."
+      },
+      {
+        "term": "Stroke volume (SV)",
+        "definition": "Volume ejected per beat. Determined by preload, afterload, and contractility."
+      },
+      {
+        "term": "Preload",
+        "definition": "End-diastolic ventricular volume (EDV); determined mainly by venous return. High preload → stretched sarcomeres → stronger contraction (Frank-Starling)."
+      },
+      {
+        "term": "Afterload",
+        "definition": "Resistance the ventricle must overcome to eject blood; essentially arterial pressure. High afterload → reduced SV."
+      },
+      {
+        "term": "Contractility (inotropy)",
+        "definition": "Intrinsic force of contraction independent of preload/afterload. Increased by sympathetic stimulation, digitalis; decreased by heart failure, beta-blockers."
+      },
+      {
+        "term": "Frank-Starling law",
+        "definition": "Within physiological limits, increased EDV (preload) stretches myofibers → greater cross-bridge overlap → greater force and SV."
+      },
+      {
+        "term": "SA node",
+        "definition": "Primary cardiac pacemaker in the right atrial wall. Sets intrinsic rate (60–80 bpm in dogs at rest). Automaticity due to the 'funny current' (If: slow Na+/Ca2+ influx during phase 4)."
+      },
+      {
+        "term": "Refractory period",
+        "definition": "Period post-depolarization when the myocardium cannot be re-excited. Prevents tetanic contraction (critical for pumping function)."
+      }
+    ],
+    "content": "## The Cardiac Cycle\n\n| Phase | Valves | Key event |\n|-------|--------|-----------|\n| 1. Isovolumetric contraction | All closed | Ventricular pressure rises |\n| 2. Rapid ejection | AoV/PV open | Blood exits; pressure peaks (systolic BP) |\n| 3. Reduced ejection | AoV/PV open | Flow slows |\n| 4. Isovolumetric relaxation | All closed | Ventricular pressure falls |\n| 5. Rapid filling | AV valves open | ~80% of ventricular fill (passive) |\n| 6. Atrial systole | AV valves open | ~20% fill; contributes more in tachycardia |\n\n## Ventricular Action Potential\n\n| Phase | Ion movement | Clinical relevance |\n|-------|-------------|--------------------|\n| 0 – Rapid depolarization | Na+ influx (fast channels) | Target of Class I antiarrhythmics |\n| 1 – Early repolarization | K+ efflux, Cl- influx | — |\n| 2 – Plateau | Ca2+ influx ≈ K+ efflux | Ca2+ triggers contraction; target of Ca2+-channel blockers |\n| 3 – Repolarization | K+ efflux dominant | Target of Class III antiarrhythmics |\n| 4 – Resting | Na+/K+ ATPase restores gradient | — |\n\n## Species Resting Heart Rates\n\n| Species | HR (bpm) |\n|---------|----------|\n| Horse | 28–44 |\n| Cow | 48–84 |\n| Sheep/Goat | 70–90 |\n| Dog | 60–160 |\n| Cat | 120–240 |\n| Pig | 70–120 |\n\n*(Higher HR in smaller species reflects higher mass-specific metabolic rate.)*\n\n## Autonomic Control\n\n- **Sympathetic (NE/E):** ↑ HR (chronotropy), ↑ contractility (inotropy), ↑ conduction velocity.\n- **Parasympathetic (ACh/vagus):** ↓ HR, ↓ conduction through AV node (→ vagal bradycardia in horses).\n- **Bainbridge reflex:** ↑ venous return → ↑ HR (stretch of RA → reflex tachycardia).",
+    "highYield": "- **CO = HR × SV** — know how each component affects CO clinically (tachycardia, hypovolemia, heart failure).\n- **Frank-Starling** compensates in early heart failure (↑ EDV → maintains SV); decompensation = SV falls despite high preload.\n- **Digitalis (digoxin):** inhibits Na+/K+ ATPase → ↑ intracellular Na+ → less Ca2+ extrusion via Na+/Ca2+ exchanger → more intracellular Ca2+ → ↑ contractility. Also vagally mediated ↓ HR. Narrow therapeutic index; renal clearance — dose-adjust in renal failure.\n- **Horses** have large SV (up to 3 L/beat at peak exercise); CO can reach 300 L/min in racing thoroughbreds. Resting sinus arrhythmia and second-degree AV block are normal in horses (high vagal tone).\n- **Cats:** tachycardia (normal HR up to 240); hypertrophic cardiomyopathy (HCM) is the most common feline heart disease — impairs diastolic filling (diastolic dysfunction).\n- **PRC Physiology A.4** (Cardiovascular) covers cardiac cycle, CO regulation, and BP control.",
+    "mnemonics": "**Cardiac cycle sequence — \"I Run Every Interval, Running Atop\":**\n> **I**sovolumetric contraction → **R**apid ejection → **E**jection reduced → **I**sovolumetric relaxation → **R**apid filling → **A**trial systole\n\n**Frank-Starling in one line:**\n> *\"The more you fill, the more you spill\"* — greater stretch → greater output.\n\n**Digitalis mechanism:**\n> Block **Na/K pump** → ↑ Na inside → ↓ Na gradient → ↓ Na/Ca exchanger activity → **Ca stays in** → stronger beat.\n> *\"Block the pump, trap the calcium, squeeze the heart.\"*",
+    "checkQuestions": ["phys-0001", "phys-0002", "phys-0003"]
+  },
+  {
+    "id": "para-lesson-toxoplasma",
+    "year": 3,
+    "subject": "Entomology and Protozoology",
+    "topic": "Toxoplasmosis",
+    "vmleSubject": "Veterinary Parasitology",
+    "objectives": [
+      "Describe the life cycle of Toxoplasma gondii and identify definitive and intermediate hosts",
+      "Explain the routes of transmission relevant to veterinary and public health",
+      "Recognize clinical presentations in cats, small ruminants, and immunocompromised humans",
+      "Apply control and prevention strategies for toxoplasmosis"
+    ],
+    "overview": "***Toxoplasma gondii*** is an obligate intracellular protozoan (Phylum Apicomplexa) with worldwide distribution. It is one of the most prevalent parasitic infections in humans and animals, with up to 30% seroprevalence in some human populations.\n\nIt is a **zoonotic** pathogen of major public health significance — capable of causing severe congenital disease and fatal encephalitis in immunocompromised hosts. Cats are the **only definitive host**; virtually any warm-blooded vertebrate can serve as an **intermediate host**.",
+    "keyTerms": [
+      {
+        "term": "Definitive host",
+        "definition": "The host in which the sexual (gametogonic) phase of the parasite life cycle occurs. For T. gondii, this is exclusively felids (domestic cat and wild cats)."
+      },
+      {
+        "term": "Intermediate host",
+        "definition": "Host in which only asexual reproduction (schizogony/bradyzoite formation) occurs. For T. gondii: any warm-blooded vertebrate including humans, sheep, pigs, and rodents."
+      },
+      {
+        "term": "Oocyst",
+        "definition": "Environmentally resistant stage shed in cat feces. Sporulates to become infective within 1–5 days. Survives months to years in moist soil."
+      },
+      {
+        "term": "Tachyzoite",
+        "definition": "Rapidly dividing asexual form during acute infection. Disseminates via the blood/lymphatics; responsible for acute tissue destruction."
+      },
+      {
+        "term": "Bradyzoite",
+        "definition": "Slow-replicating form contained within tissue cysts (in muscle and brain). Associated with chronic/latent infection. Reactivates with immunosuppression."
+      },
+      {
+        "term": "Tissue cyst",
+        "definition": "Cyst containing thousands of bradyzoites, found in muscle, brain, and other organs of intermediate hosts. Infectious if ingested by a susceptible host."
+      },
+      {
+        "term": "Congenital toxoplasmosis",
+        "definition": "Transplacental transmission of tachyzoites from a primarily infected mother. Causes abortion, stillbirth, or neonatal disease (hydrocephalus, chorioretinitis, encephalitis) in humans and small ruminants."
+      }
+    ],
+    "content": "## Life Cycle Summary\n\nT. gondii has a **heteroxenous** (two-host) life cycle with three infectious stages:\n\n| Stage | Found in | Infective to |\n|-------|----------|-------------|\n| Oocyst (sporulated) | Soil/environment | All hosts |\n| Tachyzoite | Acute infection (any host) | Transmitted across placenta |\n| Bradyzoite (tissue cyst) | Chronic infection (intermediate hosts) | Cat, other carnivores, humans |\n\n## Routes of Transmission to Humans\n\n1. **Ingestion of oocysts** — from contaminated soil, water, raw vegetables, cat litter boxes.\n2. **Ingestion of tissue cysts** — undercooked meat (lamb, pork, venison); butcher workers at risk.\n3. **Congenital** — primary maternal infection during pregnancy → transplacental tachyzoite transfer.\n4. **Organ transplant / blood transfusion** — rare; important in immunosuppressed recipients.\n\n## Clinical Disease\n\n**Cats:** Primary infection usually subclinical; shed oocysts for only ~2 weeks. Clinical disease rare (fever, dyspnea, icterus — multisystemic); more severe with concurrent FIV/FeLV.\n\n**Small ruminants (sheep, goats):** **Abortion** is the hallmark. Primary infection in early pregnancy → embryonic death and resorption. Late pregnancy → stillbirth or weak lambs with cotyledonary placentitis. Economic importance in sheep flocks.\n\n**Humans:** Immunocompetent — usually asymptomatic or mild lymphadenopathy. Immunosuppressed (HIV/AIDS, organ transplant) → **cerebral toxoplasmosis** (ring-enhancing lesions on CT/MRI); potentially fatal. Congenital — classic triad: hydrocephalus, intracranial calcifications, chorioretinitis.\n\n## Diagnosis\n\n- **Serology** (IgG/IgM ELISA, Sabin-Feldman dye test) — standard for humans and animals.\n- **PCR** on amniotic fluid, CSF, or tissue.\n- **Histopathology** — tachyzoites or cysts in tissue sections.\n- Cats: fecal flotation for oocysts (unreliable — shed only 2 weeks; oocysts resemble Hammondia, Besnoitia).\n\n## Treatment and Control\n\n- **Treatment:** Pyrimethamine + sulfadiazine (+ folinic acid to prevent bone marrow suppression) — humans. Clindamycin used in cats and dogs.\n- **Prevention:** Thorough cooking of meat (>67°C); hand hygiene after gardening or handling cat litter; pregnant women/immunosuppressed: avoid cleaning cat litter; cover sandboxes.",
+    "highYield": "- **Only cats** (felids) are the definitive host — shed oocysts. This is the single most-tested T. gondii fact.\n- **Sheep abortion** = classic VMLE scenario for T. gondii in intermediate hosts.\n- Oocysts need **1–5 days to sporulate** in the environment before becoming infective (not immediately infectious when shed).\n- **Congenital toxoplasmosis** risk: only if **primary infection** occurs during pregnancy (re-infection with latent bradyzoites does not cause congenital disease in most cases — important for counseling pregnant cat owners).\n- **Immunosuppression** reactivates bradyzoites → tachyzoites → cerebral toxoplasmosis.\n- Pyrimethamine + sulfadiazine inhibit **folate synthesis** at two sequential steps (pyrimethamine inhibits dihydrofolate reductase; sulfadiazine inhibits dihydropteroate synthase) — cross-links to Pharmacology antimicrobial mechanism of action.\n- **PRC Parasitology B** (Protozoology) covers T. gondii.",
+    "mnemonics": "**Hosts mnemonic:**\n> *\"Cats are the Final (definitive) Ones\"* — only felids complete the sexual cycle.\n\n**Three infectious stages — \"OTB\":**\n> **O**ocyst (environment) · **T**achyzoite (acute) · **B**radyzoite (chronic/tissue cyst)\n\n**Pyrimethamine + Sulfadiazine mechanism:**\n> *\"STOP Folate at Two Steps\"*\n> Sulfa → blocks dihydropteroate synthase (step 1)\n> Pyrimethamine → blocks dihydrofolate reductase (step 2)\n\n**Congenital risk rule:**\n> *\"First time is the worst time\"* — only primary infection crosses the placenta.",
+    "checkQuestions": ["para-0001", "para-0002"],
+    "diagrams": [
+      {
+        "title": "Toxoplasma gondii Life Cycle",
+        "mermaid": "flowchart TD\n    Cat[\"🐱 Definitive Host\\nCat — felids only\"]\n    Oocyst[\"🌱 Oocyst in environment\\n(sporulates in 1–5 days)\"]\n    IH[\"🐑 Intermediate Host\\nSheep, pig, rodent, human\"]\n    TissueCyst[\"Tissue cysts\\n(bradyzoites in muscle/brain)\"]\n    Human[\"👤 Human\\nCongenital / immunosuppression risk\"]\n\n    Cat -->|\"Sexual cycle in intestine;\\noocysts shed in feces\"| Oocyst\n    Oocyst -->|\"Ingested by\"| IH\n    IH --> TissueCyst\n    TissueCyst -->|\"Cat ingests\\ninfected prey/meat\"| Cat\n    Oocyst -->|\"Contaminated food/\\nsoil/water\"| Human\n    TissueCyst -->|\"Undercooked\\nmeat\"| Human\n    Cat -->|\"Tachyzoites\\ncongenital transfer\"| Congenital[\"Congenital infection\\nin newborn\"]"
+      }
+    ]
+  }
+]

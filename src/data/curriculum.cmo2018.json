@@ -1,0 +1,441 @@
+{
+  "_meta": {
+    "source": "CHED Memorandum Order No. 1, s. 2018 (sample program of study, minimum 229 units, 6 years)",
+    "retrieved": "2026-10-21",
+    "note": "CHED's SAMPLE program; schools reorder it. vmleSubject mapping partly follows RA 9268 Sec.14 (Veterinary Medicine includes Ethics, Surgery, Animal Welfare, Jurisprudence; Zootechnics includes Animal Behavior and Environmental Health) but is still an assumption: verify against PRC Enhanced Tables of Specifications (Board Res. No. 07 s.2024, Annex A). 'basic-science', 'general-education', 'clinics' are not VMLE subjects."
+  },
+  "vmleWeights": {
+    "Anatomy": 10,
+    "Physiology": 10,
+    "Zootechnics": 12,
+    "Pathology": 10,
+    "Pharmacology": 10,
+    "Veterinary Medicine": 14,
+    "Microbiology and Public Health": 14,
+    "Parasitology": 10,
+    "Surgery": 10
+  },
+  "program": {
+    "1": {
+      "1": [
+        {
+          "name": "Understanding the Self",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "name": "Readings in Philippine History",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "name": "Mathematics in the Modern World",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "name": "Science, Technology and Society",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "name": "Ethics",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "name": "Organic Chemistry",
+          "units": 3,
+          "vmleSubject": "basic-science"
+        },
+        {
+          "name": "PE",
+          "units": 2,
+          "vmleSubject": "general-education"
+        },
+        {
+          "name": "NSTP",
+          "units": 3,
+          "vmleSubject": "general-education"
+        }
+      ],
+      "2": [
+        {
+          "name": "The Contemporary World",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "name": "Purposive Communication",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "name": "Elective 1",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "name": "Elective 2",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "name": "Elective 3",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "name": "Biochemistry",
+          "units": 4,
+          "vmleSubject": "basic-science"
+        },
+        {
+          "name": "PE",
+          "units": 2,
+          "vmleSubject": "general-education"
+        },
+        {
+          "name": "NSTP",
+          "units": 3,
+          "vmleSubject": "general-education"
+        }
+      ]
+    },
+    "2": {
+      "1": [
+        {
+          "name": "Biostatistics",
+          "units": 3,
+          "vmleSubject": "basic-science"
+        },
+        {
+          "name": "Principles of Animal Production and Economics",
+          "units": 3,
+          "vmleSubject": "Zootechnics"
+        },
+        {
+          "name": "Principles of Animal Nutrition",
+          "units": 3,
+          "vmleSubject": "Zootechnics"
+        },
+        {
+          "name": "Principles of Animal Breeding and Genetics",
+          "units": 3,
+          "vmleSubject": "Zootechnics"
+        },
+        {
+          "name": "Animal Welfare",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "name": "Veterinary Developmental Anatomy (Embryology)",
+          "units": 3,
+          "vmleSubject": "Anatomy"
+        },
+        {
+          "name": "Gross Veterinary Anatomy",
+          "units": 4,
+          "vmleSubject": "Anatomy"
+        },
+        {
+          "name": "PE",
+          "units": 2,
+          "vmleSubject": "general-education"
+        }
+      ],
+      "2": [
+        {
+          "name": "Poultry Production and Flock Health Management",
+          "units": 3,
+          "vmleSubject": "Zootechnics"
+        },
+        {
+          "name": "Veterinary Microscopic Anatomy (Histology)",
+          "units": 4,
+          "vmleSubject": "Anatomy"
+        },
+        {
+          "name": "Ruminant Production and Herd Health Management",
+          "units": 3,
+          "vmleSubject": "Zootechnics"
+        },
+        {
+          "name": "Equine Production and Health Management",
+          "units": 2,
+          "vmleSubject": "Zootechnics"
+        },
+        {
+          "name": "Comparative Veterinary Anatomy",
+          "units": 4,
+          "vmleSubject": "Anatomy"
+        },
+        {
+          "name": "Art Appreciation",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "name": "PE",
+          "units": 2,
+          "vmleSubject": "general-education"
+        }
+      ]
+    },
+    "3": {
+      "1": [
+        {
+          "name": "Life and Works of Rizal",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "name": "Swine Production and Herd Health Management",
+          "units": 3,
+          "vmleSubject": "Zootechnics"
+        },
+        {
+          "name": "General Veterinary Physiology",
+          "units": 4,
+          "vmleSubject": "Physiology"
+        },
+        {
+          "name": "General Veterinary Microbiology",
+          "units": 4,
+          "vmleSubject": "Microbiology and Public Health"
+        },
+        {
+          "name": "General Veterinary Pathology",
+          "units": 4,
+          "vmleSubject": "Pathology"
+        },
+        {
+          "name": "Basic Veterinary Pharmacology",
+          "units": 4,
+          "vmleSubject": "Pharmacology"
+        }
+      ],
+      "2": [
+        {
+          "name": "Systemic Veterinary Physiology",
+          "units": 4,
+          "vmleSubject": "Physiology"
+        },
+        {
+          "name": "Veterinary Bacteriology and Mycology",
+          "units": 3,
+          "vmleSubject": "Microbiology and Public Health"
+        },
+        {
+          "name": "Veterinary Entomology and Protozoology",
+          "units": 4,
+          "vmleSubject": "Parasitology"
+        },
+        {
+          "name": "Veterinary Clinical Pharmacology",
+          "units": 4,
+          "vmleSubject": "Pharmacology"
+        },
+        {
+          "name": "Systemic Veterinary Pathology",
+          "units": 4,
+          "vmleSubject": "Pathology"
+        }
+      ]
+    },
+    "4": {
+      "1": [
+        {
+          "name": "Veterinary Reproductive Physiology and Endocrinology",
+          "units": 3,
+          "vmleSubject": "Physiology"
+        },
+        {
+          "name": "General Principles of Veterinary Medicine",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "name": "Veterinary Virology",
+          "units": 2,
+          "vmleSubject": "Microbiology and Public Health"
+        },
+        {
+          "name": "Veterinary Helminthology",
+          "units": 4,
+          "vmleSubject": "Parasitology"
+        },
+        {
+          "name": "Veterinary Clinical Pathology",
+          "units": 3,
+          "vmleSubject": "Pathology"
+        },
+        {
+          "name": "Principles of Veterinary Surgery and Anesthesiology",
+          "units": 3,
+          "vmleSubject": "Surgery"
+        }
+      ],
+      "2": [
+        {
+          "name": "Fundamentals of Immunology",
+          "units": 2,
+          "vmleSubject": "Microbiology and Public Health"
+        },
+        {
+          "name": "Poultry Medicine",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "name": "Ruminant Medicine",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "name": "Veterinary Diagnostic Imaging",
+          "units": 3,
+          "vmleSubject": "Surgery"
+        },
+        {
+          "name": "Small Animal Surgery",
+          "units": 3,
+          "vmleSubject": "Surgery"
+        },
+        {
+          "name": "Research Methods and Scientific Paper Writing",
+          "units": 2,
+          "vmleSubject": "basic-science"
+        },
+        {
+          "name": "Canine Medicine",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "name": "Feline Medicine",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        }
+      ]
+    },
+    "5": {
+      "1": [
+        {
+          "name": "Veterinary Epidemiology",
+          "units": 3,
+          "vmleSubject": "Microbiology and Public Health"
+        },
+        {
+          "name": "Veterinary Food Safety and Hygiene",
+          "units": 3,
+          "vmleSubject": "Microbiology and Public Health"
+        },
+        {
+          "name": "Large Animal Surgery",
+          "units": 3,
+          "vmleSubject": "Surgery"
+        },
+        {
+          "name": "Equine Medicine",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "name": "Swine Medicine",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "name": "Laboratory Animal Management and Medicine",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "name": "Veterinary Jurisprudence and Ethics",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "name": "Introduction to Veterinary Clinics",
+          "units": 2,
+          "vmleSubject": "clinics"
+        }
+      ],
+      "2": [
+        {
+          "name": "Zoonoses, EIDs and One Health",
+          "units": 3,
+          "vmleSubject": "Microbiology and Public Health"
+        },
+        {
+          "name": "Aquaculture and Aquatic Animal Medicine",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "name": "Apiculture, Wildlife Conservation and Medicine",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "name": "Theriogenology",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "name": "Veterinary Practice Management and Entrepreneurship",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "name": "Environmental Animal Health and Biosafety",
+          "units": 2,
+          "vmleSubject": "Zootechnics"
+        },
+        {
+          "name": "Veterinary Clerkship",
+          "units": 2,
+          "vmleSubject": "clinics"
+        },
+        {
+          "name": "Thesis 1",
+          "units": 2,
+          "vmleSubject": "clinics"
+        },
+        {
+          "name": "Clinico-Pathological Conference 1",
+          "units": 1,
+          "vmleSubject": "clinics"
+        }
+      ]
+    },
+    "6": {
+      "1": [
+        {
+          "name": "Clinico-Pathological Conference 2",
+          "units": 1,
+          "vmleSubject": "clinics"
+        },
+        {
+          "name": "Veterinary Internship 1",
+          "units": 10,
+          "vmleSubject": "clinics"
+        },
+        {
+          "name": "Thesis 2",
+          "units": 2,
+          "vmleSubject": "clinics"
+        }
+      ],
+      "2": [
+        {
+          "name": "Veterinary Internship 2",
+          "units": 12,
+          "vmleSubject": "clinics"
+        }
+      ]
+    }
+  }
+}

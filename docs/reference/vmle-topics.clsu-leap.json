@@ -1,0 +1,382 @@
+{
+  "_meta": {
+    "source": "CLSU College of Veterinary Science and Medicine LEAP Review site, 'Syllabus' pages (sites.google.com/clsucvsm.edu.ph/leapreviews/syllabus/...). Topic names, in-subject weights and subtopic lists only; sample questions NOT copied.",
+    "retrieved": "2026-10-21",
+    "caveat": "This follows the OLDER 8-subject TOS (Medicine and Surgery combined at 18%; Zootechnics 14%, Microbiology 16%, Pathology 12%). The site itself says it is based on previous PRC guidelines. PRB Resolution No. 07 s.2024 (Enhanced TOS, Annex A) replaced it from Oct 2024 (9 subjects, Surgery separate). Use this as the topic backbone and reconcile with Annex A when obtained. A Surgery topic list is NOT included (no page found).",
+    "oldSubjectWeights": {
+      "Anatomy": 10,
+      "Physiology": 10,
+      "Parasitology": 10,
+      "Pharmacology": 10,
+      "Pathology": 12,
+      "Zootechnics": 14,
+      "Microbiology and Public Health": 16,
+      "Medicine and Surgery": 18
+    }
+  },
+  "subjects": {
+    "Anatomy": [
+      {
+        "name": "Anatomy of the Dog",
+        "weightPct": 35,
+        "subtopics": [
+          "Skeletal and joint system",
+          "Muscular",
+          "Digestive",
+          "Respiratory",
+          "Blood vessels, nervous and lymphatic systems",
+          "Sense organs and special organs",
+          "Autonomic, peripheral and central nervous system (functional components)",
+          "Urogenital system",
+          "Parts important in surgery, obstetrics, clinical examination and physical diagnosis"
+        ]
+      },
+      {
+        "name": "Comparative Anatomy",
+        "weightPct": 35,
+        "subtopics": [
+          "Anatomical differences among species",
+          "Parts for epidural and paralumbar anesthesia",
+          "Age determination",
+          "Breeds and color",
+          "Sites for pulse-taking and injections (SC, IM, IV)",
+          "Lymph nodes important for meat inspection",
+          "Acupuncture sites",
+          "Radiographic anatomy"
+        ]
+      },
+      {
+        "name": "Embryology",
+        "weightPct": 15,
+        "subtopics": [
+          "Early development of birds and mammals: derivatives, mechanisms, extra-embryonic membranes and placentation, congenital malformations and teratogens",
+          "Development of nervous, skeletal and muscular, cardiovascular, digestive, respiratory, urogenital systems"
+        ]
+      },
+      {
+        "name": "Histology",
+        "weightPct": 15,
+        "subtopics": ["Microscopic anatomy of domestic animals: structure and function"]
+      }
+    ],
+    "Physiology": [
+      {
+        "name": "Principles of General Physiology",
+        "weightPct": 25,
+        "subtopics": [
+          "Excitation",
+          "Contraction",
+          "Nervous system",
+          "Blood",
+          "Cardiovascular system"
+        ]
+      },
+      {
+        "name": "Systemic Physiology",
+        "weightPct": 45,
+        "subtopics": ["Respiratory system", "Digestive system", "Metabolism", "Fluids", "Kidneys"]
+      },
+      {
+        "name": "Endocrinology and Reproductive Physiology",
+        "weightPct": 30,
+        "subtopics": [
+          "Endocrine glands",
+          "Reproduction in horse, cattle, swine, sheep, dog, cat",
+          "Reproductive patterns",
+          "Artificial breeding"
+        ]
+      }
+    ],
+    "Parasitology": [
+      {
+        "name": "Entomology",
+        "weightPct": 30,
+        "subtopics": [
+          "Mallophaga, Culicidae, myiasis flies, sucking and biting lice, poultry lice, mites and ticks: biology, pathogenicity, transmission, control"
+        ]
+      },
+      {
+        "name": "Protozoology",
+        "weightPct": 30,
+        "subtopics": [
+          "Trypanosomosis",
+          "Trichomonas",
+          "Giardia",
+          "Histomonas",
+          "Leishmania",
+          "Coccidia",
+          "Toxoplasma",
+          "Sarcocystis",
+          "Plasmodium",
+          "Leucocytozoon",
+          "Babesia",
+          "Haemoproteus",
+          "Theileria",
+          "Hepatozoon",
+          "Anaplasma",
+          "Ehrlichia",
+          "Balantidium coli",
+          "Haemobartonella and Eperythrozoon"
+        ]
+      },
+      {
+        "name": "Helminthology",
+        "weightPct": 30,
+        "subtopics": ["Trematodes", "Cestodes", "Nematodes"]
+      },
+      {
+        "name": "Parasites of wild birds, exotic and wild animals",
+        "weightPct": 5,
+        "subtopics": []
+      },
+      {
+        "name": "Parasites of fishes and other aquatic animals",
+        "weightPct": 5,
+        "subtopics": []
+      }
+    ],
+    "Pharmacology": [
+      {
+        "name": "Basic Pharmacology",
+        "weightPct": 40,
+        "subtopics": ["Physiological effects of drugs", "Mechanisms of drug action"]
+      },
+      {
+        "name": "Clinical Pharmacology",
+        "weightPct": 60,
+        "subtopics": [
+          "Drugs for modifying functions and controlling diseases of body systems",
+          "Antibiotics",
+          "Antivirals",
+          "Insecticides",
+          "Anthelmintics",
+          "Drugs for infectious diseases"
+        ]
+      }
+    ],
+    "Pathology": [
+      {
+        "name": "General Pathology",
+        "weightPct": 35,
+        "subtopics": [
+          "Basic pathology and terms",
+          "The cell: normal and pathological",
+          "Degenerative change, necrosis and death",
+          "Disturbances in circulation (hyperemia, congestion, embolism, edema, thrombosis, infarction)",
+          "Inflammation and repair",
+          "Disturbances of growth (hyperplasia, hypertrophy, atrophy, malformations, aging)",
+          "Neoplasms",
+          "Host-parasite relationships and pathogenesis"
+        ]
+      },
+      {
+        "name": "Systemic Pathology",
+        "weightPct": 35,
+        "subtopics": [
+          "Integumentary",
+          "Musculo-skeletal",
+          "Respiratory",
+          "Cardiovascular",
+          "Hemic and lymphatic",
+          "Digestive",
+          "Urinary",
+          "Genital (male and female)",
+          "Endocrine",
+          "Nervous",
+          "Organs of special sense",
+          "Nutritional deficiencies",
+          "Post-mortem techniques"
+        ]
+      },
+      {
+        "name": "Clinical Pathology",
+        "weightPct": 30,
+        "subtopics": [
+          "Specimen preparation, collection, preservation, transport",
+          "Toxicology",
+          "Hematology techniques",
+          "Clinical chemistry",
+          "Clinical enzymology",
+          "Water, electrolytes, acid-base balance",
+          "Synovial and miscellaneous fluids",
+          "Organ function tests",
+          "Cerebrospinal fluid",
+          "Microbiological diagnosis",
+          "Avian clinical pathology"
+        ]
+      }
+    ],
+    "Zootechnics": [
+      {
+        "name": "Animal Breeding, Selection and Improvement",
+        "weightPct": 10,
+        "subtopics": [
+          "Types, breeds, reproduction and improvement principles",
+          "Variation in economic traits",
+          "Selection of superior breeding stock"
+        ]
+      },
+      {
+        "name": "Animal Nutrition, Production and Health Programs",
+        "weightPct": 20,
+        "subtopics": [
+          "Digestion physiology and feed conversion efficiency",
+          "Feed nutrient composition and analysis, feedstuffs",
+          "Feed formulation and feeding standards",
+          "Health programs, housing, facilities"
+        ]
+      },
+      {
+        "name": "Cattle, Carabao and Small Ruminant Production",
+        "weightPct": 15,
+        "subtopics": [
+          "Breeds, breeding, selection",
+          "Reproduction, trends, development",
+          "Nutrition, care, herd management"
+        ]
+      },
+      {
+        "name": "Swine Production and Management",
+        "weightPct": 15,
+        "subtopics": [
+          "Breeds, breeding, selection",
+          "Reproduction, trends, development",
+          "Nutrition, care, herd management"
+        ]
+      },
+      {
+        "name": "Poultry Production and Management",
+        "weightPct": 15,
+        "subtopics": [
+          "Breeds, stock selection, reproductive physiology",
+          "Nutrition, production and management by stage",
+          "Health programs"
+        ]
+      },
+      {
+        "name": "Equine Production and Management",
+        "weightPct": 15,
+        "subtopics": [
+          "Breeding and selection",
+          "Nutrition, care, management, behavior, training",
+          "Health programs"
+        ]
+      },
+      {
+        "name": "Zoo and Exotic Animal Management",
+        "weightPct": 5,
+        "subtopics": ["Nutrition and care management", "Health programs"]
+      },
+      {
+        "name": "Restraint of Animals",
+        "weightPct": 5,
+        "subtopics": []
+      }
+    ],
+    "Microbiology and Public Health": [
+      {
+        "name": "Bacteriology",
+        "weightPct": 25,
+        "subtopics": [
+          "General: history, nature and classification, morphology/physiology/genetics, microscopy, cultivation and biochemical reactions, staining, identification of bacteria, fungi, rickettsiae",
+          "Pathogenic: recognition and diagnosis, pathogenesis (bacterial, fungal, chlamydial, rickettsial), bacteriological diagnosis, vaccination and control, zoonotic diseases"
+        ]
+      },
+      {
+        "name": "Virology",
+        "weightPct": 25,
+        "subtopics": [
+          "Nature, classification, nomenclature",
+          "Laboratory techniques (electron microscopy, ultrafiltration/ultracentrifugation, cultivation)",
+          "Physical and chemical properties",
+          "Replication",
+          "Chemotherapy",
+          "Host response and resistance",
+          "Diagnosis and control of economically and zoonotically important viral diseases (Philippine setting)"
+        ]
+      },
+      {
+        "name": "Immunology",
+        "weightPct": 20,
+        "subtopics": [
+          "Immune responses and resistance",
+          "Antigens and antibodies",
+          "Immunoglobulins",
+          "Hypersensitivity",
+          "Cellular and humoral immunity",
+          "Immune prophylaxis, vaccines",
+          "Erythrocyte antigens, blood groups",
+          "Immune defects"
+        ]
+      },
+      {
+        "name": "Food Hygiene",
+        "weightPct": 15,
+        "subtopics": [
+          "Microorganisms in food, microbial growth",
+          "Meat hygiene and inspection (ante-mortem, post-mortem judgment)",
+          "Meat processing, storage, distribution",
+          "Plant sanitation",
+          "HACCP",
+          "Spoilage in canned foods",
+          "Milk quality and laboratory tests",
+          "Milk production sanitation",
+          "Food-borne diseases"
+        ]
+      },
+      {
+        "name": "Epidemiology",
+        "weightPct": 15,
+        "subtopics": [
+          "Development, scope, uses, methods",
+          "Multifactorial causation",
+          "Patterns of disease occurrence",
+          "Spectrum of infection",
+          "Outbreak investigation and reporting"
+        ]
+      }
+    ],
+    "Medicine (old combined 'Medicine and Surgery' subject)": [
+      {
+        "name": "Prevention of Diseases of Domestic Animals",
+        "weightPct": 15,
+        "subtopics": []
+      },
+      {
+        "name": "Diagnosis of Diseases of Domestic Animals",
+        "weightPct": 35,
+        "subtopics": [
+          "Physical and laboratory diagnosis",
+          "Diagnostic tools (X-ray, ECG, laboratory)"
+        ]
+      },
+      {
+        "name": "Treatment of Diseases of Domestic Animals",
+        "weightPct": 25,
+        "subtopics": ["Medication", "Surgery"]
+      },
+      {
+        "name": "Obstetrics and Gynecology",
+        "weightPct": 15,
+        "subtopics": [
+          "Physiology, pathology, microbiology, nutrition, medical and surgical therapy of genital diseases",
+          "Artificial breeding"
+        ]
+      },
+      {
+        "name": "Aquatic and Exotic Animal Medicine",
+        "weightPct": 5,
+        "subtopics": []
+      },
+      {
+        "name": "Ethics and Jurisprudence",
+        "weightPct": 5,
+        "subtopics": [
+          "Code of ethics",
+          "Government laws, acts, regulations on veterinary practice",
+          "Quarantine and regulatory laws"
+        ]
+      }
+    ]
+  }
+}

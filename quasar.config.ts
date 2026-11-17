@@ -1,7 +1,7 @@
 // Configuration for your app
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file
 
-import { defineConfig } from '#q-app'
+import { defineConfig } from '#q-app';
 
 export default defineConfig((/* ctx */) => {
   return {
@@ -11,13 +11,10 @@ export default defineConfig((/* ctx */) => {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
-    boot: [
-    ],
+    boot: [],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#css
-    css: [
-      'app.scss'
-    ],
+    css: ['app.css'],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
@@ -28,8 +25,8 @@ export default defineConfig((/* ctx */) => {
       // 'themify',
       // 'line-awesome',
 
-      'roboto-font', // optional, you are not bound to it
-      'material-icons', // optional, you are not bound to it
+      // roboto-font removed — Inter is loaded via app.css
+      'material-icons',
     ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#build
@@ -39,8 +36,14 @@ export default defineConfig((/* ctx */) => {
         // node: 'node22'
       },
 
+      typescript: {
+        strict: true,
+        vueShim: true,
+        // extendTsConfig (tsConfig) {}
+      },
+
       // https://v2.quasar.dev/quasar-cli-vite/page-routing-with-vue-router#filename-based-routing
-      // filenameBasedRouting: true,
+      filenameBasedRouting: true,
 
       vueRouterMode: 'hash', // available values: 'hash', 'history'
       // vueRouterBase,
@@ -60,25 +63,41 @@ export default defineConfig((/* ctx */) => {
       // vueJsx: true,
 
       vitePlugins: [
-        ['vite-plugin-checker', {
-          eslint: {
-            lintCommand: 'eslint -c ./eslint.config.js "./src*/**/*.{js,mjs,cjs,vue}"',
-            useFlatConfig: true
-          }
-        }, { server: false }]
-      ]
+        [
+          'vite-plugin-checker',
+          {
+            vueTsc: true,
+            eslint: {
+              lintCommand: 'eslint -c ./eslint.config.js "./src*/**/*.{ts,js,mjs,cjs,vue}"',
+              useFlatConfig: true,
+            },
+          },
+          { server: false },
+        ],
+      ],
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#devserver
     devServer: {
       // vueDevtools: true,
       // https: true,
-      open: true // opens browser window automatically
+      open: true, // opens browser window automatically
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#framework
     framework: {
-      config: {},
+      config: {
+        brand: {
+          primary: '#0d9488',   // teal-600 — medical, trustworthy
+          secondary: '#f59e0b', // amber-400 — bookmark/highlight accent
+          accent: '#14b8a6',    // teal-400
+          dark: '#0f172a',      // slate-900
+          positive: '#10b981',  // emerald-500
+          negative: '#ef4444',  // red-500
+          info: '#3b82f6',      // blue-500
+          warning: '#f59e0b',
+        },
+      },
 
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
@@ -91,7 +110,7 @@ export default defineConfig((/* ctx */) => {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [],
     },
 
     // animations: 'all', // --- includes all animations
@@ -119,7 +138,7 @@ export default defineConfig((/* ctx */) => {
        */
       prodPort: 3000,
       middlewares: [
-        "render" // keep this as last one
+        'render', // keep this as last one
       ],
 
       // clientSideRenderingRoutes: [],
@@ -151,15 +170,12 @@ export default defineConfig((/* ctx */) => {
       // clientSideRenderingHtmlFilename: 'csr.html',
       // clientSideRenderingRoutes: [],
       // noPreloadTagRoutes: []
-
       // extendSSGRendererConf (rolldownConf) {},
       // extendSSGManifestJson (json) {},
-
       // manualStoreSerialization: true,
       // manualStoreSsrContextInjection: true,
       // manualStoreHydration: true,
       // manualPostHydrationTrigger: true,
-
       // pwa: true,
       // pwaOfflineHtmlFilename: 'offline.html',
       // extendSSGGenerateSWOptions (cfg) {},
@@ -168,7 +184,7 @@ export default defineConfig((/* ctx */) => {
 
     // https://v2.quasar.dev/quasar-cli-vite/developing-pwa/configuring-pwa
     pwa: {
-      workboxMode: 'GenerateSW' // 'GenerateSW' or 'InjectManifest'
+      workboxMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       // swFilename: 'sw.js',
       // manifestFilename: 'manifest.json',
       // extendPWAManifestJson (json) {},
@@ -185,7 +201,7 @@ export default defineConfig((/* ctx */) => {
 
     // https://v2.quasar.dev/quasar-cli-vite/developing-capacitor-apps/configuring-capacitor
     capacitor: {
-      hideSplashscreen: true
+      hideSplashscreen: true,
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/developing-electron-apps/configuring-electron
@@ -195,7 +211,7 @@ export default defineConfig((/* ctx */) => {
       // extendElectronPackageJson (pkgJson) {},
 
       // Electron preload scripts (if any) from /src-electron, WITHOUT file extension
-      preloadScripts: [ 'electron-preload' ],
+      preloadScripts: ['electron-preload'],
 
       // specify the debugging port to use for the Electron app when running in development mode
       inspectPort: 5858,
@@ -204,13 +220,11 @@ export default defineConfig((/* ctx */) => {
 
       packager: {
         // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
-
         // OS X / Mac App Store
         // appBundleId: '',
         // appCategoryType: '',
         // osxSign: '',
         // protocol: 'myapp://path',
-
         // Windows only
         // win32metadata: { ... }
       },
@@ -218,8 +232,8 @@ export default defineConfig((/* ctx */) => {
       builder: {
         // https://www.electron.build/configuration
 
-        appId: ''
-      }
+        appId: '',
+      },
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/developing-browser-extensions/configuring-bex
@@ -235,7 +249,7 @@ export default defineConfig((/* ctx */) => {
        *
        * @example [ 'my-script.ts', 'sub-folder/my-other-script.js' ]
        */
-      extraScripts: []
-    }
-  }
-})
+      extraScripts: [],
+    },
+  };
+});
