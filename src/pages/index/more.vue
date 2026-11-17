@@ -91,6 +91,17 @@
         <q-item-section side><q-icon name="chevron_right" /></q-item-section>
       </q-item>
 
+      <q-item clickable v-ripple to="/interop">
+        <q-item-section avatar>
+          <q-icon name="swap_horiz" color="primary" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Export &amp; Interop</q-item-label>
+          <q-item-label caption>Anki CSV, Markdown notes, content pack sharing</q-item-label>
+        </q-item-section>
+        <q-item-section side><q-icon name="chevron_right" /></q-item-section>
+      </q-item>
+
       <q-item clickable v-ripple to="/import">
         <q-item-section avatar>
           <q-icon name="upload" color="primary" />

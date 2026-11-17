@@ -50,6 +50,7 @@ declare module 'vue-router/auto-routes' {
       | '//hotspot/[id]'
       | '//hub/[competencyId]'
       | '//import'
+      | '//interop'
       | '//lessons'
       | '//lessons/(index)'
       | '//lessons/[id]'
@@ -160,6 +161,13 @@ declare module 'vue-router/auto-routes' {
     '//import': RouteRecordInfo<
       '//import',
       '/import',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//interop': RouteRecordInfo<
+      '//interop',
+      '/interop',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -307,6 +315,7 @@ declare module 'vue-router/auto-routes' {
         | '//hotspot/[id]'
         | '//hub/[competencyId]'
         | '//import'
+        | '//interop'
         | '//lessons'
         | '//lessons/(index)'
         | '//lessons/[id]'
@@ -435,6 +444,14 @@ declare module 'vue-router/auto-routes' {
     'src/pages/index/import.vue': {
       routes:
         | '//import'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/interop.vue': {
+      routes:
+        | '//interop'
       views:
         | never
       pathParamNames:
