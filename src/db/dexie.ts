@@ -8,6 +8,7 @@ import type { InstalledPack } from '@/types/contentPack';
 import type { OnboardingProfile } from '@/types/onboarding';
 import type { MistakeEntry, CompetencyNote, ClozeCard, BlurtSession } from '@/types/notes';
 import type { ResourceEntry } from '@/types/resource';
+import type { ChecklistProgress } from '@/types/checklist';
 
 interface Bookmark {
   questionId: string;
@@ -35,6 +36,7 @@ class DvmReviewerDb extends Dexie {
   clozeCards!: Table<ClozeCard, number>;
   blurtSessions!: Table<BlurtSession, number>;
   resources!: Table<ResourceEntry, number>;
+  checklistProgress!: Table<ChecklistProgress, string>;
 
   constructor() {
     super('dvm-reviewer');
@@ -101,6 +103,10 @@ class DvmReviewerDb extends Dexie {
 
     this.version(11).stores({
       resources: '++id, competencyId, type',
+    });
+
+    this.version(12).stores({
+      checklistProgress: '&checklistId, lastPracticedAt',
     });
   }
 }

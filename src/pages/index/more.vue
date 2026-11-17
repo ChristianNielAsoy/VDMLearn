@@ -47,6 +47,39 @@
         <q-item-section side><q-icon name="chevron_right" /></q-item-section>
       </q-item>
 
+      <q-item clickable v-ripple to="/calculators">
+        <q-item-section avatar>
+          <q-icon name="calculate" color="primary" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Calculators</q-item-label>
+          <q-item-label caption>Drug dose, fluid therapy, Pearson square, epidemiology</q-item-label>
+        </q-item-section>
+        <q-item-section side><q-icon name="chevron_right" /></q-item-section>
+      </q-item>
+
+      <q-item clickable v-ripple to="/checklists">
+        <q-item-section avatar>
+          <q-icon name="checklist" color="primary" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Skills Checklists</q-item-label>
+          <q-item-label caption>Necropsy, physical exam, injections, sutures</q-item-label>
+        </q-item-section>
+        <q-item-section side><q-icon name="chevron_right" /></q-item-section>
+      </q-item>
+
+      <q-item clickable v-ripple to="/reference">
+        <q-item-section avatar>
+          <q-icon name="auto_stories" color="primary" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Quick Reference</q-item-label>
+          <q-item-label caption>Normal values, gestation, cycles + Pre-DVM skill tree</q-item-label>
+        </q-item-section>
+        <q-item-section side><q-icon name="chevron_right" /></q-item-section>
+      </q-item>
+
       <q-item clickable v-ripple to="/import">
         <q-item-section avatar>
           <q-icon name="upload" color="primary" />

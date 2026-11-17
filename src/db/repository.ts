@@ -7,6 +7,7 @@ import type { InstalledPack, InstallResult, UpdateResult, RemoveResult, ContentP
 import type { OnboardingProfile } from '@/types/onboarding';
 import type { MistakeEntry, CompetencyNote, ClozeCard, BlurtSession } from '@/types/notes';
 import type { ResourceEntry } from '@/types/resource';
+import type { ChecklistProgress } from '@/types/checklist';
 import { applyInstall, applyUpdate, applyRemove, buildInstalledPack } from '@/services/contentPack';
 import { db } from './dexie';
 
@@ -115,6 +116,10 @@ export interface QuestionRepository {
   getResourcesForCompetency(competencyId: string): Promise<ResourceEntry[]>;
   deleteResource(id: number): Promise<void>;
 
+  getChecklistProgress(checklistId: string): Promise<ChecklistProgress | undefined>;
+  saveChecklistProgress(progress: ChecklistProgress): Promise<void>;
+  getAllChecklistProgress(): Promise<ChecklistProgress[]>;
+
   exportAll(): Promise<BackupData>;
   importAll(data: Partial<BackupData>): Promise<void>;
 }
@@ -153,6 +158,7 @@ export const localRepository: QuestionRepository = {
       db.clozeCards.clear(),
       db.blurtSessions.clear(),
       db.resources.clear(),
+      db.checklistProgress.clear(),
       // contentPacks intentionally excluded — user must uninstall packs explicitly
     ]);
   },
@@ -411,6 +417,18 @@ export const localRepository: QuestionRepository = {
 
   async deleteResource(id) {
     await db.resources.delete(id);
+  },
+
+  async getChecklistProgress(checklistId) {
+    return db.checklistProgress.get(checklistId);
+  },
+
+  async saveChecklistProgress(progress) {
+    await db.checklistProgress.put(progress);
+  },
+
+  async getAllChecklistProgress() {
+    return db.checklistProgress.toArray();
   },
 
   async exportAll(): Promise<BackupData> {
