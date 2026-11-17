@@ -38,9 +38,17 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | '//(index)'
       | '//blurt/[competencyId]'
+      | '//calculators/(index)'
+      | '//calculators/[id]'
+      | '//cases/(index)'
+      | '//cases/[id]'
+      | '//checklists/(index)'
+      | '//checklists/[id]'
       | '//cloze/[competencyId]'
       | '//flashcards'
       | '//flashcards/[lessonId]'
+      | '//hotspot/[id]'
+      | '//hub/[competencyId]'
       | '//import'
       | '//lessons'
       | '//lessons/(index)'
@@ -53,6 +61,7 @@ declare module 'vue-router/auto-routes' {
       | '//planner'
       | '//progress'
       | '//quiz'
+      | '//reference'
       | '//settings'
       | '//today'
       | '//visual'
@@ -69,6 +78,48 @@ declare module 'vue-router/auto-routes' {
       '/blurt/:competencyId',
       { competencyId: ParamValue<true> },
       { competencyId: ParamValue<false> },
+      | never
+    >,
+    '//calculators/(index)': RouteRecordInfo<
+      '//calculators/(index)',
+      '/calculators',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//calculators/[id]': RouteRecordInfo<
+      '//calculators/[id]',
+      '/calculators/:id',
+      { id: ParamValue<true> },
+      { id: ParamValue<false> },
+      | never
+    >,
+    '//cases/(index)': RouteRecordInfo<
+      '//cases/(index)',
+      '/cases',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//cases/[id]': RouteRecordInfo<
+      '//cases/[id]',
+      '/cases/:id',
+      { id: ParamValue<true> },
+      { id: ParamValue<false> },
+      | never
+    >,
+    '//checklists/(index)': RouteRecordInfo<
+      '//checklists/(index)',
+      '/checklists',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//checklists/[id]': RouteRecordInfo<
+      '//checklists/[id]',
+      '/checklists/:id',
+      { id: ParamValue<true> },
+      { id: ParamValue<false> },
       | never
     >,
     '//cloze/[competencyId]': RouteRecordInfo<
@@ -90,6 +141,20 @@ declare module 'vue-router/auto-routes' {
       '/flashcards/:lessonId',
       { lessonId: ParamValue<true> },
       { lessonId: ParamValue<false> },
+      | never
+    >,
+    '//hotspot/[id]': RouteRecordInfo<
+      '//hotspot/[id]',
+      '/hotspot/:id',
+      { id: ParamValue<true> },
+      { id: ParamValue<false> },
+      | never
+    >,
+    '//hub/[competencyId]': RouteRecordInfo<
+      '//hub/[competencyId]',
+      '/hub/:competencyId',
+      { competencyId: ParamValue<true> },
+      { competencyId: ParamValue<false> },
       | never
     >,
     '//import': RouteRecordInfo<
@@ -177,6 +242,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '//reference': RouteRecordInfo<
+      '//reference',
+      '/reference',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '//settings': RouteRecordInfo<
       '//settings',
       '/settings',
@@ -223,9 +295,17 @@ declare module 'vue-router/auto-routes' {
         | '/'
         | '//(index)'
         | '//blurt/[competencyId]'
+        | '//calculators/(index)'
+        | '//calculators/[id]'
+        | '//cases/(index)'
+        | '//cases/[id]'
+        | '//checklists/(index)'
+        | '//checklists/[id]'
         | '//cloze/[competencyId]'
         | '//flashcards'
         | '//flashcards/[lessonId]'
+        | '//hotspot/[id]'
+        | '//hub/[competencyId]'
         | '//import'
         | '//lessons'
         | '//lessons/(index)'
@@ -238,6 +318,7 @@ declare module 'vue-router/auto-routes' {
         | '//planner'
         | '//progress'
         | '//quiz'
+        | '//reference'
         | '//settings'
         | '//today'
         | '//visual'
@@ -261,6 +342,54 @@ declare module 'vue-router/auto-routes' {
         | never
       pathParamNames:
         | 'competencyId'
+    }
+    'src/pages/index/calculators/(index).vue': {
+      routes:
+        | '//calculators/(index)'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/calculators/[id].vue': {
+      routes:
+        | '//calculators/[id]'
+      views:
+        | never
+      pathParamNames:
+        | 'id'
+    }
+    'src/pages/index/cases/(index).vue': {
+      routes:
+        | '//cases/(index)'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/cases/[id].vue': {
+      routes:
+        | '//cases/[id]'
+      views:
+        | never
+      pathParamNames:
+        | 'id'
+    }
+    'src/pages/index/checklists/(index).vue': {
+      routes:
+        | '//checklists/(index)'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/checklists/[id].vue': {
+      routes:
+        | '//checklists/[id]'
+      views:
+        | never
+      pathParamNames:
+        | 'id'
     }
     'src/pages/index/cloze/[competencyId].vue': {
       routes:
@@ -286,6 +415,22 @@ declare module 'vue-router/auto-routes' {
         | never
       pathParamNames:
         | 'lessonId'
+    }
+    'src/pages/index/hotspot/[id].vue': {
+      routes:
+        | '//hotspot/[id]'
+      views:
+        | never
+      pathParamNames:
+        | 'id'
+    }
+    'src/pages/index/hub/[competencyId].vue': {
+      routes:
+        | '//hub/[competencyId]'
+      views:
+        | never
+      pathParamNames:
+        | 'competencyId'
     }
     'src/pages/index/import.vue': {
       routes:
@@ -380,6 +525,14 @@ declare module 'vue-router/auto-routes' {
     'src/pages/index/quiz.vue': {
       routes:
         | '//quiz'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/reference.vue': {
+      routes:
+        | '//reference'
       views:
         | never
       pathParamNames:
