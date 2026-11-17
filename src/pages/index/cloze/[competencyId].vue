@@ -118,7 +118,7 @@ const router = useRouter();
 const route = useRoute();
 const notesStore = useCompetencyNotesStore();
 
-const competencyId = computed(() => String(route.params.competencyId));
+const competencyId = computed(() => (route.params as { competencyId: string }).competencyId);
 const cards = computed(() => notesStore.getClozeCards(competencyId.value));
 
 const currentIndex = ref(0);

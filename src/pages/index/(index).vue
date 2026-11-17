@@ -97,6 +97,11 @@
                       </q-item-section>
                       <q-item-section side class="row items-center q-gutter-xs">
                         <q-btn
+                          flat round dense icon="hub" color="grey-4" size="xs"
+                          :aria-label="`Hub for ${section.id}.${topic.id}`"
+                          @click.stop="openHub(`${subject.name}:${section.id}.${topic.id}`)"
+                        />
+                        <q-btn
                           flat round dense icon="edit_note" color="grey-4" size="xs"
                           :aria-label="`Notes for ${section.id}.${topic.id}`"
                           @click.stop="openNote(`${subject.name}:${section.id}.${topic.id}`)"
@@ -137,6 +142,11 @@
                         <q-item-label caption>{{ sub.items }} exam items</q-item-label>
                       </q-item-section>
                       <q-item-section side class="row items-center q-gutter-xs">
+                        <q-btn
+                          flat round dense icon="hub" color="grey-4" size="xs"
+                          :aria-label="`Hub for ${section.id}.${sub.id}`"
+                          @click.stop="openHub(`${subject.name}:${section.id}.${sub.id}`)"
+                        />
                         <q-btn
                           flat round dense icon="edit_note" color="grey-4" size="xs"
                           :aria-label="`Notes for ${section.id}.${sub.id}`"
@@ -307,6 +317,10 @@ function countForCompetency(competencyId: string): number {
 
 function openNote(competencyId: string) {
   void router.push(`/notes/${encodeURIComponent(competencyId)}`);
+}
+
+function openHub(competencyId: string) {
+  void router.push(`/hub/${encodeURIComponent(competencyId)}`);
 }
 
 function startExamQuiz(subjectName: string, sectionId: string, topicId: string, topicText: string) {

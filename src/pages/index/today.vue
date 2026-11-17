@@ -14,7 +14,7 @@
         icon="refresh"
         :loading="loading"
         title="Refresh"
-        @click="refresh(true)"
+        @click="refresh()"
       />
     </div>
 
@@ -195,11 +195,9 @@ const todayLabel = computed(() =>
   new Date().toLocaleDateString('en-PH', { weekday: 'long', month: 'long', day: 'numeric' }),
 );
 
-onMounted(async () => {
-  await Promise.all([
-    progressStore.refresh(),
-    masteryStore.refresh(),
-    plannerStore.load(),
-  ]);
-});
+async function refresh() {
+  await Promise.all([progressStore.refresh(), masteryStore.refresh(), plannerStore.load()]);
+}
+
+onMounted(refresh);
 </script>

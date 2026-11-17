@@ -120,7 +120,7 @@ const router = useRouter();
 const route = useRoute();
 const notesStore = useCompetencyNotesStore();
 
-const competencyId = computed(() => String(route.params.competencyId));
+const competencyId = computed(() => (route.params as { competencyId: string }).competencyId);
 
 type Phase = 'write' | 'reveal' | 'done';
 const phase = ref<Phase>('write');

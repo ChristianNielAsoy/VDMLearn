@@ -6,6 +6,7 @@ import type { ReviewEvent } from '@/types/review';
 import type { InstalledPack, InstallResult, UpdateResult, RemoveResult, ContentPackManifest } from '@/types/contentPack';
 import type { OnboardingProfile } from '@/types/onboarding';
 import type { MistakeEntry, CompetencyNote, ClozeCard, BlurtSession } from '@/types/notes';
+import type { ResourceEntry } from '@/types/resource';
 import { applyInstall, applyUpdate, applyRemove, buildInstalledPack } from '@/services/contentPack';
 import { db } from './dexie';
 
@@ -26,6 +27,7 @@ export interface BackupData {
   competencyNotes?: CompetencyNote[];
   clozeCards?: ClozeCard[];
   blurtSessions?: BlurtSession[];
+  resources?: ResourceEntry[];
 }
 
 const DEFAULT_PLANNER_SETTINGS: PlannerSettings = {
@@ -109,6 +111,10 @@ export interface QuestionRepository {
   getBlurtSessionsForCompetency(competencyId: string): Promise<BlurtSession[]>;
   getBlurtSessions(since?: number): Promise<BlurtSession[]>;
 
+  addResource(entry: Omit<ResourceEntry, 'id'>): Promise<number>;
+  getResourcesForCompetency(competencyId: string): Promise<ResourceEntry[]>;
+  deleteResource(id: number): Promise<void>;
+
   exportAll(): Promise<BackupData>;
   importAll(data: Partial<BackupData>): Promise<void>;
 }
@@ -146,6 +152,7 @@ export const localRepository: QuestionRepository = {
       db.competencyNotes.clear(),
       db.clozeCards.clear(),
       db.blurtSessions.clear(),
+      db.resources.clear(),
       // contentPacks intentionally excluded — user must uninstall packs explicitly
     ]);
   },
@@ -394,8 +401,20 @@ export const localRepository: QuestionRepository = {
     return db.blurtSessions.toArray();
   },
 
+  async addResource(entry) {
+    return db.resources.add(entry);
+  },
+
+  async getResourcesForCompetency(competencyId) {
+    return db.resources.where('competencyId').equals(competencyId).toArray();
+  },
+
+  async deleteResource(id) {
+    await db.resources.delete(id);
+  },
+
   async exportAll(): Promise<BackupData> {
-    const [attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks, onboardingArr, mistakeEntries, competencyNotes, clozeCards, blurtSessions] =
+    const [attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks, onboardingArr, mistakeEntries, competencyNotes, clozeCards, blurtSessions, resources] =
       await Promise.all([
         db.attempts.toArray(),
         db.progress.toArray(),
@@ -413,6 +432,7 @@ export const localRepository: QuestionRepository = {
         db.competencyNotes.toArray(),
         db.clozeCards.toArray(),
         db.blurtSessions.toArray(),
+        db.resources.toArray(),
       ]);
     const result: BackupData = { attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks };
     const onboarding = onboardingArr[0];
@@ -421,6 +441,7 @@ export const localRepository: QuestionRepository = {
     if (competencyNotes.length > 0) result.competencyNotes = competencyNotes;
     if (clozeCards.length > 0) result.clozeCards = clozeCards;
     if (blurtSessions.length > 0) result.blurtSessions = blurtSessions;
+    if (resources.length > 0) result.resources = resources;
     return result;
   },
 
@@ -442,6 +463,7 @@ export const localRepository: QuestionRepository = {
     if (data.competencyNotes?.length) ops.push(db.competencyNotes.bulkPut(data.competencyNotes));
     if (data.clozeCards?.length) ops.push(db.clozeCards.bulkPut(data.clozeCards));
     if (data.blurtSessions?.length) ops.push(db.blurtSessions.bulkPut(data.blurtSessions));
+    if (data.resources?.length) ops.push(db.resources.bulkPut(data.resources));
     await Promise.all(ops);
   },
 };

@@ -158,7 +158,7 @@
           </div>
           <q-card
             v-for="card in clozeCards"
-            :key="card.id"
+            :key="card.id ?? 0"
             class="dvmr-card q-mb-sm"
           >
             <q-card-section class="q-py-sm">
@@ -197,7 +197,7 @@ const $q = useQuasar();
 const notesStore = useCompetencyNotesStore();
 const mistakeStore = useMistakeJournalStore();
 
-const competencyId = computed(() => String(route.params.competencyId));
+const competencyId = computed(() => (route.params as { competencyId: string }).competencyId);
 
 const draftBody = ref('');
 const isDirty = ref(false);

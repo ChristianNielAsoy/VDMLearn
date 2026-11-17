@@ -7,6 +7,7 @@ import type { ReviewEvent } from '@/types/review';
 import type { InstalledPack } from '@/types/contentPack';
 import type { OnboardingProfile } from '@/types/onboarding';
 import type { MistakeEntry, CompetencyNote, ClozeCard, BlurtSession } from '@/types/notes';
+import type { ResourceEntry } from '@/types/resource';
 
 interface Bookmark {
   questionId: string;
@@ -33,6 +34,7 @@ class DvmReviewerDb extends Dexie {
   competencyNotes!: Table<CompetencyNote, string>;
   clozeCards!: Table<ClozeCard, number>;
   blurtSessions!: Table<BlurtSession, number>;
+  resources!: Table<ResourceEntry, number>;
 
   constructor() {
     super('dvm-reviewer');
@@ -95,6 +97,10 @@ class DvmReviewerDb extends Dexie {
       competencyNotes: '&competencyId, updatedAt',
       clozeCards: '++id, competencyId, createdAt',
       blurtSessions: '++id, competencyId, ts',
+    });
+
+    this.version(11).stores({
+      resources: '++id, competencyId, type',
     });
   }
 }
