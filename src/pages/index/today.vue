@@ -23,7 +23,10 @@
       <!-- Due items card -->
       <div class="col-6">
         <q-card class="dvmr-card q-pa-md text-center">
-          <div class="text-h4 text-weight-bold" :class="dueCount > 0 ? 'text-primary' : 'text-grey-5'">
+          <div
+            class="text-h4 text-weight-bold"
+            :class="dueCount > 0 ? 'text-primary' : 'text-grey-5'"
+          >
             {{ dueCount }}
           </div>
           <div class="text-caption text-grey-6 q-mt-xs">Due today</div>
@@ -55,7 +58,9 @@
           >
             {{ readinessPct }}%
           </q-circular-progress>
-          <div class="text-caption text-grey-6 q-mt-xs">Readiness</div>
+          <div class="text-caption text-grey-6 q-mt-xs">
+            Readiness <span class="text-grey-4">(estimate)</span>
+          </div>
           <q-badge
             v-if="report"
             :color="report.meetsOverall ? 'positive' : 'warning'"
@@ -69,16 +74,23 @@
     </div>
 
     <!-- Exam countdown -->
-    <q-card v-if="plannerStore.daysUntilExam !== null" class="dvmr-card q-pa-sm q-mb-sm row items-center">
+    <q-card
+      v-if="plannerStore.daysUntilExam !== null"
+      class="dvmr-card q-pa-sm q-mb-sm row items-center"
+    >
       <q-icon name="event" color="primary" class="q-mr-sm" />
       <div>
         <span class="text-weight-semibold">{{ plannerStore.daysUntilExam }} days</span>
-        <span class="text-grey-6 text-caption q-ml-xs">until VMLE ({{ plannerStore.examDateStr }})</span>
+        <span class="text-grey-6 text-caption q-ml-xs"
+          >until VMLE ({{ plannerStore.examDateStr }})</span
+        >
       </div>
     </q-card>
 
     <!-- Subject mastery list -->
-    <div class="text-subtitle2 text-grey-7 q-mb-xs q-mt-md">Subject Readiness</div>
+    <div class="text-subtitle2 text-grey-7 q-mb-xs q-mt-md">
+      Subject Readiness <span class="text-caption text-grey-4">(estimate)</span>
+    </div>
 
     <div v-if="loading && !report" class="text-center q-pa-lg text-grey-5">
       <q-spinner size="32px" />
@@ -89,11 +101,7 @@
     </div>
 
     <template v-else>
-      <q-card
-        v-for="sub in report.subjects"
-        :key="sub.subject"
-        class="dvmr-card q-pa-sm q-mb-xs"
-      >
+      <q-card v-for="sub in report.subjects" :key="sub.subject" class="dvmr-card q-pa-sm q-mb-xs">
         <div class="row items-center q-mb-xs">
           <div class="text-body2 text-weight-medium col">{{ sub.subject }}</div>
           <div class="text-caption text-grey-6">{{ masteryPct(sub.subjectMastery) }}%</div>
