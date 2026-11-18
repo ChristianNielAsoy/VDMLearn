@@ -6,8 +6,8 @@
       style="width: 100%; height: auto; display: block"
       @click.self="$emit('regionClick', null)"
     >
-      <!-- Base drawing -->
-      <g v-html="diagram.svgContent" />
+      <!-- Base drawing — sanitized to prevent XSS via content-pack SVG -->
+      <g v-html="sanitizedSvg" />
 
       <!-- Region markers -->
       <g v-for="region in diagram.regions" :key="region.id">
@@ -32,23 +32,25 @@
           font-weight="bold"
           :fill="labelColor(region.id)"
           style="pointer-events: none; user-select: none"
-        >{{ markerText(region.id) }}</text>
+        >
+          {{ markerText(region.id) }}
+        </text>
       </g>
     </svg>
 
     <!-- Atlas tooltip / detail -->
-    <q-card
-      v-if="mode === 'atlas' && selectedRegion"
-      class="dvmr-card q-pa-sm q-mt-sm"
-    >
+    <q-card v-if="mode === 'atlas' && selectedRegion" class="dvmr-card q-pa-sm q-mt-sm">
       <div class="text-body2 text-weight-medium">{{ selectedRegion.label }}</div>
-      <div v-if="selectedRegion.description" class="text-caption text-grey-6 q-mt-xs">{{ selectedRegion.description }}</div>
+      <div v-if="selectedRegion.description" class="text-caption text-grey-6 q-mt-xs">
+        {{ selectedRegion.description }}
+      </div>
     </q-card>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import DOMPurify from 'dompurify';
 import type { HotspotDiagram, HotspotRegion } from '@/types/hotspot';
 
 const props = defineProps<{
@@ -64,6 +66,14 @@ const props = defineProps<{
 
 defineEmits<{ regionClick: [id: string | null] }>();
 
+const sanitizedSvg = computed(() =>
+  DOMPurify.sanitize(props.diagram.svgContent, {
+    USE_PROFILES: { svg: true, svgFilters: true },
+    FORBID_TAGS: ['script', 'style'],
+    FORBID_ATTR: ['onerror', 'onload', 'onclick', 'onmouseover'],
+  }),
+);
+
 const selectedRegion = computed<HotspotRegion | null>(() => {
   if (!props.selectedId) return null;
   return props.diagram.regions.find((r) => r.id === props.selectedId) ?? null;
@@ -76,7 +86,7 @@ function regionIndex(id: string): number {
 function markerFill(id: string): string {
   if (props.mode === 'quiz') {
     if (props.correct?.includes(id)) return '#86efac'; // green
-    if (props.activeId === id) return '#93c5fd';        // blue (being asked)
+    if (props.activeId === id) return '#93c5fd'; // blue (being asked)
     return '#e2e8f0';
   }
   return props.selectedId === id ? '#93c5fd' : '#fff';
@@ -109,7 +119,9 @@ function markerText(id: string): string {
 
 <style scoped>
 .hotspot-marker {
-  transition: fill 0.15s, stroke 0.15s;
+  transition:
+    fill 0.15s,
+    stroke 0.15s;
 }
 .hotspot-marker:hover {
   opacity: 0.85;

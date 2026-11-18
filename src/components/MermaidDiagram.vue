@@ -29,7 +29,7 @@ async function render() {
   try {
     const mermaid = (await import('mermaid')).default;
     if (!mermaidInitialized) {
-      mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+      mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'strict' });
       mermaidInitialized = true;
     }
     const id = `mermaid-${++counter}`;
