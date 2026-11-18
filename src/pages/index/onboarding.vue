@@ -1,7 +1,6 @@
 <template>
   <q-page class="q-pa-md column items-center justify-center" style="min-height: 80vh">
     <div style="max-width: 420px; width: 100%">
-
       <!-- Logo + title -->
       <div class="text-center q-mb-xl">
         <div class="text-h5 text-weight-bold text-primary q-mb-xs">Welcome to VDMLearn</div>
@@ -19,7 +18,9 @@
 
       <!-- Step 1: Target school -->
       <div v-if="step === 1">
-        <div class="text-subtitle1 text-weight-semibold q-mb-md">Which DVM program are you targeting?</div>
+        <div class="text-subtitle1 text-weight-semibold q-mb-md">
+          Which DVM program are you targeting?
+        </div>
         <q-list bordered separator class="dvmr-card q-mb-md">
           <q-item
             v-for="school in SCHOOLS"
@@ -63,27 +64,54 @@
       <div v-else-if="step === 3">
         <div class="text-subtitle1 text-weight-semibold q-mb-sm">Passing thresholds</div>
         <div class="text-caption text-grey-6 q-mb-md">
-          PRC requires a weighted average of 75% with no subject below 60%. Adjust if you want a stricter personal goal.
+          PRC requires a weighted average of 75% with no subject below 60%. Adjust if you want a
+          stricter personal goal.
         </div>
 
         <q-card class="dvmr-card q-pa-md q-mb-sm">
-          <div class="text-caption text-grey-6 q-mb-xs">Overall readiness target: {{ form.passRuleOverallPct }}%</div>
+          <div class="text-caption text-grey-6 q-mb-xs">
+            Overall readiness target: {{ form.passRuleOverallPct }}%
+          </div>
           <q-slider
             v-model="form.passRuleOverallPct"
-            :min="60" :max="95" :step="5"
+            :min="60"
+            :max="95"
+            :step="5"
             label
             color="primary"
           />
         </q-card>
 
         <q-card class="dvmr-card q-pa-md q-mb-md">
-          <div class="text-caption text-grey-6 q-mb-xs">Minimum per-subject target: {{ form.passRuleSubjectMinPct }}%</div>
+          <div class="text-caption text-grey-6 q-mb-xs">
+            Minimum per-subject target: {{ form.passRuleSubjectMinPct }}%
+          </div>
           <q-slider
             v-model="form.passRuleSubjectMinPct"
-            :min="40" :max="80" :step="5"
+            :min="40"
+            :max="80"
+            :step="5"
             label
             color="primary"
           />
+        </q-card>
+
+        <q-card class="dvmr-card q-pa-md q-mb-sm">
+          <div class="text-caption text-grey-6 q-mb-xs">
+            Mock exam duration: {{ form.mockDurationMinutes }} min per subject block
+            <q-badge color="warning" label="unverified" size="xs" class="q-ml-xs" />
+          </div>
+          <q-slider
+            v-model="form.mockDurationMinutes"
+            :min="60"
+            :max="240"
+            :step="30"
+            label
+            color="primary"
+          />
+          <div class="text-caption text-grey-5 q-mt-xs">
+            Confirm the actual PRC time limit at prc.gov.ph before your exam.
+          </div>
         </q-card>
 
         <div class="text-caption text-grey-5">
@@ -136,6 +164,7 @@ import { ref, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 import { useOnboardingStore } from '@/stores/onboardingStore';
 import { usePlannerStore } from '@/stores/plannerStore';
+import { DEFAULT_MOCK_DURATION_MINUTES } from '@/types/onboarding';
 import type { School } from '@/types/question';
 
 const router = useRouter();
@@ -157,6 +186,7 @@ const form = reactive({
   targetSchool: null as School | null,
   passRuleOverallPct: 75,
   passRuleSubjectMinPct: 60,
+  mockDurationMinutes: DEFAULT_MOCK_DURATION_MINUTES,
 });
 
 const examDateStr = ref('2026-11-04');
@@ -167,6 +197,7 @@ async function finish() {
     const updates: Parameters<typeof onboardingStore.saveProfile>[0] = {
       passRuleOverallPct: form.passRuleOverallPct,
       passRuleSubjectMinPct: form.passRuleSubjectMinPct,
+      mockDurationMinutes: form.mockDurationMinutes,
       completedAt: Date.now(),
     };
     if (form.targetSchool) updates.targetSchool = form.targetSchool;
@@ -193,7 +224,9 @@ async function finish() {
   height: 8px;
   border-radius: 999px;
   background: #e2e8f0;
-  transition: background 0.2s ease, width 0.2s ease;
+  transition:
+    background 0.2s ease,
+    width 0.2s ease;
 }
 .step-dot--active {
   background: var(--q-primary);

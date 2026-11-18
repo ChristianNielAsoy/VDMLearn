@@ -2,7 +2,9 @@
   <q-page class="q-pa-md" style="max-width: 640px; margin: 0 auto">
     <div class="text-h6 q-mb-xs">Mock Board Exam</div>
     <div class="text-caption text-grey q-mb-md">
-      PRC format · 100 items per subject · 2 hours per block
+      PRC format · 100 items per subject ·
+      {{ onboardingStore.mockDurationMinutes }} min per block
+      <q-badge color="warning" label="duration unverified" size="xs" class="q-ml-xs" />
     </div>
 
     <q-banner rounded dense class="text-caption bg-amber-1 text-amber-9 q-mb-md">
@@ -95,6 +97,21 @@
       No questions available for Day {{ selected }}. Import questions first.
     </q-banner>
 
+    <!-- Shortfall warning: bank has questions but fewer than the 100-per-subject target -->
+    <q-banner
+      v-else-if="selected && shortfallCount > 0"
+      rounded
+      dense
+      class="text-caption bg-orange-1 text-orange-9 q-mb-md"
+    >
+      <template #avatar>
+        <q-icon name="info" color="orange-7" />
+      </template>
+      Bank has {{ dayQuestionCount(selectedSubjects) }} of
+      {{ selectedSubjects.length * 100 }} target items — exam will be shorter
+      than a real VMLE. Import more questions to reach full coverage.
+    </q-banner>
+
     <!-- Start button -->
     <q-btn
       color="primary"
@@ -108,7 +125,8 @@
       <q-icon name="play_arrow" class="q-mr-sm" />
       Start Day {{ selected ?? '?' }} Mock
       <span v-if="selected" class="q-ml-xs text-caption opacity-80">
-        ({{ dayQuestionCount(selectedSubjects) }} questions · 2h)
+        ({{ dayQuestionCount(selectedSubjects) }} questions ·
+        {{ onboardingStore.mockDurationMinutes }} min)
       </span>
     </q-btn>
   </q-page>
@@ -119,17 +137,14 @@ import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useQuizStore } from '@/stores/quizStore';
 import { useQuestionStore } from '@/stores/questionStore';
-import {
-  DAY_SUBJECTS,
-  MOCK_DURATION_SECONDS,
-  drawMockQuestions,
-  subjectQuestionCount,
-} from '@/services/mockDraw';
+import { useOnboardingStore } from '@/stores/onboardingStore';
+import { DAY_SUBJECTS, drawMockQuestions, subjectQuestionCount } from '@/services/mockDraw';
 import { loadTos } from '@/data/loaders/tos';
 
 const tosData = loadTos();
 const questionStore = useQuestionStore();
-onMounted(() => void questionStore.loadAll());
+const onboardingStore = useOnboardingStore();
+onMounted(() => Promise.all([questionStore.loadAll(), onboardingStore.load()]));
 const router = useRouter();
 const quizStore = useQuizStore();
 
@@ -144,6 +159,13 @@ const questionCountBySubject = computed(() => subjectQuestionCount(questionStore
 
 const selectedSubjects = computed(() => (selected.value ? DAY_SUBJECTS[selected.value] : []));
 
+const shortfallCount = computed(() => {
+  if (!selected.value) return 0;
+  const available = dayQuestionCount(selectedSubjects.value);
+  const target = selectedSubjects.value.length * 100;
+  return available > 0 && available < target ? target - available : 0;
+});
+
 function dayQuestionCount(subjects: string[]): number {
   return subjects.reduce((sum, s) => sum + (questionCountBySubject.value.get(s) ?? 0), 0);
 }
@@ -157,7 +179,7 @@ function startMock() {
   quizStore.startQuiz(questions, {
     type: 'mock',
     label: `Day ${selected.value} Mock`,
-    timeLimitSeconds: MOCK_DURATION_SECONDS,
+    timeLimitSeconds: onboardingStore.mockDurationMinutes * 60,
   });
   void router.push('/quiz');
 }
