@@ -1,0 +1,121 @@
+{
+  "code": "STAT",
+  "title": "Biostatistics",
+  "year": 0,
+  "vmleSubject": null,
+  "source": "OpenStax Introductory Statistics; UPLB STAT 164 syllabus",
+  "schoolRefs": [
+    { "school": "UPLB", "courseCode": "STAT 164" },
+    { "school": "PSAU", "courseCode": "Biostatistics" },
+    { "school": "CLSU", "courseCode": "Biostatistics" }
+  ],
+  "sections": [
+    {
+      "id": "A",
+      "title": "Descriptive Statistics",
+      "topics": [
+        {
+          "id": "PRE:STAT:A.1",
+          "title": "Data types, tables, and graphical displays",
+          "prerequisites": [],
+          "openStaxRef": "OpenStax Introductory Statistics, Ch. 1-2",
+          "khanRef": "Khan Academy — Displaying and comparing quantitative data"
+        },
+        {
+          "id": "PRE:STAT:A.2",
+          "title": "Measures of central tendency and dispersion",
+          "prerequisites": ["PRE:STAT:A.1"],
+          "openStaxRef": "OpenStax Introductory Statistics, Ch. 2",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Probability",
+      "topics": [
+        {
+          "id": "PRE:STAT:B.1",
+          "title": "Basic probability rules and counting methods",
+          "prerequisites": ["PRE:STAT:A.2"],
+          "openStaxRef": "OpenStax Introductory Statistics, Ch. 3",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:STAT:B.2",
+          "title": "Binomial, normal, and Poisson distributions",
+          "prerequisites": ["PRE:STAT:B.1"],
+          "openStaxRef": "OpenStax Introductory Statistics, Ch. 4-6",
+          "khanRef": "Khan Academy — Normal distributions"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Inferential Statistics",
+      "topics": [
+        {
+          "id": "PRE:STAT:C.1",
+          "title": "Sampling and confidence intervals",
+          "prerequisites": ["PRE:STAT:B.2"],
+          "openStaxRef": "OpenStax Introductory Statistics, Ch. 8",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:STAT:C.2",
+          "title": "Hypothesis testing (t-test, chi-square)",
+          "prerequisites": ["PRE:STAT:C.1"],
+          "openStaxRef": "OpenStax Introductory Statistics, Ch. 9-11",
+          "khanRef": "Khan Academy — Significance tests"
+        },
+        {
+          "id": "PRE:STAT:C.3",
+          "title": "Analysis of variance (one-way ANOVA)",
+          "prerequisites": ["PRE:STAT:C.2"],
+          "openStaxRef": "OpenStax Introductory Statistics, Ch. 13",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Regression and Correlation",
+      "topics": [
+        {
+          "id": "PRE:STAT:D.1",
+          "title": "Simple linear regression",
+          "prerequisites": ["PRE:STAT:C.1"],
+          "openStaxRef": "OpenStax Introductory Statistics, Ch. 12",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:STAT:D.2",
+          "title": "Pearson and Spearman correlation",
+          "prerequisites": ["PRE:STAT:D.1"],
+          "openStaxRef": "OpenStax Introductory Statistics, Ch. 12",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "title": "Epidemiological Statistics",
+      "topics": [
+        {
+          "id": "PRE:STAT:E.1",
+          "title": "Incidence, prevalence, and risk ratios",
+          "prerequisites": ["PRE:STAT:B.1"],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:STAT:E.2",
+          "title": "Sensitivity, specificity, and predictive values",
+          "prerequisites": ["PRE:STAT:E.1"],
+          "openStaxRef": null,
+          "khanRef": null
+        }
+      ]
+    }
+  ]
+}

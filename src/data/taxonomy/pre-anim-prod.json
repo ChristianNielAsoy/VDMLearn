@@ -1,0 +1,113 @@
+{
+  "code": "ANIM-PROD",
+  "title": "Introduction to Animal Production",
+  "year": 0,
+  "vmleSubject": null,
+  "source": "CHED CMO No. 1 s.2018 Year 2 syllabus; UPLB Year 2 Animal Production course syllabi",
+  "schoolRefs": [
+    { "school": "UPLB", "courseCode": "Animal Production and Economics" },
+    { "school": "CLSU", "courseCode": "Animal Production" }
+  ],
+  "sections": [
+    {
+      "id": "A",
+      "title": "Philippine Livestock Industry",
+      "topics": [
+        {
+          "id": "PRE:ANIM-PROD:A.1",
+          "title": "Overview of the Philippine livestock and poultry industry",
+          "prerequisites": [],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:ANIM-PROD:A.2",
+          "title": "Farm records, enterprise budgeting, and basic economics",
+          "prerequisites": ["PRE:ANIM-PROD:A.1"],
+          "openStaxRef": null,
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Ruminant Production",
+      "topics": [
+        {
+          "id": "PRE:ANIM-PROD:B.1",
+          "title": "Cattle and carabao breeds, characteristics, and selection",
+          "prerequisites": ["PRE:GENETICS:D.2"],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:ANIM-PROD:B.2",
+          "title": "Ruminant digestion, feeding systems, and housing",
+          "prerequisites": ["PRE:ANIM-PROD:B.1"],
+          "openStaxRef": null,
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Swine Production",
+      "topics": [
+        {
+          "id": "PRE:ANIM-PROD:C.1",
+          "title": "Swine breeds, reproductive management, and gilt development",
+          "prerequisites": ["PRE:GENETICS:D.2"],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:ANIM-PROD:C.2",
+          "title": "Swine nutrition, housing, and biosecurity",
+          "prerequisites": ["PRE:ANIM-PROD:C.1"],
+          "openStaxRef": null,
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Poultry Production",
+      "topics": [
+        {
+          "id": "PRE:ANIM-PROD:D.1",
+          "title": "Poultry breeds and commercial production systems",
+          "prerequisites": [],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:ANIM-PROD:D.2",
+          "title": "Broiler and layer management (hatchery to market)",
+          "prerequisites": ["PRE:ANIM-PROD:D.1"],
+          "openStaxRef": null,
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "title": "Small Ruminant and Equine Production",
+      "topics": [
+        {
+          "id": "PRE:ANIM-PROD:E.1",
+          "title": "Goat and sheep production systems",
+          "prerequisites": ["PRE:ANIM-PROD:B.1"],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:ANIM-PROD:E.2",
+          "title": "Horse breeds, handling, and basic management",
+          "prerequisites": [],
+          "openStaxRef": null,
+          "khanRef": null
+        }
+      ]
+    }
+  ]
+}

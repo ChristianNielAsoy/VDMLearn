@@ -1,0 +1,104 @@
+{
+  "code": "PHYSICS",
+  "title": "Physics",
+  "year": 0,
+  "vmleSubject": null,
+  "source": "OpenStax University Physics Vol. 1-3; PSAU BP-P syllabus",
+  "schoolRefs": [{ "school": "PSAU", "courseCode": "BP-P" }],
+  "sections": [
+    {
+      "id": "A",
+      "title": "Mechanics",
+      "topics": [
+        {
+          "id": "PRE:PHYSICS:A.1",
+          "title": "Kinematics and Newton's laws of motion",
+          "prerequisites": [],
+          "openStaxRef": "OpenStax University Physics Vol. 1, Ch. 2-5",
+          "khanRef": "Khan Academy — Forces and Newton's laws of motion"
+        },
+        {
+          "id": "PRE:PHYSICS:A.2",
+          "title": "Work, energy, power, and conservation of energy",
+          "prerequisites": ["PRE:PHYSICS:A.1"],
+          "openStaxRef": "OpenStax University Physics Vol. 1, Ch. 7-8",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:PHYSICS:A.3",
+          "title": "Rotational motion, torque, and angular momentum",
+          "prerequisites": ["PRE:PHYSICS:A.2"],
+          "openStaxRef": "OpenStax University Physics Vol. 1, Ch. 10-11",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Waves and Sound",
+      "topics": [
+        {
+          "id": "PRE:PHYSICS:B.1",
+          "title": "Wave properties, superposition, and interference",
+          "prerequisites": ["PRE:PHYSICS:A.2"],
+          "openStaxRef": "OpenStax University Physics Vol. 1, Ch. 16",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:PHYSICS:B.2",
+          "title": "Sound, acoustics, and biomedical ultrasound basics",
+          "prerequisites": ["PRE:PHYSICS:B.1"],
+          "openStaxRef": "OpenStax University Physics Vol. 1, Ch. 17",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Electricity and Magnetism",
+      "topics": [
+        {
+          "id": "PRE:PHYSICS:C.1",
+          "title": "Electric charge, electric field, and electric potential",
+          "prerequisites": [],
+          "openStaxRef": "OpenStax University Physics Vol. 2, Ch. 5-7",
+          "khanRef": "Khan Academy — Electric charge, field, and potential"
+        },
+        {
+          "id": "PRE:PHYSICS:C.2",
+          "title": "DC circuits (Ohm's law, Kirchhoff's laws, capacitors)",
+          "prerequisites": ["PRE:PHYSICS:C.1"],
+          "openStaxRef": "OpenStax University Physics Vol. 2, Ch. 10-11",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:PHYSICS:C.3",
+          "title": "Magnetic fields and electromagnetic induction",
+          "prerequisites": ["PRE:PHYSICS:C.2"],
+          "openStaxRef": "OpenStax University Physics Vol. 2, Ch. 12-14",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Optics and Modern Physics",
+      "topics": [
+        {
+          "id": "PRE:PHYSICS:D.1",
+          "title": "Geometric optics: reflection, refraction, mirrors, and lenses",
+          "prerequisites": ["PRE:PHYSICS:B.1"],
+          "openStaxRef": "OpenStax University Physics Vol. 3, Ch. 2",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:PHYSICS:D.2",
+          "title": "Radiation, radioactivity, and ionizing radiation basics",
+          "prerequisites": ["PRE:CHEM-GEN:A.1"],
+          "openStaxRef": "OpenStax University Physics Vol. 3, Ch. 10",
+          "khanRef": null
+        }
+      ]
+    }
+  ]
+}

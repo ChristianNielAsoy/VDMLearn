@@ -1,0 +1,143 @@
+{
+  "code": "BIOCHEM",
+  "title": "Biochemistry",
+  "year": 0,
+  "vmleSubject": null,
+  "source": "OpenStax Microbiology (Ch. 7-11); Lehninger Principles of Biochemistry; UPLB CHEM 160 + VPHY 140 syllabus",
+  "schoolRefs": [
+    { "school": "UPLB", "courseCode": "CHEM 160" },
+    { "school": "UPLB", "courseCode": "VPHY 140" },
+    { "school": "PSAU", "courseCode": "Biochemistry" },
+    { "school": "CLSU", "courseCode": "Biochemistry" }
+  ],
+  "sections": [
+    {
+      "id": "A",
+      "title": "Proteins and Enzymes",
+      "topics": [
+        {
+          "id": "PRE:BIOCHEM:A.1",
+          "title": "Protein structure (primary → quaternary)",
+          "prerequisites": ["PRE:CHEM-ORG:D.3"],
+          "openStaxRef": "OpenStax Microbiology, Ch. 7",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:BIOCHEM:A.2",
+          "title": "Enzyme kinetics (Km, Vmax, Michaelis-Menten)",
+          "prerequisites": ["PRE:BIOCHEM:A.1"],
+          "openStaxRef": "OpenStax Microbiology, Ch. 8",
+          "khanRef": "Khan Academy — Enzymes"
+        },
+        {
+          "id": "PRE:BIOCHEM:A.3",
+          "title": "Enzyme inhibition and allosteric regulation",
+          "prerequisites": ["PRE:BIOCHEM:A.2"],
+          "openStaxRef": "OpenStax Microbiology, Ch. 8",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Carbohydrate Metabolism",
+      "topics": [
+        {
+          "id": "PRE:BIOCHEM:B.1",
+          "title": "Glycolysis and gluconeogenesis",
+          "prerequisites": ["PRE:CHEM-ORG:D.1", "PRE:BIOCHEM:A.2"],
+          "openStaxRef": "OpenStax Microbiology, Ch. 8",
+          "khanRef": "Khan Academy — Cellular respiration"
+        },
+        {
+          "id": "PRE:BIOCHEM:B.2",
+          "title": "TCA cycle (Krebs cycle)",
+          "prerequisites": ["PRE:BIOCHEM:B.1"],
+          "openStaxRef": "OpenStax Microbiology, Ch. 8",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:BIOCHEM:B.3",
+          "title": "Electron transport chain and oxidative phosphorylation",
+          "prerequisites": ["PRE:BIOCHEM:B.2"],
+          "openStaxRef": "OpenStax Microbiology, Ch. 8",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:BIOCHEM:B.4",
+          "title": "Glycogen metabolism",
+          "prerequisites": ["PRE:BIOCHEM:B.1"],
+          "openStaxRef": "OpenStax Microbiology, Ch. 8",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Lipid Metabolism",
+      "topics": [
+        {
+          "id": "PRE:BIOCHEM:C.1",
+          "title": "Fatty acid oxidation (β-oxidation)",
+          "prerequisites": ["PRE:CHEM-ORG:D.2", "PRE:BIOCHEM:B.3"],
+          "openStaxRef": "OpenStax Microbiology, Ch. 8",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:BIOCHEM:C.2",
+          "title": "Fatty acid synthesis and cholesterol metabolism",
+          "prerequisites": ["PRE:BIOCHEM:C.1"],
+          "openStaxRef": "OpenStax Microbiology, Ch. 8",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Nitrogen Metabolism",
+      "topics": [
+        {
+          "id": "PRE:BIOCHEM:D.1",
+          "title": "Amino acid catabolism and urea cycle",
+          "prerequisites": ["PRE:BIOCHEM:A.1", "PRE:BIOCHEM:B.2"],
+          "openStaxRef": "OpenStax Microbiology, Ch. 8",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:BIOCHEM:D.2",
+          "title": "Nucleotide synthesis and degradation",
+          "prerequisites": ["PRE:CHEM-ORG:D.4"],
+          "openStaxRef": "OpenStax Microbiology, Ch. 8",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "title": "Molecular Biology Basics",
+      "topics": [
+        {
+          "id": "PRE:BIOCHEM:E.1",
+          "title": "DNA replication",
+          "prerequisites": ["PRE:CHEM-ORG:D.4"],
+          "openStaxRef": "OpenStax Microbiology, Ch. 10",
+          "khanRef": "Khan Academy — DNA replication"
+        },
+        {
+          "id": "PRE:BIOCHEM:E.2",
+          "title": "Transcription and RNA processing",
+          "prerequisites": ["PRE:BIOCHEM:E.1"],
+          "openStaxRef": "OpenStax Microbiology, Ch. 11",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:BIOCHEM:E.3",
+          "title": "Translation and the genetic code",
+          "prerequisites": ["PRE:BIOCHEM:E.2"],
+          "openStaxRef": "OpenStax Microbiology, Ch. 11",
+          "khanRef": null
+        }
+      ]
+    }
+  ]
+}

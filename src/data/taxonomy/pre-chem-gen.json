@@ -1,0 +1,134 @@
+{
+  "code": "CHEM-GEN",
+  "title": "General and Inorganic Chemistry",
+  "year": 0,
+  "vmleSubject": null,
+  "source": "OpenStax Chemistry 2e; UPLB CHEM 18 syllabus",
+  "schoolRefs": [
+    { "school": "UPLB", "courseCode": "CHEM 18" },
+    { "school": "PSAU", "courseCode": "BP-GIC" }
+  ],
+  "sections": [
+    {
+      "id": "A",
+      "title": "Atomic Structure and Periodicity",
+      "topics": [
+        {
+          "id": "PRE:CHEM-GEN:A.1",
+          "title": "Atomic models and subatomic particles",
+          "prerequisites": [],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 2",
+          "khanRef": "Khan Academy — Atomic structure"
+        },
+        {
+          "id": "PRE:CHEM-GEN:A.2",
+          "title": "Electron configuration and periodic trends",
+          "prerequisites": ["PRE:CHEM-GEN:A.1"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 3",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-GEN:A.3",
+          "title": "Ionic and covalent bonding",
+          "prerequisites": ["PRE:CHEM-GEN:A.2"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 4",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "States of Matter and Solutions",
+      "topics": [
+        {
+          "id": "PRE:CHEM-GEN:B.1",
+          "title": "Gas laws (ideal and real gases)",
+          "prerequisites": [],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 9",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-GEN:B.2",
+          "title": "Liquids, solids, and phase diagrams",
+          "prerequisites": ["PRE:CHEM-GEN:B.1"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 10",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-GEN:B.3",
+          "title": "Solution chemistry (molarity, colligative properties)",
+          "prerequisites": ["PRE:CHEM-GEN:B.1"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 11",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Thermochemistry and Thermodynamics",
+      "topics": [
+        {
+          "id": "PRE:CHEM-GEN:C.1",
+          "title": "Enthalpy and Hess's law",
+          "prerequisites": [],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 5",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-GEN:C.2",
+          "title": "Entropy and Gibbs free energy",
+          "prerequisites": ["PRE:CHEM-GEN:C.1"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 16",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Chemical Equilibrium and Kinetics",
+      "topics": [
+        {
+          "id": "PRE:CHEM-GEN:D.1",
+          "title": "Equilibrium constants (Kc, Kp) and Le Chatelier's principle",
+          "prerequisites": ["PRE:CHEM-GEN:C.2"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 13",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-GEN:D.2",
+          "title": "Reaction rates and rate laws",
+          "prerequisites": ["PRE:CHEM-GEN:D.1"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 12",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "title": "Acids, Bases, and Electrochemistry",
+      "topics": [
+        {
+          "id": "PRE:CHEM-GEN:E.1",
+          "title": "pH, pKa, and buffers",
+          "prerequisites": ["PRE:CHEM-GEN:D.1"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 14",
+          "khanRef": "Khan Academy — Acids and bases"
+        },
+        {
+          "id": "PRE:CHEM-GEN:E.2",
+          "title": "Acid-base titrations",
+          "prerequisites": ["PRE:CHEM-GEN:E.1"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 14",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-GEN:E.3",
+          "title": "Oxidation-reduction and electrochemical cells",
+          "prerequisites": ["PRE:CHEM-GEN:A.2"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 17",
+          "khanRef": null
+        }
+      ]
+    }
+  ]
+}

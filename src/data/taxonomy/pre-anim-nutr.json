@@ -1,0 +1,114 @@
+{
+  "code": "ANIM-NUTR",
+  "title": "Animal Nutrition",
+  "year": 0,
+  "vmleSubject": null,
+  "source": "CHED CMO No. 1 s.2018 Year 2 syllabus; UPLB Animal Nutrition course syllabus",
+  "schoolRefs": [
+    { "school": "UPLB", "courseCode": "Animal Nutrition" },
+    { "school": "CLSU", "courseCode": "Animal Nutrition" }
+  ],
+  "sections": [
+    {
+      "id": "A",
+      "title": "Nutrients and Energy Systems",
+      "topics": [
+        {
+          "id": "PRE:ANIM-NUTR:A.1",
+          "title": "Proximate analysis (Weende scheme)",
+          "prerequisites": ["PRE:CHEM-GEN:B.3"],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:ANIM-NUTR:A.2",
+          "title": "Energy systems (TDN, ME, NE) and energy balance",
+          "prerequisites": ["PRE:ANIM-NUTR:A.1", "PRE:BIOCHEM:B.3"],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:ANIM-NUTR:A.3",
+          "title": "Protein quality, amino acid requirements, and NPN utilization",
+          "prerequisites": ["PRE:ANIM-NUTR:A.1"],
+          "openStaxRef": null,
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Feeds and Feeding",
+      "topics": [
+        {
+          "id": "PRE:ANIM-NUTR:B.1",
+          "title": "Feed classification and chemical composition",
+          "prerequisites": ["PRE:ANIM-NUTR:A.1"],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:ANIM-NUTR:B.2",
+          "title": "Feed additives, growth promoters, and probiotics",
+          "prerequisites": ["PRE:ANIM-NUTR:B.1"],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:ANIM-NUTR:B.3",
+          "title": "Ration formulation (Pearson square, least-cost methods)",
+          "prerequisites": ["PRE:ANIM-NUTR:A.2", "PRE:STAT:A.2"],
+          "openStaxRef": null,
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Species-Specific Nutrition",
+      "topics": [
+        {
+          "id": "PRE:ANIM-NUTR:C.1",
+          "title": "Ruminant nutrition (rumen physiology, NPN, forage evaluation)",
+          "prerequisites": ["PRE:ANIM-NUTR:A.3", "PRE:ANIM-PROD:B.2"],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:ANIM-NUTR:C.2",
+          "title": "Non-ruminant (swine and poultry) nutrition",
+          "prerequisites": ["PRE:ANIM-NUTR:A.2"],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:ANIM-NUTR:C.3",
+          "title": "Companion animal and specialty species nutrition",
+          "prerequisites": ["PRE:ANIM-NUTR:A.3"],
+          "openStaxRef": null,
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Nutritional Disorders",
+      "topics": [
+        {
+          "id": "PRE:ANIM-NUTR:D.1",
+          "title": "Vitamin and mineral deficiency diseases",
+          "prerequisites": ["PRE:ANIM-NUTR:A.1"],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:ANIM-NUTR:D.2",
+          "title": "Feed-related toxicoses (mycotoxins, plant toxins, mineral excess)",
+          "prerequisites": ["PRE:ANIM-NUTR:D.1"],
+          "openStaxRef": null,
+          "khanRef": null
+        }
+      ]
+    }
+  ]
+}

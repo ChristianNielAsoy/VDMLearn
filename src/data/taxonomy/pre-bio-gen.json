@@ -1,0 +1,135 @@
+{
+  "code": "BIO-GEN",
+  "title": "General Biology and Zoology",
+  "year": 0,
+  "vmleSubject": null,
+  "source": "OpenStax Biology 2e; PSAU Principles of Biology + General Zoology syllabi",
+  "schoolRefs": [
+    { "school": "PSAU", "courseCode": "Principles of Biology" },
+    { "school": "PSAU", "courseCode": "General Zoology" },
+    { "school": "CLSU", "courseCode": "General Biology" }
+  ],
+  "sections": [
+    {
+      "id": "A",
+      "title": "Cell Biology",
+      "topics": [
+        {
+          "id": "PRE:BIO-GEN:A.1",
+          "title": "Cell structure: prokaryotic vs eukaryotic",
+          "prerequisites": [],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 4",
+          "khanRef": "Khan Academy — Cells"
+        },
+        {
+          "id": "PRE:BIO-GEN:A.2",
+          "title": "Cell membranes and transport (diffusion, osmosis, active transport)",
+          "prerequisites": ["PRE:BIO-GEN:A.1"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 5",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:BIO-GEN:A.3",
+          "title": "Cell division: mitosis and meiosis",
+          "prerequisites": ["PRE:BIO-GEN:A.1"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 10",
+          "khanRef": "Khan Academy — Cell division"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Genetics Fundamentals",
+      "topics": [
+        {
+          "id": "PRE:BIO-GEN:B.1",
+          "title": "Mendelian inheritance",
+          "prerequisites": ["PRE:BIO-GEN:A.3"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 12",
+          "khanRef": "Khan Academy — Mendelian genetics"
+        },
+        {
+          "id": "PRE:BIO-GEN:B.2",
+          "title": "Chromosomal basis of inheritance; mutation types",
+          "prerequisites": ["PRE:BIO-GEN:B.1"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 13",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Evolutionary Biology",
+      "topics": [
+        {
+          "id": "PRE:BIO-GEN:C.1",
+          "title": "Natural selection, adaptation, and speciation",
+          "prerequisites": ["PRE:BIO-GEN:B.2"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 18-19",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:BIO-GEN:C.2",
+          "title": "Phylogenetics and biological classification",
+          "prerequisites": ["PRE:BIO-GEN:C.1"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 20",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Animal Diversity (Zoology)",
+      "topics": [
+        {
+          "id": "PRE:BIO-GEN:D.1",
+          "title": "Major invertebrate phyla (Porifera to Echinodermata)",
+          "prerequisites": ["PRE:BIO-GEN:C.2"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 28-29",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:BIO-GEN:D.2",
+          "title": "Vertebrate classes and distinguishing characteristics",
+          "prerequisites": ["PRE:BIO-GEN:D.1"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 29",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:BIO-GEN:D.3",
+          "title": "Animal body plans, symmetry, and coelom types",
+          "prerequisites": ["PRE:BIO-GEN:D.1"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 27",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "title": "Ecology",
+      "topics": [
+        {
+          "id": "PRE:BIO-GEN:E.1",
+          "title": "Population dynamics (growth, carrying capacity)",
+          "prerequisites": [],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 45",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:BIO-GEN:E.2",
+          "title": "Community ecology and food webs",
+          "prerequisites": ["PRE:BIO-GEN:E.1"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 46",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:BIO-GEN:E.3",
+          "title": "Ecosystem services and conservation biology",
+          "prerequisites": ["PRE:BIO-GEN:E.2"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 47",
+          "khanRef": null
+        }
+      ]
+    }
+  ]
+}

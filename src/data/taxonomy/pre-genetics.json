@@ -1,0 +1,114 @@
+{
+  "code": "GENETICS",
+  "title": "Genetics, Breeding, and Molecular Biology",
+  "year": 0,
+  "vmleSubject": null,
+  "source": "OpenStax Biology 2e (genetics chapters); PSAU Genetics + Mol Bio 1 syllabus; CMO Year 2 Breeding",
+  "schoolRefs": [
+    { "school": "PSAU", "courseCode": "Genetics and Molecular Biology 1" },
+    { "school": "CLSU", "courseCode": "Breeding and Genetics" }
+  ],
+  "sections": [
+    {
+      "id": "A",
+      "title": "Classical Genetics",
+      "topics": [
+        {
+          "id": "PRE:GENETICS:A.1",
+          "title": "Mendelian ratios, dihybrid and test crosses",
+          "prerequisites": ["PRE:BIO-GEN:B.1"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 12",
+          "khanRef": "Khan Academy — Mendelian genetics"
+        },
+        {
+          "id": "PRE:GENETICS:A.2",
+          "title": "Linkage, crossing-over, and recombination frequency",
+          "prerequisites": ["PRE:GENETICS:A.1"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 13",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:GENETICS:A.3",
+          "title": "Sex determination and sex-linked traits",
+          "prerequisites": ["PRE:GENETICS:A.1"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 13",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Molecular Genetics",
+      "topics": [
+        {
+          "id": "PRE:GENETICS:B.1",
+          "title": "DNA structure and replication",
+          "prerequisites": ["PRE:CHEM-ORG:D.4"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 14",
+          "khanRef": "Khan Academy — DNA"
+        },
+        {
+          "id": "PRE:GENETICS:B.2",
+          "title": "Gene expression and regulation (operons, transcription factors)",
+          "prerequisites": ["PRE:GENETICS:B.1"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 16",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:GENETICS:B.3",
+          "title": "Mutation types and consequences",
+          "prerequisites": ["PRE:GENETICS:B.2"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 15",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Population Genetics",
+      "topics": [
+        {
+          "id": "PRE:GENETICS:C.1",
+          "title": "Hardy-Weinberg equilibrium and its assumptions",
+          "prerequisites": ["PRE:GENETICS:A.1"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 19",
+          "khanRef": "Khan Academy — Hardy-Weinberg"
+        },
+        {
+          "id": "PRE:GENETICS:C.2",
+          "title": "Evolutionary forces: selection, drift, gene flow, mutation",
+          "prerequisites": ["PRE:GENETICS:C.1"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 19",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Animal Breeding",
+      "topics": [
+        {
+          "id": "PRE:GENETICS:D.1",
+          "title": "Heritability, breeding values, and estimated breeding value",
+          "prerequisites": ["PRE:GENETICS:C.1", "PRE:STAT:D.1"],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:GENETICS:D.2",
+          "title": "Selection methods (mass, progeny, family, index)",
+          "prerequisites": ["PRE:GENETICS:D.1"],
+          "openStaxRef": null,
+          "khanRef": null
+        },
+        {
+          "id": "PRE:GENETICS:D.3",
+          "title": "Crossbreeding systems and hybrid vigor",
+          "prerequisites": ["PRE:GENETICS:D.2"],
+          "openStaxRef": null,
+          "khanRef": null
+        }
+      ]
+    }
+  ]
+}

@@ -258,20 +258,66 @@
         <div class="text-caption text-grey-5 text-center q-mt-md">
           Coverage = distinct questions seen ÷ TOS items per subject.
         </div>
+
+        <!-- Pre-DVM coverage -->
+        <div class="text-subtitle2 text-grey-7 q-mt-lg q-mb-xs">Pre-DVM Courses</div>
+        <div class="text-caption text-grey-6 q-mb-md">
+          Year 0 topics — add questions via the importer to track coverage.
+        </div>
+        <q-card class="dvmr-card">
+          <q-expansion-item
+            v-for="course in preDvmCourses"
+            :key="course.code"
+            :label="course.title"
+            :caption="`${preDvmTopicCount(course)} topics · ${preDvmQCount(course)} Qs`"
+            dense
+            expand-separator
+            header-class="text-body2"
+          >
+            <q-list dense>
+              <q-item v-for="topic in preDvmTopicsFlat(course)" :key="topic.id" class="q-pl-lg">
+                <q-item-section>
+                  <q-item-label class="text-caption">{{ topic.title }}</q-item-label>
+                  <q-item-label
+                    v-if="topic.openStaxRef || topic.khanRef"
+                    caption
+                    class="text-grey-5"
+                  >
+                    {{ topic.openStaxRef ?? topic.khanRef }}
+                  </q-item-label>
+                </q-item-section>
+                <q-item-section side>
+                  <q-chip
+                    dense
+                    size="sm"
+                    :color="questionsByCompetency.get(topic.id) ? 'primary' : 'grey-2'"
+                    :text-color="questionsByCompetency.get(topic.id) ? 'white' : 'grey-6'"
+                    style="font-size: 0.7rem; height: 20px"
+                  >
+                    {{ questionsByCompetency.get(topic.id) ?? 0 }} Q
+                  </q-chip>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-expansion-item>
+        </q-card>
       </q-tab-panel>
     </q-tab-panels>
   </q-page>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useProgressStore } from '@/stores/progressStore';
 import { useMasteryStore } from '@/stores/masteryStore';
 import { useQuizStore } from '@/stores/quizStore';
+import { useQuestionStore } from '@/stores/questionStore';
 import { computeBloomPerformance, BLOOM_LABELS } from '@/services/bloomAnalytics';
 import { localRepository } from '@/db/repository';
 import { loadAllQuestions } from '@/data/loaders/questions';
+import { loadPreDvmCourses } from '@/data/loaders/preDvmTaxonomy';
+import type { PreDvmCourse, PreDvmTopic } from '@/types/preDvmTaxonomy';
 import type { SubjectAccuracy } from '@/stores/progressStore';
 import type { SubjectReadiness } from '@/services/mastery';
 import type { BloomLevel } from '@/types/question';
@@ -289,7 +335,34 @@ const activeTab = ref('overview');
 const progressStore = useProgressStore();
 const masteryStore = useMasteryStore();
 const quizStore = useQuizStore();
+const questionStore = useQuestionStore();
 const router = useRouter();
+
+// ── Pre-DVM coverage ───────────────────────────────────────────────────
+const preDvmCourses: PreDvmCourse[] = loadPreDvmCourses();
+
+const questionsByCompetency = computed(() => {
+  const map = new Map<string, number>();
+  for (const q of questionStore.questions) {
+    map.set(q.competencyId, (map.get(q.competencyId) ?? 0) + 1);
+  }
+  return map;
+});
+
+function preDvmTopicsFlat(course: PreDvmCourse): PreDvmTopic[] {
+  return course.sections.flatMap((s) => s.topics);
+}
+
+function preDvmTopicCount(course: PreDvmCourse): number {
+  return course.sections.reduce((n, s) => n + s.topics.length, 0);
+}
+
+function preDvmQCount(course: PreDvmCourse): number {
+  return preDvmTopicsFlat(course).reduce(
+    (n, t) => n + (questionsByCompetency.value.get(t.id) ?? 0),
+    0,
+  );
+}
 
 // Bloom data loaded async
 const bloomData = ref<Awaited<ReturnType<typeof computeBloomPerformance>>>([]);
@@ -383,7 +456,7 @@ function studyBookmarks() {
 void BLOOM_LABELS; // referenced in template via bloomData
 
 onMounted(async () => {
-  await Promise.all([progressStore.refresh(), masteryStore.refresh()]);
+  await Promise.all([progressStore.refresh(), masteryStore.refresh(), questionStore.loadAll()]);
   await loadBloomData();
 });
 </script>

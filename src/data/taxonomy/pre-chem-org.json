@@ -1,0 +1,129 @@
+{
+  "code": "CHEM-ORG",
+  "title": "Organic Chemistry",
+  "year": 0,
+  "vmleSubject": null,
+  "source": "OpenStax Chemistry 2e (organic chapters); UPLB CHEM 40 syllabus",
+  "schoolRefs": [
+    { "school": "UPLB", "courseCode": "CHEM 40" },
+    { "school": "PSAU", "courseCode": "Organic Chemistry" },
+    { "school": "CLSU", "courseCode": "Organic Chemistry" }
+  ],
+  "sections": [
+    {
+      "id": "A",
+      "title": "Structure, Bonding, and Stereochemistry",
+      "topics": [
+        {
+          "id": "PRE:CHEM-ORG:A.1",
+          "title": "Hybridization, orbital overlap, and resonance",
+          "prerequisites": ["PRE:CHEM-GEN:A.3"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 20",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-ORG:A.2",
+          "title": "Aromaticity and stereochemistry (chirality, enantiomers)",
+          "prerequisites": ["PRE:CHEM-ORG:A.1"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 20",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Functional Groups and Nomenclature",
+      "topics": [
+        {
+          "id": "PRE:CHEM-ORG:B.1",
+          "title": "Alkanes, alkenes, alkynes — structure and nomenclature",
+          "prerequisites": ["PRE:CHEM-ORG:A.1"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 20",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-ORG:B.2",
+          "title": "Alcohols, ethers, aldehydes, and ketones",
+          "prerequisites": ["PRE:CHEM-ORG:B.1"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 20",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-ORG:B.3",
+          "title": "Carboxylic acids and derivatives (esters, amides)",
+          "prerequisites": ["PRE:CHEM-ORG:B.2"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 20",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-ORG:B.4",
+          "title": "Amines and nitrogen-containing compounds",
+          "prerequisites": ["PRE:CHEM-ORG:B.3"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 20",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Reaction Mechanisms",
+      "topics": [
+        {
+          "id": "PRE:CHEM-ORG:C.1",
+          "title": "Nucleophilic substitution (SN1, SN2)",
+          "prerequisites": ["PRE:CHEM-ORG:A.1"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 21",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-ORG:C.2",
+          "title": "Elimination reactions (E1, E2)",
+          "prerequisites": ["PRE:CHEM-ORG:C.1"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 21",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-ORG:C.3",
+          "title": "Addition and aromatic substitution reactions",
+          "prerequisites": ["PRE:CHEM-ORG:A.2", "PRE:CHEM-ORG:C.1"],
+          "openStaxRef": "OpenStax Chemistry 2e, Ch. 21",
+          "khanRef": null
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Biomolecule Foundations",
+      "topics": [
+        {
+          "id": "PRE:CHEM-ORG:D.1",
+          "title": "Carbohydrates (mono-, di-, polysaccharides)",
+          "prerequisites": ["PRE:CHEM-ORG:B.2"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 3",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-ORG:D.2",
+          "title": "Lipids (fatty acids, triglycerides, phospholipids)",
+          "prerequisites": ["PRE:CHEM-ORG:B.3"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 3",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-ORG:D.3",
+          "title": "Amino acids and peptide bonds",
+          "prerequisites": ["PRE:CHEM-ORG:B.4"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 3",
+          "khanRef": null
+        },
+        {
+          "id": "PRE:CHEM-ORG:D.4",
+          "title": "Nucleotides and nucleic acid structure",
+          "prerequisites": ["PRE:CHEM-ORG:B.3"],
+          "openStaxRef": "OpenStax Biology 2e, Ch. 3",
+          "khanRef": null
+        }
+      ]
+    }
+  ]
+}
