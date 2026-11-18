@@ -36,7 +36,10 @@ export function extractClozeFromMarkdown(bodyMd: string): ExtractedCloze[] {
     while ((match = HIGHLIGHT_RE.exec(line)) !== null) {
       const highlight = match[1]!;
       // Use the line itself as back (stripped of markdown formatting)
-      const back = line.replace(/==([^=\n]+)==/g, '$1').replace(/[*_`]/g, '').trim();
+      const back = line
+        .replace(/==([^=\n]+)==/g, '$1')
+        .replace(/[*_`]/g, '')
+        .trim();
       const front = back.replace(highlight, '_____');
       results.push({ sentence: back, highlight, front, back });
     }

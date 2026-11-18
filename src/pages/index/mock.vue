@@ -108,8 +108,8 @@
         <q-icon name="info" color="orange-7" />
       </template>
       Bank has {{ dayQuestionCount(selectedSubjects) }} of
-      {{ selectedSubjects.length * 100 }} target items — exam will be shorter
-      than a real VMLE. Import more questions to reach full coverage.
+      {{ selectedSubjects.length * 100 }} target items — exam will be shorter than a real VMLE.
+      Import more questions to reach full coverage.
     </q-banner>
 
     <!-- Start button -->

@@ -1,28 +1,37 @@
 <template>
   <q-page class="column" style="max-width: 720px; margin: 0 auto">
-
     <!-- Header -->
     <div class="row items-center q-px-md q-pt-md q-pb-sm">
       <q-btn flat round dense icon="arrow_back" color="grey-7" @click="router.back()" />
       <div class="col q-ml-sm">
-        <div class="text-caption text-grey-6 ellipsis" style="max-width: 280px">{{ competencyId }}</div>
-        <div v-if="resolvedTitle" class="text-body2 text-weight-medium ellipsis">{{ resolvedTitle }}</div>
+        <div class="text-caption text-grey-6 ellipsis" style="max-width: 280px">
+          {{ competencyId }}
+        </div>
+        <div v-if="resolvedTitle" class="text-body2 text-weight-medium ellipsis">
+          {{ resolvedTitle }}
+        </div>
       </div>
-      <q-btn
-        v-if="isDirty"
-        flat dense no-caps color="primary" label="Save"
-        @click="save"
-      />
+      <q-btn v-if="isDirty" flat dense no-caps color="primary" label="Save" @click="save" />
       <q-btn flat dense round icon="more_vert" color="grey-6">
         <q-menu>
           <q-list dense>
             <q-item clickable v-close-popup @click="copyMarkdown">
               <q-item-section>Copy as Markdown</q-item-section>
             </q-item>
-            <q-item clickable v-close-popup @click="goBlurt" :disable="!notesStore.getNote(competencyId)">
+            <q-item
+              clickable
+              v-close-popup
+              @click="goBlurt"
+              :disable="!notesStore.getNote(competencyId)"
+            >
               <q-item-section>Blurt Mode</q-item-section>
             </q-item>
-            <q-item clickable v-close-popup @click="confirmDelete" :disable="!notesStore.getNote(competencyId)">
+            <q-item
+              clickable
+              v-close-popup
+              @click="confirmDelete"
+              :disable="!notesStore.getNote(competencyId)"
+            >
               <q-item-section class="text-negative">Delete Note</q-item-section>
             </q-item>
           </q-list>
@@ -47,7 +56,6 @@
     </q-tabs>
 
     <q-tab-panels v-model="activeTab" animated class="col">
-
       <!-- ── Edit tab ──────────────────────────────────────────── -->
       <q-tab-panel name="edit" class="q-pa-none">
         <!-- Syntax hint -->
@@ -82,7 +90,11 @@
             <div class="stat-chip">
               <div class="text-caption text-grey-5">Blurt avg</div>
               <div class="text-body2 text-weight-bold">
-                {{ sheet.stats.avgBlurtScore !== null ? sheet.stats.avgBlurtScore.toFixed(1) + '/3' : '—' }}
+                {{
+                  sheet.stats.avgBlurtScore !== null
+                    ? sheet.stats.avgBlurtScore.toFixed(1) + '/3'
+                    : '—'
+                }}
               </div>
             </div>
             <div class="stat-chip">
@@ -125,7 +137,9 @@
                 >
                   <q-item-section>
                     <q-item-label class="text-body2">{{ link.displayText }}</q-item-label>
-                    <q-item-label caption class="text-grey-6">{{ link.resolved?.text ?? 'Unknown competency' }}</q-item-label>
+                    <q-item-label caption class="text-grey-6">{{
+                      link.resolved?.text ?? 'Unknown competency'
+                    }}</q-item-label>
                   </q-item-section>
                   <q-item-section side>
                     <q-icon name="chevron_right" color="grey-4" />
@@ -137,8 +151,13 @@
 
           <!-- Export -->
           <q-btn
-            flat no-caps color="primary" icon="content_copy" label="Copy as Markdown"
-            size="sm" @click="copyMarkdown"
+            flat
+            no-caps
+            color="primary"
+            icon="content_copy"
+            label="Copy as Markdown"
+            size="sm"
+            @click="copyMarkdown"
           />
         </template>
       </q-tab-panel>
@@ -148,19 +167,26 @@
         <div v-if="clozeCards.length === 0" class="text-center text-grey-5 q-pa-xl">
           <q-icon name="flash_on" size="3rem" color="grey-3" />
           <div class="q-mt-sm">No cloze cards yet.</div>
-          <div class="text-caption q-mt-xs">Use ==highlight== syntax in your notes to auto-generate cards.</div>
+          <div class="text-caption q-mt-xs">
+            Use ==highlight== syntax in your notes to auto-generate cards.
+          </div>
         </div>
         <template v-else>
           <div class="row items-center q-mb-sm">
-            <div class="text-caption text-grey-6 col">{{ clozeCards.length }} card{{ clozeCards.length !== 1 ? 's' : '' }}</div>
-            <q-btn flat no-caps color="primary" label="Drill Cards" icon="flash_on" size="sm"
-              @click="router.push(`/cloze/${encodeURIComponent(competencyId)}`)" />
+            <div class="text-caption text-grey-6 col">
+              {{ clozeCards.length }} card{{ clozeCards.length !== 1 ? 's' : '' }}
+            </div>
+            <q-btn
+              flat
+              no-caps
+              color="primary"
+              label="Drill Cards"
+              icon="flash_on"
+              size="sm"
+              @click="router.push(`/cloze/${encodeURIComponent(competencyId)}`)"
+            />
           </div>
-          <q-card
-            v-for="card in clozeCards"
-            :key="card.id ?? 0"
-            class="dvmr-card q-mb-sm"
-          >
+          <q-card v-for="card in clozeCards" :key="card.id ?? 0" class="dvmr-card q-mb-sm">
             <q-card-section class="q-py-sm">
               <div class="row items-start">
                 <div class="col">
@@ -168,11 +194,22 @@
                   <div class="text-caption text-grey-6">{{ card.back }}</div>
                 </div>
                 <q-btn
-                  flat round dense icon="delete_outline" color="grey-4" size="sm"
+                  flat
+                  round
+                  dense
+                  icon="delete_outline"
+                  color="grey-4"
+                  size="sm"
                   @click="deleteCard(card.id!)"
                 />
               </div>
-              <q-badge v-if="card.source === 'manual'" color="primary" label="manual" size="xs" class="q-mt-xs" />
+              <q-badge
+                v-if="card.source === 'manual'"
+                color="primary"
+                label="manual"
+                size="xs"
+                class="q-mt-xs"
+              />
             </q-card-section>
           </q-card>
         </template>
@@ -213,10 +250,7 @@ const clozeCards = computed(() => notesStore.getClozeCards(competencyId.value));
 const sheet = computed(() => notesStore.getReviewSheet(competencyId.value, mistakeStore.entries));
 
 onMounted(async () => {
-  await Promise.all([
-    notesStore.loadNote(competencyId.value),
-    mistakeStore.load(),
-  ]);
+  await Promise.all([notesStore.loadNote(competencyId.value), mistakeStore.load()]);
   const existing = notesStore.getNote(competencyId.value);
   draftBody.value = existing?.bodyMd ?? '';
 });
@@ -260,7 +294,9 @@ function confirmDelete() {
     cancel: true,
     persistent: true,
   }).onOk(() => {
-    void notesStore.deleteNote(competencyId.value).then(() => { router.back(); });
+    void notesStore.deleteNote(competencyId.value).then(() => {
+      router.back();
+    });
   });
 }
 </script>

@@ -27,7 +27,11 @@ describe('Dexie v8 upgrade — importedQuestions migration', () => {
   });
 
   it('synthesises competencyIds when present but empty array', () => {
-    const row: LegacyQuestion = { id: 'anat-002', competencyId: 'Veterinary Anatomy:A.1.2', competencyIds: [] };
+    const row: LegacyQuestion = {
+      id: 'anat-002',
+      competencyId: 'Veterinary Anatomy:A.1.2',
+      competencyIds: [],
+    };
     applyV8Upgrade(row);
     expect(row.competencyIds).toEqual(['Veterinary Anatomy:A.1.2']);
   });
@@ -39,10 +43,7 @@ describe('Dexie v8 upgrade — importedQuestions migration', () => {
       competencyIds: ['Veterinary Physiology:B.1', 'Veterinary Physiology:B.2'],
     };
     applyV8Upgrade(row);
-    expect(row.competencyIds).toEqual([
-      'Veterinary Physiology:B.1',
-      'Veterinary Physiology:B.2',
-    ]);
+    expect(row.competencyIds).toEqual(['Veterinary Physiology:B.1', 'Veterinary Physiology:B.2']);
   });
 
   it('sets updatedAt=0 when missing', () => {
@@ -52,7 +53,11 @@ describe('Dexie v8 upgrade — importedQuestions migration', () => {
   });
 
   it('leaves updatedAt unchanged when already set', () => {
-    const row: LegacyQuestion = { id: 'q1', competencyId: 'Veterinary Anatomy:A.1.1', updatedAt: 1_700_000_000_000 };
+    const row: LegacyQuestion = {
+      id: 'q1',
+      competencyId: 'Veterinary Anatomy:A.1.1',
+      updatedAt: 1_700_000_000_000,
+    };
     applyV8Upgrade(row);
     expect(row.updatedAt).toBe(1_700_000_000_000);
   });

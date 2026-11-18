@@ -1,11 +1,17 @@
 <template>
   <div class="step-through column">
-
     <!-- Progress -->
     <div class="row items-center q-mb-sm">
-      <div class="text-caption text-grey-6 col">Step {{ currentIndex + 1 }} of {{ def.steps.length }}</div>
+      <div class="text-caption text-grey-6 col">
+        Step {{ currentIndex + 1 }} of {{ def.steps.length }}
+      </div>
       <q-btn
-        flat round dense icon="close" color="grey-5" size="sm"
+        flat
+        round
+        dense
+        icon="close"
+        color="grey-5"
+        size="sm"
         v-if="$attrs.onClose"
         @click="$emit('close')"
       />
@@ -22,7 +28,9 @@
     <!-- Step content -->
     <q-card class="dvmr-card q-pa-md col step-card">
       <div class="text-subtitle2 text-weight-medium q-mb-sm">{{ step.title }}</div>
-      <div class="text-body2 text-grey-8" style="line-height: 1.7; white-space: pre-line">{{ step.body }}</div>
+      <div class="text-body2 text-grey-8" style="line-height: 1.7; white-space: pre-line">
+        {{ step.body }}
+      </div>
       <div v-if="step.diagram" class="q-mt-md">
         <MermaidDiagram :diagram="step.diagram" />
       </div>
@@ -31,7 +39,11 @@
     <!-- Navigation -->
     <div class="row items-center q-mt-md q-gutter-sm">
       <q-btn
-        flat no-caps icon="arrow_back" label="Previous" color="grey-7"
+        flat
+        no-caps
+        icon="arrow_back"
+        label="Previous"
+        color="grey-7"
         :disable="currentIndex === 0"
         @click="currentIndex--"
       />
@@ -49,12 +61,20 @@
       <q-space />
       <q-btn
         v-if="currentIndex < def.steps.length - 1"
-        unelevated no-caps icon-right="arrow_forward" label="Next" color="primary"
+        unelevated
+        no-caps
+        icon-right="arrow_forward"
+        label="Next"
+        color="primary"
         @click="currentIndex++"
       />
       <q-btn
         v-else
-        unelevated no-caps icon="check" label="Done" color="positive"
+        unelevated
+        no-caps
+        icon="check"
+        label="Done"
+        color="positive"
         @click="$emit('done')"
       />
     </div>

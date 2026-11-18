@@ -53,7 +53,9 @@
         </q-item-section>
         <q-item-section>
           <q-item-label>Calculators</q-item-label>
-          <q-item-label caption>Drug dose, fluid therapy, Pearson square, epidemiology</q-item-label>
+          <q-item-label caption
+            >Drug dose, fluid therapy, Pearson square, epidemiology</q-item-label
+          >
         </q-item-section>
         <q-item-section side><q-icon name="chevron_right" /></q-item-section>
       </q-item>
@@ -86,7 +88,9 @@
         </q-item-section>
         <q-item-section>
           <q-item-label>Virtual Patient Cases</q-item-label>
-          <q-item-label caption>Step-through clinical scenarios with branching decisions</q-item-label>
+          <q-item-label caption
+            >Step-through clinical scenarios with branching decisions</q-item-label
+          >
         </q-item-section>
         <q-item-section side><q-icon name="chevron_right" /></q-item-section>
       </q-item>

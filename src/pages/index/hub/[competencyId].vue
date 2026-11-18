@@ -1,12 +1,15 @@
 <template>
   <q-page class="column" style="max-width: 720px; margin: 0 auto">
-
     <!-- Header -->
     <div class="row items-center q-px-md q-pt-md q-pb-sm">
       <q-btn flat round dense icon="arrow_back" color="grey-7" @click="router.back()" />
       <div class="col q-ml-sm">
-        <div class="text-caption text-grey-6 ellipsis" style="max-width: 280px">{{ competencyId }}</div>
-        <div v-if="resolved" class="text-body2 text-weight-medium ellipsis">{{ resolved.text }}</div>
+        <div class="text-caption text-grey-6 ellipsis" style="max-width: 280px">
+          {{ competencyId }}
+        </div>
+        <div v-if="resolved" class="text-body2 text-weight-medium ellipsis">
+          {{ resolved.text }}
+        </div>
       </div>
       <q-chip v-if="resolved" dense color="primary" text-color="white" size="sm" class="q-ml-xs">
         {{ resolved.subject.split(' ')[1] ?? resolved.subject }}
@@ -24,36 +27,50 @@
       indicator-color="primary"
       class="q-px-md"
     >
-      <q-tab name="overview"   label="Overview"   no-caps />
-      <q-tab name="practice"   label="Practice"   no-caps />
-      <q-tab name="notes"      label="Notes"      no-caps />
-      <q-tab name="resources"  :label="`Resources (${resources.length})`" no-caps />
+      <q-tab name="overview" label="Overview" no-caps />
+      <q-tab name="practice" label="Practice" no-caps />
+      <q-tab name="notes" label="Notes" no-caps />
+      <q-tab name="resources" :label="`Resources (${resources.length})`" no-caps />
     </q-tabs>
 
     <q-tab-panels v-model="activeTab" animated class="col">
-
       <!-- ── Overview ─────────────────────────────────────────── -->
       <q-tab-panel name="overview" class="q-pa-md">
-
         <!-- Quick actions -->
         <div class="row q-gutter-sm q-mb-md">
           <q-btn
-            unelevated no-caps color="primary" icon="edit_note" label="Notes"
+            unelevated
+            no-caps
+            color="primary"
+            icon="edit_note"
+            label="Notes"
             @click="router.push(`/notes/${encodeURIComponent(competencyId)}`)"
           />
           <q-btn
             v-if="clozeCount > 0"
-            unelevated no-caps color="secondary" icon="flash_on" label="Drill Cards"
+            unelevated
+            no-caps
+            color="secondary"
+            icon="flash_on"
+            label="Drill Cards"
             @click="router.push(`/cloze/${encodeURIComponent(competencyId)}`)"
           />
           <q-btn
             v-if="hasNote"
-            unelevated no-caps color="accent" icon="psychology" label="Blurt"
+            unelevated
+            no-caps
+            color="accent"
+            icon="psychology"
+            label="Blurt"
             @click="router.push(`/blurt/${encodeURIComponent(competencyId)}`)"
           />
           <q-btn
             v-if="questionCount > 0"
-            unelevated no-caps color="orange" icon="quiz" label="Quiz"
+            unelevated
+            no-caps
+            color="orange"
+            icon="quiz"
+            label="Quiz"
             @click="startQuiz"
           />
         </div>
@@ -104,7 +121,6 @@
             </q-list>
           </q-card>
         </template>
-
       </q-tab-panel>
 
       <!-- ── Practice ──────────────────────────────────────────── -->
@@ -115,8 +131,19 @@
         </div>
         <template v-else>
           <div class="row items-center q-mb-sm">
-            <div class="text-caption text-grey-6 col">{{ competencyQuestions.length }} question{{ competencyQuestions.length !== 1 ? 's' : '' }}</div>
-            <q-btn unelevated no-caps color="primary" label="Quiz all" size="sm" @click="startQuiz" />
+            <div class="text-caption text-grey-6 col">
+              {{ competencyQuestions.length }} question{{
+                competencyQuestions.length !== 1 ? 's' : ''
+              }}
+            </div>
+            <q-btn
+              unelevated
+              no-caps
+              color="primary"
+              label="Quiz all"
+              size="sm"
+              @click="startQuiz"
+            />
           </div>
           <q-card
             v-for="q in competencyQuestions.slice(0, 20)"
@@ -128,7 +155,10 @@
               <div class="text-caption text-grey-6 q-mt-xs">{{ q.vmleSubject }}</div>
             </q-card-section>
           </q-card>
-          <div v-if="competencyQuestions.length > 20" class="text-caption text-grey-5 text-center q-pt-sm">
+          <div
+            v-if="competencyQuestions.length > 20"
+            class="text-caption text-grey-5 text-center q-pt-sm"
+          >
             + {{ competencyQuestions.length - 20 }} more
           </div>
         </template>
@@ -140,23 +170,41 @@
           <q-icon name="edit_note" size="3rem" color="grey-3" />
           <div class="q-mt-sm">No notes yet.</div>
           <q-btn
-            unelevated no-caps color="primary" label="Create note" class="q-mt-md"
+            unelevated
+            no-caps
+            color="primary"
+            label="Create note"
+            class="q-mt-md"
             @click="router.push(`/notes/${encodeURIComponent(competencyId)}`)"
           />
         </div>
         <template v-else>
           <div class="row items-center q-mb-sm">
             <div class="col text-caption text-grey-6">Last updated {{ noteAge }}</div>
-            <q-btn flat no-caps color="primary" label="Edit" size="sm"
-              @click="router.push(`/notes/${encodeURIComponent(competencyId)}`)" />
+            <q-btn
+              flat
+              no-caps
+              color="primary"
+              label="Edit"
+              size="sm"
+              @click="router.push(`/notes/${encodeURIComponent(competencyId)}`)"
+            />
           </div>
           <q-card class="dvmr-card q-pa-md">
             <div class="note-preview text-body2">{{ notePreview }}</div>
           </q-card>
           <div v-if="clozeCount > 0" class="row items-center q-mt-md">
-            <div class="col text-caption text-grey-6">{{ clozeCount }} cloze card{{ clozeCount !== 1 ? 's' : '' }}</div>
-            <q-btn flat no-caps color="primary" label="Drill Cards" size="sm"
-              @click="router.push(`/cloze/${encodeURIComponent(competencyId)}`)" />
+            <div class="col text-caption text-grey-6">
+              {{ clozeCount }} cloze card{{ clozeCount !== 1 ? 's' : '' }}
+            </div>
+            <q-btn
+              flat
+              no-caps
+              color="primary"
+              label="Drill Cards"
+              size="sm"
+              @click="router.push(`/cloze/${encodeURIComponent(competencyId)}`)"
+            />
           </div>
         </template>
       </q-tab-panel>
@@ -164,7 +212,9 @@
       <!-- ── Resources ─────────────────────────────────────────── -->
       <q-tab-panel name="resources" class="q-pa-md">
         <div class="row items-center q-mb-sm">
-          <div class="col text-caption text-grey-6">External links — link out only, not an endorsement</div>
+          <div class="col text-caption text-grey-6">
+            External links — link out only, not an endorsement
+          </div>
           <q-btn flat round dense icon="add" color="primary" @click="showAddDialog = true" />
         </div>
 
@@ -173,7 +223,15 @@
           <div class="text-caption text-grey-5 q-mb-sm">Suggested starting points (not saved):</div>
           <q-card class="dvmr-card q-mb-md">
             <q-list dense separator>
-              <q-item v-for="s in seedResources" :key="s.url" clickable tag="a" :href="s.url" target="_blank" rel="noopener noreferrer">
+              <q-item
+                v-for="s in seedResources"
+                :key="s.url"
+                clickable
+                tag="a"
+                :href="s.url"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <q-item-section avatar>
                   <q-icon :name="typeIcon(s.type)" color="primary" size="sm" />
                 </q-item-section>
@@ -189,7 +247,10 @@
           </q-card>
         </template>
 
-        <div v-if="resources.length === 0 && seedResources.length === 0" class="text-center text-grey-5 q-pa-xl">
+        <div
+          v-if="resources.length === 0 && seedResources.length === 0"
+          class="text-center text-grey-5 q-pa-xl"
+        >
           <q-icon name="link" size="3rem" color="grey-3" />
           <div class="q-mt-sm">No resources saved yet.</div>
         </div>
@@ -216,8 +277,15 @@
                 </q-item-label>
               </q-item-section>
               <q-item-section side>
-                <q-btn flat round dense icon="delete_outline" color="grey-4" size="sm"
-                  @click.prevent="removeResource(r.id!)" />
+                <q-btn
+                  flat
+                  round
+                  dense
+                  icon="delete_outline"
+                  color="grey-4"
+                  size="sm"
+                  @click.prevent="removeResource(r.id!)"
+                />
               </q-item-section>
             </q-item>
           </q-list>
@@ -230,12 +298,20 @@
       <q-card style="min-width: 320px; max-width: 480px; width: 100%">
         <q-card-section>
           <div class="text-h6">Add Resource</div>
-          <div class="text-caption text-grey-6">Link out only — do not embed or copy third-party content.</div>
+          <div class="text-caption text-grey-6">
+            Link out only — do not embed or copy third-party content.
+          </div>
         </q-card-section>
         <q-card-section class="q-pt-none column q-gutter-sm">
           <q-input v-model="newRes.url" label="URL *" dense outlined />
           <q-input v-model="newRes.sourceName" label="Source name *" dense outlined />
-          <q-input v-model="newRes.licenseNote" label="License note" dense outlined placeholder="e.g. Free to access, CC BY-SA" />
+          <q-input
+            v-model="newRes.licenseNote"
+            label="License note"
+            dense
+            outlined
+            placeholder="e.g. Free to access, CC BY-SA"
+          />
           <q-select
             v-model="newRes.type"
             :options="RESOURCE_TYPES"
@@ -250,14 +326,16 @@
         <q-card-actions align="right">
           <q-btn flat no-caps label="Cancel" @click="closeAddDialog" />
           <q-btn
-            unelevated no-caps color="primary" label="Save"
+            unelevated
+            no-caps
+            color="primary"
+            label="Save"
             :disable="!newRes.url || !newRes.sourceName"
             @click="saveResource"
           />
         </q-card-actions>
       </q-card>
     </q-dialog>
-
   </q-page>
 </template>
 
@@ -282,42 +360,135 @@ const RESOURCE_TYPES = [
 ];
 
 // Candidate link-outs per subject (seed data, not persisted)
-const SEED_RESOURCES: Record<string, { url: string; sourceName: string; licenseNote: string; type: ResourceType }[]> = {
+const SEED_RESOURCES: Record<
+  string,
+  { url: string; sourceName: string; licenseNote: string; type: ResourceType }[]
+> = {
   'Veterinary Anatomy': [
-    { url: 'https://www.imaios.com/en/e-anatomy/animals', sourceName: 'IMAIOS e-Anatomy (Animals)', licenseNote: 'Paid; free preview available', type: 'atlas' },
-    { url: 'https://en.wikivet.net/Anatomy', sourceName: 'WikiVet — Anatomy', licenseNote: 'CC BY-SA', type: 'reference' },
+    {
+      url: 'https://www.imaios.com/en/e-anatomy/animals',
+      sourceName: 'IMAIOS e-Anatomy (Animals)',
+      licenseNote: 'Paid; free preview available',
+      type: 'atlas',
+    },
+    {
+      url: 'https://en.wikivet.net/Anatomy',
+      sourceName: 'WikiVet — Anatomy',
+      licenseNote: 'CC BY-SA',
+      type: 'reference',
+    },
   ],
   'Veterinary Physiology': [
-    { url: 'https://en.wikivet.net/Physiology', sourceName: 'WikiVet — Physiology', licenseNote: 'CC BY-SA', type: 'reference' },
-    { url: 'https://www.merckvetmanual.com', sourceName: 'Merck Veterinary Manual', licenseNote: 'Free to access', type: 'reference' },
+    {
+      url: 'https://en.wikivet.net/Physiology',
+      sourceName: 'WikiVet — Physiology',
+      licenseNote: 'CC BY-SA',
+      type: 'reference',
+    },
+    {
+      url: 'https://www.merckvetmanual.com',
+      sourceName: 'Merck Veterinary Manual',
+      licenseNote: 'Free to access',
+      type: 'reference',
+    },
   ],
-  'Zootechnics': [
-    { url: 'https://www.merckvetmanual.com/management-and-nutrition', sourceName: 'Merck VM — Management & Nutrition', licenseNote: 'Free to access', type: 'reference' },
-    { url: 'https://en.wikivet.net/Zoology', sourceName: 'WikiVet — Animal Production', licenseNote: 'CC BY-SA', type: 'reference' },
+  Zootechnics: [
+    {
+      url: 'https://www.merckvetmanual.com/management-and-nutrition',
+      sourceName: 'Merck VM — Management & Nutrition',
+      licenseNote: 'Free to access',
+      type: 'reference',
+    },
+    {
+      url: 'https://en.wikivet.net/Zoology',
+      sourceName: 'WikiVet — Animal Production',
+      licenseNote: 'CC BY-SA',
+      type: 'reference',
+    },
   ],
   'Veterinary Pathology': [
-    { url: 'https://en.wikivet.net/Pathology', sourceName: 'WikiVet — Pathology', licenseNote: 'CC BY-SA', type: 'reference' },
-    { url: 'https://www.merckvetmanual.com/special-subjects/the-merck-veterinary-manual', sourceName: 'Merck Veterinary Manual', licenseNote: 'Free to access', type: 'reference' },
+    {
+      url: 'https://en.wikivet.net/Pathology',
+      sourceName: 'WikiVet — Pathology',
+      licenseNote: 'CC BY-SA',
+      type: 'reference',
+    },
+    {
+      url: 'https://www.merckvetmanual.com/special-subjects/the-merck-veterinary-manual',
+      sourceName: 'Merck Veterinary Manual',
+      licenseNote: 'Free to access',
+      type: 'reference',
+    },
   ],
   'Veterinary Pharmacology': [
-    { url: 'https://www.plumbsveterinarydrugs.com', sourceName: "Plumb's Veterinary Drugs", licenseNote: 'Subscription; limited free search', type: 'reference' },
-    { url: 'https://en.wikivet.net/Pharmacology', sourceName: 'WikiVet — Pharmacology', licenseNote: 'CC BY-SA', type: 'reference' },
+    {
+      url: 'https://www.plumbsveterinarydrugs.com',
+      sourceName: "Plumb's Veterinary Drugs",
+      licenseNote: 'Subscription; limited free search',
+      type: 'reference',
+    },
+    {
+      url: 'https://en.wikivet.net/Pharmacology',
+      sourceName: 'WikiVet — Pharmacology',
+      licenseNote: 'CC BY-SA',
+      type: 'reference',
+    },
   ],
   'Veterinary Medicine': [
-    { url: 'https://www.merckvetmanual.com', sourceName: 'Merck Veterinary Manual', licenseNote: 'Free to access', type: 'reference' },
-    { url: 'https://en.wikivet.net/Medicine', sourceName: 'WikiVet — Medicine', licenseNote: 'CC BY-SA', type: 'reference' },
+    {
+      url: 'https://www.merckvetmanual.com',
+      sourceName: 'Merck Veterinary Manual',
+      licenseNote: 'Free to access',
+      type: 'reference',
+    },
+    {
+      url: 'https://en.wikivet.net/Medicine',
+      sourceName: 'WikiVet — Medicine',
+      licenseNote: 'CC BY-SA',
+      type: 'reference',
+    },
   ],
   'Veterinary Microbiology and Public Health': [
-    { url: 'https://en.wikivet.net/Microbiology', sourceName: 'WikiVet — Microbiology', licenseNote: 'CC BY-SA', type: 'reference' },
-    { url: 'https://www.merckvetmanual.com/infectious-diseases', sourceName: 'Merck VM — Infectious Diseases', licenseNote: 'Free to access', type: 'reference' },
+    {
+      url: 'https://en.wikivet.net/Microbiology',
+      sourceName: 'WikiVet — Microbiology',
+      licenseNote: 'CC BY-SA',
+      type: 'reference',
+    },
+    {
+      url: 'https://www.merckvetmanual.com/infectious-diseases',
+      sourceName: 'Merck VM — Infectious Diseases',
+      licenseNote: 'Free to access',
+      type: 'reference',
+    },
   ],
   'Veterinary Parasitology': [
-    { url: 'https://en.wikivet.net/Parasitology', sourceName: 'WikiVet — Parasitology', licenseNote: 'CC BY-SA', type: 'reference' },
-    { url: 'https://www.merckvetmanual.com/dog-owners/parasitic-diseases-of-dogs', sourceName: 'Merck VM — Parasitology', licenseNote: 'Free to access', type: 'reference' },
+    {
+      url: 'https://en.wikivet.net/Parasitology',
+      sourceName: 'WikiVet — Parasitology',
+      licenseNote: 'CC BY-SA',
+      type: 'reference',
+    },
+    {
+      url: 'https://www.merckvetmanual.com/dog-owners/parasitic-diseases-of-dogs',
+      sourceName: 'Merck VM — Parasitology',
+      licenseNote: 'Free to access',
+      type: 'reference',
+    },
   ],
   'Veterinary Surgery': [
-    { url: 'https://en.wikivet.net/Surgery', sourceName: 'WikiVet — Surgery', licenseNote: 'CC BY-SA', type: 'reference' },
-    { url: 'https://www.merckvetmanual.com/special-subjects/pain-management-in-veterinary-patients', sourceName: 'Merck VM — Surgery / Anesthesia', licenseNote: 'Free to access', type: 'reference' },
+    {
+      url: 'https://en.wikivet.net/Surgery',
+      sourceName: 'WikiVet — Surgery',
+      licenseNote: 'CC BY-SA',
+      type: 'reference',
+    },
+    {
+      url: 'https://www.merckvetmanual.com/special-subjects/pain-management-in-veterinary-patients',
+      sourceName: 'Merck VM — Surgery / Anesthesia',
+      licenseNote: 'Free to access',
+      type: 'reference',
+    },
   ],
 };
 
@@ -366,9 +537,7 @@ const noteAge = computed(() => {
 });
 
 const mistakeEntries = computed(() =>
-  mistakeStore.entries.filter((e) =>
-    competencyQuestions.value.some((q) => q.id === e.questionId),
-  ),
+  mistakeStore.entries.filter((e) => competencyQuestions.value.some((q) => q.id === e.questionId)),
 );
 const mistakeCount = computed(() => mistakeEntries.value.length);
 const mistakeReasons = computed(() => {
@@ -387,11 +556,23 @@ const seedResources = computed(() => {
 
 // Add dialog
 const showAddDialog = ref(false);
-const newRes = ref<{ url: string; sourceName: string; licenseNote: string; type: ResourceType; verifiedBy: string }>({ url: '', sourceName: '', licenseNote: 'Free to access', type: 'reference', verifiedBy: '' });
+const newRes = ref<{
+  url: string;
+  sourceName: string;
+  licenseNote: string;
+  type: ResourceType;
+  verifiedBy: string;
+}>({ url: '', sourceName: '', licenseNote: 'Free to access', type: 'reference', verifiedBy: '' });
 
 function closeAddDialog() {
   showAddDialog.value = false;
-  newRes.value = { url: '', sourceName: '', licenseNote: 'Free to access', type: 'reference', verifiedBy: '' };
+  newRes.value = {
+    url: '',
+    sourceName: '',
+    licenseNote: 'Free to access',
+    type: 'reference',
+    verifiedBy: '',
+  };
 }
 
 async function saveResource() {

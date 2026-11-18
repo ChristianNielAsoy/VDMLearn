@@ -10,8 +10,14 @@ export interface KeyboardShortcutHandlers {
 }
 
 const CHOICE_KEYS: Record<string, 0 | 1 | 2 | 3> = {
-  '1': 0, '2': 1, '3': 2, '4': 3,
-  a: 0, b: 1, c: 2, d: 3,
+  '1': 0,
+  '2': 1,
+  '3': 2,
+  '4': 3,
+  a: 0,
+  b: 1,
+  c: 2,
+  d: 3,
 };
 
 export function useKeyboardShortcuts(handlers: KeyboardShortcutHandlers) {

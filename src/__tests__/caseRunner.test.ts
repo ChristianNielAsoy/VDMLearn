@@ -1,5 +1,12 @@
 import { describe, it, expect } from 'vitest';
-import { startCase, getCurrentNode, advanceNode, selectChoice, finalizeCase, getDebrief } from '@/services/caseRunner';
+import {
+  startCase,
+  getCurrentNode,
+  advanceNode,
+  selectChoice,
+  finalizeCase,
+  getDebrief,
+} from '@/services/caseRunner';
 import type { CaseDef } from '@/types/case';
 
 const simpleDef: CaseDef = {
@@ -13,19 +20,43 @@ const simpleDef: CaseDef = {
   startNodeId: 'n-sig',
   maxScore: 10,
   nodes: [
-    { id: 'n-sig',  kind: 'signalment', content: 'Cat, 3yr, female', next: 'n-hist' },
-    { id: 'n-hist', kind: 'history',    content: 'Vomiting 2 days',   next: 'n-dec' },
+    { id: 'n-sig', kind: 'signalment', content: 'Cat, 3yr, female', next: 'n-hist' },
+    { id: 'n-hist', kind: 'history', content: 'Vomiting 2 days', next: 'n-dec' },
     {
       id: 'n-dec',
       kind: 'decision',
       content: 'What next?',
       choices: [
-        { id: 'c-good', label: 'Ultrasound', next: 'n-out-good', correct: true,  points: 10, feedback: 'Excellent!' },
-        { id: 'c-bad',  label: 'Send home',  next: 'n-out-bad',  correct: false, points: 0,  feedback: 'Missed it.' },
+        {
+          id: 'c-good',
+          label: 'Ultrasound',
+          next: 'n-out-good',
+          correct: true,
+          points: 10,
+          feedback: 'Excellent!',
+        },
+        {
+          id: 'c-bad',
+          label: 'Send home',
+          next: 'n-out-bad',
+          correct: false,
+          points: 0,
+          feedback: 'Missed it.',
+        },
       ],
     },
-    { id: 'n-out-good', kind: 'outcome', content: 'Intestinal foreign body found', finalDiagnosis: 'Linear foreign body' },
-    { id: 'n-out-bad',  kind: 'outcome', content: 'Returned collapsed next day',   finalDiagnosis: 'Missed foreign body' },
+    {
+      id: 'n-out-good',
+      kind: 'outcome',
+      content: 'Intestinal foreign body found',
+      finalDiagnosis: 'Linear foreign body',
+    },
+    {
+      id: 'n-out-bad',
+      kind: 'outcome',
+      content: 'Returned collapsed next day',
+      finalDiagnosis: 'Missed foreign body',
+    },
   ],
 };
 
@@ -70,7 +101,9 @@ describe('caseRunner', () => {
     expect(result.currentNodeId).toBe('n-out-good');
     expect(result.score).toBe(10);
     expect(result.complete).toBe(true);
-    expect(result.steps.some((s) => s.choiceId === 'c-good' && s.choiceCorrect === true)).toBe(true);
+    expect(result.steps.some((s) => s.choiceId === 'c-good' && s.choiceCorrect === true)).toBe(
+      true,
+    );
   });
 
   it('selectChoice with wrong choice gives 0 points', () => {

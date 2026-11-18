@@ -1,0 +1,2234 @@
+{
+  "_meta": {
+    "source": "PRC Professional Regulatory Board of Veterinary Medicine, Annex 'A' to Resolution No. 07 s.2024: Enhanced Tables of Specifications for the Subjects in the Veterinarian Licensure Examination (user-provided PDF). Implemented from the October 2024 VLE onward.",
+    "checks": "Every subject's competency items sum to 100; every parent topic equals the sum of its sub-items; Bloom totals sum to 100 per subject; exam weights sum to 100.",
+    "howToUse": "'items' = number of questions out of 100 per subject exam; section weight = % of that subject. Overall share of a competency in the whole exam = items/100 x examWeightPct.",
+    "bloom": "R Remembering, U Understanding, Ap Applying, An Analyzing, E Evaluating, C Creating. Totals are copied as printed; the per-row column alignment in the PDF scan was unreliable, so row-level levels are not recorded.",
+    "printedOddities": [
+      "Physiology A: item numbering skips 5",
+      "Zootechnics C 5.4 mentions 'farrowing' (copied from swine)",
+      "Veterinary Medicine H.3 prints 'RA 8585' (Animal Welfare Act is RA 8485 as amended by RA 10631; verify)"
+    ]
+  },
+  "subjects": [
+    {
+      "name": "Veterinary Anatomy",
+      "examWeightPct": 10,
+      "itemsPerExam": 100,
+      "bloomTotals": {
+        "R": 0,
+        "U": 32,
+        "Ap": 30,
+        "An": 38,
+        "E": 0,
+        "C": 0
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "Anatomy of the Dog",
+          "weight": 30,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Organs and structures of the body systems of the dog",
+              "items": 15,
+              "sub": [
+                {
+                  "id": "1.1",
+                  "text": "Skeletal",
+                  "items": 1
+                },
+                {
+                  "id": "1.2",
+                  "text": "Muscular",
+                  "items": 2
+                },
+                {
+                  "id": "1.3",
+                  "text": "Cardiovascular",
+                  "items": 2
+                },
+                {
+                  "id": "1.4",
+                  "text": "Nervous",
+                  "items": 1
+                },
+                {
+                  "id": "1.5",
+                  "text": "Integumentary",
+                  "items": 1
+                },
+                {
+                  "id": "1.6",
+                  "text": "Lymphatic",
+                  "items": 1
+                },
+                {
+                  "id": "1.7",
+                  "text": "Respiratory",
+                  "items": 1
+                },
+                {
+                  "id": "1.8",
+                  "text": "Digestive",
+                  "items": 1
+                },
+                {
+                  "id": "1.9",
+                  "text": "Urinary",
+                  "items": 1
+                },
+                {
+                  "id": "1.10",
+                  "text": "Reproductive",
+                  "items": 1
+                },
+                {
+                  "id": "1.11",
+                  "text": "Endocrine",
+                  "items": 1
+                },
+                {
+                  "id": "1.12",
+                  "text": "Eye",
+                  "items": 1
+                },
+                {
+                  "id": "1.13",
+                  "text": "Ear",
+                  "items": 1
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "text": "Anatomical points significant in clinical and surgical procedures",
+              "items": 15,
+              "sub": [
+                {
+                  "id": "2.1",
+                  "text": "Physical and clinical examination",
+                  "items": 4
+                },
+                {
+                  "id": "2.2",
+                  "text": "Diagnostic imaging (radiography, ultrasonography, MRI)",
+                  "items": 3
+                },
+                {
+                  "id": "2.3",
+                  "text": "Surgical procedures",
+                  "items": 4
+                },
+                {
+                  "id": "2.4",
+                  "text": "Regional and local anesthesia",
+                  "items": 2
+                },
+                {
+                  "id": "2.5",
+                  "text": "Obstetrics",
+                  "items": 1
+                },
+                {
+                  "id": "2.6",
+                  "text": "Necropsy",
+                  "items": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Comparative Anatomy",
+          "weight": 30,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Compare organs and structures across species",
+              "items": 15,
+              "sub": [
+                {
+                  "id": "1.1",
+                  "text": "Skeletal",
+                  "items": 2
+                },
+                {
+                  "id": "1.2",
+                  "text": "Muscular",
+                  "items": 1
+                },
+                {
+                  "id": "1.3",
+                  "text": "Cardiovascular",
+                  "items": 1
+                },
+                {
+                  "id": "1.4",
+                  "text": "Nervous",
+                  "items": 1
+                },
+                {
+                  "id": "1.5",
+                  "text": "Integument",
+                  "items": 1
+                },
+                {
+                  "id": "1.6",
+                  "text": "Lymphatic",
+                  "items": 1
+                },
+                {
+                  "id": "1.7",
+                  "text": "Respiratory",
+                  "items": 1
+                },
+                {
+                  "id": "1.8",
+                  "text": "Digestive",
+                  "items": 2
+                },
+                {
+                  "id": "1.9",
+                  "text": "Urinary",
+                  "items": 1
+                },
+                {
+                  "id": "1.10",
+                  "text": "Reproductive",
+                  "items": 1
+                },
+                {
+                  "id": "1.11",
+                  "text": "Endocrine",
+                  "items": 1
+                },
+                {
+                  "id": "1.12",
+                  "text": "Eye",
+                  "items": 1
+                },
+                {
+                  "id": "1.13",
+                  "text": "Ear",
+                  "items": 1
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "text": "Anatomical points for surgical procedures in various species",
+              "items": 15,
+              "sub": [
+                {
+                  "id": "2.1",
+                  "text": "Ruminants: physical/clinical exam 2, surgical procedures 2, regional/local anesthesia 2, lymph nodes for meat inspection 2",
+                  "items": 8
+                },
+                {
+                  "id": "2.2",
+                  "text": "Pigs: physical/clinical exam 1, necropsy 1, lymph nodes for meat inspection 2",
+                  "items": 4
+                },
+                {
+                  "id": "2.3",
+                  "text": "Avian: physical/clinical exam 1, necropsy 2",
+                  "items": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Embryology",
+          "weight": 20,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Derivations of organs and structures",
+              "items": 6
+            },
+            {
+              "id": "2",
+              "text": "Concepts and mechanisms of development",
+              "items": 2
+            },
+            {
+              "id": "3",
+              "text": "Extra-embryonic membranes and placentation in domestic animals",
+              "items": 4
+            },
+            {
+              "id": "4",
+              "text": "Development of body systems",
+              "items": 6,
+              "sub": [
+                {
+                  "id": "4.1",
+                  "text": "Skeletal and muscular",
+                  "items": 1
+                },
+                {
+                  "id": "4.2",
+                  "text": "Cardiovascular",
+                  "items": 1
+                },
+                {
+                  "id": "4.3",
+                  "text": "Nervous and integumentary",
+                  "items": 1
+                },
+                {
+                  "id": "4.4",
+                  "text": "Digestive, respiratory, lymphatic",
+                  "items": 1
+                },
+                {
+                  "id": "4.5",
+                  "text": "Urinary and reproductive",
+                  "items": 1
+                },
+                {
+                  "id": "4.6",
+                  "text": "Endocrine",
+                  "items": 1
+                }
+              ]
+            },
+            {
+              "id": "5",
+              "text": "Congenital malformations",
+              "items": 2
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "name": "Histology",
+          "weight": 20,
+          "topics": [
+            {
+              "id": "1",
+              "text": "General morphology of tissues",
+              "items": 10,
+              "sub": [
+                {
+                  "id": "1.1",
+                  "text": "Epithelium (lining/covering, glandular, special)",
+                  "items": 3
+                },
+                {
+                  "id": "1.2",
+                  "text": "Connective (proper, supportive: bone and cartilage)",
+                  "items": 3
+                },
+                {
+                  "id": "1.3",
+                  "text": "Muscle (skeletal, smooth, cardiac)",
+                  "items": 3
+                },
+                {
+                  "id": "1.4",
+                  "text": "Nervous (nerve fibers)",
+                  "items": 1
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "text": "Microscopic features of organs and systems in mammals and avian",
+              "items": 10,
+              "sub": [
+                {
+                  "id": "2.1",
+                  "text": "Skeletal",
+                  "items": 1
+                },
+                {
+                  "id": "2.2",
+                  "text": "Muscular",
+                  "items": 1
+                },
+                {
+                  "id": "2.3",
+                  "text": "Cardiovascular",
+                  "items": 1
+                },
+                {
+                  "id": "2.4",
+                  "text": "Nervous",
+                  "items": 1
+                },
+                {
+                  "id": "2.5",
+                  "text": "Integument",
+                  "items": 1
+                },
+                {
+                  "id": "2.6",
+                  "text": "Lymphatic",
+                  "items": 1
+                },
+                {
+                  "id": "2.7",
+                  "text": "Respiratory",
+                  "items": 1
+                },
+                {
+                  "id": "2.8",
+                  "text": "Digestive",
+                  "items": 1
+                },
+                {
+                  "id": "2.9",
+                  "text": "Urinary, reproductive, endocrine",
+                  "items": 1
+                },
+                {
+                  "id": "2.10",
+                  "text": "Eye and ear",
+                  "items": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Physiology",
+      "examWeightPct": 10,
+      "itemsPerExam": 100,
+      "bloomTotals": {
+        "R": 0,
+        "U": 49,
+        "Ap": 5,
+        "An": 46,
+        "E": 0,
+        "C": 0
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "Principles of Physiology",
+          "weight": 20,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Parts, components and function of the eukaryotic cell",
+              "items": 2
+            },
+            {
+              "id": "2",
+              "text": "Transport mechanisms for solutes and substances",
+              "items": 2
+            },
+            {
+              "id": "3",
+              "text": "Body fluid compartments, importance, imbalances",
+              "items": 3
+            },
+            {
+              "id": "4",
+              "text": "Skeletal, smooth and cardiac muscle physiology",
+              "items": 3
+            },
+            {
+              "id": "6",
+              "text": "Divisions of the nervous system; cranial nerve functions",
+              "items": 3
+            },
+            {
+              "id": "7",
+              "text": "Blood and blood cells",
+              "items": 4
+            },
+            {
+              "id": "8",
+              "text": "Blood clotting, platelets, vascular endothelial derived substances",
+              "items": 3
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Systemic Physiology",
+          "weight": 40,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Digestive physiology: monogastric, ruminant, hind-gut fermenter, chicken",
+              "items": 6
+            },
+            {
+              "id": "2",
+              "text": "Nervous, hormonal and chemical regulation of digestion (prehension to elimination)",
+              "items": 5
+            },
+            {
+              "id": "3",
+              "text": "Metabolism of carbohydrates, proteins, fats",
+              "items": 5
+            },
+            {
+              "id": "4",
+              "text": "Minerals and vitamins, homeostatic mechanisms, syndromes of special concern",
+              "items": 5
+            },
+            {
+              "id": "5",
+              "text": "Urinary physiology",
+              "items": 7
+            },
+            {
+              "id": "6",
+              "text": "Respiratory physiology: mammals vs avians",
+              "items": 5
+            },
+            {
+              "id": "7",
+              "text": "Acid-base balance and systemic compensation",
+              "items": 4
+            },
+            {
+              "id": "8",
+              "text": "Thermoregulation",
+              "items": 3
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Endocrinology and Reproductive Physiology",
+          "weight": 40,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Endocrine glands and tissues, hormonal secretions, control mechanisms",
+              "items": 20
+            },
+            {
+              "id": "2",
+              "text": "Male reproduction in domestic animals and avians (organ functions, spermatogenesis)",
+              "items": 10
+            },
+            {
+              "id": "3",
+              "text": "Female reproduction in domestic animals and avian (organ functions, oogenesis, cyclicity, fertilization, pregnancy)",
+              "items": 10
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Printed table has no item 5 under A (numbering jumps 4 to 6).",
+        "No explicit cardiovascular or nervous-system line items in section B as printed."
+      ]
+    },
+    {
+      "name": "Zootechnics",
+      "examWeightPct": 12,
+      "itemsPerExam": 100,
+      "bloomTotals": {
+        "R": 15,
+        "U": 13,
+        "Ap": 32,
+        "An": 13,
+        "E": 27,
+        "C": 0
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "Principles of Animal Breeding, Selection and Improvement",
+          "weight": 10,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Types and breeds of farm animals (types, classes, strains, uses)",
+              "items": 4
+            },
+            {
+              "id": "2",
+              "text": "Breeding, reproduction and genetics in improvement (breeding systems, genetics and inheritance)",
+              "items": 4
+            },
+            {
+              "id": "3",
+              "text": "Variation in economic traits",
+              "items": 2
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Principles of Animal Nutrition, Production and Health",
+          "weight": 15,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Digestive tract differences vs nutritional needs (simple stomach, avian, ruminant)",
+              "items": 4
+            },
+            {
+              "id": "2",
+              "text": "Feed nutrients: classification of nutritive value, types of feeds, additives and performance stimulants",
+              "items": 4
+            },
+            {
+              "id": "3",
+              "text": "Feed formulation for various species",
+              "items": 4
+            },
+            {
+              "id": "4",
+              "text": "Facility and health management (building/equipment, health management system)",
+              "items": 3
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Ruminant Production",
+          "weight": 20,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Breeds and classification",
+              "items": 5
+            },
+            {
+              "id": "2",
+              "text": "Basic principles of breeding",
+              "items": 4
+            },
+            {
+              "id": "3",
+              "text": "Selection principles",
+              "items": 3
+            },
+            {
+              "id": "4",
+              "text": "Physiology of reproduction, trends, development",
+              "items": 2
+            },
+            {
+              "id": "5",
+              "text": "Nutrition, care, health management",
+              "items": 6,
+              "sub": [
+                {
+                  "id": "5.1",
+                  "text": "Types of commercial ruminant farm operations",
+                  "items": 1
+                },
+                {
+                  "id": "5.2",
+                  "text": "Housing and equipment",
+                  "items": 1
+                },
+                {
+                  "id": "5.3",
+                  "text": "Feeding and nutrition",
+                  "items": 1
+                },
+                {
+                  "id": "5.4",
+                  "text": "Breeder herd, nursery, growing-finishing management (printed text says 'farrowing', copied from swine)",
+                  "items": 2
+                },
+                {
+                  "id": "5.5",
+                  "text": "Waste management",
+                  "items": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "name": "Swine Production and Management",
+          "weight": 15,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Breeds",
+              "items": 3
+            },
+            {
+              "id": "2",
+              "text": "Basic concepts of breeding",
+              "items": 2
+            },
+            {
+              "id": "3",
+              "text": "Selection principles and methods for breeder stock",
+              "items": 2
+            },
+            {
+              "id": "4",
+              "text": "Physiology of reproduction, trend, development",
+              "items": 1
+            },
+            {
+              "id": "5",
+              "text": "Nutrition, care, herd management",
+              "items": 6,
+              "sub": [
+                {
+                  "id": "5.1",
+                  "text": "Types of commercial swine farm operation",
+                  "items": 1
+                },
+                {
+                  "id": "5.2",
+                  "text": "Housing and equipment",
+                  "items": 1
+                },
+                {
+                  "id": "5.3",
+                  "text": "Feeding and nutrition",
+                  "items": 1
+                },
+                {
+                  "id": "5.4",
+                  "text": "Breeding herd, farrowing, nursery, growing-finishing",
+                  "items": 2
+                },
+                {
+                  "id": "5.5",
+                  "text": "Waste management",
+                  "items": 1
+                }
+              ]
+            },
+            {
+              "id": "6",
+              "text": "Herd health program design",
+              "items": 1
+            }
+          ]
+        },
+        {
+          "id": "E",
+          "name": "Poultry Production and Management",
+          "weight": 15,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Breeds",
+              "items": 3
+            },
+            {
+              "id": "2",
+              "text": "Stock selection in breeding and genetics",
+              "items": 1
+            },
+            {
+              "id": "3",
+              "text": "Reproductive physiology of chickens",
+              "items": 2
+            },
+            {
+              "id": "4",
+              "text": "Nutrition, care, management at different stages",
+              "items": 7,
+              "sub": [
+                {
+                  "id": "4.1",
+                  "text": "Housing and equipment",
+                  "items": 1
+                },
+                {
+                  "id": "4.2",
+                  "text": "Incubation and hatchery management",
+                  "items": 1
+                },
+                {
+                  "id": "4.3",
+                  "text": "Free range, duck and quail production",
+                  "items": 2
+                },
+                {
+                  "id": "4.4",
+                  "text": "Broilers and layers production and standards",
+                  "items": 2
+                },
+                {
+                  "id": "4.5",
+                  "text": "Breeder management",
+                  "items": 1
+                }
+              ]
+            },
+            {
+              "id": "5",
+              "text": "Flock health program design",
+              "items": 2
+            }
+          ]
+        },
+        {
+          "id": "F",
+          "name": "Equine Production and Management",
+          "weight": 10,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Breeds and classification (horse terms, points of the horse)",
+              "items": 2
+            },
+            {
+              "id": "2",
+              "text": "Breeding principles",
+              "items": 1
+            },
+            {
+              "id": "3",
+              "text": "Nutrition, care and management programs (breeding, feeding, height and weight estimating)",
+              "items": 2
+            },
+            {
+              "id": "4",
+              "text": "Behaviors, behavioral abnormalities, gaits, unsoundness and blemishes",
+              "items": 3
+            },
+            {
+              "id": "5",
+              "text": "Health management program design",
+              "items": 1
+            },
+            {
+              "id": "6",
+              "text": "Riding and training principles",
+              "items": 1
+            }
+          ]
+        },
+        {
+          "id": "G",
+          "name": "Zoo and Exotic Animal Management (incl. aquatic, game, alternative animal production)",
+          "weight": 10,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Conservation management",
+              "items": 2
+            },
+            {
+              "id": "2",
+              "text": "Proper care and management principles",
+              "items": 5
+            },
+            {
+              "id": "3",
+              "text": "Health program design",
+              "items": 3
+            }
+          ]
+        },
+        {
+          "id": "H",
+          "name": "Restraint of Animals",
+          "weight": 5,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Proper restraint (psychological, physical, chemical)",
+              "items": 3,
+              "sub": [
+                {
+                  "id": "1.1",
+                  "text": "Psychological restraint",
+                  "items": 1
+                },
+                {
+                  "id": "1.2",
+                  "text": "Physical restraint",
+                  "items": 1
+                },
+                {
+                  "id": "1.3",
+                  "text": "Chemical restraint",
+                  "items": 1
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "text": "How the environment affects animal behavior",
+              "items": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Pathology",
+      "examWeightPct": 10,
+      "itemsPerExam": 100,
+      "bloomTotals": {
+        "R": 5,
+        "U": 14,
+        "Ap": 5,
+        "An": 60,
+        "E": 6,
+        "C": 10
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "General Pathology",
+          "weight": 30,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Define common pathological terms",
+              "items": 5
+            },
+            {
+              "id": "2",
+              "text": "Normal and pathological changes",
+              "items": 3,
+              "sub": [
+                {
+                  "id": "2.1",
+                  "text": "Normal vs abnormal cellular changes",
+                  "items": 1
+                },
+                {
+                  "id": "2.2",
+                  "text": "Cell injury vs degeneration",
+                  "items": 1
+                },
+                {
+                  "id": "2.3",
+                  "text": "Necrosis vs post mortem changes",
+                  "items": 1
+                }
+              ]
+            },
+            {
+              "id": "3",
+              "text": "Disturbances in circulation",
+              "items": 3
+            },
+            {
+              "id": "4",
+              "text": "Inflammation, wound healing and repair",
+              "items": 3
+            },
+            {
+              "id": "5",
+              "text": "Adaptive changes",
+              "items": 5
+            },
+            {
+              "id": "6",
+              "text": "Neoplastic conditions",
+              "items": 3
+            },
+            {
+              "id": "7",
+              "text": "Pathogenesis of infectious diseases",
+              "items": 3
+            },
+            {
+              "id": "8",
+              "text": "Necropsy procedures in different species",
+              "items": 5
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Systemic Pathology",
+          "weight": 40,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Categorize pathological changes with clinical diseases in organ systems",
+              "items": 10
+            },
+            {
+              "id": "2",
+              "text": "Gross lesions in clinical diseases",
+              "items": 10
+            },
+            {
+              "id": "3",
+              "text": "Microscopic lesions in clinical diseases",
+              "items": 10
+            },
+            {
+              "id": "4",
+              "text": "Morphological diagnosis from gross and histopathological findings",
+              "items": 10
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Clinical Pathology",
+          "weight": 30,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Specimen collection, handling, transport, submission",
+              "items": 5
+            },
+            {
+              "id": "2",
+              "text": "Laboratory work",
+              "items": 16,
+              "sub": [
+                {
+                  "id": "2.1",
+                  "text": "Interpret hemogram results",
+                  "items": 6
+                },
+                {
+                  "id": "2.2",
+                  "text": "Analyze blood chemistry and organ function tests",
+                  "items": 10
+                }
+              ]
+            },
+            {
+              "id": "3",
+              "text": "Fecalysis and skin scraping results",
+              "items": 3
+            },
+            {
+              "id": "4",
+              "text": "Cytologic smears",
+              "items": 3
+            },
+            {
+              "id": "5",
+              "text": "Toxicity test results",
+              "items": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Pharmacology",
+      "examWeightPct": 10,
+      "itemsPerExam": 100,
+      "bloomTotals": {
+        "R": 6,
+        "U": 50,
+        "Ap": 5,
+        "An": 32,
+        "E": 7,
+        "C": 0
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "General Pharmacology",
+          "weight": 30,
+          "topics": [
+            {
+              "id": "1",
+              "text": "General principles of pharmacodynamics",
+              "items": 10,
+              "sub": [
+                {
+                  "id": "1.1",
+                  "text": "Drug action: receptor/non-receptor, agonists vs antagonists, receptor types, signal transduction, structure-activity",
+                  "items": 4
+                },
+                {
+                  "id": "1.2",
+                  "text": "Dose-response relationships: law of mass action, graded and quantal",
+                  "items": 4
+                },
+                {
+                  "id": "1.3",
+                  "text": "Drug interactions: additive, synergism, potentiation; molecular, physiological, chemical",
+                  "items": 2
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "text": "General principles of pharmacokinetics",
+              "items": 10,
+              "sub": [
+                {
+                  "id": "2.1",
+                  "text": "Absorption: routes, transport across membranes, bioavailability, factors",
+                  "items": 4
+                },
+                {
+                  "id": "2.2",
+                  "text": "Distribution: volume of distribution, plasma protein binding, barriers, ion trapping, redistribution",
+                  "items": 2
+                },
+                {
+                  "id": "2.3",
+                  "text": "Biotransformation: outcomes, phases, sites, factors",
+                  "items": 2
+                },
+                {
+                  "id": "2.4",
+                  "text": "Excretion: renal, biliary, enterohepatic recycling, renal clearance, minor routes",
+                  "items": 2
+                }
+              ]
+            },
+            {
+              "id": "3",
+              "text": "Computation of drug dose",
+              "items": 5
+            },
+            {
+              "id": "4",
+              "text": "Veterinary prescription",
+              "items": 5,
+              "sub": [
+                {
+                  "id": "4.1",
+                  "text": "Parts of a veterinary prescription",
+                  "items": 3
+                },
+                {
+                  "id": "4.2",
+                  "text": "National regulations on prescription writing (DA Administrative Order No. 39 and DOH No. 111-B of 1991)",
+                  "items": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Clinical Pharmacology",
+          "weight": 60,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Classification (clinical use, system affected), mechanisms, indications, contraindications and effects of veterinary drugs",
+              "items": 25,
+              "sub": [
+                {
+                  "id": "1.1",
+                  "text": "Distinguish drug classifications",
+                  "items": 5
+                },
+                {
+                  "id": "1.2",
+                  "text": "Categorize mechanisms of drug action",
+                  "items": 10
+                },
+                {
+                  "id": "1.3",
+                  "text": "Indications and contraindications of drug classes",
+                  "items": 10
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "text": "Physiological effects of drugs",
+              "items": 15
+            },
+            {
+              "id": "3",
+              "text": "Categorize physiological effects of drugs",
+              "items": 15
+            },
+            {
+              "id": "4",
+              "text": "Principles of withdrawal period",
+              "items": 5
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Toxicology",
+          "weight": 10,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Effects of drug toxicology",
+              "items": 3
+            },
+            {
+              "id": "2",
+              "text": "Mechanism of drug toxicity",
+              "items": 3
+            },
+            {
+              "id": "3",
+              "text": "Recommend treatment options in drug toxicity",
+              "items": 2
+            },
+            {
+              "id": "4",
+              "text": "Treatment options and antidotes in drug toxicity",
+              "items": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Medicine",
+      "examWeightPct": 14,
+      "itemsPerExam": 100,
+      "bloomTotals": {
+        "R": 0,
+        "U": 42,
+        "Ap": 18,
+        "An": 21,
+        "E": 19,
+        "C": 0
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "General Principles",
+          "weight": 15,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Diagnostic methods for tentative and definitive diagnoses (problem-oriented medical record, anamnesis, physical exam, vital signs, laboratory procedures, general clinical signs, diagnostic imaging)",
+              "items": 5
+            },
+            {
+              "id": "2",
+              "text": "Management and general medical procedures",
+              "items": 5
+            },
+            {
+              "id": "3",
+              "text": "Preventive measures (biosecurity, management, vaccination, quarantine, antiparasitics, nutrition)",
+              "items": 3
+            },
+            {
+              "id": "4",
+              "text": "Complementary and alternative medical procedures (herbal, acupuncture, physiotherapy, traditional)",
+              "items": 2
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Companion Animal Medicine (dog, cat, horse)",
+          "weight": 20,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Problems, clinical signs, lesions, abnormalities",
+              "items": 6
+            },
+            {
+              "id": "2",
+              "text": "Pathophysiological changes and disease process",
+              "items": 6
+            },
+            {
+              "id": "3",
+              "text": "Diagnostic plans",
+              "items": 3
+            },
+            {
+              "id": "4",
+              "text": "Specific, supportive and symptomatic treatment and management",
+              "items": 3
+            },
+            {
+              "id": "5",
+              "text": "Preventive measures (vaccination, endectocide, surveillance, nutrition, housing, environment)",
+              "items": 2
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Farm Animal Medicine (swine, poultry, small and large ruminants)",
+          "weight": 25,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Problems, clinical signs, lesions, abnormalities",
+              "items": 6
+            },
+            {
+              "id": "2",
+              "text": "Pathophysiological changes and disease process",
+              "items": 6
+            },
+            {
+              "id": "3",
+              "text": "Diagnostic plans",
+              "items": 5
+            },
+            {
+              "id": "4",
+              "text": "Specific treatments",
+              "items": 5
+            },
+            {
+              "id": "5",
+              "text": "Preventive measures (biosecurity, management, vaccination, quarantine, antiparasitic)",
+              "items": 3
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "name": "Aquatic (4), Wildlife (4), Laboratory Animals (4) and Alternative Livestock Medicine (3: rabbit, crocodile, bees)",
+          "weight": 15,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Problems, clinical signs, lesions, abnormalities",
+              "items": 5
+            },
+            {
+              "id": "2",
+              "text": "Pathophysiological changes and disease process",
+              "items": 3
+            },
+            {
+              "id": "3",
+              "text": "Diagnostic plans",
+              "items": 2
+            },
+            {
+              "id": "4",
+              "text": "Specific treatments",
+              "items": 3
+            },
+            {
+              "id": "5",
+              "text": "Preventive measures (wildlife conservation techniques, herd health protocols, surveillance)",
+              "items": 2
+            }
+          ]
+        },
+        {
+          "id": "E",
+          "name": "Theriogenology",
+          "weight": 10,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Pregnancy diagnosis and obstetrical cases in small and large animals",
+              "items": 3
+            },
+            {
+              "id": "2",
+              "text": "Medical management of genital diseases (infertility, STDs, ovarian and uterine pathologies)",
+              "items": 4
+            },
+            {
+              "id": "3",
+              "text": "Artificial breeding (breeding soundness exam, estrus synchronization, AI, MOET, cloning, other biotechnologies)",
+              "items": 3
+            }
+          ]
+        },
+        {
+          "id": "F",
+          "name": "Ethics and Jurisprudence",
+          "weight": 5,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Professional ethics (ethics vs morals, types of ethics, PVMA, Code of Ethics)",
+              "items": 3
+            },
+            {
+              "id": "2",
+              "text": "Legislation in veterinary practice (RA 9268, Rabies Act, Generics Act, Food Safety Act, vet feeds and drugs laws, meat inspection and standards, livestock disease laws, importation and quarantine laws)",
+              "items": 2
+            }
+          ]
+        },
+        {
+          "id": "G",
+          "name": "Veterinary Practice Management and Entrepreneurship",
+          "weight": 5,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Establishing a veterinary practice (location, name, facility design, infrastructure, equipment, registration and permits)",
+              "items": 2
+            },
+            {
+              "id": "2",
+              "text": "Maintaining a practice (records, inventory, finance, HR, administration, sales/marketing, pricing, maintenance, vet-client relationship)",
+              "items": 2
+            },
+            {
+              "id": "3",
+              "text": "Cost-benefit analysis of setting up a practice",
+              "items": 1
+            }
+          ]
+        },
+        {
+          "id": "H",
+          "name": "Animal Welfare",
+          "weight": 5,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Scientific bases of animal welfare (sentience, Five Freedoms, suffering, welfare assessment by physiological, behavioral, production, health measures)",
+              "items": 2
+            },
+            {
+              "id": "2",
+              "text": "Animal ethics (anthropomorphism, ethical theories on animal use, human-animal bond)",
+              "items": 2
+            },
+            {
+              "id": "3",
+              "text": "Animal Welfare Act provisions (printed as 'IRR of RA 8585/RA 10631'; the Animal Welfare Act is RA 8485 as amended by RA 10631, so 8585 is probably a typo: verify)",
+              "items": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Microbiology and Public Health",
+      "examWeightPct": 14,
+      "itemsPerExam": 100,
+      "bloomTotals": {
+        "R": 8,
+        "U": 34,
+        "Ap": 23,
+        "An": 13,
+        "E": 22,
+        "C": 0
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "General Veterinary Microbiology",
+          "weight": 30,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Differentiate bacteria from other living things and microorganisms",
+              "items": 5
+            },
+            {
+              "id": "2",
+              "text": "Anatomical, physiological, genetic characteristics of bacteria",
+              "items": 5
+            },
+            {
+              "id": "3",
+              "text": "Classification of molds and yeast",
+              "items": 4
+            },
+            {
+              "id": "4",
+              "text": "Characteristics of viruses and other acellular pathogens",
+              "items": 3
+            },
+            {
+              "id": "5",
+              "text": "Characteristics of fungi",
+              "items": 3
+            },
+            {
+              "id": "6",
+              "text": "Diagnostic plan using bacteriological techniques",
+              "items": 4
+            },
+            {
+              "id": "7",
+              "text": "Antimicrobial resistance: mechanism, control, prevention",
+              "items": 3
+            },
+            {
+              "id": "8",
+              "text": "Microbiological techniques to detect antimicrobial resistance",
+              "items": 3
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Veterinary Bacteriology and Mycology",
+          "weight": 20,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Mechanisms of infection and virulence",
+              "items": 4
+            },
+            {
+              "id": "2",
+              "text": "Bacteria and fungi of veterinary importance",
+              "items": 2
+            },
+            {
+              "id": "3",
+              "text": "Differentiate bacterial pathogens incl. chlamydia and rickettsia by disease",
+              "items": 4
+            },
+            {
+              "id": "4",
+              "text": "Laboratory skills for diagnosis of bacterial and mycotic infections",
+              "items": 4
+            },
+            {
+              "id": "5",
+              "text": "Diagnosis, prevention, control strategies",
+              "items": 4
+            },
+            {
+              "id": "6",
+              "text": "Preventive and control measures incl. chlamydia and rickettsia",
+              "items": 2
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Veterinary Virology",
+          "weight": 10,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Viruses of veterinary importance",
+              "items": 2
+            },
+            {
+              "id": "2",
+              "text": "Immune responses to viral infections",
+              "items": 2
+            },
+            {
+              "id": "3",
+              "text": "Pathogenesis of viruses and acellular pathogens (replication, genetics, recombination)",
+              "items": 2
+            },
+            {
+              "id": "4",
+              "text": "Specimen collection and handling; isolation, purification, identification, genetic characterization",
+              "items": 2
+            },
+            {
+              "id": "5",
+              "text": "Diagnosis, prevention, control strategies",
+              "items": 2
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "name": "Fundamentals of Immunology",
+          "weight": 10,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Immune evasion mechanisms of microorganisms",
+              "items": 2
+            },
+            {
+              "id": "2",
+              "text": "Apply basic immunology",
+              "items": 2
+            },
+            {
+              "id": "3",
+              "text": "Types and kinetics of immune responses",
+              "items": 2
+            },
+            {
+              "id": "4",
+              "text": "Principles of vaccination",
+              "items": 1
+            },
+            {
+              "id": "5",
+              "text": "Immunological diagnostic tests",
+              "items": 2
+            },
+            {
+              "id": "6",
+              "text": "Immune-mediated diseases",
+              "items": 1
+            }
+          ]
+        },
+        {
+          "id": "E",
+          "name": "Zoonoses, Emerging Infectious Zoonotic Diseases and One Health",
+          "weight": 10,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Types of zoonoses and factors in emergence",
+              "items": 2
+            },
+            {
+              "id": "2",
+              "text": "One Health concept",
+              "items": 1
+            },
+            {
+              "id": "3",
+              "text": "Bacterial, viral and other zoonotic agents, vectors, distribution, treatment, prevention",
+              "items": 3
+            },
+            {
+              "id": "4",
+              "text": "Diagnostic and control plans applying One Health",
+              "items": 2
+            },
+            {
+              "id": "5",
+              "text": "Socio-economic, human health and regulatory implications",
+              "items": 2
+            }
+          ]
+        },
+        {
+          "id": "F",
+          "name": "Veterinary Food Safety and Hygiene",
+          "weight": 10,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Meat, fish and milk hygiene (on-farm practices, storage, preservation, transport, GMP, national and international food regulations)",
+              "items": 3
+            },
+            {
+              "id": "2",
+              "text": "Hygiene status of food and establishments, microbial analysis, veterinary drug residues",
+              "items": 2
+            },
+            {
+              "id": "3",
+              "text": "Slaughter inspection: humane slaughter, ante and post mortem, grading",
+              "items": 3
+            },
+            {
+              "id": "4",
+              "text": "Foodborne diseases, diagnosis, control, roles of stakeholders",
+              "items": 2
+            }
+          ]
+        },
+        {
+          "id": "G",
+          "name": "Veterinary Epidemiology",
+          "weight": 10,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Temporal and spatial patterns of diseases",
+              "items": 2
+            },
+            {
+              "id": "2",
+              "text": "Epidemiological studies",
+              "items": 4,
+              "sub": [
+                {
+                  "id": "2.1",
+                  "text": "Study design appropriateness",
+                  "items": 2
+                },
+                {
+                  "id": "2.2",
+                  "text": "Sampling procedure and sample size calculation",
+                  "items": 1
+                },
+                {
+                  "id": "2.3",
+                  "text": "Biases",
+                  "items": 1
+                }
+              ]
+            },
+            {
+              "id": "3",
+              "text": "Epidemiologic measures: mortality (case fatality rate, crude mortality), morbidity (prevalence, incidence), associations (odds ratio, relative risk, attributable risk), diagnostic tests (sensitivity, specificity, accuracy, PPV, NPV)",
+              "items": 2
+            },
+            {
+              "id": "4",
+              "text": "Disease monitoring, surveillance, outbreak investigation",
+              "items": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Parasitology",
+      "examWeightPct": 10,
+      "itemsPerExam": 100,
+      "bloomTotals": {
+        "R": 6,
+        "U": 40,
+        "Ap": 0,
+        "An": 34,
+        "E": 20,
+        "C": 0
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "Arthropods",
+          "weight": 20,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Identify important arthropods in domestic animals",
+              "items": 2
+            },
+            {
+              "id": "2",
+              "text": "Biological characteristics that cause disease",
+              "items": 2
+            },
+            {
+              "id": "3",
+              "text": "Arthropods as vectors of pathogens",
+              "items": 2
+            },
+            {
+              "id": "4",
+              "text": "Compare pathogenicity",
+              "items": 5
+            },
+            {
+              "id": "5",
+              "text": "Differentiate arthropod diseases from other parasitic diseases",
+              "items": 5
+            },
+            {
+              "id": "6",
+              "text": "Select diagnostic tests",
+              "items": 2
+            },
+            {
+              "id": "7",
+              "text": "Prevention and control methods",
+              "items": 2
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Protozoans",
+          "weight": 20,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Identify protozoan parasites by morphology",
+              "items": 2
+            },
+            {
+              "id": "2",
+              "text": "Biology of protozoans",
+              "items": 2
+            },
+            {
+              "id": "3",
+              "text": "Transmission",
+              "items": 2
+            },
+            {
+              "id": "4",
+              "text": "Distinguish important protozoan diseases",
+              "items": 5
+            },
+            {
+              "id": "5",
+              "text": "Compare pathogenicity",
+              "items": 5
+            },
+            {
+              "id": "6",
+              "text": "Select diagnostic tests",
+              "items": 2
+            },
+            {
+              "id": "7",
+              "text": "Prevention and control",
+              "items": 2
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Helminths",
+          "weight": 40,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Identify important helminths",
+              "items": 4
+            },
+            {
+              "id": "2",
+              "text": "Classification based on morphology",
+              "items": 6
+            },
+            {
+              "id": "3",
+              "text": "Bionomics and relationship to animal diseases",
+              "items": 4
+            },
+            {
+              "id": "4",
+              "text": "Compare diseases caused by helminths",
+              "items": 8
+            },
+            {
+              "id": "5",
+              "text": "Pathogenesis of helminth infections",
+              "items": 10
+            },
+            {
+              "id": "6",
+              "text": "Validate diagnostic methods",
+              "items": 4
+            },
+            {
+              "id": "7",
+              "text": "Prevention and control",
+              "items": 4
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "name": "Parasites of Wild, Exotic Animals and Bees",
+          "weight": 10,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Identify parasites of captive ferals, wildlife and bees by morphology",
+              "items": 2
+            },
+            {
+              "id": "2",
+              "text": "Pathogenicity and transmission",
+              "items": 1
+            },
+            {
+              "id": "3",
+              "text": "Differentiate diseases caused by the parasites",
+              "items": 5
+            },
+            {
+              "id": "4",
+              "text": "Plans for diagnosis and control",
+              "items": 2
+            }
+          ]
+        },
+        {
+          "id": "E",
+          "name": "Parasites of Fishes and Aquatic Mammals",
+          "weight": 10,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Identify parasites of aquarium fishes and captive aquatic mammals by morphology",
+              "items": 2
+            },
+            {
+              "id": "2",
+              "text": "Pathogenicity and transmission",
+              "items": 2
+            },
+            {
+              "id": "3",
+              "text": "Distinguish diseases caused by the parasites",
+              "items": 4
+            },
+            {
+              "id": "4",
+              "text": "Plans for diagnosis and control",
+              "items": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Surgery",
+      "examWeightPct": 10,
+      "itemsPerExam": 100,
+      "bloomTotals": {
+        "R": 0,
+        "U": 53,
+        "Ap": 5,
+        "An": 21,
+        "E": 21,
+        "C": 0
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "General Principles",
+          "weight": 20,
+          "topics": [
+            {
+              "id": "1",
+              "text": "General principles of surgery",
+              "items": 6,
+              "sub": [
+                {
+                  "id": "1.1",
+                  "text": "Asepsis and aseptic practice",
+                  "items": 1
+                },
+                {
+                  "id": "1.2",
+                  "text": "Surgical instrumentation",
+                  "items": 1
+                },
+                {
+                  "id": "1.3",
+                  "text": "Wound healing and management",
+                  "items": 1
+                },
+                {
+                  "id": "1.4",
+                  "text": "Suture patterns, techniques and materials",
+                  "items": 1
+                },
+                {
+                  "id": "1.5",
+                  "text": "Indications, pre-operative considerations, complications",
+                  "items": 1
+                },
+                {
+                  "id": "1.6",
+                  "text": "Roles of surgical team members",
+                  "items": 1
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "text": "Operating room emergencies",
+              "items": 4,
+              "sub": [
+                {
+                  "id": "2.1",
+                  "text": "Hemostasis",
+                  "items": 1
+                },
+                {
+                  "id": "2.2",
+                  "text": "CPR in dogs and cats",
+                  "items": 1
+                },
+                {
+                  "id": "2.3",
+                  "text": "Shock management",
+                  "items": 1
+                },
+                {
+                  "id": "2.4",
+                  "text": "Fluid therapy computation",
+                  "items": 1
+                }
+              ]
+            },
+            {
+              "id": "3",
+              "text": "Principles of analgesia and anesthesia",
+              "items": 10,
+              "sub": [
+                {
+                  "id": "3.1",
+                  "text": "Anesthetic considerations in large vs small animal surgery",
+                  "items": 2
+                },
+                {
+                  "id": "3.2",
+                  "text": "Sedatives and anesthetic agents",
+                  "items": 2
+                },
+                {
+                  "id": "3.3",
+                  "text": "Local and regional analgesia",
+                  "items": 4
+                },
+                {
+                  "id": "3.4",
+                  "text": "General anesthesia in dogs",
+                  "items": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Small Animal Surgery",
+          "weight": 30,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Orthopedic surgical procedures",
+              "items": 5,
+              "sub": [
+                {
+                  "id": "1.1",
+                  "text": "Fracture management",
+                  "items": 1
+                },
+                {
+                  "id": "1.2",
+                  "text": "Bone implants and external coaptation",
+                  "items": 2
+                },
+                {
+                  "id": "1.3",
+                  "text": "Appropriate orthopedic procedures",
+                  "items": 1
+                },
+                {
+                  "id": "1.4",
+                  "text": "Classification of long bone, non-long bone and physeal fractures",
+                  "items": 1
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "text": "Digestive system",
+              "items": 10,
+              "sub": [
+                {
+                  "id": "2.1",
+                  "text": "Procedures of the digestive tract",
+                  "items": 3
+                },
+                {
+                  "id": "2.2",
+                  "text": "Congenital anomalies of the digestive system",
+                  "items": 5
+                },
+                {
+                  "id": "2.3",
+                  "text": "Appropriate procedures",
+                  "items": 2
+                }
+              ]
+            },
+            {
+              "id": "3",
+              "text": "Genito-urinary system",
+              "items": 10,
+              "sub": [
+                {
+                  "id": "3.1",
+                  "text": "Male and female reproductive procedures",
+                  "items": 4
+                },
+                {
+                  "id": "3.2",
+                  "text": "Urinary system procedures",
+                  "items": 3
+                },
+                {
+                  "id": "3.3",
+                  "text": "Skin tumor excision incl. mammary tumors",
+                  "items": 3
+                }
+              ]
+            },
+            {
+              "id": "4",
+              "text": "Special sensory organs and other procedures",
+              "items": 5,
+              "sub": [
+                {
+                  "id": "4.1",
+                  "text": "Eye and ear",
+                  "items": 1
+                },
+                {
+                  "id": "4.2",
+                  "text": "Respiratory tract",
+                  "items": 2
+                },
+                {
+                  "id": "4.3",
+                  "text": "Reconstructive surgery",
+                  "items": 1
+                },
+                {
+                  "id": "4.4",
+                  "text": "Hernia repairs",
+                  "items": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Large Animal Surgery",
+          "weight": 30,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Head and neck",
+              "items": 6,
+              "sub": [
+                {
+                  "id": "1.1",
+                  "text": "Describe procedures",
+                  "items": 3
+                },
+                {
+                  "id": "1.2",
+                  "text": "Assess appropriate procedures",
+                  "items": 3
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "text": "Thorax and abdomen",
+              "items": 6,
+              "sub": [
+                {
+                  "id": "2.1",
+                  "text": "Describe procedures",
+                  "items": 3
+                },
+                {
+                  "id": "2.2",
+                  "text": "Assess appropriate procedures",
+                  "items": 3
+                }
+              ]
+            },
+            {
+              "id": "3",
+              "text": "Male genito-urinary system",
+              "items": 6,
+              "sub": [
+                {
+                  "id": "3.1",
+                  "text": "Describe procedures",
+                  "items": 3
+                },
+                {
+                  "id": "3.2",
+                  "text": "Assess appropriate procedure",
+                  "items": 3
+                }
+              ]
+            },
+            {
+              "id": "4",
+              "text": "Female genito-urinary system and mammary gland",
+              "items": 6,
+              "sub": [
+                {
+                  "id": "4.1",
+                  "text": "Teat and mammary gland procedures",
+                  "items": 2
+                },
+                {
+                  "id": "4.2",
+                  "text": "Female genito-urinary procedures",
+                  "items": 2
+                },
+                {
+                  "id": "4.3",
+                  "text": "Assess appropriate procedures",
+                  "items": 2
+                }
+              ]
+            },
+            {
+              "id": "5",
+              "text": "Musculo-skeletal system",
+              "items": 6,
+              "sub": [
+                {
+                  "id": "5.1",
+                  "text": "Hoof repair techniques",
+                  "items": 1
+                },
+                {
+                  "id": "5.2",
+                  "text": "Surgeries of hoof, limb, skeletal system",
+                  "items": 1
+                },
+                {
+                  "id": "5.3",
+                  "text": "Procedures of limbs and joints",
+                  "items": 1
+                },
+                {
+                  "id": "5.4",
+                  "text": "Indications and contraindications of regional and general anesthesia",
+                  "items": 1
+                },
+                {
+                  "id": "5.5",
+                  "text": "Regional anesthesia techniques (site, drug, duration)",
+                  "items": 1
+                },
+                {
+                  "id": "5.6",
+                  "text": "Anesthetic monitoring in large animals",
+                  "items": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "name": "Diagnostic Imaging",
+          "weight": 20,
+          "topics": [
+            {
+              "id": "1",
+              "text": "Principles of radiography and ultrasonography",
+              "items": 4
+            },
+            {
+              "id": "2",
+              "text": "Proper techniques (restraint, positioning)",
+              "items": 4
+            },
+            {
+              "id": "3",
+              "text": "Radiographic findings and diagnosis (artifacts, Roentgen signs, measurements and indices)",
+              "items": 6
+            },
+            {
+              "id": "4",
+              "text": "Ultrasonographic findings and diagnosis (normal/abnormal, measurements and indices)",
+              "items": 6
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

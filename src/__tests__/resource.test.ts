@@ -22,7 +22,10 @@ function makeFakeRepo() {
   };
 }
 
-function makeEntry(competencyId: string, type: ResourceType = 'reference'): Omit<ResourceEntry, 'id'> {
+function makeEntry(
+  competencyId: string,
+  type: ResourceType = 'reference',
+): Omit<ResourceEntry, 'id'> {
   return {
     competencyId,
     url: 'https://example.com',

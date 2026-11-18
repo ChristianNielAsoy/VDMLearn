@@ -1,0 +1,590 @@
+{
+  "_meta": {
+    "status": "AUTHOR DRAFT for owner approval. Not copied from any textbook table of contents.",
+    "basis": "Standard introductory course outlines (author knowledge) and course names/codes from the UPLB, PSAU and CLSU curriculum files. Course code mapping is only as complete as the captured curricula (CLSU Years 1-3 only).",
+    "idFormat": "PRE:<AREA>:<section>.<topic>",
+    "owner": "Review, delete or add topics, then approve. Align with the syllabus of the school you enroll in."
+  },
+  "areas": [
+    {
+      "id": "GENBIO",
+      "name": "General Biology and Zoology",
+      "courses": {
+        "PSAU": ["BP-PB 1", "GE-Zoo 1"],
+        "UPLB": [],
+        "CLSU": []
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "Chemistry of life",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Water and its properties"
+            },
+            {
+              "id": "2",
+              "name": "Carbohydrates, lipids, proteins, nucleic acids"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "The cell",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Cell structure and organelles"
+            },
+            {
+              "id": "2",
+              "name": "Membranes and transport"
+            },
+            {
+              "id": "3",
+              "name": "Cellular respiration and photosynthesis (overview)"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Cell division",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Cell cycle and mitosis"
+            },
+            {
+              "id": "2",
+              "name": "Meiosis and gamete formation"
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "name": "Genetics",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Mendelian inheritance and Punnett squares"
+            },
+            {
+              "id": "2",
+              "name": "Non-Mendelian patterns and sex linkage"
+            },
+            {
+              "id": "3",
+              "name": "DNA, replication, transcription, translation"
+            }
+          ]
+        },
+        {
+          "id": "E",
+          "name": "Evolution and diversity",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Natural selection and evolution"
+            },
+            {
+              "id": "2",
+              "name": "Classification and animal phyla overview"
+            }
+          ]
+        },
+        {
+          "id": "F",
+          "name": "Animal structure and function",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Tissues and organ systems overview"
+            }
+          ]
+        },
+        {
+          "id": "G",
+          "name": "Ecology basics",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Populations, communities, ecosystems"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GENCHEM",
+      "name": "General and Inorganic Chemistry",
+      "courses": {
+        "UPLB": ["CHEM 18", "CHEM 18.1"],
+        "PSAU": ["BP-GIC"],
+        "CLSU": []
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "Measurement and matter",
+          "topics": [
+            {
+              "id": "1",
+              "name": "SI units, significant figures, dimensional analysis"
+            },
+            {
+              "id": "2",
+              "name": "States and properties of matter"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Atoms and bonding",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Atomic structure and periodic trends"
+            },
+            {
+              "id": "2",
+              "name": "Ionic and covalent bonding, molecular shape"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Stoichiometry and solutions",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Mole concept and chemical equations"
+            },
+            {
+              "id": "2",
+              "name": "Solution concentration and dilution"
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "name": "Gases and energy",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Gas laws"
+            },
+            {
+              "id": "2",
+              "name": "Thermochemistry (overview)"
+            }
+          ]
+        },
+        {
+          "id": "E",
+          "name": "Equilibrium, acids and bases",
+          "topics": [
+            {
+              "id": "1",
+              "name": "pH and pOH"
+            },
+            {
+              "id": "2",
+              "name": "Weak acids, buffers, Henderson-Hasselbalch"
+            }
+          ]
+        },
+        {
+          "id": "F",
+          "name": "Redox and kinetics",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Oxidation-reduction"
+            },
+            {
+              "id": "2",
+              "name": "Reaction rates"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ORGCHEM",
+      "name": "Organic Chemistry",
+      "courses": {
+        "UPLB": ["CHEM 40", "CHEM 40.1"],
+        "PSAU": ["Chem 1"],
+        "CLSU": ["CHEM 1206"]
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "Structure and bonding",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Hybridization and molecular geometry"
+            },
+            {
+              "id": "2",
+              "name": "Isomerism"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Functional groups",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Identification and nomenclature"
+            },
+            {
+              "id": "2",
+              "name": "Physical properties"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Hydrocarbons",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Alkanes and cycloalkanes"
+            },
+            {
+              "id": "2",
+              "name": "Alkenes and alkynes"
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "name": "Oxygen and nitrogen compounds",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Alcohols, ethers"
+            },
+            {
+              "id": "2",
+              "name": "Aldehydes and ketones"
+            },
+            {
+              "id": "3",
+              "name": "Carboxylic acids and derivatives"
+            },
+            {
+              "id": "4",
+              "name": "Amines"
+            }
+          ]
+        },
+        {
+          "id": "E",
+          "name": "Stereochemistry",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Chirality and enantiomers"
+            }
+          ]
+        },
+        {
+          "id": "F",
+          "name": "Reaction types",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Substitution and elimination"
+            },
+            {
+              "id": "2",
+              "name": "Addition reactions"
+            }
+          ]
+        },
+        {
+          "id": "G",
+          "name": "Biomolecule bridge",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Carbohydrates, lipids, amino acids (structures)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BIOCHEM",
+      "name": "Biochemistry",
+      "courses": {
+        "UPLB": ["CHEM 160", "VPHY 140"],
+        "PSAU": ["Chem 2"],
+        "CLSU": ["CHEM 1222"]
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "Water, pH and buffers in biology",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Ionization and biological buffers"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Amino acids and proteins",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Amino acids, peptide bond, protein structure levels"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Enzymes",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Catalysis, kinetics, inhibition"
+            },
+            {
+              "id": "2",
+              "name": "Regulation of enzymes"
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "name": "Carbohydrate metabolism",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Glycolysis"
+            },
+            {
+              "id": "2",
+              "name": "TCA cycle and oxidative phosphorylation"
+            },
+            {
+              "id": "3",
+              "name": "Gluconeogenesis and glycogen"
+            }
+          ]
+        },
+        {
+          "id": "E",
+          "name": "Lipid metabolism",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Fatty acid oxidation and synthesis"
+            },
+            {
+              "id": "2",
+              "name": "Ketone bodies"
+            }
+          ]
+        },
+        {
+          "id": "F",
+          "name": "Nucleic acids",
+          "topics": [
+            {
+              "id": "1",
+              "name": "DNA/RNA structure and central dogma"
+            }
+          ]
+        },
+        {
+          "id": "G",
+          "name": "Integration",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Fed and fasted states, hormonal control"
+            }
+          ]
+        },
+        {
+          "id": "H",
+          "name": "Vitamins and minerals",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Roles of common vitamins and minerals"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "STAT",
+      "name": "Statistics and Biostatistics",
+      "courses": {
+        "UPLB": ["STAT 164"],
+        "PSAU": ["BP-FS", "Biostat"],
+        "CLSU": ["STAT 2205"]
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "Descriptive statistics",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Mean, median, mode"
+            },
+            {
+              "id": "2",
+              "name": "Variance and standard deviation"
+            },
+            {
+              "id": "3",
+              "name": "Graphs and frequency distributions"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Probability and distributions",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Probability rules"
+            },
+            {
+              "id": "2",
+              "name": "Normal distribution"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Estimation",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Standard error and confidence intervals"
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "name": "Hypothesis testing",
+          "topics": [
+            {
+              "id": "1",
+              "name": "t-tests"
+            },
+            {
+              "id": "2",
+              "name": "Chi-square tests"
+            }
+          ]
+        },
+        {
+          "id": "E",
+          "name": "Association",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Correlation and simple linear regression"
+            }
+          ]
+        },
+        {
+          "id": "F",
+          "name": "Experimental design",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Completely randomized and randomized block designs, ANOVA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ANIMSCI",
+      "name": "Introductory Animal Production, Nutrition and Breeding",
+      "courses": {
+        "UPLB": ["ZOTC 111", "ZOTC 112", "ZOTC 113"],
+        "PSAU": ["AS 100", "AS 101", "AS 102"],
+        "CLSU": ["ZOOT 1100", "ZOOT 1105", "ZOOT 1110"]
+      },
+      "sections": [
+        {
+          "id": "A",
+          "name": "Production systems and economics",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Livestock and poultry production systems"
+            },
+            {
+              "id": "2",
+              "name": "Basic farm economics"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Nutrition",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Nutrients, feedstuffs and feed analysis"
+            },
+            {
+              "id": "2",
+              "name": "Digestive systems by species group"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "name": "Breeding and genetics",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Selection, heritability, response to selection"
+            },
+            {
+              "id": "2",
+              "name": "Mating systems, inbreeding, heterosis"
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "name": "Species basics",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Poultry, swine, ruminants, equine overview"
+            }
+          ]
+        },
+        {
+          "id": "E",
+          "name": "Welfare and behavior",
+          "topics": [
+            {
+              "id": "1",
+              "name": "Animal welfare principles and ethology"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

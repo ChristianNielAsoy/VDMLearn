@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { generateInstance, checkAnswer, renderStem, renderExplanation } from '@/services/parametricGenerator';
+import {
+  generateInstance,
+  checkAnswer,
+  renderStem,
+  renderExplanation,
+} from '@/services/parametricGenerator';
 import { PARAMETRIC_TEMPLATES } from '@/data/parametric/templates';
 import type { ParametricTemplate } from '@/types/parametric';
 
@@ -63,7 +68,13 @@ describe('checkAnswer', () => {
 describe('renderStem', () => {
   it('interpolates variables into stem', () => {
     const t = getTemplate('pharm-dose-volume');
-    const vars = { weight: 10, doseRate: 2, concentration: 20, species: 'dog', drug: 'amoxicillin' };
+    const vars = {
+      weight: 10,
+      doseRate: 2,
+      concentration: 20,
+      species: 'dog',
+      drug: 'amoxicillin',
+    };
     const rendered = renderStem(t, vars);
     expect(rendered).toContain('10');
     expect(rendered).toContain('2');

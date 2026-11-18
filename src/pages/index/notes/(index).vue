@@ -1,9 +1,16 @@
 <template>
   <q-page class="column" style="max-width: 600px; margin: 0 auto">
-
     <div class="q-px-md q-pt-md q-pb-sm row items-center">
       <div class="text-h6 text-weight-semibold col" style="letter-spacing: -0.01em">My Notes</div>
-      <q-btn flat no-caps color="primary" label="New Note" icon="add" size="sm" @click="showNewDialog = true" />
+      <q-btn
+        flat
+        no-caps
+        color="primary"
+        label="New Note"
+        icon="add"
+        size="sm"
+        @click="showNewDialog = true"
+      />
     </div>
 
     <q-separator />
@@ -27,7 +34,9 @@
 
     <div v-else-if="filtered.length === 0" class="text-center text-grey-5 q-pa-xl">
       <q-icon name="description" size="3rem" color="grey-3" />
-      <div class="q-mt-sm">{{ notesStore.allNotes.length === 0 ? 'No notes yet.' : 'No matches.' }}</div>
+      <div class="q-mt-sm">
+        {{ notesStore.allNotes.length === 0 ? 'No notes yet.' : 'No matches.' }}
+      </div>
       <div v-if="notesStore.allNotes.length === 0" class="text-caption q-mt-xs">
         Open a competency from Browse and tap "Take Notes".
       </div>
@@ -41,8 +50,12 @@
         @click="openNote(note.competencyId)"
       >
         <q-item-section>
-          <q-item-label class="text-body2 text-weight-medium ellipsis">{{ note.competencyId }}</q-item-label>
-          <q-item-label caption class="text-grey-6 ellipsis" style="max-width: 340px">{{ preview(note.bodyMd) }}</q-item-label>
+          <q-item-label class="text-body2 text-weight-medium ellipsis">{{
+            note.competencyId
+          }}</q-item-label>
+          <q-item-label caption class="text-grey-6 ellipsis" style="max-width: 340px">{{
+            preview(note.bodyMd)
+          }}</q-item-label>
         </q-item-section>
         <q-item-section side>
           <div class="text-caption text-grey-5">{{ timeAgo(note.updatedAt) }}</div>
@@ -74,7 +87,13 @@
         </q-card-section>
         <q-card-actions align="right">
           <q-btn flat label="Cancel" v-close-popup />
-          <q-btn unelevated color="primary" label="Create" :disable="!newCompetencyId.trim()" @click="createNote" />
+          <q-btn
+            unelevated
+            color="primary"
+            label="Create"
+            :disable="!newCompetencyId.trim()"
+            @click="createNote"
+          />
         </q-card-actions>
       </q-card>
     </q-dialog>
@@ -116,7 +135,11 @@ function createNote() {
 }
 
 function preview(bodyMd: string): string {
-  return bodyMd.replace(/^#{1,6}\s+/gm, '').replace(/[*_`=]/g, '').trim().slice(0, 80);
+  return bodyMd
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/[*_`=]/g, '')
+    .trim()
+    .slice(0, 80);
 }
 
 function timeAgo(ts: number): string {

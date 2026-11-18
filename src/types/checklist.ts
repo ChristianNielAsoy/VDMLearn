@@ -15,7 +15,7 @@ export interface ChecklistDef {
 
 export interface ChecklistProgress {
   checklistId: string;
-  stepsDone: string[];   // step ids completed
-  selfRating: 0 | 1 | 2 | 3;  // 0=not rated, 1=needs work, 2=ok, 3=competent
+  stepsDone: string[]; // step ids completed
+  selfRating: 0 | 1 | 2 | 3; // 0=not rated, 1=needs work, 2=ok, 3=competent
   lastPracticedAt: number;
 }

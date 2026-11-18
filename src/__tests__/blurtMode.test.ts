@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { buildBlurtPrompt, deriveBlurtRating, buildBlurtSession, buildBlurtReviewEvent } from '@/services/blurtMode';
+import {
+  buildBlurtPrompt,
+  deriveBlurtRating,
+  buildBlurtSession,
+  buildBlurtReviewEvent,
+} from '@/services/blurtMode';
 import type { CompetencyNote } from '@/types/notes';
 
 const NOTE: CompetencyNote = {
@@ -42,7 +47,11 @@ describe('buildBlurtPrompt', () => {
   });
 
   it('returns empty keyPoints for a plain note', () => {
-    const plainNote: CompetencyNote = { competencyId: 'c:1', bodyMd: 'Just plain text.', updatedAt: 0 };
+    const plainNote: CompetencyNote = {
+      competencyId: 'c:1',
+      bodyMd: 'Just plain text.',
+      updatedAt: 0,
+    };
     const prompt = buildBlurtPrompt(plainNote);
     expect(prompt.keyPoints).toHaveLength(0);
   });

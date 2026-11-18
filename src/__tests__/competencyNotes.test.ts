@@ -59,7 +59,8 @@ function makeFakeRepo() {
       return Promise.resolve(blurtSessions.filter((s) => s.competencyId === competencyId));
     },
     getBlurtSessions(since?: number): Promise<BlurtSession[]> {
-      const result = since !== undefined ? blurtSessions.filter((s) => s.ts >= since) : [...blurtSessions];
+      const result =
+        since !== undefined ? blurtSessions.filter((s) => s.ts >= since) : [...blurtSessions];
       return Promise.resolve(result);
     },
   };
@@ -115,38 +116,98 @@ describe('ClozeCard repository', () => {
   });
 
   it('appendClozeCard assigns auto-increment id', async () => {
-    const id1 = await repo.appendClozeCard({ competencyId: 'Veterinary Anatomy:A.1', front: 'The _____ is the longest bone.', back: 'femur', source: 'note-highlight', createdAt: 1000 });
-    const id2 = await repo.appendClozeCard({ competencyId: 'Veterinary Anatomy:A.1', front: 'The _____ is the largest bone.', back: 'pelvis', source: 'manual', createdAt: 2000 });
+    const id1 = await repo.appendClozeCard({
+      competencyId: 'Veterinary Anatomy:A.1',
+      front: 'The _____ is the longest bone.',
+      back: 'femur',
+      source: 'note-highlight',
+      createdAt: 1000,
+    });
+    const id2 = await repo.appendClozeCard({
+      competencyId: 'Veterinary Anatomy:A.1',
+      front: 'The _____ is the largest bone.',
+      back: 'pelvis',
+      source: 'manual',
+      createdAt: 2000,
+    });
     expect(id1).toBe(1);
     expect(id2).toBe(2);
   });
 
   it('getClozeCardsForCompetency filters by competencyId', async () => {
-    await repo.appendClozeCard({ competencyId: 'Veterinary Anatomy:A.1', front: 'front1', back: 'back1', source: 'note-highlight', createdAt: 1000 });
-    await repo.appendClozeCard({ competencyId: 'Veterinary Physiology:B.1', front: 'front2', back: 'back2', source: 'manual', createdAt: 2000 });
+    await repo.appendClozeCard({
+      competencyId: 'Veterinary Anatomy:A.1',
+      front: 'front1',
+      back: 'back1',
+      source: 'note-highlight',
+      createdAt: 1000,
+    });
+    await repo.appendClozeCard({
+      competencyId: 'Veterinary Physiology:B.1',
+      front: 'front2',
+      back: 'back2',
+      source: 'manual',
+      createdAt: 2000,
+    });
     const cards = await repo.getClozeCardsForCompetency('Veterinary Anatomy:A.1');
     expect(cards).toHaveLength(1);
     expect(cards[0]?.front).toBe('front1');
   });
 
   it('getAllClozeCards returns all cards', async () => {
-    await repo.appendClozeCard({ competencyId: 'c:1', front: 'f1', back: 'b1', source: 'note-highlight', createdAt: 1000 });
-    await repo.appendClozeCard({ competencyId: 'c:2', front: 'f2', back: 'b2', source: 'manual', createdAt: 2000 });
+    await repo.appendClozeCard({
+      competencyId: 'c:1',
+      front: 'f1',
+      back: 'b1',
+      source: 'note-highlight',
+      createdAt: 1000,
+    });
+    await repo.appendClozeCard({
+      competencyId: 'c:2',
+      front: 'f2',
+      back: 'b2',
+      source: 'manual',
+      createdAt: 2000,
+    });
     const all = await repo.getAllClozeCards();
     expect(all).toHaveLength(2);
   });
 
   it('deleteClozeCard removes by id', async () => {
-    const id = await repo.appendClozeCard({ competencyId: 'c:1', front: 'f', back: 'b', source: 'note-highlight', createdAt: 1000 });
+    const id = await repo.appendClozeCard({
+      competencyId: 'c:1',
+      front: 'f',
+      back: 'b',
+      source: 'note-highlight',
+      createdAt: 1000,
+    });
     await repo.deleteClozeCard(id);
     const all = await repo.getAllClozeCards();
     expect(all).toHaveLength(0);
   });
 
   it('clearClozeCardsForCompetency removes only that competency cards', async () => {
-    await repo.appendClozeCard({ competencyId: 'c:1', front: 'f1', back: 'b1', source: 'note-highlight', createdAt: 1000 });
-    await repo.appendClozeCard({ competencyId: 'c:1', front: 'f2', back: 'b2', source: 'note-highlight', createdAt: 2000 });
-    await repo.appendClozeCard({ competencyId: 'c:2', front: 'f3', back: 'b3', source: 'manual', createdAt: 3000 });
+    await repo.appendClozeCard({
+      competencyId: 'c:1',
+      front: 'f1',
+      back: 'b1',
+      source: 'note-highlight',
+      createdAt: 1000,
+    });
+    await repo.appendClozeCard({
+      competencyId: 'c:1',
+      front: 'f2',
+      back: 'b2',
+      source: 'note-highlight',
+      createdAt: 2000,
+    });
+    await repo.appendClozeCard({
+      competencyId: 'c:2',
+      front: 'f3',
+      back: 'b3',
+      source: 'manual',
+      createdAt: 3000,
+    });
     await repo.clearClozeCardsForCompetency('c:1');
     const all = await repo.getAllClozeCards();
     expect(all).toHaveLength(1);

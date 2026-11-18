@@ -1,6 +1,5 @@
 <template>
   <q-page class="column" style="max-width: 720px; margin: 0 auto">
-
     <!-- Header -->
     <div class="row items-center q-px-md q-pt-md q-pb-sm">
       <q-btn flat round dense icon="arrow_back" color="grey-7" @click="router.back()" />
@@ -22,12 +21,20 @@
         <!-- Score banner -->
         <q-card class="dvmr-card q-pa-md text-center">
           <q-icon
-            :name="debrief.pct >= 80 ? 'emoji_events' : debrief.pct >= 50 ? 'thumb_up' : 'sentiment_dissatisfied'"
+            :name="
+              debrief.pct >= 80
+                ? 'emoji_events'
+                : debrief.pct >= 50
+                  ? 'thumb_up'
+                  : 'sentiment_dissatisfied'
+            "
             :color="debrief.pct >= 80 ? 'positive' : debrief.pct >= 50 ? 'primary' : 'negative'"
             size="3rem"
           />
           <div class="text-h5 q-mt-sm">{{ debrief.score }} / {{ debrief.maxScore }}</div>
-          <div class="text-caption text-grey-6">{{ debrief.pct }}% — {{ scoreLabel(debrief.pct) }}</div>
+          <div class="text-caption text-grey-6">
+            {{ debrief.pct }}% — {{ scoreLabel(debrief.pct) }}
+          </div>
           <div v-if="debrief.finalDiagnosis" class="q-mt-md text-body2 text-weight-medium">
             Final Diagnosis: {{ debrief.finalDiagnosis }}
           </div>
@@ -35,11 +42,7 @@
 
         <!-- Decision review -->
         <div class="text-subtitle2 text-grey-7 q-mb-xs">Decision Review</div>
-        <q-card
-          v-for="d in debrief.decisions"
-          :key="d.nodeId"
-          class="dvmr-card"
-        >
+        <q-card v-for="d in debrief.decisions" :key="d.nodeId" class="dvmr-card">
           <q-card-section class="q-pb-xs">
             <div class="row items-center q-gutter-xs">
               <q-icon
@@ -49,11 +52,15 @@
               />
               <span class="text-body2 text-weight-medium">{{ d.nodeTitle }}</span>
               <q-space />
-              <span class="text-caption text-grey-6">{{ d.pointsEarned }} / {{ d.bestPoints }} pts</span>
+              <span class="text-caption text-grey-6"
+                >{{ d.pointsEarned }} / {{ d.bestPoints }} pts</span
+              >
             </div>
           </q-card-section>
           <q-card-section class="q-pt-xs">
-            <div class="text-caption text-grey-7 q-mb-xs">Your answer: <em>{{ d.choiceLabel }}</em></div>
+            <div class="text-caption text-grey-7 q-mb-xs">
+              Your answer: <em>{{ d.choiceLabel }}</em>
+            </div>
             <div class="text-body2" :class="d.correct ? 'text-positive' : 'text-negative'">
               {{ d.feedback }}
             </div>
@@ -67,8 +74,22 @@
 
         <!-- Actions -->
         <div class="row q-gutter-sm">
-          <q-btn unelevated no-caps color="primary" icon="replay" label="Play Again" @click="restart" />
-          <q-btn flat no-caps color="grey-7" icon="arrow_back" label="All Cases" @click="router.back()" />
+          <q-btn
+            unelevated
+            no-caps
+            color="primary"
+            icon="replay"
+            label="Play Again"
+            @click="restart"
+          />
+          <q-btn
+            flat
+            no-caps
+            color="grey-7"
+            icon="arrow_back"
+            label="All Cases"
+            @click="router.back()"
+          />
         </div>
       </div>
     </template>
@@ -76,7 +97,6 @@
     <!-- CASE PLAYER view -->
     <template v-else-if="state">
       <div class="q-pa-md column q-gutter-md">
-
         <!-- Progress -->
         <div class="row items-center q-gutter-sm">
           <q-linear-progress
@@ -95,11 +115,15 @@
           <q-card-section class="q-pb-xs">
             <div class="row items-center q-gutter-xs">
               <q-badge :color="kindColor(currentNode.kind)" :label="kindLabel(currentNode.kind)" />
-              <span v-if="currentNode.title" class="text-body2 text-weight-medium">{{ currentNode.title }}</span>
+              <span v-if="currentNode.title" class="text-body2 text-weight-medium">{{
+                currentNode.title
+              }}</span>
             </div>
           </q-card-section>
           <q-card-section>
-            <div class="text-body2 case-content" style="white-space: pre-wrap">{{ currentNode.content }}</div>
+            <div class="text-body2 case-content" style="white-space: pre-wrap">
+              {{ currentNode.content }}
+            </div>
           </q-card-section>
         </q-card>
 
@@ -111,7 +135,10 @@
               :color="lastChoiceCorrect ? 'positive' : 'negative'"
               size="sm"
             />
-            <div class="col text-body2" :class="lastChoiceCorrect ? 'text-positive' : 'text-negative'">
+            <div
+              class="col text-body2"
+              :class="lastChoiceCorrect ? 'text-positive' : 'text-negative'"
+            >
               {{ lastFeedback }}
             </div>
           </div>
@@ -126,7 +153,8 @@
               :label="choice.label"
               color="grey-2"
               text-color="grey-8"
-              unelevated no-caps
+              unelevated
+              no-caps
               class="full-width text-left"
               align="left"
               style="white-space: normal; min-height: 44px"
@@ -138,7 +166,8 @@
         <!-- Advance button (non-decision nodes, or after choice feedback) -->
         <template v-else-if="currentNode?.kind !== 'outcome'">
           <q-btn
-            unelevated no-caps
+            unelevated
+            no-caps
             color="primary"
             :label="lastFeedback !== null ? 'Continue' : 'Next'"
             icon-right="arrow_forward"
@@ -149,17 +178,16 @@
         <!-- Outcome node -->
         <template v-if="currentNode?.kind === 'outcome'">
           <q-btn
-            unelevated no-caps
+            unelevated
+            no-caps
             color="positive"
             label="See Debrief"
             icon-right="assessment"
             @click="onFinish"
           />
         </template>
-
       </div>
     </template>
-
   </q-page>
 </template>
 
@@ -195,7 +223,9 @@ const currentNode = computed(() => (state.value ? getCurrentNode(state.value) : 
 
 const nodeCount = computed(() => def?.nodes.length ?? 0);
 const visitedCount = computed(() => state.value?.steps.length ?? 0);
-const progressPct = computed(() => (nodeCount.value > 0 ? visitedCount.value / nodeCount.value : 0));
+const progressPct = computed(() =>
+  nodeCount.value > 0 ? visitedCount.value / nodeCount.value : 0,
+);
 
 function kindLabel(kind: CaseNodeKind): string {
   const labels: Record<CaseNodeKind, string> = {

@@ -1,5 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { applyInstall, applyUpdate, applyRemove, buildInstalledPack, verifyChecksum } from '@/services/contentPack';
+import {
+  applyInstall,
+  applyUpdate,
+  applyRemove,
+  buildInstalledPack,
+  verifyChecksum,
+} from '@/services/contentPack';
 import type { Question } from '@/types/question';
 import type { ContentPackManifest } from '@/types/contentPack';
 
@@ -73,8 +79,8 @@ describe('applyUpdate', () => {
   it('updates pack-managed rows, skips user-modified', () => {
     const incoming = [makeQ('q1', 'pack-test'), makeQ('q2', 'pack-test')];
     const existing = new Map([
-      ['q1', makeQ('q1', 'pack-test', 0)],    // pack-managed
-      ['q2', makeQ('q2', 'pack-test', 8888)],  // user-modified
+      ['q1', makeQ('q1', 'pack-test', 0)], // pack-managed
+      ['q2', makeQ('q2', 'pack-test', 8888)], // user-modified
     ]);
     const { toUpdate, skipped } = applyUpdate(incoming, existing, 'pack-test');
     expect(toUpdate).toHaveLength(1);
@@ -86,9 +92,9 @@ describe('applyUpdate', () => {
 describe('applyRemove', () => {
   it('deletes pack-managed rows, keeps user-modified rows', () => {
     const existing = [
-      makeQ('q1', 'pack-test', 0),    // pack-managed → delete
+      makeQ('q1', 'pack-test', 0), // pack-managed → delete
       makeQ('q2', 'pack-test', 5000), // user-modified → keep
-      makeQ('q3', 'other-pack', 0),   // different pack → not touched
+      makeQ('q3', 'other-pack', 0), // different pack → not touched
     ];
     const { toDelete, kept } = applyRemove(existing, 'pack-test');
     expect(toDelete).toContain('q1');
@@ -133,8 +139,13 @@ describe('verifyChecksum', () => {
 
   it('returns false for a wrong checksum', async () => {
     const m: ContentPackManifest = {
-      packId: 'p1', version: '1.0.0', schemaVersion: 1, name: 'Test',
-      files: {}, checksum: 'deadbeef', createdAt: 0,
+      packId: 'p1',
+      version: '1.0.0',
+      schemaVersion: 1,
+      name: 'Test',
+      files: {},
+      checksum: 'deadbeef',
+      createdAt: 0,
     };
     expect(await verifyChecksum(m)).toBe(false);
   });

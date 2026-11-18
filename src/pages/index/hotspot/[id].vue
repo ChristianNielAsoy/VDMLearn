@@ -1,6 +1,5 @@
 <template>
   <q-page class="column" style="max-width: 720px; margin: 0 auto">
-
     <div class="row items-center q-px-md q-pt-md q-pb-sm">
       <q-btn flat round dense icon="arrow_back" color="grey-7" @click="router.back()" />
       <div class="col q-ml-sm">
@@ -10,8 +9,14 @@
       <q-btn-toggle
         v-if="diagram"
         v-model="mode"
-        :options="[{ value: 'atlas', label: 'Atlas' }, { value: 'quiz', label: 'Quiz' }]"
-        no-caps dense unelevated rounded
+        :options="[
+          { value: 'atlas', label: 'Atlas' },
+          { value: 'quiz', label: 'Quiz' },
+        ]"
+        no-caps
+        dense
+        unelevated
+        rounded
         color="grey-2"
         text-color="grey-7"
         toggle-color="primary"
@@ -25,7 +30,6 @@
     <div v-if="!diagram" class="text-center text-grey-5 q-pa-xl">Diagram not found.</div>
 
     <div v-else class="q-pa-md column q-gutter-md">
-
       <!-- Diagram -->
       <HotspotDiagram
         :diagram="diagram"
@@ -56,8 +60,12 @@
                 <q-badge color="primary" :label="i + 1" />
               </q-item-section>
               <q-item-section>
-                <q-item-label class="text-body2 text-weight-medium">{{ region.label }}</q-item-label>
-                <q-item-label v-if="region.description" caption class="text-grey-6">{{ region.description }}</q-item-label>
+                <q-item-label class="text-body2 text-weight-medium">{{
+                  region.label
+                }}</q-item-label>
+                <q-item-label v-if="region.description" caption class="text-grey-6">{{
+                  region.description
+                }}</q-item-label>
               </q-item-section>
             </q-item>
           </q-list>
@@ -69,15 +77,28 @@
         <!-- Finished -->
         <q-card v-if="quizDone" class="dvmr-card q-pa-md text-center">
           <q-icon name="emoji_events" color="positive" size="3rem" />
-          <div class="text-h6 q-mt-sm">{{ correct.length }} / {{ diagram.regions.length }} correct</div>
-          <div class="text-caption text-grey-6 q-mt-xs">{{ mistakeCount }} mistake{{ mistakeCount !== 1 ? 's' : '' }}</div>
-          <q-btn unelevated no-caps color="primary" label="Restart" class="q-mt-md" @click="startQuiz" />
+          <div class="text-h6 q-mt-sm">
+            {{ correct.length }} / {{ diagram.regions.length }} correct
+          </div>
+          <div class="text-caption text-grey-6 q-mt-xs">
+            {{ mistakeCount }} mistake{{ mistakeCount !== 1 ? 's' : '' }}
+          </div>
+          <q-btn
+            unelevated
+            no-caps
+            color="primary"
+            label="Restart"
+            class="q-mt-md"
+            @click="startQuiz"
+          />
         </q-card>
 
         <template v-else>
           <!-- Current question -->
           <q-card class="dvmr-card q-pa-md">
-            <div class="text-caption text-grey-5 q-mb-xs">Question {{ correct.length + 1 }} of {{ diagram.regions.length }}</div>
+            <div class="text-caption text-grey-5 q-mb-xs">
+              Question {{ correct.length + 1 }} of {{ diagram.regions.length }}
+            </div>
             <div class="text-body2 text-weight-medium q-mb-sm">
               Tap region <span class="text-primary">#{{ activeIndex + 1 }}</span> on the diagram.
             </div>
@@ -91,7 +112,9 @@
                 :label="opt.label"
                 :color="optionColor(opt.id)"
                 :text-color="optionColor(opt.id) === 'grey-2' ? 'grey-7' : 'white'"
-                unelevated no-caps class="full-width text-left"
+                unelevated
+                no-caps
+                class="full-width text-left"
                 align="left"
                 :disable="showResult"
                 @click="selectOption(opt.id)"
@@ -100,9 +123,20 @@
 
             <!-- Result feedback -->
             <div v-if="showResult" class="q-mt-sm">
-              <div v-if="lastCorrect" class="text-positive text-body2"><q-icon name="check_circle" /> Correct!</div>
-              <div v-else class="text-negative text-body2"><q-icon name="cancel" /> Incorrect. Answer: {{ activeRegion?.label }}</div>
-              <q-btn unelevated no-caps color="primary" label="Next" class="q-mt-sm" @click="advance" />
+              <div v-if="lastCorrect" class="text-positive text-body2">
+                <q-icon name="check_circle" /> Correct!
+              </div>
+              <div v-else class="text-negative text-body2">
+                <q-icon name="cancel" /> Incorrect. Answer: {{ activeRegion?.label }}
+              </div>
+              <q-btn
+                unelevated
+                no-caps
+                color="primary"
+                label="Next"
+                class="q-mt-sm"
+                @click="advance"
+              />
             </div>
           </q-card>
         </template>
@@ -136,7 +170,9 @@ const lastCorrect = ref(false);
 const selectedOptionId = ref<string | null>(null);
 
 const activeRegionId = computed(() => shuffledRegions.value[activeIndex.value]?.id ?? null);
-const activeRegion = computed(() => diagram?.regions.find((r) => r.id === activeRegionId.value) ?? null);
+const activeRegion = computed(
+  () => diagram?.regions.find((r) => r.id === activeRegionId.value) ?? null,
+);
 const quizDone = computed(() => !!diagram && correct.value.length === diagram.regions.length);
 
 const options = computed<HotspotRegion[]>(() => {

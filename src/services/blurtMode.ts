@@ -28,7 +28,10 @@ function extractKeyPoints(bodyMd: string): string[] {
     const trimmed = line.trim();
     // Unordered list items
     if (/^[-*+]\s+(.+)/.test(trimmed)) {
-      const text = trimmed.replace(/^[-*+]\s+/, '').replace(/==/g, '').trim();
+      const text = trimmed
+        .replace(/^[-*+]\s+/, '')
+        .replace(/==/g, '')
+        .trim();
       if (text) points.push(text);
     }
     // Headings (H2 and below become key topics)

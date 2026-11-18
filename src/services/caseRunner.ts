@@ -60,9 +60,10 @@ export function advanceNode(state: CaseState): CaseState {
     ...state,
     currentNodeId: node.next,
     steps,
-    complete: complete && nextNode?.kind === 'outcome' && !nextNode.choices && !nextNode.next
-      ? true
-      : false,
+    complete:
+      complete && nextNode?.kind === 'outcome' && !nextNode.choices && !nextNode.next
+        ? true
+        : false,
   };
 }
 

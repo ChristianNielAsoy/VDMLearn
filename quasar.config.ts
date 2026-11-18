@@ -88,13 +88,13 @@ export default defineConfig((/* ctx */) => {
     framework: {
       config: {
         brand: {
-          primary: '#0d9488',   // teal-600 — medical, trustworthy
+          primary: '#0d9488', // teal-600 — medical, trustworthy
           secondary: '#f59e0b', // amber-400 — bookmark/highlight accent
-          accent: '#14b8a6',    // teal-400
-          dark: '#0f172a',      // slate-900
-          positive: '#10b981',  // emerald-500
-          negative: '#ef4444',  // red-500
-          info: '#3b82f6',      // blue-500
+          accent: '#14b8a6', // teal-400
+          dark: '#0f172a', // slate-900
+          positive: '#10b981', // emerald-500
+          negative: '#ef4444', // red-500
+          info: '#3b82f6', // blue-500
           warning: '#f59e0b',
         },
       },

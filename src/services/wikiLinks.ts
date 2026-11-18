@@ -63,6 +63,9 @@ export function extractBacklinks(targetId: string, noteBodyMd: string): boolean 
 /**
  * Given an array of {competencyId, bodyMd}, returns the ids that link to targetId.
  */
-export function findBacklinks(targetId: string, allNotes: { competencyId: string; bodyMd: string }[]): string[] {
+export function findBacklinks(
+  targetId: string,
+  allNotes: { competencyId: string; bodyMd: string }[],
+): string[] {
   return allNotes.filter((n) => extractBacklinks(targetId, n.bodyMd)).map((n) => n.competencyId);
 }

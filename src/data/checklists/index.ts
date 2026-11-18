@@ -6,25 +6,65 @@ export const CHECKLISTS: ChecklistDef[] = [
     name: 'Basic Necropsy Procedure',
     competencyId: 'Veterinary Pathology:A.1',
     description: 'Systematic post-mortem examination sequence for large and small animals.',
-    source: 'Thompson K. Jubb, Kennedy & Palmer Pathology of Domestic Animals, 6th ed., Vol. 1, Necropsy technique chapter.',
+    source:
+      'Thompson K. Jubb, Kennedy & Palmer Pathology of Domestic Animals, 6th ed., Vol. 1, Necropsy technique chapter.',
     steps: [
-      { id: 'n01', text: 'Record signalment and history (species, breed, age, sex, clinical history, presumptive diagnosis)' },
+      {
+        id: 'n01',
+        text: 'Record signalment and history (species, breed, age, sex, clinical history, presumptive diagnosis)',
+      },
       { id: 'n02', text: 'Photograph external surfaces before incision' },
-      { id: 'n03', text: 'Assess body condition score, body weight, external lesions, skin, mucous membranes' },
-      { id: 'n04', text: 'Position animal in dorsal or lateral recumbency as appropriate to species' },
+      {
+        id: 'n03',
+        text: 'Assess body condition score, body weight, external lesions, skin, mucous membranes',
+      },
+      {
+        id: 'n04',
+        text: 'Position animal in dorsal or lateral recumbency as appropriate to species',
+      },
       { id: 'n05', text: 'Make midline incision from mandible to pubis through skin' },
       { id: 'n06', text: 'Reflect limbs; examine subcutaneous tissue, lymph nodes, musculature' },
-      { id: 'n07', text: 'Open abdominal cavity; note presence of fluid, organ position, adhesions, abnormal odours' },
-      { id: 'n08', text: 'Remove gastrointestinal tract; examine each segment in situ before removal' },
-      { id: 'n09', text: 'Remove and examine liver, spleen, pancreas, adrenal glands, kidneys, bladder, reproductive organs' },
-      { id: 'n10', text: 'Open thoracic cavity; note pleural fluid, lung expansion, pericardial fluid' },
-      { id: 'n11', text: 'Remove heart; open all chambers; measure wall thickness; examine valves' },
+      {
+        id: 'n07',
+        text: 'Open abdominal cavity; note presence of fluid, organ position, adhesions, abnormal odours',
+      },
+      {
+        id: 'n08',
+        text: 'Remove gastrointestinal tract; examine each segment in situ before removal',
+      },
+      {
+        id: 'n09',
+        text: 'Remove and examine liver, spleen, pancreas, adrenal glands, kidneys, bladder, reproductive organs',
+      },
+      {
+        id: 'n10',
+        text: 'Open thoracic cavity; note pleural fluid, lung expansion, pericardial fluid',
+      },
+      {
+        id: 'n11',
+        text: 'Remove heart; open all chambers; measure wall thickness; examine valves',
+      },
       { id: 'n12', text: 'Remove and inflate/fix lungs; examine all lobes' },
-      { id: 'n13', text: 'Remove cervical organs (trachea, oesophagus, thyroid, parathyroid, cervical lymph nodes)' },
-      { id: 'n14', text: 'Open cranial vault; remove brain; fix in formalin if histopathology needed' },
-      { id: 'n15', text: 'Collect tissues in 10% buffered formalin (10:1 formalin:tissue volume ratio)' },
-      { id: 'n16', text: 'Collect swabs, fresh tissue, and fluid samples for microbiology/toxicology as indicated' },
-      { id: 'n17', text: 'Complete necropsy report: gross findings, differential diagnosis, samples collected' },
+      {
+        id: 'n13',
+        text: 'Remove cervical organs (trachea, oesophagus, thyroid, parathyroid, cervical lymph nodes)',
+      },
+      {
+        id: 'n14',
+        text: 'Open cranial vault; remove brain; fix in formalin if histopathology needed',
+      },
+      {
+        id: 'n15',
+        text: 'Collect tissues in 10% buffered formalin (10:1 formalin:tissue volume ratio)',
+      },
+      {
+        id: 'n16',
+        text: 'Collect swabs, fresh tissue, and fluid samples for microbiology/toxicology as indicated',
+      },
+      {
+        id: 'n17',
+        text: 'Complete necropsy report: gross findings, differential diagnosis, samples collected',
+      },
     ],
   },
   {
@@ -34,46 +74,98 @@ export const CHECKLISTS: ChecklistDef[] = [
     description: 'Systematic head-to-tail physical examination of the dog.',
     source: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. (Elsevier, 2019), Ch. 1.',
     steps: [
-      { id: 'pe01', text: 'Record signalment (species, breed, age, sex/reproductive status, weight)' },
-      { id: 'pe02', text: 'Assess mentation and behaviour (alert, dull, obtunded, stuporous, comatose)' },
+      {
+        id: 'pe01',
+        text: 'Record signalment (species, breed, age, sex/reproductive status, weight)',
+      },
+      {
+        id: 'pe02',
+        text: 'Assess mentation and behaviour (alert, dull, obtunded, stuporous, comatose)',
+      },
       { id: 'pe03', text: 'Note body condition score (1–9 scale); muscle condition score' },
       { id: 'pe04', text: 'Measure temperature (rectal; normal dog 38.3–39.2°C)' },
       { id: 'pe05', text: 'Measure heart rate (normal dog 60–140 bpm; small dogs up to 180)' },
       { id: 'pe06', text: 'Measure respiratory rate (normal dog 10–30 rpm)' },
-      { id: 'pe07', text: 'Assess mucous membrane colour (pink, pale, icteric, cyanotic, brick red)' },
+      {
+        id: 'pe07',
+        text: 'Assess mucous membrane colour (pink, pale, icteric, cyanotic, brick red)',
+      },
       { id: 'pe08', text: 'Assess capillary refill time (< 2 s normal)' },
       { id: 'pe09', text: 'Assess skin turgor and hydration status' },
       { id: 'pe10', text: 'Examine eyes: pupil size/symmetry, cornea, conjunctiva, discharge' },
       { id: 'pe11', text: 'Examine ears: pinnae, canals (otoscope), discharge, odour' },
       { id: 'pe12', text: 'Examine nose: symmetry, discharge, airflow from each nostril' },
       { id: 'pe13', text: 'Examine oral cavity: teeth, gingiva, tongue, palate, pharynx' },
-      { id: 'pe14', text: 'Palpate peripheral lymph nodes (submandibular, prescapular, axillary, inguinal, popliteal)' },
-      { id: 'pe15', text: 'Auscultate heart: rate, rhythm, murmur (grade I–VI), point of maximum intensity' },
-      { id: 'pe16', text: 'Auscultate lungs: bilateral, all fields; note crackles, wheezes, absence of sounds' },
-      { id: 'pe17', text: 'Palpate abdomen: systematic; liver, spleen, kidneys, intestines, bladder, uterus/prostate' },
-      { id: 'pe18', text: 'Assess musculoskeletal: gait, symmetry, joint range of motion, muscle mass' },
+      {
+        id: 'pe14',
+        text: 'Palpate peripheral lymph nodes (submandibular, prescapular, axillary, inguinal, popliteal)',
+      },
+      {
+        id: 'pe15',
+        text: 'Auscultate heart: rate, rhythm, murmur (grade I–VI), point of maximum intensity',
+      },
+      {
+        id: 'pe16',
+        text: 'Auscultate lungs: bilateral, all fields; note crackles, wheezes, absence of sounds',
+      },
+      {
+        id: 'pe17',
+        text: 'Palpate abdomen: systematic; liver, spleen, kidneys, intestines, bladder, uterus/prostate',
+      },
+      {
+        id: 'pe18',
+        text: 'Assess musculoskeletal: gait, symmetry, joint range of motion, muscle mass',
+      },
       { id: 'pe19', text: 'Examine external genitalia and perineal region' },
-      { id: 'pe20', text: 'Assess neurological status (if indicated): reflexes, cranial nerve examination' },
+      {
+        id: 'pe20',
+        text: 'Assess neurological status (if indicated): reflexes, cranial nerve examination',
+      },
     ],
   },
   {
     id: 'injection-sites',
     name: 'Common Injection Sites and Techniques',
     competencyId: 'Veterinary Surgery:A.2',
-    description: 'Routes and landmark technique for subcutaneous, intramuscular, intravenous, and intraperitoneal injections in common species.',
+    description:
+      'Routes and landmark technique for subcutaneous, intramuscular, intravenous, and intraperitoneal injections in common species.',
     source: 'Muir WW et al. Handbook of Veterinary Anesthesia, 5th ed. (Mosby, 2013), Ch. 2.',
     steps: [
-      { id: 'inj01', text: 'SQ — Dog/Cat: tent skin at scruff or lateral thorax; insert bevel-up at 45°; aspirate before injecting' },
-      { id: 'inj02', text: 'IM — Dog: epaxial muscle (lumbar) or caudal thigh; avoid sciatic nerve (medial thigh)' },
+      {
+        id: 'inj01',
+        text: 'SQ — Dog/Cat: tent skin at scruff or lateral thorax; insert bevel-up at 45°; aspirate before injecting',
+      },
+      {
+        id: 'inj02',
+        text: 'IM — Dog: epaxial muscle (lumbar) or caudal thigh; avoid sciatic nerve (medial thigh)',
+      },
       { id: 'inj03', text: 'IM — Cat: caudal thigh or epaxial; maximum 1 mL per site' },
-      { id: 'inj04', text: 'IM — Swine: neck muscles cranial to shoulder; use long needle (25–38 mm) for adults' },
+      {
+        id: 'inj04',
+        text: 'IM — Swine: neck muscles cranial to shoulder; use long needle (25–38 mm) for adults',
+      },
       { id: 'inj05', text: 'IM — Cattle: neck or caudal thigh; maximum 10 mL per site in neck' },
-      { id: 'inj06', text: 'IV — Dog: cephalic vein (foreleg), saphenous vein (hindleg), jugular (sedated)' },
-      { id: 'inj07', text: 'IV — Cat: cephalic or medial saphenous; jugular for sampling or catheter' },
+      {
+        id: 'inj06',
+        text: 'IV — Dog: cephalic vein (foreleg), saphenous vein (hindleg), jugular (sedated)',
+      },
+      {
+        id: 'inj07',
+        text: 'IV — Cat: cephalic or medial saphenous; jugular for sampling or catheter',
+      },
       { id: 'inj08', text: 'IV — Cattle: jugular (most accessible), tail vein, milk vein (avoid)' },
-      { id: 'inj09', text: 'IP — Rodents/Rabbit: lower right quadrant, avoid midline bladder/cecum; 45° angle' },
-      { id: 'inj10', text: 'Always aspirate before injecting IM/SQ; discard needle if blood appears' },
-      { id: 'inj11', text: 'Record: site, route, drug, dose, batch number, expiry, withdrawal period if applicable' },
+      {
+        id: 'inj09',
+        text: 'IP — Rodents/Rabbit: lower right quadrant, avoid midline bladder/cecum; 45° angle',
+      },
+      {
+        id: 'inj10',
+        text: 'Always aspirate before injecting IM/SQ; discard needle if blood appears',
+      },
+      {
+        id: 'inj11',
+        text: 'Record: site, route, drug, dose, batch number, expiry, withdrawal period if applicable',
+      },
     ],
   },
   {
@@ -83,14 +175,38 @@ export const CHECKLISTS: ChecklistDef[] = [
     description: 'Step-by-step technique for the five most commonly examined suture patterns.',
     source: 'Fossum TW. Small Animal Surgery, 5th ed. (Elsevier, 2019), Ch. 3.',
     steps: [
-      { id: 'sp01', text: 'Simple interrupted: insert needle perpendicular to skin edge; evert wound edges; tie square knot; cut ends to 3–5 mm' },
-      { id: 'sp02', text: 'Simple continuous: start with simple interrupted knot; take bites perpendicular; end with instrument tie against last loop' },
-      { id: 'sp03', text: 'Cruciate (cross-mattress): insert 5–8 mm from edge, exit opposite; cross back across incision; evert skin' },
-      { id: 'sp04', text: 'Ford interlocking: running pattern; each pass locks under previous loop; used for skin closure in large animals' },
-      { id: 'sp05', text: 'Lembert (inverting): appositional bites parallel to incision; buries mucosa inward; used for hollow viscera' },
-      { id: 'sp06', text: 'Cushing: continuous inversion pattern similar to Lembert; used for stomach/intestinal closure' },
-      { id: 'sp07', text: 'Know knot security: square knot = 3 throws for monofilament, 2 for braided; add extra throw if tissue tension present' },
-      { id: 'sp08', text: 'Know suture material choice: absorbable (polyglycolic acid, PDS) for buried layers; non-absorbable (nylon, polypropylene) for skin' },
+      {
+        id: 'sp01',
+        text: 'Simple interrupted: insert needle perpendicular to skin edge; evert wound edges; tie square knot; cut ends to 3–5 mm',
+      },
+      {
+        id: 'sp02',
+        text: 'Simple continuous: start with simple interrupted knot; take bites perpendicular; end with instrument tie against last loop',
+      },
+      {
+        id: 'sp03',
+        text: 'Cruciate (cross-mattress): insert 5–8 mm from edge, exit opposite; cross back across incision; evert skin',
+      },
+      {
+        id: 'sp04',
+        text: 'Ford interlocking: running pattern; each pass locks under previous loop; used for skin closure in large animals',
+      },
+      {
+        id: 'sp05',
+        text: 'Lembert (inverting): appositional bites parallel to incision; buries mucosa inward; used for hollow viscera',
+      },
+      {
+        id: 'sp06',
+        text: 'Cushing: continuous inversion pattern similar to Lembert; used for stomach/intestinal closure',
+      },
+      {
+        id: 'sp07',
+        text: 'Know knot security: square knot = 3 throws for monofilament, 2 for braided; add extra throw if tissue tension present',
+      },
+      {
+        id: 'sp08',
+        text: 'Know suture material choice: absorbable (polyglycolic acid, PDS) for buried layers; non-absorbable (nylon, polypropylene) for skin',
+      },
     ],
   },
   {
@@ -101,14 +217,38 @@ export const CHECKLISTS: ChecklistDef[] = [
     source: 'Fubini SL, Ducharme NG. Farm Animal Surgery, 2nd ed. (Elsevier, 2017), Ch. 1.',
     steps: [
       { id: 'rb01', text: 'Assess temperament and health before approach; observe from distance' },
-      { id: 'rb02', text: 'Use chute/squeeze for most procedures; check gate function before animal entry' },
-      { id: 'rb03', text: 'Halter placement: loop over poll, noseband below eyes; lead rope on left side' },
-      { id: 'rb04', text: 'Nose tongs (cattle nose lead): grip nasal septum; create distraction restraint; never sole restraint for painful procedures' },
-      { id: 'rb05', text: 'Tail jack: raise tail perpendicular to spine; effective short-term distraction for rectal exam or IV access' },
-      { id: 'rb06', text: 'Casting — Reuff\'s method: rope around horn base, loop around thorax, loop around flank; pull dorsal rope' },
-      { id: 'rb07', text: 'Standing sedation: xylazine 0.05–0.1 mg/kg IM; onset 5–15 min; monitor respiratory rate and ataxia' },
-      { id: 'rb08', text: 'Recumbent sedation (caution): xylazine 0.1–0.2 mg/kg IM; manage regurgitation risk; prop sternal if possible' },
-      { id: 'rb09', text: 'Always have a handler at head; stand to the side, never directly behind; use protective equipment' },
+      {
+        id: 'rb02',
+        text: 'Use chute/squeeze for most procedures; check gate function before animal entry',
+      },
+      {
+        id: 'rb03',
+        text: 'Halter placement: loop over poll, noseband below eyes; lead rope on left side',
+      },
+      {
+        id: 'rb04',
+        text: 'Nose tongs (cattle nose lead): grip nasal septum; create distraction restraint; never sole restraint for painful procedures',
+      },
+      {
+        id: 'rb05',
+        text: 'Tail jack: raise tail perpendicular to spine; effective short-term distraction for rectal exam or IV access',
+      },
+      {
+        id: 'rb06',
+        text: "Casting — Reuff's method: rope around horn base, loop around thorax, loop around flank; pull dorsal rope",
+      },
+      {
+        id: 'rb07',
+        text: 'Standing sedation: xylazine 0.05–0.1 mg/kg IM; onset 5–15 min; monitor respiratory rate and ataxia',
+      },
+      {
+        id: 'rb08',
+        text: 'Recumbent sedation (caution): xylazine 0.1–0.2 mg/kg IM; manage regurgitation risk; prop sternal if possible',
+      },
+      {
+        id: 'rb09',
+        text: 'Always have a handler at head; stand to the side, never directly behind; use protective equipment',
+      },
     ],
   },
 ];

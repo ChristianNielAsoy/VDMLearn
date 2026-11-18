@@ -1,6 +1,5 @@
 <template>
   <q-page class="column" style="max-width: 720px; margin: 0 auto">
-
     <div class="q-px-md q-pt-md q-pb-sm">
       <div class="text-h6">Export &amp; Interop</div>
       <div class="text-caption text-grey-6 q-mt-xs">
@@ -17,19 +16,18 @@
       class="q-px-md"
       style="border-bottom: 1px solid var(--dvmr-border)"
     >
-      <q-tab name="anki-export"  label="Anki Export"  no-caps />
-      <q-tab name="anki-import"  label="Anki Import"  no-caps />
-      <q-tab name="notes"        label="Notes"         no-caps />
-      <q-tab name="packs"        label="Content Packs" no-caps />
+      <q-tab name="anki-export" label="Anki Export" no-caps />
+      <q-tab name="anki-import" label="Anki Import" no-caps />
+      <q-tab name="notes" label="Notes" no-caps />
+      <q-tab name="packs" label="Content Packs" no-caps />
     </q-tabs>
 
     <q-tab-panels v-model="activeTab" animated class="col">
-
       <!-- ── Anki Export ──────────────────────────────────────── -->
       <q-tab-panel name="anki-export" class="q-pa-md">
         <div class="text-caption text-grey-6 q-mb-md">
-          Export questions as a tab-separated file importable into Anki. Covers all questions in
-          the app (seed + imported).
+          Export questions as a tab-separated file importable into Anki. Covers all questions in the
+          app (seed + imported).
         </div>
 
         <q-card class="dvmr-card q-mb-md">
@@ -54,7 +52,9 @@
           <q-separator />
           <q-card-actions>
             <q-btn
-              unelevated no-caps color="primary"
+              unelevated
+              no-caps
+              color="primary"
               icon="download"
               label="Download Anki TSV"
               :disable="exportCount === 0"
@@ -72,14 +72,16 @@
       <!-- ── Anki Import ──────────────────────────────────────── -->
       <q-tab-panel name="anki-import" class="q-pa-md">
         <div class="text-caption text-grey-6 q-mb-md">
-          Upload an Anki plain-text export (tab-separated). Parses cards into question stubs
-          ready for the Import Questions page.
+          Upload an Anki plain-text export (tab-separated). Parses cards into question stubs ready
+          for the Import Questions page.
         </div>
 
         <q-card class="dvmr-card q-mb-md">
           <q-card-section>
             <q-btn
-              unelevated no-caps color="primary"
+              unelevated
+              no-caps
+              color="primary"
               icon="upload_file"
               label="Choose Anki .txt file"
               @click="ankiFileInput?.click()"
@@ -98,7 +100,12 @@
             <q-card-section class="q-pb-xs">
               <div class="row items-center q-gutter-xs q-mb-sm">
                 <q-icon name="check_circle" color="positive" size="sm" />
-                <span class="text-body2 text-positive">{{ ankiParseResult.rows.length }} card{{ ankiParseResult.rows.length !== 1 ? 's' : '' }} parsed</span>
+                <span class="text-body2 text-positive"
+                  >{{ ankiParseResult.rows.length }} card{{
+                    ankiParseResult.rows.length !== 1 ? 's' : ''
+                  }}
+                  parsed</span
+                >
                 <span v-if="ankiParseResult.skipped > 0" class="text-caption text-grey-6">
                   ({{ ankiParseResult.skipped }} skipped)
                 </span>
@@ -119,7 +126,9 @@
                 style="font-family: monospace; font-size: 11px"
               />
               <q-btn
-                flat no-caps dense
+                flat
+                no-caps
+                dense
                 icon="content_copy"
                 label="Copy JSON"
                 class="q-mt-xs"
@@ -131,7 +140,9 @@
           <template v-if="ankiParseResult?.errors?.length">
             <q-separator />
             <q-card-section>
-              <div class="text-caption text-negative" v-for="e in ankiParseResult.errors" :key="e">{{ e }}</div>
+              <div class="text-caption text-negative" v-for="e in ankiParseResult.errors" :key="e">
+                {{ e }}
+              </div>
             </q-card-section>
           </template>
         </q-card>
@@ -146,8 +157,8 @@
       <!-- ── Notes Markdown Export ───────────────────────────── -->
       <q-tab-panel name="notes" class="q-pa-md">
         <div class="text-caption text-grey-6 q-mb-md">
-          Export all your competency notes as a single Markdown file — useful for offline review
-          or sharing with study partners.
+          Export all your competency notes as a single Markdown file — useful for offline review or
+          sharing with study partners.
         </div>
 
         <q-card class="dvmr-card q-mb-md">
@@ -158,15 +169,18 @@
               <q-badge color="primary" :label="notesCount" />
             </div>
             <div class="text-caption text-grey-6">
-              {{ notesCount === 0
-                ? 'No notes yet. Write notes from the Browse → hub page for any competency.'
-                : `${notesCount} note${notesCount !== 1 ? 's' : ''} across all subjects.` }}
+              {{
+                notesCount === 0
+                  ? 'No notes yet. Write notes from the Browse → hub page for any competency.'
+                  : `${notesCount} note${notesCount !== 1 ? 's' : ''} across all subjects.`
+              }}
             </div>
           </q-card-section>
           <q-separator />
           <q-card-actions>
             <q-btn
-              unelevated no-caps
+              unelevated
+              no-caps
               color="primary"
               icon="download"
               label="Download as Markdown (.md)"
@@ -178,16 +192,16 @@
 
         <q-banner rounded dense class="text-caption bg-blue-1 text-blue-9">
           <template #avatar><q-icon name="info" color="blue-7" size="xs" /></template>
-          The Markdown file uses standard headings and can be opened in Obsidian, Typora,
-          VS Code, or any Markdown viewer.
+          The Markdown file uses standard headings and can be opened in Obsidian, Typora, VS Code,
+          or any Markdown viewer.
         </q-banner>
       </q-tab-panel>
 
       <!-- ── Content Packs ────────────────────────────────────── -->
       <q-tab-panel name="packs" class="q-pa-md">
         <div class="text-caption text-grey-6 q-mb-md">
-          Bundle your imported questions into a shareable JSON file, or install a content pack
-          from a file.
+          Bundle your imported questions into a shareable JSON file, or install a content pack from
+          a file.
         </div>
 
         <!-- Export pack -->
@@ -197,34 +211,41 @@
             <q-input
               v-model="packName"
               label="Pack name"
-              outlined dense
+              outlined
+              dense
               class="q-mb-sm"
               hint="e.g. 'My Pharmacology Set'"
             />
             <q-input
               v-model="packAuthor"
               label="Author (optional)"
-              outlined dense
+              outlined
+              dense
               class="q-mb-sm"
             />
             <q-select
               v-model="packSubject"
               :options="subjectOptions"
               label="Subject filter"
-              outlined dense
+              outlined
+              dense
               clearable
-              emit-value map-options
+              emit-value
+              map-options
               hint="Leave blank to export all imported questions"
               class="q-mb-sm"
             />
             <div class="text-caption text-grey-6">
-              {{ packQuestionCount }} question{{ packQuestionCount !== 1 ? 's' : '' }} will be included
+              {{ packQuestionCount }} question{{ packQuestionCount !== 1 ? 's' : '' }} will be
+              included
             </div>
           </q-card-section>
           <q-separator />
           <q-card-actions>
             <q-btn
-              unelevated no-caps color="primary"
+              unelevated
+              no-caps
+              color="primary"
               icon="ios_share"
               label="Export Pack"
               :disable="!packName.trim() || packQuestionCount === 0 || packExporting"
@@ -251,7 +272,12 @@
               </q-item-section>
               <q-item-section side>
                 <q-btn
-                  flat dense round icon="delete" color="negative" size="sm"
+                  flat
+                  dense
+                  round
+                  icon="delete"
+                  color="negative"
+                  size="sm"
                   @click="confirmRemovePack(p.packId)"
                 />
               </q-item-section>
@@ -267,7 +293,9 @@
         <q-card class="dvmr-card q-mb-md">
           <q-card-section>
             <q-btn
-              unelevated no-caps color="primary"
+              unelevated
+              no-caps
+              color="primary"
               icon="upload_file"
               label="Choose pack .json file"
               @click="packFileInput?.click()"
@@ -283,10 +311,11 @@
           <template v-if="packPreview">
             <q-separator />
             <q-card-section>
-              <div class="text-body2 text-weight-medium q-mb-xs">{{ packPreview.manifest.name }}</div>
+              <div class="text-body2 text-weight-medium q-mb-xs">
+                {{ packPreview.manifest.name }}
+              </div>
               <div class="text-caption text-grey-6">
-                v{{ packPreview.manifest.version }}
-                · {{ packPreview.questions.length }} questions
+                v{{ packPreview.manifest.version }} · {{ packPreview.questions.length }} questions
                 {{ packPreview.manifest.author ? `· by ${packPreview.manifest.author}` : '' }}
               </div>
               <div v-if="packPreview.manifest.description" class="text-caption text-grey-7 q-mt-xs">
@@ -296,7 +325,9 @@
             <q-separator />
             <q-card-actions>
               <q-btn
-                unelevated no-caps color="positive"
+                unelevated
+                no-caps
+                color="positive"
                 icon="download_done"
                 label="Install Pack"
                 :loading="packInstalling"
@@ -310,7 +341,8 @@
         <!-- Status banner -->
         <q-banner
           v-if="packStatus"
-          rounded dense
+          rounded
+          dense
           :class="packStatusError ? 'bg-negative text-white' : 'bg-positive text-white'"
           class="q-mb-md"
         >
@@ -323,17 +355,18 @@
           </template>
         </q-banner>
       </q-tab-panel>
-
     </q-tab-panels>
 
     <!-- Remove pack confirm dialog -->
     <q-dialog v-model="showRemoveDialog" persistent>
       <q-card style="min-width: 280px; max-width: 400px">
         <q-card-section>
-          <div class="text-body1 text-weight-medium text-negative q-mb-sm">Remove Content Pack?</div>
+          <div class="text-body1 text-weight-medium text-negative q-mb-sm">
+            Remove Content Pack?
+          </div>
           <div class="text-body2">
-            This deletes all questions from pack <strong>{{ packToRemove }}</strong> that have
-            not been edited by you. User-modified questions are kept.
+            This deletes all questions from pack <strong>{{ packToRemove }}</strong> that have not
+            been edited by you. User-modified questions are kept.
           </div>
         </q-card-section>
         <q-card-actions align="right" class="q-pb-md q-pr-md">
@@ -342,7 +375,6 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
-
   </q-page>
 </template>
 
@@ -385,12 +417,20 @@ const exportCount = computed(() => exportQuestions.value.length);
 
 function doAnkiExport() {
   downloadAnkiTsv(exportQuestions.value);
-  $q.notify({ type: 'positive', message: `Downloaded ${exportCount.value} questions as Anki TSV.`, timeout: 2000 });
+  $q.notify({
+    type: 'positive',
+    message: `Downloaded ${exportCount.value} questions as Anki TSV.`,
+    timeout: 2000,
+  });
 }
 
 // ── Anki Import ───────────────────────────────────────────────────────────────
 
-const ankiParseResult = ref<{ rows: ReturnType<typeof parseAnkiTsv>['rows']; skipped: number; errors: string[] } | null>(null);
+const ankiParseResult = ref<{
+  rows: ReturnType<typeof parseAnkiTsv>['rows'];
+  skipped: number;
+  errors: string[];
+} | null>(null);
 const ankiParsedJson = ref('');
 
 async function onAnkiFile(e: Event) {
@@ -425,7 +465,11 @@ async function loadNotesCount() {
 async function doNotesExport() {
   const notes = await localRepository.getAllCompetencyNotes();
   downloadNotesMarkdown(notes);
-  $q.notify({ type: 'positive', message: `Downloaded ${notes.length} notes as Markdown.`, timeout: 2000 });
+  $q.notify({
+    type: 'positive',
+    message: `Downloaded ${notes.length} notes as Markdown.`,
+    timeout: 2000,
+  });
 }
 
 // ── Content Packs ─────────────────────────────────────────────────────────────
@@ -443,7 +487,9 @@ const showRemoveDialog = ref(false);
 const packToRemove = ref('');
 
 const importedQuestions = computed(() =>
-  allQuestions.value.filter((q: Question) => q.sourceType === 'imported' || q.sourceType === 'ai-draft'),
+  allQuestions.value.filter(
+    (q: Question) => q.sourceType === 'imported' || q.sourceType === 'ai-draft',
+  ),
 );
 
 const packQuestionCount = computed(() => {
@@ -459,7 +505,11 @@ async function doPackExport() {
     const qs = packSubject.value
       ? importedQuestions.value.filter((q) => q.vmleSubject === packSubject.value)
       : importedQuestions.value;
-    const packId = packName.value.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    const packId = packName.value
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
     const authorVal = packAuthor.value.trim();
     const bundle = await buildBundle({
       packId,
@@ -468,7 +518,11 @@ async function doPackExport() {
       questions: qs,
     });
     downloadBundle(bundle);
-    $q.notify({ type: 'positive', message: `Exported ${qs.length} questions as content pack.`, timeout: 2000 });
+    $q.notify({
+      type: 'positive',
+      message: `Exported ${qs.length} questions as content pack.`,
+      timeout: 2000,
+    });
   } finally {
     packExporting.value = false;
   }

@@ -3,7 +3,10 @@
     <q-header elevated class="bg-primary">
       <q-toolbar style="min-height: 56px">
         <div class="dvmr-wordmark q-mr-sm" aria-hidden="true">VDM</div>
-        <q-toolbar-title class="text-weight-semibold" style="font-size: 1rem; letter-spacing: -0.01em">
+        <q-toolbar-title
+          class="text-weight-semibold"
+          style="font-size: 1rem; letter-spacing: -0.01em"
+        >
           Learn
         </q-toolbar-title>
 
@@ -38,12 +41,12 @@
         :class="$q.dark.isActive ? 'bg-grey-10 text-grey-4' : 'bg-white text-grey-7'"
         style="min-height: var(--dvmr-nav-height)"
       >
-        <q-route-tab icon="today"        label="Today"    to="/today"    />
-        <q-route-tab icon="menu_book"    label="Learn"    to="/lessons"  />
-        <q-route-tab icon="quiz"         label="Practice" to="/quiz"     :disable="!quizActive" />
-        <q-route-tab icon="image"        label="Visual"   to="/visual"   />
-        <q-route-tab icon="bar_chart"    label="Progress" to="/progress" />
-        <q-route-tab icon="more_horiz"   label="More"     to="/more"     />
+        <q-route-tab icon="today" label="Today" to="/today" />
+        <q-route-tab icon="menu_book" label="Learn" to="/lessons" />
+        <q-route-tab icon="quiz" label="Practice" to="/quiz" :disable="!quizActive" />
+        <q-route-tab icon="image" label="Visual" to="/visual" />
+        <q-route-tab icon="bar_chart" label="Progress" to="/progress" />
+        <q-route-tab icon="more_horiz" label="More" to="/more" />
       </q-tabs>
     </q-footer>
   </q-layout>

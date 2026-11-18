@@ -1,6 +1,5 @@
 <template>
   <q-page class="column items-stretch" style="max-width: 600px; margin: 0 auto">
-
     <!-- Header -->
     <div class="row items-center q-px-md q-pt-md q-pb-sm">
       <q-btn flat round dense icon="arrow_back" color="grey-7" @click="router.back()" />
@@ -29,7 +28,11 @@
       <q-space />
       <div class="q-pa-md">
         <q-btn
-          color="primary" label="Reveal Key Points" unelevated no-caps class="full-width"
+          color="primary"
+          label="Reveal Key Points"
+          unelevated
+          no-caps
+          class="full-width"
           style="min-height: 48px; border-radius: 8px; font-weight: 600"
           :disable="!userBlurt.trim()"
           @click="reveal"
@@ -45,7 +48,9 @@
           <q-card class="dvmr-card col" style="min-width: 0">
             <q-card-section class="q-py-sm">
               <div class="text-caption text-grey-5 q-mb-xs">Your blurt</div>
-              <div class="text-body2" style="white-space: pre-wrap; line-height: 1.65">{{ userBlurt }}</div>
+              <div class="text-body2" style="white-space: pre-wrap; line-height: 1.65">
+                {{ userBlurt }}
+              </div>
             </q-card-section>
           </q-card>
         </div>
@@ -74,7 +79,8 @@
             :label="s.label"
             :color="selectedScore === s.value ? s.color : 'grey-2'"
             :text-color="selectedScore === s.value ? 'white' : 'grey-7'"
-            unelevated no-caps
+            unelevated
+            no-caps
             class="col"
             style="min-height: 48px"
             @click="selectedScore = s.value"
@@ -84,7 +90,11 @@
 
       <div class="q-pa-md">
         <q-btn
-          color="primary" label="Done" unelevated no-caps class="full-width"
+          color="primary"
+          label="Done"
+          unelevated
+          no-caps
+          class="full-width"
           style="min-height: 48px; border-radius: 8px; font-weight: 600"
           :disable="selectedScore === null"
           :loading="saving"
@@ -101,8 +111,13 @@
         Self-score: <strong>{{ selectedScore }}/3</strong>
       </div>
       <div class="q-gutter-sm">
-        <q-btn color="primary" unelevated no-caps label="Back to Notes"
-          @click="router.push(`/notes/${encodeURIComponent(competencyId)}`)" />
+        <q-btn
+          color="primary"
+          unelevated
+          no-caps
+          label="Back to Notes"
+          @click="router.push(`/notes/${encodeURIComponent(competencyId)}`)"
+        />
         <q-btn outline color="primary" no-caps label="Blurt Again" @click="restart" />
       </div>
     </div>
@@ -138,7 +153,13 @@ const SCORES = [
 
 const placeholderNote: CompetencyNote = { competencyId: '', bodyMd: '', updatedAt: 0 };
 
-const note = computed(() => notesStore.getNote(competencyId.value) ?? { ...placeholderNote, competencyId: competencyId.value });
+const note = computed(
+  () =>
+    notesStore.getNote(competencyId.value) ?? {
+      ...placeholderNote,
+      competencyId: competencyId.value,
+    },
+);
 const prompt = computed(() => buildBlurtPrompt(note.value));
 
 onMounted(async () => {

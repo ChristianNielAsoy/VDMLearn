@@ -25,8 +25,22 @@ const minimalCase: CaseDef = {
       kind: 'decision',
       content: 'Make a decision',
       choices: [
-        { id: 'c1', label: 'Option A', next: 'n3', correct: true, points: 10, feedback: 'Correct!' },
-        { id: 'c2', label: 'Option B', next: 'n4', correct: false, points: 0, feedback: 'Incorrect.' },
+        {
+          id: 'c1',
+          label: 'Option A',
+          next: 'n3',
+          correct: true,
+          points: 10,
+          feedback: 'Correct!',
+        },
+        {
+          id: 'c2',
+          label: 'Option B',
+          next: 'n4',
+          correct: false,
+          points: 0,
+          feedback: 'Incorrect.',
+        },
       ],
     },
     {
@@ -75,7 +89,14 @@ describe('validateCase', () => {
           kind: 'decision',
           content: 'Decision',
           choices: [
-            { id: 'c1', label: 'Only option', next: 'n3', correct: true, points: 10, feedback: 'Ok' },
+            {
+              id: 'c1',
+              label: 'Only option',
+              next: 'n3',
+              correct: true,
+              points: 10,
+              feedback: 'Ok',
+            },
           ],
         },
         { ...minimalCase.nodes[2]! },

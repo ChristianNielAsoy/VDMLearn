@@ -30,7 +30,7 @@ export interface BloomPerformance {
   label: string;
   attempts: number;
   correct: number;
-  accuracy: number;    // 0–1; NaN when attempts === 0
+  accuracy: number; // 0–1; NaN when attempts === 0
   tosTargetPct: number; // from bloomTotals in TOS for the subject (0 if unknown)
 }
 

@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { detectLeeches, scoreItems, buildInterleaved, DEFAULT_LEECH_THRESHOLD } from '@/services/itemPriority';
+import {
+  detectLeeches,
+  scoreItems,
+  buildInterleaved,
+  DEFAULT_LEECH_THRESHOLD,
+} from '@/services/itemPriority';
 import type { ReviewEvent } from '@/types/review';
 import type { SrsProgress } from '@/types/progress';
 import type { Question } from '@/types/question';
@@ -10,38 +15,75 @@ const DAY = 86_400_000;
 
 function makeEvent(overrides: Partial<ReviewEvent> = {}): ReviewEvent {
   return {
-    objectId: 'q1', activityType: 'mcq', correct: true, rating: 3,
-    confidence: 2, responseMs: 3000, mode: 'competency', sessionId: 's1', ts: NOW - DAY,
+    objectId: 'q1',
+    activityType: 'mcq',
+    correct: true,
+    rating: 3,
+    confidence: 2,
+    responseMs: 3000,
+    mode: 'competency',
+    sessionId: 's1',
+    ts: NOW - DAY,
     ...overrides,
   };
 }
 
 function makeProgress(questionId: string, overrides: Partial<SrsProgress> = {}): SrsProgress {
   return {
-    questionId, attempts: 2, correct: 1, ease: 2.5, intervalDays: 7,
-    dueAt: NOW + DAY, lastSeenAt: NOW - 2 * DAY,
+    questionId,
+    attempts: 2,
+    correct: 1,
+    ease: 2.5,
+    intervalDays: 7,
+    dueAt: NOW + DAY,
+    lastSeenAt: NOW - 2 * DAY,
     ...overrides,
   };
 }
 
 function makeQ(id: string, subject: Question['vmleSubject'] = 'Veterinary Anatomy'): Question {
   return {
-    id, type: 'question', competencyIds: ['Veterinary Anatomy:A.1'],
-    courseRefs: [], links: [], origin: { type: 'ai-draft', ref: 'test' },
-    status: 'unverified', updatedAt: 0, version: 1, year: 2,
-    subject: 'Gross Anatomy', vmleSubject: subject,
+    id,
+    type: 'question',
+    competencyIds: ['Veterinary Anatomy:A.1'],
+    courseRefs: [],
+    links: [],
+    origin: { type: 'ai-draft', ref: 'test' },
+    status: 'unverified',
+    updatedAt: 0,
+    version: 1,
+    year: 2,
+    subject: 'Gross Anatomy',
+    vmleSubject: subject,
     competencyId: 'Veterinary Anatomy:A.1',
     stem: 'Which bone is the longest in the dog body?',
-    choices: [{ key: 'A', text: 'Femur' }, { key: 'B', text: 'Tibia' }, { key: 'C', text: 'Humerus' }, { key: 'D', text: 'Radius' }],
-    answer: 'A', explanation: 'Femur.', sourceType: 'ai-draft', source: 'test',
+    choices: [
+      { key: 'A', text: 'Femur' },
+      { key: 'B', text: 'Tibia' },
+      { key: 'C', text: 'Humerus' },
+      { key: 'D', text: 'Radius' },
+    ],
+    answer: 'A',
+    explanation: 'Femur.',
+    sourceType: 'ai-draft',
+    source: 'test',
   };
 }
 
 function makeCompetencyMap(): Map<string, CompetencyNode> {
-  return new Map([['Veterinary Anatomy:A.1', {
-    id: 'Veterinary Anatomy:A.1', subject: 'Veterinary Anatomy',
-    sectionId: 'A', text: 'Osteology', items: 5, examSharePct: 0.5,
-  }]]);
+  return new Map([
+    [
+      'Veterinary Anatomy:A.1',
+      {
+        id: 'Veterinary Anatomy:A.1',
+        subject: 'Veterinary Anatomy',
+        sectionId: 'A',
+        text: 'Osteology',
+        items: 5,
+        examSharePct: 0.5,
+      },
+    ],
+  ]);
 }
 
 // ── detectLeeches ──────────────────────────────────────────────────────────
@@ -69,7 +111,7 @@ describe('detectLeeches', () => {
 
   it('streak resets after a correct answer', () => {
     const events = [
-      makeEvent({ objectId: 'q1', correct: true,  ts: NOW - 5 * DAY }),
+      makeEvent({ objectId: 'q1', correct: true, ts: NOW - 5 * DAY }),
       makeEvent({ objectId: 'q1', correct: false, ts: NOW - 4 * DAY }),
       makeEvent({ objectId: 'q1', correct: false, ts: NOW - 3 * DAY }),
       makeEvent({ objectId: 'q1', correct: false, ts: NOW - 2 * DAY }),
@@ -84,15 +126,19 @@ describe('detectLeeches', () => {
       makeEvent({ objectId: 'q1', correct: false, ts: NOW - 4 * DAY }),
       makeEvent({ objectId: 'q1', correct: false, ts: NOW - 3 * DAY }),
       makeEvent({ objectId: 'q1', correct: false, ts: NOW - 2 * DAY }),
-      makeEvent({ objectId: 'q1', correct: true,  ts: NOW - DAY }),   // correct breaks streak
+      makeEvent({ objectId: 'q1', correct: true, ts: NOW - DAY }), // correct breaks streak
     ];
     expect(detectLeeches(events, 4).has('q1')).toBe(false);
   });
 
   it('flags multiple objects independently', () => {
     const events = [
-      ...Array.from({ length: 4 }, (_, i) => makeEvent({ objectId: 'q1', correct: false, ts: NOW - (i + 1) * DAY })),
-      ...Array.from({ length: 4 }, (_, i) => makeEvent({ objectId: 'q2', correct: false, ts: NOW - (i + 1) * DAY })),
+      ...Array.from({ length: 4 }, (_, i) =>
+        makeEvent({ objectId: 'q1', correct: false, ts: NOW - (i + 1) * DAY }),
+      ),
+      ...Array.from({ length: 4 }, (_, i) =>
+        makeEvent({ objectId: 'q2', correct: false, ts: NOW - (i + 1) * DAY }),
+      ),
     ];
     const leeches = detectLeeches(events);
     expect(leeches.has('q1')).toBe(true);
@@ -106,7 +152,13 @@ describe('scoreItems', () => {
   const competencyMap = makeCompetencyMap();
 
   it('returns empty when no questions', () => {
-    const result = scoreItems({ questions: [], allProgress: new Map(), reviewEvents: [], competencyMap, now: NOW });
+    const result = scoreItems({
+      questions: [],
+      allProgress: new Map(),
+      reviewEvents: [],
+      competencyMap,
+      now: NOW,
+    });
     expect(result).toHaveLength(0);
   });
 
@@ -114,10 +166,16 @@ describe('scoreItems', () => {
     const overdue = makeQ('overdue');
     const notDue = makeQ('not-due');
     const progress = new Map([
-      ['overdue', makeProgress('overdue', { dueAt: NOW - 3 * DAY })],  // overdue
-      ['not-due', makeProgress('not-due', { dueAt: NOW + 3 * DAY })],  // not yet due
+      ['overdue', makeProgress('overdue', { dueAt: NOW - 3 * DAY })], // overdue
+      ['not-due', makeProgress('not-due', { dueAt: NOW + 3 * DAY })], // not yet due
     ]);
-    const scored = scoreItems({ questions: [notDue, overdue], allProgress: progress, reviewEvents: [], competencyMap, now: NOW });
+    const scored = scoreItems({
+      questions: [notDue, overdue],
+      allProgress: progress,
+      reviewEvents: [],
+      competencyMap,
+      now: NOW,
+    });
     const overdueScore = scored.find((s) => s.question.id === 'overdue')!.score;
     const notDueScore = scored.find((s) => s.question.id === 'not-due')!.score;
     expect(overdueScore).toBeGreaterThan(notDueScore);
@@ -132,11 +190,21 @@ describe('scoreItems', () => {
     ]);
     const events: ReviewEvent[] = [
       // weak: many wrong answers
-      ...Array.from({ length: 5 }, (_, i) => makeEvent({ objectId: 'weak', correct: false, ts: NOW - (i + 1) * 1000 })),
+      ...Array.from({ length: 5 }, (_, i) =>
+        makeEvent({ objectId: 'weak', correct: false, ts: NOW - (i + 1) * 1000 }),
+      ),
       // strong: many correct answers
-      ...Array.from({ length: 5 }, (_, i) => makeEvent({ objectId: 'strong', correct: true, ts: NOW - (i + 1) * 1000 })),
+      ...Array.from({ length: 5 }, (_, i) =>
+        makeEvent({ objectId: 'strong', correct: true, ts: NOW - (i + 1) * 1000 }),
+      ),
     ];
-    const scored = scoreItems({ questions: [strong, weak], allProgress: progress, reviewEvents: events, competencyMap, now: NOW });
+    const scored = scoreItems({
+      questions: [strong, weak],
+      allProgress: progress,
+      reviewEvents: events,
+      competencyMap,
+      now: NOW,
+    });
     const weakScore = scored.find((s) => s.question.id === 'weak')!.score;
     const strongScore = scored.find((s) => s.question.id === 'strong')!.score;
     expect(weakScore).toBeGreaterThan(strongScore);
@@ -145,7 +213,11 @@ describe('scoreItems', () => {
   it('new items are capped by newItemBudget', () => {
     const questions = Array.from({ length: 10 }, (_, i) => makeQ(`new-${i}`));
     const scored = scoreItems({
-      questions, allProgress: new Map(), reviewEvents: [], competencyMap, now: NOW,
+      questions,
+      allProgress: new Map(),
+      reviewEvents: [],
+      competencyMap,
+      now: NOW,
       newItemBudget: 3,
     });
     expect(scored.filter((s) => s.isNew)).toHaveLength(3);
@@ -158,7 +230,13 @@ describe('scoreItems', () => {
       ['q2', makeProgress('q2', { dueAt: NOW - DAY })],
       ['q3', makeProgress('q3', { dueAt: NOW + 5 * DAY })],
     ]);
-    const scored = scoreItems({ questions, allProgress: progress, reviewEvents: [], competencyMap, now: NOW });
+    const scored = scoreItems({
+      questions,
+      allProgress: progress,
+      reviewEvents: [],
+      competencyMap,
+      now: NOW,
+    });
     for (let i = 0; i < scored.length - 1; i++) {
       expect(scored[i]!.score).toBeGreaterThanOrEqual(scored[i + 1]!.score);
     }
@@ -170,7 +248,13 @@ describe('scoreItems', () => {
     const events = Array.from({ length: 4 }, (_, i) =>
       makeEvent({ objectId: 'leech-q', correct: false, ts: NOW - (i + 1) * DAY }),
     );
-    const scored = scoreItems({ questions: [q], allProgress: progress, reviewEvents: events, competencyMap, now: NOW });
+    const scored = scoreItems({
+      questions: [q],
+      allProgress: progress,
+      reviewEvents: events,
+      competencyMap,
+      now: NOW,
+    });
     expect(scored[0]!.isLeech).toBe(true);
   });
 });
@@ -185,18 +269,29 @@ describe('buildInterleaved', () => {
   it('returns at most targetCount items', () => {
     const items = Array.from({ length: 20 }, (_, i) => ({
       question: makeQ(`q${i}`, 'Veterinary Anatomy'),
-      score: i, isNew: false, isOverdue: false, isWeak: false, isLeech: false,
+      score: i,
+      isNew: false,
+      isOverdue: false,
+      isWeak: false,
+      isLeech: false,
     }));
     expect(buildInterleaved(items, 5)).toHaveLength(5);
   });
 
   it('no two consecutive items share the same subject when multiple subjects available', () => {
-    const subjects: Question['vmleSubject'][] = ['Veterinary Anatomy', 'Veterinary Physiology', 'Zootechnics'];
+    const subjects: Question['vmleSubject'][] = [
+      'Veterinary Anatomy',
+      'Veterinary Physiology',
+      'Zootechnics',
+    ];
     const items = subjects.flatMap((subj, si) =>
       Array.from({ length: 4 }, (_, i) => ({
         question: makeQ(`${subj}-${i}`, subj),
         score: 10 - si,
-        isNew: false, isOverdue: false, isWeak: false, isLeech: false,
+        isNew: false,
+        isOverdue: false,
+        isWeak: false,
+        isLeech: false,
       })),
     );
     const result = buildInterleaved(items, 9);

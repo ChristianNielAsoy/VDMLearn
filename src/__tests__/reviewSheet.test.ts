@@ -9,7 +9,14 @@ const NOTE: CompetencyNote = {
 };
 
 const CLOZE_CARDS: ClozeCard[] = [
-  { id: 1, competencyId: 'Veterinary Anatomy:A.1', front: 'The _____ is the longest bone.', back: 'The femur is the longest bone.', source: 'note-highlight', createdAt: 1000 },
+  {
+    id: 1,
+    competencyId: 'Veterinary Anatomy:A.1',
+    front: 'The _____ is the longest bone.',
+    back: 'The femur is the longest bone.',
+    source: 'note-highlight',
+    createdAt: 1000,
+  },
 ];
 
 const MISTAKE_ENTRIES: MistakeEntry[] = [

@@ -244,7 +244,9 @@ describe('computeMastery', () => {
     });
 
     expect(report.overallReadiness).toBeGreaterThan(0);
-    expect(report.subjects[0]!.meetsSubjectMin).toBe(report.subjects[0]!.subjectMastery * 100 >= 60);
+    expect(report.subjects[0]!.meetsSubjectMin).toBe(
+      report.subjects[0]!.subjectMastery * 100 >= 60,
+    );
   });
 
   it('MASTERY_WEIGHTS sum to 1.0', () => {

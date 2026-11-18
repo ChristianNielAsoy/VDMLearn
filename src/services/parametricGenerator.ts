@@ -16,15 +16,26 @@ export function generateInstance(template: ParametricTemplate, seed?: number): P
   return { templateId: template.id, vars, answer };
 }
 
-export function checkAnswer(instance: ParametricInstance, template: ParametricTemplate, userAnswer: number): boolean {
+export function checkAnswer(
+  instance: ParametricInstance,
+  template: ParametricTemplate,
+  userAnswer: number,
+): boolean {
   return Math.abs(userAnswer - instance.answer) <= template.tolerance;
 }
 
-export function renderStem(template: ParametricTemplate, vars: Record<string, number | string>): string {
+export function renderStem(
+  template: ParametricTemplate,
+  vars: Record<string, number | string>,
+): string {
   return interpolate(template.stem, vars);
 }
 
-export function renderExplanation(template: ParametricTemplate, vars: Record<string, number>, answer: number): string {
+export function renderExplanation(
+  template: ParametricTemplate,
+  vars: Record<string, number>,
+  answer: number,
+): string {
   return interpolate(template.explanationTemplate, { ...vars, answer });
 }
 

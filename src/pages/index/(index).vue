@@ -9,7 +9,7 @@
         unelevated
         :options="[
           { label: 'By exam topic', value: 'exam', icon: 'assignment' },
-          { label: 'By my course',  value: 'course', icon: 'school' },
+          { label: 'By my course', value: 'course', icon: 'school' },
         ]"
         color="grey-2"
         text-color="grey-7"
@@ -48,10 +48,7 @@
         >
           <template #header>
             <q-item-section avatar style="min-width: 0; padding-right: 12px">
-              <span
-                class="subject-dot"
-                :style="{ background: subjectColor(subject.name) }"
-              />
+              <span class="subject-dot" :style="{ background: subjectColor(subject.name) }" />
             </q-item-section>
             <q-item-section>
               <q-item-label class="text-weight-semibold" style="font-size: 0.875rem">
@@ -59,7 +56,9 @@
               </q-item-label>
               <q-item-label caption class="text-grey-6">
                 {{ subject.examWeightPct }}% of exam &middot;
-                <span :class="countBySubject(subject.name) > 0 ? 'text-primary text-weight-medium' : ''">
+                <span
+                  :class="countBySubject(subject.name) > 0 ? 'text-primary text-weight-medium' : ''"
+                >
                   {{ countBySubject(subject.name) }} Qs
                 </span>
               </q-item-label>
@@ -97,19 +96,38 @@
                       </q-item-section>
                       <q-item-section side class="row items-center q-gutter-xs">
                         <q-btn
-                          flat round dense icon="hub" color="grey-4" size="xs"
+                          flat
+                          round
+                          dense
+                          icon="hub"
+                          color="grey-4"
+                          size="xs"
                           :aria-label="`Hub for ${section.id}.${topic.id}`"
                           @click.stop="openHub(`${subject.name}:${section.id}.${topic.id}`)"
                         />
                         <q-btn
-                          flat round dense icon="edit_note" color="grey-4" size="xs"
+                          flat
+                          round
+                          dense
+                          icon="edit_note"
+                          color="grey-4"
+                          size="xs"
                           :aria-label="`Notes for ${section.id}.${topic.id}`"
                           @click.stop="openNote(`${subject.name}:${section.id}.${topic.id}`)"
                         />
                         <q-chip
-                          dense size="sm"
-                          :color="countForCompetency(`${subject.name}:${section.id}.${topic.id}`) > 0 ? 'primary' : 'grey-2'"
-                          :text-color="countForCompetency(`${subject.name}:${section.id}.${topic.id}`) > 0 ? 'white' : 'grey-6'"
+                          dense
+                          size="sm"
+                          :color="
+                            countForCompetency(`${subject.name}:${section.id}.${topic.id}`) > 0
+                              ? 'primary'
+                              : 'grey-2'
+                          "
+                          :text-color="
+                            countForCompetency(`${subject.name}:${section.id}.${topic.id}`) > 0
+                              ? 'white'
+                              : 'grey-6'
+                          "
                           style="font-size: 0.7rem; height: 20px"
                         >
                           {{ countForCompetency(`${subject.name}:${section.id}.${topic.id}`) }} Q
@@ -122,7 +140,10 @@
                   <template v-else>
                     <q-item class="q-pl-xl" dense>
                       <q-item-section>
-                        <q-item-label class="text-caption text-grey-5 text-weight-medium" style="text-transform: uppercase; letter-spacing: 0.04em">
+                        <q-item-label
+                          class="text-caption text-grey-5 text-weight-medium"
+                          style="text-transform: uppercase; letter-spacing: 0.04em"
+                        >
                           {{ section.id }}.{{ topic.id }} {{ topic.text }}
                         </q-item-label>
                       </q-item-section>
@@ -143,19 +164,38 @@
                       </q-item-section>
                       <q-item-section side class="row items-center q-gutter-xs">
                         <q-btn
-                          flat round dense icon="hub" color="grey-4" size="xs"
+                          flat
+                          round
+                          dense
+                          icon="hub"
+                          color="grey-4"
+                          size="xs"
                           :aria-label="`Hub for ${section.id}.${sub.id}`"
                           @click.stop="openHub(`${subject.name}:${section.id}.${sub.id}`)"
                         />
                         <q-btn
-                          flat round dense icon="edit_note" color="grey-4" size="xs"
+                          flat
+                          round
+                          dense
+                          icon="edit_note"
+                          color="grey-4"
+                          size="xs"
                           :aria-label="`Notes for ${section.id}.${sub.id}`"
                           @click.stop="openNote(`${subject.name}:${section.id}.${sub.id}`)"
                         />
                         <q-chip
-                          dense size="sm"
-                          :color="countForCompetency(`${subject.name}:${section.id}.${sub.id}`) > 0 ? 'primary' : 'grey-2'"
-                          :text-color="countForCompetency(`${subject.name}:${section.id}.${sub.id}`) > 0 ? 'white' : 'grey-6'"
+                          dense
+                          size="sm"
+                          :color="
+                            countForCompetency(`${subject.name}:${section.id}.${sub.id}`) > 0
+                              ? 'primary'
+                              : 'grey-2'
+                          "
+                          :text-color="
+                            countForCompetency(`${subject.name}:${section.id}.${sub.id}`) > 0
+                              ? 'white'
+                              : 'grey-6'
+                          "
                           style="font-size: 0.7rem; height: 20px"
                         >
                           {{ countForCompetency(`${subject.name}:${section.id}.${sub.id}`) }} Q
@@ -239,7 +279,9 @@
 
         <div v-else class="text-center text-grey q-mt-xl q-py-xl">
           <q-icon name="school" size="3.5rem" color="grey-3" />
-          <div class="text-subtitle2 q-mt-md text-grey-6">Select a school to browse its curriculum</div>
+          <div class="text-subtitle2 q-mt-md text-grey-6">
+            Select a school to browse its curriculum
+          </div>
           <div class="text-caption text-grey-5 q-mt-xs">UPLB, CLSU, PSAU, or CHED sample</div>
         </div>
       </div>
@@ -273,15 +315,15 @@ onMounted(() => void questionStore.loadAll());
 
 // ── Subject color map ────────────────────────────────────────────────
 const SUBJECT_COLORS: Record<string, string> = {
-  'Veterinary Anatomy':                       '#6366f1',
-  'Veterinary Physiology':                    '#0ea5e9',
-  'Zootechnics':                              '#10b981',
-  'Veterinary Pathology':                     '#f43f5e',
-  'Veterinary Pharmacology':                  '#a855f7',
-  'Veterinary Medicine':                      '#3b82f6',
-  'Veterinary Microbiology and Public Health':'#f59e0b',
-  'Veterinary Parasitology':                  '#22c55e',
-  'Veterinary Surgery':                       '#ef4444',
+  'Veterinary Anatomy': '#6366f1',
+  'Veterinary Physiology': '#0ea5e9',
+  Zootechnics: '#10b981',
+  'Veterinary Pathology': '#f43f5e',
+  'Veterinary Pharmacology': '#a855f7',
+  'Veterinary Medicine': '#3b82f6',
+  'Veterinary Microbiology and Public Health': '#f59e0b',
+  'Veterinary Parasitology': '#22c55e',
+  'Veterinary Surgery': '#ef4444',
 };
 
 function subjectColor(name: string): string {

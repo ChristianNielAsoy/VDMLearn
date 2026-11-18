@@ -1,10 +1,10 @@
 <template>
   <q-page class="column" style="max-width: 720px; margin: 0 auto">
-
     <div class="q-px-md q-pt-md q-pb-sm">
       <div class="text-h6">Virtual Patient Cases</div>
       <div class="text-caption text-grey-6 q-mt-xs">
-        Work through clinical scenarios step by step. Make decisions, collect data, and reach a diagnosis.
+        Work through clinical scenarios step by step. Make decisions, collect data, and reach a
+        diagnosis.
       </div>
     </div>
 

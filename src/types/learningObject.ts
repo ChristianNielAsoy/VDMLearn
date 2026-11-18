@@ -19,13 +19,7 @@ export interface CourseRef {
 }
 
 export interface OriginInfo {
-  type:
-    | 'own-notes'
-    | 'ai-draft'
-    | 'open-reference'
-    | 'hand-written'
-    | 'content-pack'
-    | 'imported';
+  type: 'own-notes' | 'ai-draft' | 'open-reference' | 'hand-written' | 'content-pack' | 'imported';
   ref: string; // textbook+page, URL, or descriptive reference
 }
 

@@ -6,7 +6,8 @@ export const STEPPERS: StepperDef[] = [
     title: 'Toxoplasma gondii Life Cycle',
     competencyId: 'Veterinary Parasitology:B.4',
     description: 'Two-host life cycle of Toxoplasma gondii (Apicomplexa: Sarcocystidae).',
-    source: 'Urquhart GM et al. Veterinary Parasitology, 2nd ed. (Blackwell, 1996), Ch. 3; Merck Veterinary Manual.',
+    source:
+      'Urquhart GM et al. Veterinary Parasitology, 2nd ed. (Blackwell, 1996), Ch. 3; Merck Veterinary Manual.',
     steps: [
       {
         id: 'tx1',
@@ -18,7 +19,7 @@ export const STEPPERS: StepperDef[] = [
       {
         id: 'tx2',
         title: 'Enteroepithelial cycle in cat',
-        body: 'In the cat\'s small intestine enterocytes, the parasite undergoes several asexual generations (tachyzoite-like forms), followed by gametogony — macrogametocytes and microgametocytes form.',
+        body: "In the cat's small intestine enterocytes, the parasite undergoes several asexual generations (tachyzoite-like forms), followed by gametogony — macrogametocytes and microgametocytes form.",
         diagram: `flowchart LR
   B[Enteroepithelial stages] --> C[Macrogametes + Microgametes] --> D[Zygote → Oocyst]`,
       },
@@ -69,8 +70,9 @@ export const STEPPERS: StepperDef[] = [
     id: 'dirofilaria-life-cycle',
     title: 'Dirofilaria immitis Life Cycle (Heartworm)',
     competencyId: 'Veterinary Parasitology:A.3',
-    description: 'Life cycle of Dirofilaria immitis (Nematoda: Onchocercidae), the canine and feline heartworm.',
-    source: 'Bowman DD. Georgis\' Parasitology for Veterinarians, 11th ed. (Elsevier, 2021), Ch. 8.',
+    description:
+      'Life cycle of Dirofilaria immitis (Nematoda: Onchocercidae), the canine and feline heartworm.',
+    source: "Bowman DD. Georgis' Parasitology for Veterinarians, 11th ed. (Elsevier, 2021), Ch. 8.",
     steps: [
       {
         id: 'di1',
@@ -117,8 +119,10 @@ export const STEPPERS: StepperDef[] = [
     id: 'fmd-pathogenesis',
     title: 'Foot-and-Mouth Disease (FMD) Pathogenesis',
     competencyId: 'Veterinary Microbiology and Public Health:D.2',
-    description: 'Pathogenesis of Foot-and-Mouth Disease Virus (FMDV, Aphthovirus) in cloven-hoofed animals.',
-    source: 'Fenner FJ et al. Veterinary Virology, 2nd ed. (Academic Press, 1993); OIE Technical Disease Card.',
+    description:
+      'Pathogenesis of Foot-and-Mouth Disease Virus (FMDV, Aphthovirus) in cloven-hoofed animals.',
+    source:
+      'Fenner FJ et al. Veterinary Virology, 2nd ed. (Academic Press, 1993); OIE Technical Disease Card.',
     steps: [
       {
         id: 'fmd1',

@@ -66,5 +66,15 @@ export const useMistakeJournalStore = defineStore('mistakeJournal', () => {
     return byQuestion.value.get(questionId) ?? [];
   }
 
-  return { entries, loading, byQuestion, reasonCounts, load, addEntry, removeEntry, clearAll, getForQuestion };
+  return {
+    entries,
+    loading,
+    byQuestion,
+    reasonCounts,
+    load,
+    addEntry,
+    removeEntry,
+    clearAll,
+    getForQuestion,
+  };
 });

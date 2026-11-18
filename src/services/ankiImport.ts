@@ -14,15 +14,15 @@ function stripHtml(s: string): string {
 
 function normalizeVmleSubject(raw: string): VmleSubject | undefined {
   const map: Record<string, VmleSubject> = {
-    'veterinary_anatomy': 'Veterinary Anatomy',
-    'veterinary_physiology': 'Veterinary Physiology',
-    'zootechnics': 'Zootechnics',
-    'veterinary_pathology': 'Veterinary Pathology',
-    'veterinary_pharmacology': 'Veterinary Pharmacology',
-    'veterinary_medicine': 'Veterinary Medicine',
-    'veterinary_microbiology_and_public_health': 'Veterinary Microbiology and Public Health',
-    'veterinary_parasitology': 'Veterinary Parasitology',
-    'veterinary_surgery': 'Veterinary Surgery',
+    veterinary_anatomy: 'Veterinary Anatomy',
+    veterinary_physiology: 'Veterinary Physiology',
+    zootechnics: 'Zootechnics',
+    veterinary_pathology: 'Veterinary Pathology',
+    veterinary_pharmacology: 'Veterinary Pharmacology',
+    veterinary_medicine: 'Veterinary Medicine',
+    veterinary_microbiology_and_public_health: 'Veterinary Microbiology and Public Health',
+    veterinary_parasitology: 'Veterinary Parasitology',
+    veterinary_surgery: 'Veterinary Surgery',
   };
   const key = raw.toLowerCase().replace(/\s+/g, '_');
   return map[key];
@@ -40,7 +40,10 @@ export interface AnkiParseResult {
   errors: string[];
 }
 
-export interface AnkiImportQuestion extends Omit<Question, 'type' | 'competencyIds' | 'courseRefs' | 'links' | 'origin' | 'updatedAt' | 'version'> {
+export interface AnkiImportQuestion extends Omit<
+  Question,
+  'type' | 'competencyIds' | 'courseRefs' | 'links' | 'origin' | 'updatedAt' | 'version'
+> {
   type: 'question';
   competencyIds: string[];
   courseRefs: [];
@@ -89,7 +92,10 @@ function parseStructuredFront(plain: string): {
   stem: string;
   choices: Question['choices'];
 } | null {
-  const lines = plain.split('\n').map((l) => l.trim()).filter(Boolean);
+  const lines = plain
+    .split('\n')
+    .map((l) => l.trim())
+    .filter(Boolean);
 
   // Find indices of A./B./C./D. lines
   const choiceIndices: number[] = [];
@@ -126,16 +132,20 @@ function parseStructuredFront(plain: string): {
  * Looks for `Answer: X.` or `Answer: X` at the start of the text.
  */
 function parseAnswer(plain: string): { answer: ChoiceKey; explanation: string } | null {
-  const match = /^Answer:\s*([ABCD])\.?\s*(.*)/si.exec(plain.trim());
+  const match = /^Answer:\s*([ABCD])\.?\s*(.*)/is.exec(plain.trim());
   if (!match) return null;
   const answer = match[1] as ChoiceKey;
   const rest = (match[2] ?? '').trim();
   // Skip the answer-text line; explanation starts after the first blank line
   const lines = rest.split('\n');
   const blankIdx = lines.findIndex((l) => l.trim() === '');
-  const explanation = blankIdx >= 0
-    ? lines.slice(blankIdx + 1).join('\n').trim()
-    : rest;
+  const explanation =
+    blankIdx >= 0
+      ? lines
+          .slice(blankIdx + 1)
+          .join('\n')
+          .trim()
+      : rest;
   return { answer, explanation };
 }
 
@@ -161,12 +171,14 @@ export function ankiRowsToQuestions(rows: AnkiImportRow[]): AnkiImportQuestion[]
 
     // Try to get vmleSubject from tags
     const subjectTag = row.tags.find((t) => normalizeVmleSubject(t));
-    const vmleSubject: VmleSubject = (subjectTag ? normalizeVmleSubject(subjectTag) : undefined)
-      ?? 'Veterinary Medicine';
+    const vmleSubject: VmleSubject =
+      (subjectTag ? normalizeVmleSubject(subjectTag) : undefined) ?? 'Veterinary Medicine';
 
     // Try to get competencyId from tags (looks like Subject_A_1 → Subject:A.1)
     const compTag = row.tags.find((t) => /^[A-Za-z_]+_[A-Z]_\d/.test(t));
-    const competencyId = compTag ? compTag.replace(/_([A-Z]_)/, ':$1').replace(/_/g, '.') : `${vmleSubject}:A.1`;
+    const competencyId = compTag
+      ? compTag.replace(/_([A-Z]_)/, ':$1').replace(/_/g, '.')
+      : `${vmleSubject}:A.1`;
 
     const id = `anki-import-${Date.now()}-${i}`;
 

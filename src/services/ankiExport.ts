@@ -15,9 +15,7 @@ function toTag(s: string): string {
 }
 
 function buildFront(q: Question): string {
-  const choices = q.choices
-    .map((c) => `${c.key}. ${escHtml(c.text)}`)
-    .join('<br>');
+  const choices = q.choices.map((c) => `${c.key}. ${escHtml(c.text)}`).join('<br>');
   return `${escHtml(q.stem)}<br><br>${choices}`;
 }
 
@@ -28,11 +26,7 @@ function buildBack(q: Question): string {
 }
 
 function buildTags(q: Question): string {
-  const tags = [
-    'dvmreview',
-    toTag(q.vmleSubject),
-    toTag(q.competencyId),
-  ];
+  const tags = ['dvmreview', toTag(q.vmleSubject), toTag(q.competencyId)];
   return tags.join(' ');
 }
 

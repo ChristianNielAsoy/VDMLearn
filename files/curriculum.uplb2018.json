@@ -1,0 +1,519 @@
+{
+  "_meta": {
+    "school": "University of the Philippines Los Ba\u00f1os (UPLB), College of Veterinary Medicine",
+    "source": "2018-2019 Revised DVM Curriculum PDF (user-provided, from cvm.uplb.edu.ph), effective AY 2018-2019, total 221 units",
+    "verified": "Semester totals recomputed: Y1 17/20, Y2 20/19, Y3 21/18, Y4 21/17, Y5 19/20, Y6 14/15 = 221",
+    "note": "Year 6 column placement of VELD 161.1, VMED 156, VMED 200 inferred from the printed semester totals (14 and 15). vmleSubject tags are assumptions. Check UPLB for newer revisions.",
+    "geElectives": [
+      "MATH 10",
+      "SCIENCE 11",
+      "HUM 3",
+      "SOSC 3",
+      "PHLO 1",
+      "PHILARTS 1",
+      "SCIENCE 10",
+      "SAS 1",
+      "WIKA 1"
+    ]
+  },
+  "program": {
+    "1": {
+      "1": [
+        {
+          "code": "ETHICS 1",
+          "name": "Ethics and Moral Reasoning in Everyday Life",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "KAS 1/HIST 1",
+          "name": "Kasaysayan ng Pilipinas/Philippine History",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "PI 10",
+          "name": "Life and Works of Jose Rizal",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "VMED 101",
+          "name": "Animal Welfare",
+          "units": 3,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "code": "CHEM 18",
+          "name": "University Chemistry",
+          "units": 3,
+          "vmleSubject": "basic-science"
+        },
+        {
+          "code": "CHEM 18.1",
+          "name": "University Chemistry Lab",
+          "units": 2,
+          "vmleSubject": "basic-science"
+        },
+        {
+          "code": "NSTP 1",
+          "name": "ROTC/LTS/CWTS",
+          "units": 3,
+          "vmleSubject": "general-education",
+          "note": "non-credit (units in brackets on form, not counted in total)"
+        },
+        {
+          "code": "HK 11",
+          "name": "Concepts in Wellness and Basic Injury Management",
+          "units": 2,
+          "vmleSubject": "general-education",
+          "note": "non-credit (units in brackets on form, not counted in total)"
+        }
+      ],
+      "2": [
+        {
+          "code": "STS 1",
+          "name": "Science, Technology and Society",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "ARTS 1",
+          "name": "Critical Perspectives in the Arts",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "GE ELECTIVE 1",
+          "name": "Elective GE 1",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "CHEM 40",
+          "name": "Basic Organic Chemistry",
+          "units": 4,
+          "vmleSubject": "basic-science"
+        },
+        {
+          "code": "CHEM 40.1",
+          "name": "Basic Organic Chemistry Lab",
+          "units": 1,
+          "vmleSubject": "basic-science"
+        },
+        {
+          "code": "STAT 164",
+          "name": "Statistics for the Biological Sciences",
+          "units": 3,
+          "vmleSubject": "basic-science"
+        },
+        {
+          "code": "ZOTC 111",
+          "name": "General Principles of Animal Production",
+          "units": 3,
+          "vmleSubject": "Zootechnics"
+        },
+        {
+          "code": "NSTP 2",
+          "name": "ROTC/LTS/CWTS",
+          "units": 3,
+          "vmleSubject": "general-education",
+          "note": "non-credit (units in brackets on form, not counted in total)"
+        },
+        {
+          "code": "HK 12",
+          "name": "Human Kinetics Activities",
+          "units": 2,
+          "vmleSubject": "general-education",
+          "note": "non-credit (units in brackets on form, not counted in total)"
+        }
+      ]
+    },
+    "2": {
+      "1": [
+        {
+          "code": "GE ELECTIVE 2",
+          "name": "Elective GE 2",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "GE ELECTIVE 3",
+          "name": "Elective GE 3",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "ABME 10",
+          "name": "Foundations of Entrepreneurship",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "ZOTC 112",
+          "name": "Principles of Animal Breeding",
+          "units": 3,
+          "vmleSubject": "Zootechnics"
+        },
+        {
+          "code": "CHEM 160",
+          "name": "Introductory Biochemistry",
+          "units": 3,
+          "vmleSubject": "basic-science"
+        },
+        {
+          "code": "VPHY 140",
+          "name": "Biochemical Aspects of Animal Processes",
+          "units": 2,
+          "vmleSubject": "Physiology"
+        },
+        {
+          "code": "ZOTC 113",
+          "name": "Principles of Animal Nutrition",
+          "units": 3,
+          "vmleSubject": "Zootechnics"
+        },
+        {
+          "code": "HK 12/13",
+          "name": "Human Kinetics Activities",
+          "units": 2,
+          "vmleSubject": "general-education",
+          "note": "non-credit (units in brackets on form, not counted in total)"
+        }
+      ],
+      "2": [
+        {
+          "code": "COMM 10",
+          "name": "Critical Perspectives in Communication",
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "VETA 101",
+          "name": "Macroscopic Anatomy I",
+          "units": 5,
+          "vmleSubject": "Anatomy"
+        },
+        {
+          "code": "VETA 105",
+          "name": "Microscopic and Developmental Anatomy I",
+          "units": 3,
+          "vmleSubject": "Anatomy"
+        },
+        {
+          "code": "VMCB 121",
+          "name": "General Microbiology",
+          "units": 4,
+          "vmleSubject": "Microbiology and Public Health"
+        },
+        {
+          "code": "VPHY 141",
+          "name": "General Physiology",
+          "units": 4,
+          "vmleSubject": "Physiology"
+        },
+        {
+          "code": "HK 12/13",
+          "name": "Human Kinetics Activities",
+          "units": 2,
+          "vmleSubject": "general-education",
+          "note": "non-credit (units in brackets on form, not counted in total)"
+        }
+      ]
+    },
+    "3": {
+      "1": [
+        {
+          "code": "VETA 102",
+          "name": "Macroscopic Anatomy II",
+          "units": 4,
+          "vmleSubject": "Anatomy"
+        },
+        {
+          "code": "VETA 106",
+          "name": "Microscopic and Developmental Anatomy II",
+          "units": 4,
+          "vmleSubject": "Anatomy"
+        },
+        {
+          "code": "VMCB 122",
+          "name": "Veterinary Bacteriology and Mycology",
+          "units": 3,
+          "vmleSubject": "Microbiology and Public Health"
+        },
+        {
+          "code": "VPHY 142",
+          "name": "Systemic Physiology",
+          "units": 4,
+          "vmleSubject": "Physiology"
+        },
+        {
+          "code": "ZOTC 114",
+          "name": "Swine Production",
+          "units": 3,
+          "vmleSubject": "Zootechnics"
+        },
+        {
+          "code": "ZOTC 115",
+          "name": "Ruminant Production",
+          "units": 3,
+          "vmleSubject": "Zootechnics"
+        }
+      ],
+      "2": [
+        {
+          "code": "VMCB 123",
+          "name": "Veterinary Virology",
+          "units": 3,
+          "vmleSubject": "Microbiology and Public Health"
+        },
+        {
+          "code": "VPAR 131",
+          "name": "Veterinary Entomology and Protozoology",
+          "units": 4,
+          "vmleSubject": "Parasitology"
+        },
+        {
+          "code": "VPHM 141",
+          "name": "Veterinary Pharmacology and Therapeutics I",
+          "units": 4,
+          "vmleSubject": "Pharmacology"
+        },
+        {
+          "code": "VPTH 121",
+          "name": "General Pathology",
+          "units": 4,
+          "vmleSubject": "Pathology"
+        },
+        {
+          "code": "ZOTC 116",
+          "name": "Poultry Production",
+          "units": 3,
+          "vmleSubject": "Zootechnics"
+        }
+      ]
+    },
+    "4": {
+      "1": [
+        {
+          "code": "VMCB 124",
+          "name": "Fundamentals of Immunology",
+          "units": 2,
+          "vmleSubject": "Microbiology and Public Health"
+        },
+        {
+          "code": "VPAR 132",
+          "name": "Veterinary Helminthology",
+          "units": 4,
+          "vmleSubject": "Parasitology"
+        },
+        {
+          "code": "VPH 121",
+          "name": "Epidemiology",
+          "units": 3,
+          "vmleSubject": "Microbiology and Public Health"
+        },
+        {
+          "code": "VPHM 142",
+          "name": "Veterinary Pharmacology and Therapeutics II",
+          "units": 4,
+          "vmleSubject": "Pharmacology"
+        },
+        {
+          "code": "VPTH 122",
+          "name": "Systemic Pathology",
+          "units": 3,
+          "vmleSubject": "Pathology"
+        },
+        {
+          "code": "ZOTC 117",
+          "name": "Equine Production",
+          "units": 2,
+          "vmleSubject": "Zootechnics"
+        },
+        {
+          "code": "ZOTC 119",
+          "name": "Husbandry and Health Management of Laboratory Animals",
+          "units": 3,
+          "vmleSubject": "Zootechnics"
+        }
+      ],
+      "2": [
+        {
+          "code": "VMED 151",
+          "name": "General Principles of Veterinary Medicine",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "code": "VMED 195",
+          "name": "Research Methods in Veterinary Medicine",
+          "units": 3,
+          "vmleSubject": "basic-science"
+        },
+        {
+          "code": "VPH 122",
+          "name": "Zoonoses",
+          "units": 2,
+          "vmleSubject": "Microbiology and Public Health"
+        },
+        {
+          "code": "VPTH 123",
+          "name": "Clinical Pathology",
+          "units": 3,
+          "vmleSubject": "Pathology"
+        },
+        {
+          "code": "VPHY 143",
+          "name": "Veterinary Endocrinology and Reproductive Physiology",
+          "units": 4,
+          "vmleSubject": "Physiology"
+        },
+        {
+          "code": "VSUR 151",
+          "name": "Principles of Surgery and Anesthesiology",
+          "units": 3,
+          "vmleSubject": "Surgery"
+        }
+      ]
+    },
+    "5": {
+      "1": [
+        {
+          "code": "VSUR 154",
+          "name": "Veterinary Diagnostic Imaging",
+          "units": 2,
+          "vmleSubject": "Surgery"
+        },
+        {
+          "code": "VETC 171",
+          "name": "Introduction to Clinics",
+          "units": 2,
+          "vmleSubject": "clinics"
+        },
+        {
+          "code": "VMED 152",
+          "name": "Canine and Feline Medicine",
+          "units": 4,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "code": "VMED 162",
+          "name": "Poultry Medicine",
+          "units": 3,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "code": "VPH 123",
+          "name": "Food Hygiene",
+          "units": 4,
+          "vmleSubject": "Microbiology and Public Health"
+        },
+        {
+          "code": "VSUR 152",
+          "name": "Small Animal Surgery",
+          "units": 4,
+          "vmleSubject": "Surgery"
+        }
+      ],
+      "2": [
+        {
+          "code": "VETC 172",
+          "name": "Clinical Clerkship",
+          "units": 2,
+          "vmleSubject": "clinics"
+        },
+        {
+          "code": "VMED 155",
+          "name": "Theriogenology",
+          "units": 3,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "code": "VMED 161",
+          "name": "Equine Medicine",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "code": "VMED 163",
+          "name": "Ruminant Medicine",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "code": "VMED 164",
+          "name": "Swine Medicine",
+          "units": 3,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "code": "VMED 165",
+          "name": "Aquatic and Wildlife Medicine",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "code": "VSUR 153",
+          "name": "Large Animal Surgery",
+          "units": 3,
+          "vmleSubject": "Surgery"
+        },
+        {
+          "code": "VMED 200",
+          "name": "Undergraduate Thesis",
+          "units": 3,
+          "vmleSubject": "clinics"
+        }
+      ]
+    },
+    "6": {
+      "1": [
+        {
+          "code": "VETC 173",
+          "name": "Clinical Conference I",
+          "units": 1,
+          "vmleSubject": "clinics"
+        },
+        {
+          "code": "VETC 175",
+          "name": "Clinical Internship I",
+          "units": 6,
+          "vmleSubject": "clinics"
+        },
+        {
+          "code": "VELD 161.1",
+          "name": "Laboratory Diagnostics in Veterinary Medicine",
+          "units": 2,
+          "vmleSubject": "clinics"
+        },
+        {
+          "code": "VMED 156",
+          "name": "Jurisprudence, Ethics and Economics",
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine"
+        },
+        {
+          "code": "VMED 200",
+          "name": "Undergraduate Thesis",
+          "units": 3,
+          "vmleSubject": "clinics"
+        }
+      ],
+      "2": [
+        {
+          "code": "VETC 174",
+          "name": "Clinical Conference II",
+          "units": 1,
+          "vmleSubject": "clinics"
+        },
+        {
+          "code": "VETC 176",
+          "name": "Clinical Internship II",
+          "units": 14,
+          "vmleSubject": "clinics"
+        }
+      ]
+    }
+  }
+}

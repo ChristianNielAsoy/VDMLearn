@@ -54,3 +54,13 @@ npm audit           # 0 high or critical vulnerabilities
 - [ ] Export backup → `version: 2`, `flags`, `reviewEvents`, `contentPacks` keys present in JSON
 - [ ] Import a v1 backup file (no `flags`/`reviewEvents`/`contentPacks` keys) → accepted without error, summary shown
 - [ ] Dexie upgrade test: open DevTools IndexedDB on a v6 database (pre-M1), reload app → version jumps to v8; `importedQuestions` rows have `competencyIds` array populated
+
+## V2 Evidence Alignment (manual verification)
+
+- [ ] Answer a question with "Confidence tap before answer" ON (default) → confidence buttons appear BEFORE feedback is revealed; answer is not shown until a confidence level is tapped
+- [ ] Answer a question with "Confidence tap before answer" OFF → confidence panel appears AFTER feedback (post-answer fallback position)
+- [ ] Answer a question incorrectly with confidence 3 (high) → at session end the item reappears in the queue; check IndexedDB `progress` row: `dueAt` is tomorrow (≥ 24 h from now)
+- [ ] On the finish screen with ≥ 1 missed question → "Retry missed" button is visible; tapping it re-runs only the missed items
+- [ ] Enable "Self-explanation prompt" in Settings → after each answer a "Why is this the answer?" textarea appears; type text and submit; open Notes for the competency → entry appears prefixed with today's date
+- [ ] Toggle "Mix new-material sessions" ON in Settings → quiz sessions interleave items across subjects; OFF → items drawn in category order
+- [ ] Go to Settings → Data → "Export usage log" → `.json` file downloads; open it → `exportedAt` timestamp and `entries` array present; entries include `feature_open`, `session_start`, `session_end` kinds

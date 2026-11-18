@@ -1,0 +1,1232 @@
+[
+  {
+    "id": "rum-001",
+    "year": 2,
+    "vmleSubject": "Zootechnics",
+    "competencyId": "Zootechnics:B.1",
+    "stem": "Which compartment of the ruminant stomach is the glandular (true) stomach that secretes HCl and pepsinogen?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Rumen"
+      },
+      {
+        "key": "B",
+        "text": "Reticulum"
+      },
+      {
+        "key": "C",
+        "text": "Abomasum"
+      },
+      {
+        "key": "D",
+        "text": "Omasum"
+      }
+    ],
+    "answer": "C",
+    "explanation": "The abomasum is the only glandular compartment; the first three are forestomachs lined with non-glandular epithelium.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary physiology or animal nutrition text, digestive chapter (lesson-rum-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "rum-002",
+    "year": 2,
+    "vmleSubject": "Zootechnics",
+    "competencyId": "Zootechnics:B.1",
+    "stem": "Which volatile fatty acid is the main precursor for glucose synthesis in the liver of ruminants?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Propionate"
+      },
+      {
+        "key": "B",
+        "text": "Acetate"
+      },
+      {
+        "key": "C",
+        "text": "Butyrate"
+      },
+      {
+        "key": "D",
+        "text": "Lactate"
+      }
+    ],
+    "answer": "A",
+    "explanation": "Propionate is absorbed from the rumen and converted to glucose by hepatic gluconeogenesis. Acetate mainly supports fat synthesis; butyrate is largely converted to ketone bodies by the rumen wall; lactate is not a VFA.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary physiology or animal nutrition text, digestive chapter (lesson-rum-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "rum-003",
+    "year": 2,
+    "vmleSubject": "Zootechnics",
+    "competencyId": "Zootechnics:B.1",
+    "stem": "A cow suddenly eats a large amount of grain. Which change in the rumen is most likely?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Rumen pH rises because saliva output increases"
+      },
+      {
+        "key": "B",
+        "text": "Cellulose digestion increases"
+      },
+      {
+        "key": "C",
+        "text": "Rumination increases because more coarse fiber is eaten"
+      },
+      {
+        "key": "D",
+        "text": "Rapid fermentation of starch lowers the rumen pH (acidosis)"
+      }
+    ],
+    "answer": "D",
+    "explanation": "Rapidly fermentable starch produces acids faster than the rumen can buffer them, so pH falls and cellulose-digesting microbes are suppressed.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary physiology or animal nutrition text, digestive chapter (lesson-rum-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "rum-004",
+    "year": 2,
+    "vmleSubject": "Zootechnics",
+    "competencyId": "Zootechnics:B.1",
+    "stem": "A cow swallows a nail. In which compartment is the object most likely to lodge?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Rumen (dorsal sac)"
+      },
+      {
+        "key": "B",
+        "text": "Reticulum"
+      },
+      {
+        "key": "C",
+        "text": "Omasum"
+      },
+      {
+        "key": "D",
+        "text": "Abomasum"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Heavy foreign bodies settle in the reticulum, whose honeycomb lining and contractions can drive them through the wall (hardware disease).",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary physiology or animal nutrition text, digestive chapter (lesson-rum-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "rum-005",
+    "year": 2,
+    "vmleSubject": "Zootechnics",
+    "competencyId": "Zootechnics:B.1",
+    "stem": "In a suckling calf, milk bypasses the undeveloped rumen and reaches the abomasum because of the:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Pyloric sphincter"
+      },
+      {
+        "key": "B",
+        "text": "Reticulo-omasal orifice"
+      },
+      {
+        "key": "C",
+        "text": "Cardiac sphincter"
+      },
+      {
+        "key": "D",
+        "text": "Esophageal groove reflex"
+      }
+    ],
+    "answer": "D",
+    "explanation": "Suckling closes the esophageal (reticular) groove, channeling milk directly to the abomasum.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary physiology or animal nutrition text, digestive chapter (lesson-rum-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "rum-006",
+    "year": 2,
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:B.1",
+    "stem": "Which animal is classified as a hind-gut fermenter?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Horse"
+      },
+      {
+        "key": "B",
+        "text": "Goat"
+      },
+      {
+        "key": "C",
+        "text": "Cow"
+      },
+      {
+        "key": "D",
+        "text": "Sheep"
+      }
+    ],
+    "answer": "A",
+    "explanation": "The horse ferments fiber in the cecum and colon. Goats, cattle and sheep are ruminant foregut fermenters.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary physiology or animal nutrition text, digestive chapter (lesson-rum-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "epi-001",
+    "year": 4,
+    "vmleSubject": "Veterinary Microbiology and Public Health",
+    "competencyId": "Veterinary Microbiology and Public Health:G.3",
+    "stem": "In a herd of 500 cattle, 30 animals have brucellosis on the survey day. The prevalence is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3%"
+      },
+      {
+        "key": "B",
+        "text": "6%"
+      },
+      {
+        "key": "C",
+        "text": "30%"
+      },
+      {
+        "key": "D",
+        "text": "60%"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Prevalence = existing cases / population = 30/500 = 6%.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary epidemiology text or your biostatistics notes; recompute the numbers yourself (lesson-epi-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "epi-002",
+    "year": 4,
+    "vmleSubject": "Veterinary Microbiology and Public Health",
+    "competencyId": "Veterinary Microbiology and Public Health:G.3",
+    "stem": "A farm has 400 healthy pigs at the start of the month and 20 become sick during the month. The cumulative incidence is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "5%"
+      },
+      {
+        "key": "B",
+        "text": "20%"
+      },
+      {
+        "key": "C",
+        "text": "0.5%"
+      },
+      {
+        "key": "D",
+        "text": "8%"
+      }
+    ],
+    "answer": "A",
+    "explanation": "Cumulative incidence = new cases / animals at risk at the start = 20/400 = 5%.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary epidemiology text or your biostatistics notes; recompute the numbers yourself (lesson-epi-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "epi-003",
+    "year": 4,
+    "vmleSubject": "Veterinary Microbiology and Public Health",
+    "competencyId": "Veterinary Microbiology and Public Health:G.3",
+    "stem": "Of 150 animals that developed a disease, 12 died of it. The case fatality rate is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1.2%"
+      },
+      {
+        "key": "B",
+        "text": "8%"
+      },
+      {
+        "key": "C",
+        "text": "12%"
+      },
+      {
+        "key": "D",
+        "text": "80%"
+      }
+    ],
+    "answer": "B",
+    "explanation": "CFR = deaths from the disease / cases x 100 = 12/150 x 100 = 8%.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary epidemiology text or your biostatistics notes; recompute the numbers yourself (lesson-epi-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "epi-004",
+    "year": 4,
+    "vmleSubject": "Veterinary Microbiology and Public Health",
+    "competencyId": "Veterinary Microbiology and Public Health:G.3",
+    "stem": "In a cohort study, 30 of 100 exposed animals and 10 of 100 unexposed animals became sick. The relative risk is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0.33"
+      },
+      {
+        "key": "B",
+        "text": "2.0"
+      },
+      {
+        "key": "C",
+        "text": "3.0"
+      },
+      {
+        "key": "D",
+        "text": "20"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Risk in exposed 0.30; risk in unexposed 0.10; RR = 0.30/0.10 = 3.0. (20 would be the attributable risk in percentage points.)",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary epidemiology text or your biostatistics notes; recompute the numbers yourself (lesson-epi-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "epi-005",
+    "year": 4,
+    "vmleSubject": "Veterinary Microbiology and Public Health",
+    "competencyId": "Veterinary Microbiology and Public Health:G.3",
+    "stem": "A test detects 72 of the 80 truly diseased animals in a group. Its sensitivity is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "72%"
+      },
+      {
+        "key": "B",
+        "text": "80%"
+      },
+      {
+        "key": "C",
+        "text": "90%"
+      },
+      {
+        "key": "D",
+        "text": "10%"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Sensitivity = TP/(TP+FN) = 72/80 = 90%.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary epidemiology text or your biostatistics notes; recompute the numbers yourself (lesson-epi-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "epi-006",
+    "year": 4,
+    "vmleSubject": "Veterinary Microbiology and Public Health",
+    "competencyId": "Veterinary Microbiology and Public Health:G.3",
+    "stem": "A highly sensitive test gives a negative result in an animal. Which statement is best supported?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Disease is certain"
+      },
+      {
+        "key": "B",
+        "text": "Prevalence must be high"
+      },
+      {
+        "key": "C",
+        "text": "Disease is unlikely (the test helps rule disease out)"
+      },
+      {
+        "key": "D",
+        "text": "The test must have many false positives"
+      }
+    ],
+    "answer": "C",
+    "explanation": "A highly sensitive test has few false negatives, so a negative result is reassuring (SnNout).",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary epidemiology text or your biostatistics notes; recompute the numbers yourself (lesson-epi-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "epi-007",
+    "year": 4,
+    "vmleSubject": "Veterinary Microbiology and Public Health",
+    "competencyId": "Veterinary Microbiology and Public Health:G.3",
+    "stem": "If a test's sensitivity and specificity stay the same but disease prevalence in the tested group falls, the positive predictive value will:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Rise"
+      },
+      {
+        "key": "B",
+        "text": "Fall"
+      },
+      {
+        "key": "C",
+        "text": "Stay the same"
+      },
+      {
+        "key": "D",
+        "text": "Equal the specificity"
+      }
+    ],
+    "answer": "B",
+    "explanation": "PPV depends on prevalence: with fewer truly diseased animals, a larger share of positives are false positives.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary epidemiology text or your biostatistics notes; recompute the numbers yourself (lesson-epi-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "dose-001",
+    "year": 3,
+    "vmleSubject": "Veterinary Pharmacology",
+    "competencyId": "Veterinary Pharmacology:A.3",
+    "stem": "A 33-lb dog needs 'Drug X' at 4 mg/kg. The stock is 20 mg/mL. How many mL are given? (Use 1 kg = 2.2 lb; practice values only.)",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1.5 mL"
+      },
+      {
+        "key": "B",
+        "text": "3 mL"
+      },
+      {
+        "key": "C",
+        "text": "6 mL"
+      },
+      {
+        "key": "D",
+        "text": "12 mL"
+      }
+    ],
+    "answer": "B",
+    "explanation": "33/2.2 = 15 kg; 15 x 4 = 60 mg; 60/20 = 3 mL.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: your pharmacology course notes and a dosage-calculation reference. All numbers here are practice values, not clinical doses (lesson-dose-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "dose-002",
+    "year": 3,
+    "vmleSubject": "Veterinary Pharmacology",
+    "competencyId": "Veterinary Pharmacology:A.3",
+    "stem": "A 1% (w/v) solution contains how many mg of drug per mL?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1 mg"
+      },
+      {
+        "key": "B",
+        "text": "10 mg"
+      },
+      {
+        "key": "C",
+        "text": "100 mg"
+      },
+      {
+        "key": "D",
+        "text": "0.1 mg"
+      }
+    ],
+    "answer": "B",
+    "explanation": "1% = 1 g per 100 mL = 1,000 mg/100 mL = 10 mg/mL.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: your pharmacology course notes and a dosage-calculation reference. All numbers here are practice values, not clinical doses (lesson-dose-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "dose-003",
+    "year": 3,
+    "vmleSubject": "Veterinary Pharmacology",
+    "competencyId": "Veterinary Pharmacology:A.3",
+    "stem": "How many mL of a 2% solution contain 150 mg of drug?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0.75 mL"
+      },
+      {
+        "key": "B",
+        "text": "3 mL"
+      },
+      {
+        "key": "C",
+        "text": "7.5 mL"
+      },
+      {
+        "key": "D",
+        "text": "75 mL"
+      }
+    ],
+    "answer": "C",
+    "explanation": "2% = 20 mg/mL; 150/20 = 7.5 mL.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: your pharmacology course notes and a dosage-calculation reference. All numbers here are practice values, not clinical doses (lesson-dose-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "dose-004",
+    "year": 3,
+    "vmleSubject": "Veterinary Pharmacology",
+    "competencyId": "Veterinary Pharmacology:A.3",
+    "stem": "You need 100 mL of a 5% solution and have a 50% stock. You should mix:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "5 mL stock + 95 mL diluent"
+      },
+      {
+        "key": "B",
+        "text": "10 mL stock + 90 mL diluent"
+      },
+      {
+        "key": "C",
+        "text": "50 mL stock + 50 mL diluent"
+      },
+      {
+        "key": "D",
+        "text": "25 mL stock + 75 mL diluent"
+      }
+    ],
+    "answer": "B",
+    "explanation": "C1V1 = C2V2: V1 = (5 x 100)/50 = 10 mL stock, then add diluent to 100 mL (90 mL).",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: your pharmacology course notes and a dosage-calculation reference. All numbers here are practice values, not clinical doses (lesson-dose-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "dose-005",
+    "year": 3,
+    "vmleSubject": "Veterinary Surgery",
+    "competencyId": "Veterinary Surgery:A.2.4",
+    "stem": "A 20-kg dog is estimated to be 8% dehydrated. The estimated fluid deficit is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0.16 L"
+      },
+      {
+        "key": "B",
+        "text": "0.8 L"
+      },
+      {
+        "key": "C",
+        "text": "1.6 L"
+      },
+      {
+        "key": "D",
+        "text": "8 L"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Deficit (L) = body weight (kg) x % dehydration as a decimal = 20 x 0.08 = 1.6 L.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: your pharmacology course notes and a dosage-calculation reference. All numbers here are practice values, not clinical doses (lesson-dose-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "dose-006",
+    "year": 3,
+    "vmleSubject": "Veterinary Pharmacology",
+    "competencyId": "Veterinary Pharmacology:B.4",
+    "stem": "What is the purpose of a drug withdrawal period in food animals?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "To let the drug reach peak plasma concentration"
+      },
+      {
+        "key": "B",
+        "text": "To prevent parasite resistance"
+      },
+      {
+        "key": "C",
+        "text": "To let residues in meat or milk fall below the safe limit before human consumption"
+      },
+      {
+        "key": "D",
+        "text": "To rest the animal after treatment"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Withdrawal periods protect consumers by allowing tissue and milk residues to decline to acceptable levels.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: your pharmacology course notes and a dosage-calculation reference. All numbers here are practice values, not clinical doses (lesson-dose-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "dose-007",
+    "year": 3,
+    "vmleSubject": "Veterinary Pharmacology",
+    "competencyId": "Veterinary Pharmacology:B.4",
+    "stem": "Which statement about withdrawal periods is correct?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "They can differ, and the product label states each one"
+      },
+      {
+        "key": "B",
+        "text": "Milk withholding time and slaughter withdrawal time are always equal"
+      },
+      {
+        "key": "C",
+        "text": "They apply only to antibiotics"
+      },
+      {
+        "key": "D",
+        "text": "They end when clinical signs stop"
+      }
+    ],
+    "answer": "A",
+    "explanation": "Milk and meat periods are set separately for each product; always read the label.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: your pharmacology course notes and a dosage-calculation reference. All numbers here are practice values, not clinical doses (lesson-dose-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "cell-001",
+    "year": 2,
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:A.1",
+    "stem": "Which organelle is the main site of ATP production?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Golgi apparatus"
+      },
+      {
+        "key": "B",
+        "text": "Lysosome"
+      },
+      {
+        "key": "C",
+        "text": "Smooth endoplasmic reticulum"
+      },
+      {
+        "key": "D",
+        "text": "Mitochondrion"
+      }
+    ],
+    "answer": "D",
+    "explanation": "Mitochondria carry out aerobic respiration and make most of the cell's ATP.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general biology text and a veterinary physiology text; proportions vary by species and age (lesson-cell-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "cell-002",
+    "year": 2,
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:A.1",
+    "stem": "Which organelle modifies and packages proteins for secretion?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Ribosome"
+      },
+      {
+        "key": "B",
+        "text": "Golgi apparatus"
+      },
+      {
+        "key": "C",
+        "text": "Peroxisome"
+      },
+      {
+        "key": "D",
+        "text": "Nucleolus"
+      }
+    ],
+    "answer": "B",
+    "explanation": "The Golgi apparatus modifies, sorts and packages proteins and lipids.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general biology text and a veterinary physiology text; proportions vary by species and age (lesson-cell-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "cell-003",
+    "year": 2,
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:A.2",
+    "stem": "Each cycle of the Na+/K+-ATPase moves:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2 Na+ out and 3 K+ in"
+      },
+      {
+        "key": "B",
+        "text": "3 Na+ out and 2 K+ in"
+      },
+      {
+        "key": "C",
+        "text": "3 Na+ in and 2 K+ out"
+      },
+      {
+        "key": "D",
+        "text": "1 Na+ out and 1 K+ in"
+      }
+    ],
+    "answer": "B",
+    "explanation": "The pump exports 3 Na+ and imports 2 K+ per ATP, keeping Na+ high outside and K+ high inside.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general biology text and a veterinary physiology text; proportions vary by species and age (lesson-cell-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "cell-004",
+    "year": 2,
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:A.2",
+    "stem": "Red blood cells are placed in a hypertonic solution. What happens?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "They swell and burst"
+      },
+      {
+        "key": "B",
+        "text": "They stay the same size"
+      },
+      {
+        "key": "C",
+        "text": "They divide"
+      },
+      {
+        "key": "D",
+        "text": "They shrink (crenate)"
+      }
+    ],
+    "answer": "D",
+    "explanation": "Water leaves the cells by osmosis toward the higher solute concentration outside, so they shrink.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general biology text and a veterinary physiology text; proportions vary by species and age (lesson-cell-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "cell-005",
+    "year": 2,
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:A.3",
+    "stem": "Which compartment holds the largest share of total body water?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Intracellular fluid"
+      },
+      {
+        "key": "B",
+        "text": "Plasma"
+      },
+      {
+        "key": "C",
+        "text": "Interstitial fluid"
+      },
+      {
+        "key": "D",
+        "text": "Transcellular fluid"
+      }
+    ],
+    "answer": "A",
+    "explanation": "Intracellular fluid is about two thirds of body water (roughly 40% of body weight).",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general biology text and a veterinary physiology text; proportions vary by species and age (lesson-cell-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "cell-006",
+    "year": 2,
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:A.3",
+    "stem": "Which pair of ions is most abundant in extracellular fluid?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "K+ and phosphate"
+      },
+      {
+        "key": "B",
+        "text": "Na+ and Cl-"
+      },
+      {
+        "key": "C",
+        "text": "Mg2+ and protein"
+      },
+      {
+        "key": "D",
+        "text": "Ca2+ and K+"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Na+ and Cl- dominate the ECF; K+, phosphate and proteins dominate the ICF.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general biology text and a veterinary physiology text; proportions vary by species and age (lesson-cell-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "fas-001",
+    "year": 4,
+    "vmleSubject": "Veterinary Parasitology",
+    "competencyId": "Veterinary Parasitology:C.3",
+    "stem": "Which stage of Fasciola is infective to the ruminant host?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Miracidium"
+      },
+      {
+        "key": "B",
+        "text": "Cercaria free in water"
+      },
+      {
+        "key": "C",
+        "text": "Metacercaria on vegetation"
+      },
+      {
+        "key": "D",
+        "text": "Redia"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Cercariae leave the snail and encyst on plants as metacercariae, which the grazing host swallows.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary parasitology text and local Philippine references (lesson-fas-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "fas-002",
+    "year": 4,
+    "vmleSubject": "Veterinary Parasitology",
+    "competencyId": "Veterinary Parasitology:C.3",
+    "stem": "The intermediate host of Fasciola hepatica is a:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Ixodid tick"
+      },
+      {
+        "key": "B",
+        "text": "Lymnaeid snail"
+      },
+      {
+        "key": "C",
+        "text": "Mosquito"
+      },
+      {
+        "key": "D",
+        "text": "Dung beetle"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Fasciola uses freshwater snails of the family Lymnaeidae.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary parasitology text and local Philippine references (lesson-fas-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "fas-003",
+    "year": 4,
+    "vmleSubject": "Veterinary Parasitology",
+    "competencyId": "Veterinary Parasitology:C.1",
+    "stem": "Which description fits Fasciola eggs in a fecal sample?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Small and thin-shelled with polar filaments"
+      },
+      {
+        "key": "B",
+        "text": "Thick-walled with a spiny shell"
+      },
+      {
+        "key": "C",
+        "text": "Large, operculated and yellow-brown"
+      },
+      {
+        "key": "D",
+        "text": "Oval with an internal hooked embryo"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Fluke eggs are large, operculated and yellow-brown.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary parasitology text and local Philippine references (lesson-fas-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "fas-004",
+    "year": 4,
+    "vmleSubject": "Veterinary Parasitology",
+    "competencyId": "Veterinary Parasitology:C.6",
+    "stem": "Which fecal technique is the usual choice for detecting heavy, operculated fluke eggs?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Sedimentation"
+      },
+      {
+        "key": "B",
+        "text": "Simple flotation in a light solution"
+      },
+      {
+        "key": "C",
+        "text": "Direct smear only"
+      },
+      {
+        "key": "D",
+        "text": "Baermann technique"
+      }
+    ],
+    "answer": "A",
+    "explanation": "Fluke eggs are heavy and may not float well, so sedimentation is standard. The Baermann technique recovers larvae (e.g., lungworm).",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary parasitology text and local Philippine references (lesson-fas-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "fas-005",
+    "year": 4,
+    "vmleSubject": "Veterinary Parasitology",
+    "competencyId": "Veterinary Parasitology:C.5",
+    "stem": "Submandibular edema ('bottle jaw') in a chronically infected cow is mainly due to:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Hyperproteinemia"
+      },
+      {
+        "key": "B",
+        "text": "Polycythemia"
+      },
+      {
+        "key": "C",
+        "text": "Hypercalcemia"
+      },
+      {
+        "key": "D",
+        "text": "Hypoalbuminemia"
+      }
+    ],
+    "answer": "D",
+    "explanation": "Chronic blood-feeding and bile duct damage lower plasma albumin, allowing fluid to collect in dependent tissues.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary parasitology text and local Philippine references (lesson-fas-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "fas-006",
+    "year": 4,
+    "vmleSubject": "Veterinary Parasitology",
+    "competencyId": "Veterinary Parasitology:C.7",
+    "stem": "Which measure most directly interrupts the Fasciola life cycle on pasture?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Increasing stocking rate"
+      },
+      {
+        "key": "B",
+        "text": "Draining or fencing off wet snail habitats"
+      },
+      {
+        "key": "C",
+        "text": "Feeding more concentrate"
+      },
+      {
+        "key": "D",
+        "text": "Mixing species on the same paddock"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Removing snail habitat breaks the link between eggs and infective metacercariae.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a veterinary parasitology text and local Philippine references (lesson-fas-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "gen-001",
+    "year": 0,
+    "vmleSubject": "Zootechnics",
+    "competencyId": "Zootechnics:A.2",
+    "stem": "Two heterozygous (Aa) animals are mated. What fraction of offspring will be aa?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0"
+      },
+      {
+        "key": "B",
+        "text": "1/4"
+      },
+      {
+        "key": "C",
+        "text": "1/2"
+      },
+      {
+        "key": "D",
+        "text": "3/4"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Aa x Aa gives 1 AA : 2 Aa : 1 aa, so 1/4 are aa.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general genetics text and an animal breeding text; redo each cross yourself (lesson-gen-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "gen-002",
+    "year": 0,
+    "vmleSubject": "Zootechnics",
+    "competencyId": "Zootechnics:A.2",
+    "stem": "An animal with the dominant phenotype is mated to a homozygous recessive. About half of the offspring show the recessive trait. The unknown parent's genotype is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "AA"
+      },
+      {
+        "key": "B",
+        "text": "aa"
+      },
+      {
+        "key": "C",
+        "text": "Aa"
+      },
+      {
+        "key": "D",
+        "text": "Cannot be determined"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Recessive offspring show the unknown parent carries a recessive allele; the 1:1 ratio fits Aa x aa.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general genetics text and an animal breeding text; redo each cross yourself (lesson-gen-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "gen-003",
+    "year": 0,
+    "vmleSubject": "Zootechnics",
+    "competencyId": "Zootechnics:A.2",
+    "stem": "In AaBb x AaBb (independent assortment, complete dominance), what proportion of offspring show both dominant traits?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1/16"
+      },
+      {
+        "key": "B",
+        "text": "3/16"
+      },
+      {
+        "key": "C",
+        "text": "9/16"
+      },
+      {
+        "key": "D",
+        "text": "3/4"
+      }
+    ],
+    "answer": "C",
+    "explanation": "The dihybrid ratio is 9:3:3:1; 9/16 show both dominant phenotypes.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general genetics text and an animal breeding text; redo each cross yourself (lesson-gen-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "gen-004",
+    "year": 0,
+    "vmleSubject": "Zootechnics",
+    "competencyId": "Zootechnics:A.2",
+    "stem": "In chickens a non-barred male (ZbZb) is mated to a barred female (ZBW). The chicks will be:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Barred males and non-barred females"
+      },
+      {
+        "key": "B",
+        "text": "All barred"
+      },
+      {
+        "key": "C",
+        "text": "Non-barred males and barred females"
+      },
+      {
+        "key": "D",
+        "text": "All non-barred"
+      }
+    ],
+    "answer": "A",
+    "explanation": "Sons receive ZB from the mother (barred); daughters receive Zb from the father and W from the mother (non-barred).",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general genetics text and an animal breeding text; redo each cross yourself (lesson-gen-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "gen-005",
+    "year": 0,
+    "vmleSubject": "Zootechnics",
+    "competencyId": "Zootechnics:A.3",
+    "stem": "Heritability of a trait is 0.30 and the selection differential is 5 units. The expected response per generation is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0.6 units"
+      },
+      {
+        "key": "B",
+        "text": "1.5 units"
+      },
+      {
+        "key": "C",
+        "text": "3.5 units"
+      },
+      {
+        "key": "D",
+        "text": "16.7 units"
+      }
+    ],
+    "answer": "B",
+    "explanation": "R = h2 x S = 0.30 x 5 = 1.5.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general genetics text and an animal breeding text; redo each cross yourself (lesson-gen-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "gen-006",
+    "year": 0,
+    "vmleSubject": "Zootechnics",
+    "competencyId": "Zootechnics:A.3",
+    "stem": "Heterosis is expected to be greatest for traits with:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "High heritability"
+      },
+      {
+        "key": "B",
+        "text": "No genetic variation"
+      },
+      {
+        "key": "C",
+        "text": "Low heritability"
+      },
+      {
+        "key": "D",
+        "text": "Only qualitative inheritance"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Low-heritability traits (e.g., fertility) respond poorly to selection but show the largest hybrid vigor.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general genetics text and an animal breeding text; redo each cross yourself (lesson-gen-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "acid-005",
+    "year": 2,
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:B.7",
+    "stem": "Prolonged diarrhea with loss of bicarbonate leads to:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Respiratory acidosis"
+      },
+      {
+        "key": "B",
+        "text": "Metabolic acidosis"
+      },
+      {
+        "key": "C",
+        "text": "Metabolic alkalosis"
+      },
+      {
+        "key": "D",
+        "text": "Respiratory alkalosis"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Losing HCO3- lowers the base side of the bicarbonate buffer, causing metabolic acidosis.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general chemistry text (pH, buffers) and a veterinary physiology text (acid-base) (lesson-acid-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "acid-006",
+    "year": 2,
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:B.7",
+    "stem": "In metabolic acidosis, the expected respiratory compensation is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Hypoventilation that raises PCO2"
+      },
+      {
+        "key": "B",
+        "text": "Hyperventilation that lowers PCO2"
+      },
+      {
+        "key": "C",
+        "text": "No change in ventilation"
+      },
+      {
+        "key": "D",
+        "text": "Immediate renal retention of HCO3-"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Low pH stimulates breathing; blowing off CO2 shifts the ratio back toward normal.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general chemistry text (pH, buffers) and a veterinary physiology text (acid-base) (lesson-acid-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "acid-007",
+    "year": 2,
+    "vmleSubject": "Veterinary Physiology",
+    "competencyId": "Veterinary Physiology:B.7",
+    "stem": "Using pH = 6.1 + log[HCO3-/(0.03 x PCO2)], blood with HCO3- 24 mmol/L and PCO2 40 mmHg has a pH of about:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "7.10"
+      },
+      {
+        "key": "B",
+        "text": "7.22"
+      },
+      {
+        "key": "C",
+        "text": "7.40"
+      },
+      {
+        "key": "D",
+        "text": "7.60"
+      }
+    ],
+    "answer": "C",
+    "explanation": "24/(0.03 x 40) = 20; log 20 = 1.30; 6.1 + 1.30 = 7.40.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general chemistry text (pH, buffers) and a veterinary physiology text (acid-base) (lesson-acid-001)",
+    "status": "unverified"
+  }
+]

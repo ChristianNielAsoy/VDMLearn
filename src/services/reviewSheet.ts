@@ -20,7 +20,11 @@ export interface ReviewSheet {
   competencyId: string;
   note: CompetencyNote;
   stats: ReviewSheetStats;
-  wikiLinks: { competencyId: string; displayText: string; resolved: { subject: string; text: string } | null }[];
+  wikiLinks: {
+    competencyId: string;
+    displayText: string;
+    resolved: { subject: string; text: string } | null;
+  }[];
   clozeCards: ClozeCard[];
 }
 
@@ -52,10 +56,7 @@ function computeStats(
       ? blurtSessions.reduce((s, b) => s + b.selfScore, 0) / blurtSessions.length
       : null;
 
-  const lastBlurtAt =
-    blurtSessions.length > 0
-      ? Math.max(...blurtSessions.map((b) => b.ts))
-      : null;
+  const lastBlurtAt = blurtSessions.length > 0 ? Math.max(...blurtSessions.map((b) => b.ts)) : null;
 
   const mistakeReasons: Record<string, number> = {};
   for (const e of mistakeEntries) {
@@ -120,7 +121,9 @@ export function exportReviewSheetAsMarkdown(sheet: ReviewSheet): string {
     lines.push('## Linked Competencies');
     lines.push('');
     for (const link of sheet.wikiLinks) {
-      const label = link.resolved ? `${link.displayText} — ${link.resolved.text}` : `${link.displayText} [?]`;
+      const label = link.resolved
+        ? `${link.displayText} — ${link.resolved.text}`
+        : `${link.displayText} [?]`;
       lines.push(`- ${link.competencyId}: ${label}`);
     }
     lines.push('');

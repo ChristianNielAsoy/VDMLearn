@@ -1,6 +1,5 @@
 <template>
   <q-page class="column" style="max-width: 600px; margin: 0 auto">
-
     <div class="row items-center q-px-md q-pt-md q-pb-sm">
       <q-btn flat round dense icon="arrow_back" color="grey-7" @click="router.back()" />
       <div class="col q-ml-sm">
@@ -19,7 +18,6 @@
     </div>
 
     <div v-else class="q-pa-md column q-gutter-md">
-
       <!-- Disclaimer -->
       <q-banner rounded dense class="text-caption bg-amber-1 text-amber-9">
         <template #avatar><q-icon name="warning" color="amber-7" /></template>
@@ -49,7 +47,11 @@
           </div>
         </div>
         <q-btn
-          unelevated no-caps color="primary" label="Calculate" class="q-mt-md full-width"
+          unelevated
+          no-caps
+          color="primary"
+          label="Calculate"
+          class="q-mt-md full-width"
           @click="compute"
         />
       </q-card>
@@ -63,7 +65,9 @@
               <div class="col text-body2">{{ r.label }}</div>
               <div class="text-h6 text-primary text-weight-bold">
                 {{ isFinite(r.value) ? r.value : '∞' }}
-                <span class="text-caption text-grey-6 text-weight-regular q-ml-xs">{{ r.unit }}</span>
+                <span class="text-caption text-grey-6 text-weight-regular q-ml-xs">{{
+                  r.unit
+                }}</span>
               </div>
             </div>
             <div class="text-caption text-grey-5 q-mt-xs">{{ r.formula }}</div>

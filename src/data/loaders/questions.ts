@@ -3,8 +3,16 @@ import type { OriginInfo } from '@/types/learningObject';
 import sampleRaw from '../questions/sample.json';
 import { localRepository } from '@/db/repository';
 
-type RawQuestion = Omit<Question, 'type' | 'competencyIds' | 'courseRefs' | 'links' | 'origin' | 'updatedAt' | 'version'> &
-  Partial<Pick<Question, 'type' | 'competencyIds' | 'courseRefs' | 'links' | 'origin' | 'updatedAt' | 'version'>>;
+type RawQuestion = Omit<
+  Question,
+  'type' | 'competencyIds' | 'courseRefs' | 'links' | 'origin' | 'updatedAt' | 'version'
+> &
+  Partial<
+    Pick<
+      Question,
+      'type' | 'competencyIds' | 'courseRefs' | 'links' | 'origin' | 'updatedAt' | 'version'
+    >
+  >;
 
 // Synthesize M1 LearningObject base fields that may be absent in seed JSON
 // or pre-v8 DB rows. Called by the loader and by getImportedQuestions().

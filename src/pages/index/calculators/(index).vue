@@ -2,8 +2,8 @@
   <q-page class="q-pa-md" style="max-width: 600px; margin: 0 auto">
     <div class="text-h6 q-mb-xs">Calculators</div>
     <div class="text-caption text-grey-6 q-mb-md">
-      Study aid only — not a substitute for clinical judgement.
-      Formulas shown with every result; verify source before use.
+      Study aid only — not a substitute for clinical judgement. Formulas shown with every result;
+      verify source before use.
     </div>
 
     <q-banner rounded dense class="text-caption bg-amber-1 text-amber-9 q-mb-md">
@@ -49,11 +49,11 @@ const calculators = ALL_CALCULATORS;
 
 function calcIcon(id: string): string {
   const icons: Record<string, string> = {
-    'drug-dose':     'vaccines',
+    'drug-dose': 'vaccines',
     'fluid-therapy': 'water_drop',
-    'pearson-square':'agriculture',
-    'epi-2x2':       'biotech',
-    'epi-odds':      'bar_chart',
+    'pearson-square': 'agriculture',
+    'epi-2x2': 'biotech',
+    'epi-odds': 'bar_chart',
   };
   return icons[id] ?? 'calculate';
 }

@@ -1,6 +1,5 @@
 <template>
   <q-page class="column" style="max-width: 720px; margin: 0 auto">
-
     <q-tabs
       v-model="activeTab"
       dense
@@ -10,12 +9,11 @@
       class="q-px-md"
       style="border-bottom: 1px solid var(--dvmr-border)"
     >
-      <q-tab name="diagrams"  label="Diagrams"    no-caps />
+      <q-tab name="diagrams" label="Diagrams" no-caps />
       <q-tab name="lifecycles" label="Life Cycles" no-caps />
     </q-tabs>
 
     <q-tab-panels v-model="activeTab" animated class="col">
-
       <!-- ── Hotspot Diagrams ───────────────────────────────── -->
       <q-tab-panel name="diagrams" class="q-pa-md">
         <div class="text-caption text-grey-6 q-mb-md">
@@ -36,7 +34,9 @@
               </q-item-section>
               <q-item-section>
                 <q-item-label class="text-body2 text-weight-medium">{{ d.title }}</q-item-label>
-                <q-item-label caption class="text-grey-6">{{ d.regions.length }} labeled structures</q-item-label>
+                <q-item-label caption class="text-grey-6"
+                  >{{ d.regions.length }} labeled structures</q-item-label
+                >
               </q-item-section>
               <q-item-section side>
                 <div class="row q-gutter-xs">
@@ -66,19 +66,15 @@
 
         <q-card v-else class="dvmr-card">
           <q-list separator>
-            <q-item
-              v-for="s in steppers"
-              :key="s.id"
-              clickable
-              v-ripple
-              @click="activeStepper = s"
-            >
+            <q-item v-for="s in steppers" :key="s.id" clickable v-ripple @click="activeStepper = s">
               <q-item-section avatar>
                 <q-icon name="loop" color="primary" />
               </q-item-section>
               <q-item-section>
                 <q-item-label class="text-body2 text-weight-medium">{{ s.title }}</q-item-label>
-                <q-item-label caption class="text-grey-6">{{ s.steps.length }} steps · {{ s.description }}</q-item-label>
+                <q-item-label caption class="text-grey-6"
+                  >{{ s.steps.length }} steps · {{ s.description }}</q-item-label
+                >
               </q-item-section>
               <q-item-section side>
                 <q-icon name="chevron_right" color="grey-4" />

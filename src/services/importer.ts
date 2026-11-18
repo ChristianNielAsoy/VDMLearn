@@ -42,12 +42,16 @@ const QuestionSchema = z.object({
   competencyId: z.string().min(1, 'competencyId is required'),
   // M1 LearningObject fields — accepted but not required (synthesized if absent)
   competencyIds: z.array(z.string()).optional(),
-  courseRefs: z.array(z.object({
-    school: z.enum(['UPLB', 'CLSU', 'PSAU', 'CHED']),
-    year: z.number(),
-    semester: z.number(),
-    courseName: z.string(),
-  })).optional(),
+  courseRefs: z
+    .array(
+      z.object({
+        school: z.enum(['UPLB', 'CLSU', 'PSAU', 'CHED']),
+        year: z.number(),
+        semester: z.number(),
+        courseName: z.string(),
+      }),
+    )
+    .optional(),
   links: z.array(z.string()).optional(),
   origin: z.object({ type: OriginTypeSchema, ref: z.string() }).optional(),
   updatedAt: z.number().optional(),
@@ -106,7 +110,11 @@ export function validateImport(raw: unknown): ImportResult {
   for (let i = 0; i < items.length; i++) {
     const result = QuestionSchema.safeParse(items[i]);
     if (result.success) {
-      valid.push(hydrateLearningObjectFields({ ...result.data, status: 'unverified' } as Parameters<typeof hydrateLearningObjectFields>[0]));
+      valid.push(
+        hydrateLearningObjectFields({ ...result.data, status: 'unverified' } as Parameters<
+          typeof hydrateLearningObjectFields
+        >[0]),
+      );
     } else {
       const idHint =
         typeof items[i] === 'object' && items[i] !== null && 'id' in (items[i] as object)

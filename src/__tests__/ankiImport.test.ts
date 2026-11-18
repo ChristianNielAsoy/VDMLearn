@@ -91,12 +91,16 @@ describe('ankiRowsToQuestions', () => {
   });
 
   it('uses front as stem when no structured choices', () => {
-    const qs = ankiRowsToQuestions([{ front: 'Simple question text', back: 'Answer text', tags: [] }]);
+    const qs = ankiRowsToQuestions([
+      { front: 'Simple question text', back: 'Answer text', tags: [] },
+    ]);
     expect(qs[0]?.stem).toBe('Simple question text');
   });
 
   it('extracts vmleSubject from tag if recognisable', () => {
-    const qs = ankiRowsToQuestions([{ front: 'Q', back: 'A', tags: ['dvmreview', 'Veterinary_Physiology'] }]);
+    const qs = ankiRowsToQuestions([
+      { front: 'Q', back: 'A', tags: ['dvmreview', 'Veterinary_Physiology'] },
+    ]);
     expect(qs[0]?.vmleSubject).toBe('Veterinary Physiology');
   });
 });

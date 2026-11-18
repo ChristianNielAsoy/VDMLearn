@@ -33,26 +33,26 @@ export interface CompetencyMastery {
   subject: VmleSubject;
   examSharePct: number;
   tosItems: number;
-  recentAccuracy: number;   // 0–1; NaN when no events in window
-  memoryStrength: number;   // 0–1
-  coverage: number;         // 0–1
-  mastery: number;          // weighted composite 0–1
+  recentAccuracy: number; // 0–1; NaN when no events in window
+  memoryStrength: number; // 0–1
+  coverage: number; // 0–1
+  mastery: number; // weighted composite 0–1
 }
 
 export interface SubjectReadiness {
   subject: VmleSubject;
   examWeightPct: number;
   competencyMasteries: CompetencyMastery[];
-  subjectMastery: number;      // TOS-items-weighted avg of competency mastery
-  meetsSubjectMin: boolean;    // subjectMastery*100 >= passRuleSubjectMinPct
+  subjectMastery: number; // TOS-items-weighted avg of competency mastery
+  meetsSubjectMin: boolean; // subjectMastery*100 >= passRuleSubjectMinPct
 }
 
 export interface ReadinessReport {
-  overallReadiness: number;      // 0–1
+  overallReadiness: number; // 0–1
   meetsOverall: boolean;
   subjects: SubjectReadiness[];
   generatedAt: number;
-  isEstimate: true;              // literal — always present; must appear in UI
+  isEstimate: true; // literal — always present; must appear in UI
 }
 
 export interface MasteryInput {
@@ -60,10 +60,10 @@ export interface MasteryInput {
   allProgress: SrsProgress[];
   allQuestions: Question[];
   competencies: CompetencyNode[];
-  passRuleOverallPct: number;    // default 75
+  passRuleOverallPct: number; // default 75
   passRuleSubjectMinPct: number; // default 60
   now?: number;
-  recentWindowDays?: number;     // default 30
+  recentWindowDays?: number; // default 30
 }
 
 // ── Core pure functions ────────────────────────────────────────────────────
@@ -74,10 +74,7 @@ export interface MasteryInput {
  * FSRS: R = exp(ln(0.9) * elapsed / stability)  [9/10 retrievability at scheduled day]
  * Returns 0 for new items (no progress or interval=0).
  */
-export function computeMemoryStrength(
-  progress: SrsProgress | undefined,
-  now: number,
-): number {
+export function computeMemoryStrength(progress: SrsProgress | undefined, now: number): number {
   if (!progress) return 0;
   const elapsedDays = Math.max(0, (now - progress.lastSeenAt) / 86_400_000);
 

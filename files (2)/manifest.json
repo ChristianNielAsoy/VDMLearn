@@ -1,0 +1,127 @@
+{
+  "packId": "pack-001",
+  "version": "1.0.0",
+  "schemaVersion": 1,
+  "createdAt": "2026-11-18",
+  "status": "unverified",
+  "description": "Author-draft starter pack: 7 lessons, 4 diagrams, 55 questions",
+  "counts": {
+    "lessons": 7,
+    "diagrams": 4,
+    "questions": 55
+  },
+  "files": [
+    {
+      "path": "library/pre-dvm/biochemistry/questions/biochemistry.questions.json",
+      "type": "questions",
+      "sha256": "4d7c08e2c25b12d5285c422fa651d31bb89b26cbbf21ae530c136997d146918e"
+    },
+    {
+      "path": "library/pre-dvm/general-chemistry/lessons/lesson-acid-001.md",
+      "type": "lesson",
+      "sha256": "3b643b3cd2180b5211a1ae5479a24d21fb0efce343e34050c3bb5c6a0233488d"
+    },
+    {
+      "path": "library/pre-dvm/general-chemistry/questions/general-chemistry.questions.json",
+      "type": "questions",
+      "sha256": "fe21946eb2f1c748285116bd26d8f94fbd44193da8f8476c25c82ca9ba073333"
+    },
+    {
+      "path": "library/pre-dvm/organic-chemistry/questions/organic-chemistry.questions.json",
+      "type": "questions",
+      "sha256": "8276dcec5d5529d907c7bd869304babae0c9251378e0d7edd6deeedf45f3acbc"
+    },
+    {
+      "path": "library/pre-dvm/statistics/questions/statistics.questions.json",
+      "type": "questions",
+      "sha256": "a721f834becfc6556a1c51093bf3ca6aafe58e3a8fefc93e628ecdc483d96903"
+    },
+    {
+      "path": "library/vmle/microbiology-public-health/diagrams/diagnostic_2x2.svg",
+      "type": "diagram",
+      "sha256": "19ab1bb3188b385a9ba940b76c098cad3f545be29de221388764b68dedce3f18"
+    },
+    {
+      "path": "library/vmle/microbiology-public-health/lessons/lesson-epi-001.md",
+      "type": "lesson",
+      "sha256": "b7a2a22445415619818a58742ed4514d02952604554ab3572b8f80daa6618082"
+    },
+    {
+      "path": "library/vmle/microbiology-public-health/questions/microbiology-public-health.questions.json",
+      "type": "questions",
+      "sha256": "a247b9325d2c6a11800a4db5eb7c6cb93b444b98b1248ca6ecff27f5610fbbb3"
+    },
+    {
+      "path": "library/vmle/parasitology/diagrams/fasciola_lifecycle.svg",
+      "type": "diagram",
+      "sha256": "a72964d87a2a5da6c4c320f96e8fe1bed204410b56cd41ea11bd044e37e1cab8"
+    },
+    {
+      "path": "library/vmle/parasitology/lessons/lesson-fas-001.md",
+      "type": "lesson",
+      "sha256": "277b29aa68439a5e8db3fc0750e94d7df03baef247832ab39e16521d24f211cf"
+    },
+    {
+      "path": "library/vmle/parasitology/questions/parasitology.questions.json",
+      "type": "questions",
+      "sha256": "967bb11cda6036302756c68c9c59d11a3ae24a21111ed2c3e77f0b41d6aafe10"
+    },
+    {
+      "path": "library/vmle/pharmacology/lessons/lesson-dose-001.md",
+      "type": "lesson",
+      "sha256": "37392a6d3e4602bd6a5061b6f14915987d05f50ca20de4ed6dcc94704fb02881"
+    },
+    {
+      "path": "library/vmle/pharmacology/questions/pharmacology.questions.json",
+      "type": "questions",
+      "sha256": "5cc5ffa3416a17b4ea6e91c320835579f361d7d467a7d862a66cd3d430bbd50d"
+    },
+    {
+      "path": "library/vmle/physiology/lessons/lesson-cell-001.md",
+      "type": "lesson",
+      "sha256": "47a8284971ef1c670b8df273b9233565607f0c43f78e53b1e0cd71cb47d8634b"
+    },
+    {
+      "path": "library/vmle/physiology/questions/physiology.questions.json",
+      "type": "questions",
+      "sha256": "5acfcf15c3389e4e2af78930f92ef6052dc32f820c669b6d884b70c8696b2a3b"
+    },
+    {
+      "path": "library/vmle/surgery/questions/surgery.questions.json",
+      "type": "questions",
+      "sha256": "d98067aa926e2247c5be525e1c9a0869961e779da5212d411714a27242022eba"
+    },
+    {
+      "path": "library/vmle/zootechnics/diagrams/punnett_monohybrid.svg",
+      "type": "diagram",
+      "sha256": "cb5d8159e41c329bc832d06daf2a5c7ab053e36c3d04a57021f7e78d9ede0044"
+    },
+    {
+      "path": "library/vmle/zootechnics/diagrams/ruminant_stomach.hotspots.json",
+      "type": "hotspots",
+      "sha256": "c35389b35290d9f6fec8534f8e517642e07bd442cd34dabac7469ad1f2d3b20b"
+    },
+    {
+      "path": "library/vmle/zootechnics/diagrams/ruminant_stomach.svg",
+      "type": "diagram",
+      "sha256": "fc56356d30008c9bc930aba2c2a1754a1f55d5babd4dd213b7bac83e8ebc8d24"
+    },
+    {
+      "path": "library/vmle/zootechnics/lessons/lesson-gen-001.md",
+      "type": "lesson",
+      "sha256": "1a141a60677022131d70c5448031b290e03bddac4d364d69f0ab72acfb2e0b8d"
+    },
+    {
+      "path": "library/vmle/zootechnics/lessons/lesson-rum-001.md",
+      "type": "lesson",
+      "sha256": "8dc3274aedbfb22f8251e5cb4fc8690f447226b27de62d52a12a388481607e98"
+    },
+    {
+      "path": "library/vmle/zootechnics/questions/zootechnics.questions.json",
+      "type": "questions",
+      "sha256": "4abbec4b8511f0fbbd9e4afbcdf8af695f39c943f99bb9ee7db7f4b44ae090e4"
+    }
+  ],
+  "sources": "sources/sources.json",
+  "media": "media/media.json"
+}

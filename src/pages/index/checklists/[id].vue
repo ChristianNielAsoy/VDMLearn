@@ -1,6 +1,5 @@
 <template>
   <q-page class="column" style="max-width: 600px; margin: 0 auto">
-
     <div class="row items-center q-px-md q-pt-md q-pb-sm">
       <q-btn flat round dense icon="arrow_back" color="grey-7" @click="router.back()" />
       <div class="col q-ml-sm">
@@ -12,12 +11,9 @@
 
     <q-separator />
 
-    <div v-if="!cl" class="text-center text-grey-5 q-pa-xl">
-      Checklist not found.
-    </div>
+    <div v-if="!cl" class="text-center text-grey-5 q-pa-xl">Checklist not found.</div>
 
     <div v-else class="q-pa-md column q-gutter-md">
-
       <!-- Progress bar -->
       <q-linear-progress
         :value="doneCount / cl.steps.length"
@@ -56,8 +52,11 @@
                 class="text-body2"
                 :class="isDone(step.id) ? 'text-grey-5' : ''"
                 style="white-space: normal"
-              >{{ step.text }}</q-item-label>
-              <q-item-label v-if="step.note" caption class="text-grey-6">{{ step.note }}</q-item-label>
+                >{{ step.text }}</q-item-label
+              >
+              <q-item-label v-if="step.note" caption class="text-grey-6">{{
+                step.note
+              }}</q-item-label>
             </q-item-section>
           </q-item>
         </q-list>
@@ -73,7 +72,9 @@
             :label="opt.label"
             :color="selfRating === opt.value ? opt.color : 'grey-3'"
             :text-color="selfRating === opt.value ? 'white' : 'grey-7'"
-            unelevated no-caps dense
+            unelevated
+            no-caps
+            dense
             @click="setSelfRating(opt.value as 1 | 2 | 3)"
           />
         </div>
@@ -81,15 +82,9 @@
 
       <!-- Actions -->
       <div class="row q-gutter-sm">
-        <q-btn
-          flat no-caps color="negative" label="Reset"
-          @click="resetProgress"
-        />
+        <q-btn flat no-caps color="negative" label="Reset" @click="resetProgress" />
         <q-space />
-        <q-btn
-          unelevated no-caps color="primary" label="Save"
-          @click="save"
-        />
+        <q-btn unelevated no-caps color="primary" label="Save" @click="save" />
       </div>
     </div>
   </q-page>

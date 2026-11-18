@@ -12,10 +12,7 @@ export const CASES: CaseDef[] = [
     species: 'Canine',
     description:
       'A recently adopted puppy presents with a persistent cough. Work through the history, examination, and diagnostics to reach a diagnosis and treatment plan.',
-    competencyIds: [
-      'Veterinary Microbiology and Public Health:B.1',
-      'Veterinary Medicine:A.2',
-    ],
+    competencyIds: ['Veterinary Microbiology and Public Health:B.1', 'Veterinary Medicine:A.2'],
     source:
       'Original case. Cf. Greene CE. Infectious Diseases of the Dog and Cat, 4th ed. (Elsevier, 2012), Ch. 6; Merck Veterinary Manual — Infectious Tracheobronchitis.',
     verified: true,
@@ -56,7 +53,8 @@ export const CASES: CaseDef[] = [
         choices: [
           {
             id: 'kc-d1-a',
-            label: 'PCR respiratory panel (Bordetella bronchiseptica, canine parainfluenza virus, canine adenovirus-2)',
+            label:
+              'PCR respiratory panel (Bordetella bronchiseptica, canine parainfluenza virus, canine adenovirus-2)',
             next: 'kc-l1',
             correct: true,
             points: 10,
@@ -187,14 +185,15 @@ export const CASES: CaseDef[] = [
         title: 'Outcome — Partial Response',
         content:
           'The puppy showed partial improvement on amoxicillin-clavulanate but still had a mild cough at day 7 recheck. Culture and sensitivity results (from the PCR swab) confirmed Bordetella with intermediate susceptibility to amoxicillin.\n\nTreatment was switched to doxycycline 5 mg/kg PO q12h × 7 more days. Full resolution occurred by day 14.\n\nLesson: First-line treatment for Bordetella is doxycycline or a fluoroquinolone.',
-        finalDiagnosis: 'Bordetella bronchiseptica tracheobronchitis — partial response to beta-lactam; resolved with doxycycline',
+        finalDiagnosis:
+          'Bordetella bronchiseptica tracheobronchitis — partial response to beta-lactam; resolved with doxycycline',
       },
       {
         id: 'kc-o1c',
         kind: 'outcome',
         title: 'Outcome — Complication',
         content:
-          'Without antibiotic treatment, the puppy\'s condition worsened over the next 5 days. At recheck:\n• Temperature: 40.1 °C\n• Respiratory rate: 38 brpm with mild effort\n• Crackles in cranioventral lung fields\n• Radiographs: alveolar pattern cranioventral lobes\n\nDiagnosis: Bordetella bronchopneumonia (progression due to untreated bacterial infection).\n\nThe puppy required hospitalization, IV doxycycline, and supportive care. Recovered over 7 days with intensive treatment.\n\nLesson: Young, unvaccinated puppies with Bordetella require antibiotic treatment — the disease is not reliably self-limiting in this population.',
+          "Without antibiotic treatment, the puppy's condition worsened over the next 5 days. At recheck:\n• Temperature: 40.1 °C\n• Respiratory rate: 38 brpm with mild effort\n• Crackles in cranioventral lung fields\n• Radiographs: alveolar pattern cranioventral lobes\n\nDiagnosis: Bordetella bronchopneumonia (progression due to untreated bacterial infection).\n\nThe puppy required hospitalization, IV doxycycline, and supportive care. Recovered over 7 days with intensive treatment.\n\nLesson: Young, unvaccinated puppies with Bordetella require antibiotic treatment — the disease is not reliably self-limiting in this population.",
         finalDiagnosis: 'Bordetella bronchopneumonia (complication of untreated tracheobronchitis)',
       },
     ],
@@ -313,7 +312,8 @@ export const CASES: CaseDef[] = [
         choices: [
           {
             id: 'mf-d2-a',
-            label: 'Slow IV calcium gluconate 23% (1 g Ca/45 kg) with cardiac monitoring + subcutaneous calcium + oral calcium boluses when cow is sternal',
+            label:
+              'Slow IV calcium gluconate 23% (1 g Ca/45 kg) with cardiac monitoring + subcutaneous calcium + oral calcium boluses when cow is sternal',
             next: 'mf-o1',
             correct: true,
             points: 10,
@@ -347,7 +347,8 @@ export const CASES: CaseDef[] = [
         title: 'Outcome — Full Recovery',
         content:
           'IV calcium gluconate (450 mL of 23% solution given over 25 minutes) with cardiac monitoring — no arrhythmias detected.\n\nResponse within 30 minutes:\n• Heart rate returned to 68 bpm\n• Cow became alert and attempted to rise\n• Rumen motility improved\n\nSubcutaneous calcium (2 × 400 mL 23% Ca gluconate) administered at different sites.\n\nCow was assisted to sternal recumbency; stood unassisted 45 minutes post-treatment.\n\nPhosphorus deficiency addressed with IV sodium phosphate (not shown above) + dibasic oral phosphorus supplement for 3 days.\n\nRecheck at 48 hours: standing, eating, milk production normalizing.\n\nKey teaching points:\n• Milk fever peaks at 24–48 hours post-calving in older, high-producing cows\n• Stage III (lateral recumbency, bradycardia) requires IV calcium — do not delay\n• Concurrent hypophosphatemia delays recovery and must be treated\n• Prevention: anionic salts pre-calving, vitamin D3, oral calcium post-calving in at-risk cows',
-        finalDiagnosis: 'Periparturient hypocalcemia (Milk Fever), Stage III — full recovery with IV + SC calcium and phosphorus supplementation',
+        finalDiagnosis:
+          'Periparturient hypocalcemia (Milk Fever), Stage III — full recovery with IV + SC calcium and phosphorus supplementation',
       },
       {
         id: 'mf-o1b',
@@ -355,7 +356,8 @@ export const CASES: CaseDef[] = [
         title: 'Outcome — Treatment Failure',
         content:
           'Oral calcium bolus was administered via balling gun. The cow was unable to maintain sternal recumbency and showed no improvement over 2 hours.\n\nThe cow developed ruminal bloat (dorsal recumbency impairs eructation), and was found with severe bloat and respiratory distress 3 hours later.\n\nEmergency IV calcium was then administered with concurrent trocarization for bloat relief.\n\nOutcome: Prolonged recumbency resulted in compartment syndrome (downer cow syndrome). Despite subsequent IV calcium treatment, the cow never regained normal hindlimb function and was euthanized on day 4.\n\nLesson: Stage III milk fever requires IV calcium. Oral calcium is insufficient and dangerous in a recumbent cow.',
-        finalDiagnosis: 'Stage III periparturient hypocalcemia → downer cow syndrome (delayed IV treatment)',
+        finalDiagnosis:
+          'Stage III periparturient hypocalcemia → downer cow syndrome (delayed IV treatment)',
       },
       {
         id: 'mf-o1c',
@@ -363,7 +365,8 @@ export const CASES: CaseDef[] = [
         title: 'Outcome — Incorrect Treatment',
         content:
           'Dexamethasone 20 mg IM was administered. No improvement in calcium levels or clinical signs after 2 hours.\n\nThe cow remained in lateral recumbency. Emergency blood calcium confirmed: 1.1 mmol/L.\n\nIV calcium was eventually administered and the cow recovered, but the 2-hour delay resulted in significant muscle damage (elevated CK, myoglobinuria) and prolonged recovery time (5 days to full standing).\n\nLesson: Corticosteroids have no role in acute hypocalcemia treatment. IV calcium gluconate is the definitive and only appropriate emergency treatment for Stage III milk fever.',
-        finalDiagnosis: 'Stage III periparturient hypocalcemia — delayed recovery due to incorrect initial treatment',
+        finalDiagnosis:
+          'Stage III periparturient hypocalcemia — delayed recovery due to incorrect initial treatment',
       },
     ],
   },

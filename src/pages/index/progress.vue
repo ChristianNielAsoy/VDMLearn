@@ -1,6 +1,5 @@
 <template>
   <q-page class="column" style="max-width: 600px; margin: 0 auto">
-
     <!-- Tab bar -->
     <q-tabs
       v-model="activeTab"
@@ -11,10 +10,10 @@
       class="q-px-md"
       style="border-bottom: 1px solid var(--dvmr-border)"
     >
-      <q-tab name="overview"  label="Overview"  no-caps />
-      <q-tab name="mastery"   label="Mastery"   no-caps />
-      <q-tab name="bloom"     label="Bloom"     no-caps />
-      <q-tab name="coverage"  label="Coverage"  no-caps />
+      <q-tab name="overview" label="Overview" no-caps />
+      <q-tab name="mastery" label="Mastery" no-caps />
+      <q-tab name="bloom" label="Bloom" no-caps />
+      <q-tab name="coverage" label="Coverage" no-caps />
     </q-tabs>
 
     <div v-if="progressStore.loading || masteryStore.loading" class="text-center q-pa-xl">
@@ -22,10 +21,8 @@
     </div>
 
     <q-tab-panels v-else v-model="activeTab" animated class="col">
-
       <!-- ── Overview ─────────────────────────────────────────── -->
       <q-tab-panel name="overview" class="q-pa-md">
-
         <!-- Due today -->
         <q-card class="dvmr-card q-mb-sm">
           <q-card-section class="row items-center q-py-sm">
@@ -33,12 +30,18 @@
             <div class="col">
               <div class="text-body2 text-weight-medium">Due for review</div>
               <div class="text-caption text-grey-6">
-                {{ progressStore.dueQuestions.length }} question{{ progressStore.dueQuestions.length !== 1 ? 's' : '' }}
+                {{ progressStore.dueQuestions.length }} question{{
+                  progressStore.dueQuestions.length !== 1 ? 's' : ''
+                }}
               </div>
             </div>
             <q-btn
               v-if="progressStore.dueQuestions.length > 0"
-              color="primary" label="Study Now" unelevated no-caps dense
+              color="primary"
+              label="Study Now"
+              unelevated
+              no-caps
+              dense
               @click="studyDue"
             />
             <q-badge v-else color="positive" label="All caught up!" />
@@ -52,22 +55,39 @@
           For study purposes only — not clinical guidance.
         </q-banner>
 
-        <div v-if="progressStore.accuracy.every((a) => a.attempts === 0)" class="text-center text-grey q-pa-lg">
+        <div
+          v-if="progressStore.accuracy.every((a) => a.attempts === 0)"
+          class="text-center text-grey q-pa-lg"
+        >
           <q-icon name="bar_chart" size="3rem" color="grey-3" />
           <div class="q-mt-sm">No attempts yet. Answer questions to see accuracy.</div>
         </div>
 
         <q-card v-else class="dvmr-card">
           <q-list dense separator>
-            <q-item v-for="item in progressStore.accuracy" :key="item.subject" class="q-py-sm" :class="isWeak(item) ? 'bg-red-1' : ''">
+            <q-item
+              v-for="item in progressStore.accuracy"
+              :key="item.subject"
+              class="q-py-sm"
+              :class="isWeak(item) ? 'bg-red-1' : ''"
+            >
               <q-item-section>
                 <div class="row items-center q-mb-xs">
                   <span class="text-body2 text-weight-medium col ellipsis">{{ item.subject }}</span>
-                  <q-badge :color="item.attempts > 0 ? accuracyColor(item.pct) : 'grey-4'" :text-color="item.attempts > 0 ? 'white' : 'grey-6'">
+                  <q-badge
+                    :color="item.attempts > 0 ? accuracyColor(item.pct) : 'grey-4'"
+                    :text-color="item.attempts > 0 ? 'white' : 'grey-6'"
+                  >
                     {{ item.attempts > 0 ? `${item.pct}%` : '—' }}
                   </q-badge>
                 </div>
-                <q-linear-progress :value="item.attempts > 0 ? item.correct / item.attempts : 0" :color="accuracyColor(item.pct)" rounded size="5px" track-color="grey-2" />
+                <q-linear-progress
+                  :value="item.attempts > 0 ? item.correct / item.attempts : 0"
+                  :color="accuracyColor(item.pct)"
+                  rounded
+                  size="5px"
+                  track-color="grey-2"
+                />
               </q-item-section>
             </q-item>
           </q-list>
@@ -78,7 +98,15 @@
           <div class="text-subtitle2 text-grey-7 q-mt-md q-mb-xs row items-center">
             <q-icon name="bookmark" color="amber-7" size="xs" class="q-mr-xs" />Bookmarked
             <q-space />
-            <q-btn flat dense no-caps color="primary" label="Quiz all" size="sm" @click="studyBookmarks" />
+            <q-btn
+              flat
+              dense
+              no-caps
+              color="primary"
+              label="Quiz all"
+              size="sm"
+              @click="studyBookmarks"
+            />
           </div>
           <q-card class="dvmr-card">
             <q-list dense separator>
@@ -88,7 +116,15 @@
                   <q-item-label caption class="text-grey-6">{{ q.vmleSubject }}</q-item-label>
                 </q-item-section>
                 <q-item-section side>
-                  <q-btn flat round dense icon="bookmark_remove" color="amber-7" size="sm" @click="progressStore.toggleBookmark(q.id)" />
+                  <q-btn
+                    flat
+                    round
+                    dense
+                    icon="bookmark_remove"
+                    color="amber-7"
+                    size="sm"
+                    @click="progressStore.toggleBookmark(q.id)"
+                  />
                 </q-item-section>
               </q-item>
             </q-list>
@@ -155,8 +191,8 @@
       <q-tab-panel name="bloom" class="q-pa-md">
         <div class="text-subtitle2 text-grey-7 q-mb-xs">Bloom's Taxonomy Performance</div>
         <div class="text-caption text-grey-6 q-mb-md">
-          Compares your accuracy per cognitive level against the TOS target distribution.
-          Only questions with a tagged Bloom level are counted.
+          Compares your accuracy per cognitive level against the TOS target distribution. Only
+          questions with a tagged Bloom level are counted.
         </div>
 
         <div v-if="bloomData.length === 0" class="text-center text-grey-5 q-pa-lg">
@@ -197,9 +233,7 @@
           Fraction of each subject's TOS items you have seen or attempted.
         </div>
 
-        <div v-if="!masteryStore.report" class="text-center text-grey-5 q-pa-lg">
-          No data yet.
-        </div>
+        <div v-if="!masteryStore.report" class="text-center text-grey-5 q-pa-lg">No data yet.</div>
 
         <q-card v-else class="dvmr-card">
           <q-list dense separator>
@@ -243,7 +277,12 @@ import type { SubjectReadiness } from '@/services/mastery';
 import type { BloomLevel } from '@/types/question';
 
 const BLOOM_COLORS: Record<BloomLevel, string> = {
-  R: '#94a3b8', U: '#60a5fa', Ap: '#34d399', An: '#fbbf24', E: '#f87171', C: '#c084fc',
+  R: '#94a3b8',
+  U: '#60a5fa',
+  Ap: '#34d399',
+  An: '#fbbf24',
+  E: '#f87171',
+  C: '#c084fc',
 };
 
 const activeTab = ref('overview');
@@ -288,7 +327,7 @@ function masteryColor(val: number): string {
 
 function masteryBg(val: number): string {
   if (val >= 0.75) return 'rgba(16,185,129,0.15)';
-  if (val >= 0.5)  return 'rgba(245,158,11,0.15)';
+  if (val >= 0.5) return 'rgba(245,158,11,0.15)';
   return 'rgba(244,63,94,0.12)';
 }
 
@@ -299,7 +338,9 @@ function pctStr(val: number | undefined): string {
 
 function avgCoverage(sub: SubjectReadiness): number {
   if (sub.competencyMasteries.length === 0) return 0;
-  return sub.competencyMasteries.reduce((s, c) => s + c.coverage, 0) / sub.competencyMasteries.length;
+  return (
+    sub.competencyMasteries.reduce((s, c) => s + c.coverage, 0) / sub.competencyMasteries.length
+  );
 }
 
 function avgCovPct(sub: SubjectReadiness): number {
@@ -311,7 +352,7 @@ function subjectShort(name: string): string {
   const map: Record<string, string> = {
     'Veterinary Anatomy': 'Anat',
     'Veterinary Physiology': 'Phys',
-    'Zootechnics': 'Zoo',
+    Zootechnics: 'Zoo',
     'Veterinary Pathology': 'Path',
     'Veterinary Pharmacology': 'Pharm',
     'Veterinary Medicine': 'Med',
@@ -332,7 +373,10 @@ function studyDue() {
 
 function studyBookmarks() {
   if (progressStore.bookmarkedQuestions.length === 0) return;
-  quizStore.startQuiz(progressStore.bookmarkedQuestions, { type: 'bookmarked', label: 'Bookmarked' });
+  quizStore.startQuiz(progressStore.bookmarkedQuestions, {
+    type: 'bookmarked',
+    label: 'Bookmarked',
+  });
   void router.push('/quiz');
 }
 

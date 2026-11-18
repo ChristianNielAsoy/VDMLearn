@@ -1,5 +1,11 @@
 import type { Question } from '@/types/question';
-import type { ContentPackManifest, InstalledPack, InstallResult, UpdateResult, RemoveResult } from '@/types/contentPack';
+import type {
+  ContentPackManifest,
+  InstalledPack,
+  InstallResult,
+  UpdateResult,
+  RemoveResult,
+} from '@/types/contentPack';
 
 /** A row is user-modified if updatedAt > 0 */
 function isUserModified(q: Question): boolean {

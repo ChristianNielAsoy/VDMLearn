@@ -20,11 +20,11 @@ import type { CompetencyNode } from '@/repositories/competency';
 // ── Weights ────────────────────────────────────────────────────────────────
 
 export const PRIORITY_WEIGHTS = {
-  overdue: 30,          // points per overdue day
-  maxOverduebonus: 60,  // cap
-  weakness: 25,         // multiplied by (1 - accuracy)
-  examWeight: 20,       // multiplied by examSharePct
-  newPenalty: 15,       // subtracted for new items
+  overdue: 30, // points per overdue day
+  maxOverduebonus: 60, // cap
+  weakness: 25, // multiplied by (1 - accuracy)
+  examWeight: 20, // multiplied by examSharePct
+  newPenalty: 15, // subtracted for new items
 } as const;
 
 export const DEFAULT_LEECH_THRESHOLD = 4;

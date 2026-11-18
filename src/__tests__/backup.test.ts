@@ -33,9 +33,17 @@ describe('BackupFile type guards', () => {
     app: 'dvm-reviewer',
     exportedAt: 1,
     data: {
-      attempts: [], progress: [], bookmarks: [], flags: [], importedQuestions: [],
-      lessonStatus: [], lessonNotes: [], tasks: [], plannerSettings: [],
-      reviewEvents: [], contentPacks: [],
+      attempts: [],
+      progress: [],
+      bookmarks: [],
+      flags: [],
+      importedQuestions: [],
+      lessonStatus: [],
+      lessonNotes: [],
+      tasks: [],
+      plannerSettings: [],
+      reviewEvents: [],
+      contentPacks: [],
     },
   };
 
@@ -87,9 +95,17 @@ describe('v1→v2 migration (v1ToPartialData)', () => {
 describe('BackupFileV2 structure', () => {
   it('v2 data includes all 11 table keys', () => {
     const v2data: BackupData = {
-      attempts: [], progress: [], bookmarks: [], flags: [], importedQuestions: [],
-      lessonStatus: [], lessonNotes: [], tasks: [], plannerSettings: [],
-      reviewEvents: [], contentPacks: [],
+      attempts: [],
+      progress: [],
+      bookmarks: [],
+      flags: [],
+      importedQuestions: [],
+      lessonStatus: [],
+      lessonNotes: [],
+      tasks: [],
+      plannerSettings: [],
+      reviewEvents: [],
+      contentPacks: [],
     };
     const keys = Object.keys(v2data);
     expect(keys).toContain('flags');

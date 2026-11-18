@@ -86,7 +86,12 @@ describe('MistakeJournal repository', () => {
   });
 
   it('entries preserve optional detail field', async () => {
-    await repo.appendMistakeEntry({ questionId: 'q1', reason: 'knowledge-gap', ts: 1000, detail: 'forgot the mechanism' });
+    await repo.appendMistakeEntry({
+      questionId: 'q1',
+      reason: 'knowledge-gap',
+      ts: 1000,
+      detail: 'forgot the mechanism',
+    });
     const all = await repo.getMistakeEntries();
     expect(all[0]?.detail).toBe('forgot the mechanism');
   });

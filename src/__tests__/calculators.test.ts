@@ -10,7 +10,7 @@ describe('drugDoseCalc', () => {
     // 2 mg/kg × 10 kg = 20 mg; 20 mg ÷ 10 mg/mL = 2 mL
     const results = drugDoseCalc.compute({ doseRate: 2, weight: 10, concentration: 10 });
     const totalDose = results.find((r) => r.key === 'totalDose')!;
-    const volume    = results.find((r) => r.key === 'volume')!;
+    const volume = results.find((r) => r.key === 'volume')!;
     expect(totalDose.value).toBe(20);
     expect(volume.value).toBe(2);
   });
@@ -34,14 +34,24 @@ describe('drugDoseCalc', () => {
 describe('fluidTherapyCalc', () => {
   it('computes deficit correctly', () => {
     // 20 kg × 5% × 10 = 1000 mL deficit
-    const results = fluidTherapyCalc.compute({ weight: 20, dehydration: 5, maintenance: 60, hours: 24 });
+    const results = fluidTherapyCalc.compute({
+      weight: 20,
+      dehydration: 5,
+      maintenance: 60,
+      hours: 24,
+    });
     const deficit = results.find((r) => r.key === 'deficit')!;
     expect(deficit.value).toBe(1000);
   });
 
   it('computes 24h maintenance correctly', () => {
     // 20 kg × 60 mL/kg/day = 1200 mL/day
-    const results = fluidTherapyCalc.compute({ weight: 20, dehydration: 0, maintenance: 60, hours: 24 });
+    const results = fluidTherapyCalc.compute({
+      weight: 20,
+      dehydration: 0,
+      maintenance: 60,
+      hours: 24,
+    });
     const maint = results.find((r) => r.key === 'maint')!;
     expect(maint.value).toBe(1200);
   });
@@ -51,14 +61,24 @@ describe('fluidTherapyCalc', () => {
     // deficit = 10 × 8 × 10 = 800 mL
     // maintenance 24h = 10 × 60 = 600 mL; for 12h = 300 mL
     // total = 800 + 300 = 1100 mL
-    const results = fluidTherapyCalc.compute({ weight: 10, dehydration: 8, maintenance: 60, hours: 12 });
+    const results = fluidTherapyCalc.compute({
+      weight: 10,
+      dehydration: 8,
+      maintenance: 60,
+      hours: 12,
+    });
     const total = results.find((r) => r.key === 'total')!;
     expect(total.value).toBe(1100);
   });
 
   it('computes hourly rate', () => {
     // total 1100 mL ÷ 12 h ≈ 91.7 mL/h
-    const results = fluidTherapyCalc.compute({ weight: 10, dehydration: 8, maintenance: 60, hours: 12 });
+    const results = fluidTherapyCalc.compute({
+      weight: 10,
+      dehydration: 8,
+      maintenance: 60,
+      hours: 12,
+    });
     const rate = results.find((r) => r.key === 'ratePerHour')!;
     expect(rate.value).toBeCloseTo(91.7, 1);
   });
@@ -71,7 +91,12 @@ describe('pearsonSquareCalc', () => {
     // parts SBM = |16 - 8| = 8; parts corn = |44 - 16| = 28
     // total parts = 36
     // kg SBM = 8/36 × 100 = 22.22 kg; kg corn = 28/36 × 100 = 77.78 kg
-    const results = pearsonSquareCalc.compute({ aPercent: 44, bPercent: 8, target: 16, totalKg: 100 });
+    const results = pearsonSquareCalc.compute({
+      aPercent: 44,
+      bPercent: 8,
+      target: 16,
+      totalKg: 100,
+    });
     const kgA = results.find((r) => r.key === 'kgA')!;
     const kgB = results.find((r) => r.key === 'kgB')!;
     expect(kgA.value).toBeCloseTo(22.22, 1);
@@ -79,7 +104,12 @@ describe('pearsonSquareCalc', () => {
   });
 
   it('parts add up to total batch', () => {
-    const results = pearsonSquareCalc.compute({ aPercent: 30, bPercent: 10, target: 18, totalKg: 50 });
+    const results = pearsonSquareCalc.compute({
+      aPercent: 30,
+      bPercent: 10,
+      target: 18,
+      totalKg: 50,
+    });
     const kgA = results.find((r) => r.key === 'kgA')!;
     const kgB = results.find((r) => r.key === 'kgB')!;
     expect(kgA.value + kgB.value).toBeCloseTo(50, 2);

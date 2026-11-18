@@ -1,5 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { extractClozeFromMarkdown, toClozeCards, extractAndConvert } from '@/services/clozeExtractor';
+import {
+  extractClozeFromMarkdown,
+  toClozeCards,
+  extractAndConvert,
+} from '@/services/clozeExtractor';
 
 describe('extractClozeFromMarkdown', () => {
   it('returns empty array when no highlights', () => {

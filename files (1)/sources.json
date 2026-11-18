@@ -1,0 +1,111 @@
+{
+  "_meta": {
+    "checkedOn": "2026-11-18",
+    "schema": "see docs/content-intake.md section 2; aiIngestion added: whether the source's terms allow pasting it into AI tools"
+  },
+  "sources": [
+    {
+      "id": "author-draft",
+      "title": "Author draft by Claude (this content pack)",
+      "type": "original",
+      "license": "Original text and drawings created in this project; drawings released CC0",
+      "aiIngestion": "n/a",
+      "shareable": true,
+      "notes": "Written from general knowledge, NOT from any textbook. Everything is unverified until checked against a real reference."
+    },
+    {
+      "id": "prc-tos-2024",
+      "title": "PRC Board of Veterinary Medicine, Resolution No. 07 s.2024, Annex A (Tables of Specifications)",
+      "type": "government-document",
+      "license": "Official administrative text: not protected by copyright (Philippine IP Code Sec. 175); government works have no copyright (Sec. 176) but profit use needs agency approval",
+      "aiIngestion": "No stated restriction found",
+      "shareable": true,
+      "url": "https://www.prc.gov.ph/Pages/PRBv4/VeterinaryMedicine.htm",
+      "notes": "Used for structure only (vmle-tos-2024.json). Not legal advice."
+    },
+    {
+      "id": "openstax-biology-2e",
+      "title": "OpenStax Biology (2e)",
+      "type": "open-textbook",
+      "license": "CC BY-NC-SA 4.0 per OpenStax's current terms (older preface text says CC BY)",
+      "aiIngestion": "PROHIBITED without OpenStax written permission (current terms say the book may not be ingested into LLMs or generative AI offerings). Read it yourself; do not paste it into AI tools.",
+      "shareable": true,
+      "url": "https://openstax.org/books/biology/pages/1-introduction",
+      "notes": "Use as a reading reference you verify against. Attribution required for any adaptation; share-alike and non-commercial apply to adaptations. Checked 2026-11-18 on the book's preface page."
+    },
+    {
+      "id": "openstax-other",
+      "title": "Other OpenStax titles (Concepts of Biology, Anatomy and Physiology, Microbiology, Chemistry, Introductory Statistics)",
+      "type": "open-textbook",
+      "license": "Not individually checked: assume the same terms as Biology (CC BY-NC-SA 4.0 and no AI ingestion)",
+      "aiIngestion": "Assume prohibited; check each book's page",
+      "shareable": true,
+      "url": "https://openstax.org/",
+      "notes": "Confirm each book's license and AI terms before relying on it."
+    },
+    {
+      "id": "vet-histology-open",
+      "title": "Veterinary Histology (open textbook)",
+      "type": "open-textbook",
+      "license": "Listed as openly licensed by a university library guide; license not verified",
+      "aiIngestion": "Unknown: check",
+      "shareable": false,
+      "notes": "Set shareable only after reading the license."
+    },
+    {
+      "id": "wikivet",
+      "title": "WikiVet",
+      "type": "web-reference",
+      "license": "Conflicting statements: site terms mention CC BY 3.0 / BY-SA; another page says CC BY-NC-ND; a library guide says not openly licensed",
+      "aiIngestion": "Unknown: check",
+      "shareable": false,
+      "url": "https://en.wikivet.net/",
+      "notes": "Read and link out; do not copy."
+    },
+    {
+      "id": "merck-vet-manual",
+      "title": "Merck Veterinary Manual",
+      "type": "web-reference",
+      "license": "Terms not checked",
+      "aiIngestion": "Unknown: check",
+      "shareable": false,
+      "notes": "Link out only."
+    },
+    {
+      "id": "plumbs",
+      "title": "Plumb's Veterinary Drug Handbook",
+      "type": "commercial-reference",
+      "license": "Commercial; terms not checked",
+      "aiIngestion": "Unknown: check",
+      "shareable": false,
+      "notes": "Link out only; never copy doses."
+    },
+    {
+      "id": "imaios-vet-anatomy",
+      "title": "IMAIOS Vet-Anatomy",
+      "type": "web-atlas",
+      "license": "Terms not checked",
+      "aiIngestion": "Unknown: check",
+      "shareable": false,
+      "notes": "Link out only."
+    },
+    {
+      "id": "ra-9268",
+      "title": "RA 9268 (Veterinary Medicine Act) and related laws and administrative orders",
+      "type": "law",
+      "license": "Official legislative/administrative texts are not protected by copyright (IP Code Sec. 175)",
+      "aiIngestion": "No restriction expected for statute text",
+      "shareable": true,
+      "notes": "Use official texts. The PRC table prints the Animal Welfare Act as RA 8585; the Act is RA 8485 as amended by RA 10631 (verify)."
+    },
+    {
+      "id": "ched-cmo-1-2018",
+      "title": "CHED CMO No. 1 s.2018 (DVM policies, standards and guidelines)",
+      "type": "government-document",
+      "license": "Official administrative text (IP Code Sec. 175)",
+      "aiIngestion": "No stated restriction found",
+      "shareable": true,
+      "notes": "Recommended reference titles in its annex are older editions."
+    }
+  ]
+}

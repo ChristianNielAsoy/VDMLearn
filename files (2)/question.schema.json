@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Question file (array)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "year",
+      "vmleSubject",
+      "competencyId",
+      "stem",
+      "choices",
+      "answer",
+      "explanation",
+      "sourceType",
+      "source",
+      "status"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      },
+      "year": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 6
+      },
+      "school": {
+        "enum": ["UPLB", "CLSU", "PSAU", "CHED"]
+      },
+      "vmleSubject": {
+        "type": ["string", "null"],
+        "enum": [
+          "Veterinary Anatomy",
+          "Veterinary Physiology",
+          "Zootechnics",
+          "Veterinary Pathology",
+          "Veterinary Pharmacology",
+          "Veterinary Medicine",
+          "Veterinary Microbiology and Public Health",
+          "Veterinary Parasitology",
+          "Veterinary Surgery",
+          null
+        ]
+      },
+      "competencyId": {
+        "type": "string",
+        "pattern": "^(PRE:[A-Z]+:[A-Z]\\.\\d+|[A-Za-z ]+:[A-Z]\\.\\d+(\\.\\d+)?)$"
+      },
+      "stem": {
+        "type": "string",
+        "minLength": 10
+      },
+      "choices": {
+        "type": "array",
+        "minItems": 4,
+        "maxItems": 4,
+        "items": {
+          "type": "object",
+          "required": ["key", "text"],
+          "additionalProperties": false,
+          "properties": {
+            "key": {
+              "enum": ["A", "B", "C", "D"]
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "answer": {
+        "enum": ["A", "B", "C", "D"]
+      },
+      "explanation": {
+        "type": "string",
+        "minLength": 10
+      },
+      "sourceType": {
+        "enum": ["own-notes", "ai-draft", "open-reference", "hand-written"]
+      },
+      "source": {
+        "type": "string",
+        "minLength": 5
+      },
+      "sourceId": {
+        "type": "string"
+      },
+      "status": {
+        "enum": ["unverified", "verified"]
+      }
+    }
+  }
+}

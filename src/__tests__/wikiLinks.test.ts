@@ -1,5 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { parseWikiLinks, resolveWikiLink, renderWikiLinksAsText, extractBacklinks, findBacklinks } from '@/services/wikiLinks';
+import {
+  parseWikiLinks,
+  resolveWikiLink,
+  renderWikiLinksAsText,
+  extractBacklinks,
+  findBacklinks,
+} from '@/services/wikiLinks';
 
 // Known competency ids from vmle-tos-2024.json:
 //   "Veterinary Anatomy:A.1"  → section A, topic 1 ("Organs and structures...")

@@ -1,0 +1,893 @@
+{
+  "_meta": {
+    "school": "Pampanga State Agricultural University (PSAU), College of Veterinary Medicine, Magalang, Pampanga",
+    "source": "'Revised Program Curriculum as per CMO No. 1 Series 2018', 4 screenshots provided by the user; signed by Anita G. David, Ed.D., VP for Academic Affairs. Undated.",
+    "totalUnits": 261,
+    "totalUnitsNonSTEM": 281,
+    "note": "Bridging program (non-credit but required, mid-year terms) applies to NON-STEM students: 11 units before Year 1 (BP-GIC, BP-PB 1, BP-IT1) and 9 units after Year 1 (BP-FS, BP-P, BP-PB 2). Whether it applies to a college graduate must be confirmed with PSAU. NSTP units in brackets are non-credit. vmleSubject tags are assumptions.",
+    "transcriptionChecks": "Per-semester units and lab hours match printed totals. One printed lecture-hour total (Year 1 Sem 1) does not match its rows (rows sum to 26, printed 22); units are consistent. Prereq text for V. Patho 143 is cut off in the image; Thesis 10 units inferred."
+  },
+  "bridging": {
+    "before_year1": [
+      {
+        "code": "BP-GIC",
+        "name": "General and Inorganic Chemistry",
+        "lecHrs": 3,
+        "labHrs": 6,
+        "units": 5,
+        "vmleSubject": "basic-science"
+      },
+      {
+        "code": "BP-PB 1",
+        "name": "Principles of Biology",
+        "lecHrs": 2,
+        "labHrs": 3,
+        "units": 3,
+        "vmleSubject": "basic-science"
+      },
+      {
+        "code": "BP-IT1",
+        "name": "Basic computer concepts and application or its equivalent",
+        "lecHrs": 3,
+        "labHrs": 0,
+        "units": 3,
+        "vmleSubject": "general-education"
+      }
+    ],
+    "after_year1": [
+      {
+        "code": "BP-FS",
+        "name": "Fundamentals of Statistics",
+        "lecHrs": 3,
+        "labHrs": 0,
+        "units": 3,
+        "vmleSubject": "basic-science"
+      },
+      {
+        "code": "BP-P",
+        "name": "Physics",
+        "lecHrs": 3,
+        "labHrs": 0,
+        "units": 3,
+        "vmleSubject": "basic-science"
+      },
+      {
+        "code": "BP-PB 2",
+        "name": "Genetics",
+        "lecHrs": 2,
+        "labHrs": 3,
+        "units": 3,
+        "vmleSubject": "basic-science"
+      }
+    ]
+  },
+  "program": {
+    "1": {
+      "1": [
+        {
+          "code": "GE-UTS",
+          "name": "Understanding the Self",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "GE-STS",
+          "name": "Science, Technology and Society",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "GE-MMW",
+          "name": "Mathematics in the Modern World",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "GE-Zoo 1",
+          "name": "General Zoology",
+          "lecHrs": 3,
+          "labHrs": 3,
+          "units": 4,
+          "vmleSubject": "basic-science",
+          "prereq": "PB"
+        },
+        {
+          "code": "GE-ELEC SSP",
+          "name": "Gender and Society",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "Chem 1",
+          "name": "Organic Chemistry",
+          "lecHrs": 3,
+          "labHrs": 3,
+          "units": 4,
+          "vmleSubject": "basic-science",
+          "prereq": "GIC"
+        },
+        {
+          "code": "GE-FIL 1",
+          "name": "Panitikan ng Pilipinas",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "PE 1",
+          "name": "Physical Fitness and Gymnastics",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "GE-VE",
+          "name": "Values Education",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "NSTP 1",
+          "name": "National Service Training Program",
+          "lecHrs": 4,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education",
+          "credit": false
+        }
+      ],
+      "2": [
+        {
+          "code": "GE-RPH",
+          "name": "Readings in the Philippine History",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education",
+          "prereq": "GE-STS"
+        },
+        {
+          "code": "Chem 2",
+          "name": "Biochemistry",
+          "lecHrs": 3,
+          "labHrs": 6,
+          "units": 5,
+          "vmleSubject": "basic-science",
+          "prereq": "Chem 1"
+        },
+        {
+          "code": "GE-AA",
+          "name": "Art Appreciation",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "GE-PC",
+          "name": "Purposive Communication",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education",
+          "prereq": "GE-UTS"
+        },
+        {
+          "code": "AS 100",
+          "name": "Principles of Animal Production and Economics",
+          "lecHrs": 2,
+          "labHrs": 3,
+          "units": 3,
+          "vmleSubject": "Zootechnics",
+          "prereq": "GE-Zoo 1"
+        },
+        {
+          "code": "GE-E",
+          "name": "Ethics",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education",
+          "prereq": "GE-UTS"
+        },
+        {
+          "code": "GE-FIL 2",
+          "name": "Estruktura ng Wikang Filipino",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "PE 2",
+          "name": "Fundamentals of Rhythmic Activities",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "general-education",
+          "prereq": "PE 1"
+        },
+        {
+          "code": "NSTP 2",
+          "name": "National Service Training Program 2",
+          "lecHrs": 4,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education",
+          "credit": false
+        }
+      ]
+    },
+    "2": {
+      "1": [
+        {
+          "code": "GE-CW",
+          "name": "The Contemporary World",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education",
+          "prereq": "GE-STS, GE-RPH"
+        },
+        {
+          "code": "AS 101",
+          "name": "Principles of Animal Nutrition",
+          "lecHrs": 2,
+          "labHrs": 3,
+          "units": 3,
+          "vmleSubject": "Zootechnics",
+          "prereq": "AS 100; Chem 1 and 2"
+        },
+        {
+          "code": "AS 102",
+          "name": "Principles of Animal Breeding and Genetics",
+          "lecHrs": 2,
+          "labHrs": 3,
+          "units": 3,
+          "vmleSubject": "Zootechnics",
+          "prereq": "AS 100"
+        },
+        {
+          "code": "AS 103",
+          "name": "Poultry Production and Flock Health Management",
+          "lecHrs": 2,
+          "labHrs": 3,
+          "units": 3,
+          "vmleSubject": "Zootechnics",
+          "prereq": "AS 100"
+        },
+        {
+          "code": "AS 104",
+          "name": "Swine Production and Herd Health Management",
+          "lecHrs": 2,
+          "labHrs": 3,
+          "units": 3,
+          "vmleSubject": "Zootechnics",
+          "prereq": "AS 100"
+        },
+        {
+          "code": "Biostat",
+          "name": "Intro to Biostat and Experimental Design",
+          "lecHrs": 2,
+          "labHrs": 3,
+          "units": 3,
+          "vmleSubject": "basic-science",
+          "prereq": "GE-MMW, FS"
+        },
+        {
+          "code": "GE-ELEC MST",
+          "name": "Environmental Science",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "PE 3",
+          "name": "Individual and Dual Sports",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "general-education",
+          "prereq": "PE 1"
+        }
+      ],
+      "2": [
+        {
+          "code": "Mol Bio 1",
+          "name": "Introduction to Molecular Biology",
+          "lecHrs": 2,
+          "labHrs": 3,
+          "units": 3,
+          "vmleSubject": "basic-science",
+          "prereq": "Chemistry 1 and 2, Zoo 1, PB 1"
+        },
+        {
+          "code": "Research 101",
+          "name": "Research Methods and Scientific Paper Writing",
+          "lecHrs": 1,
+          "labHrs": 3,
+          "units": 2,
+          "vmleSubject": "basic-science",
+          "prereq": "GE-PC, GE-MMW, Biostat"
+        },
+        {
+          "code": "GE-ELEC AH",
+          "name": "Philippine Popular Culture",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "GE-Rizal",
+          "name": "Life and Works of Rizal",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "general-education"
+        },
+        {
+          "code": "AS 106",
+          "name": "Wildlife, Zoo Management and Apiculture",
+          "lecHrs": 1,
+          "labHrs": 3,
+          "units": 2,
+          "vmleSubject": "Zootechnics",
+          "prereq": "AS 100"
+        },
+        {
+          "code": "AS 107",
+          "name": "Ruminant Production and Herd Health Management",
+          "lecHrs": 2,
+          "labHrs": 6,
+          "units": 4,
+          "vmleSubject": "Zootechnics",
+          "prereq": "AS 100"
+        },
+        {
+          "code": "AS 108",
+          "name": "Aquaculture",
+          "lecHrs": 1,
+          "labHrs": 3,
+          "units": 2,
+          "vmleSubject": "Zootechnics",
+          "prereq": "AS 100"
+        },
+        {
+          "code": "AS 109",
+          "name": "Laboratory Animal Production and Management",
+          "lecHrs": 1,
+          "labHrs": 3,
+          "units": 2,
+          "vmleSubject": "Zootechnics",
+          "prereq": "AS 100"
+        },
+        {
+          "code": "PE 4",
+          "name": "Team Sports",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "general-education",
+          "prereq": "PE 1"
+        }
+      ],
+      "midyear": [
+        {
+          "code": "NCII-AP",
+          "name": "Training and Assessment for National Certificate II on Animal Production (Poultry, Swine or Ruminant), 80/160 hours; choose one training",
+          "lecHrs": 0,
+          "labHrs": 0,
+          "units": 0,
+          "vmleSubject": "Zootechnics",
+          "prereq": "AS 100, AS 103, AS 104 and AS 107",
+          "note": "No units shown. Training days: Ruminants 39-62, Poultry 29, Swine 39-62. Student may be assessed in all 3 qualifications if they took the specific courses."
+        }
+      ]
+    },
+    "3": {
+      "1": [
+        {
+          "code": "V. Anat 121",
+          "name": "Macroscopic Veterinary Anatomy (Gross Anatomy)",
+          "lecHrs": 3,
+          "labHrs": 6,
+          "units": 5,
+          "vmleSubject": "Anatomy",
+          "prereq": "Zoo 1, AS 100"
+        },
+        {
+          "code": "V. Physio 131",
+          "name": "General Veterinary Physiology",
+          "lecHrs": 3,
+          "labHrs": 3,
+          "units": 4,
+          "vmleSubject": "Physiology",
+          "prereq": "Zoo 1, AS 100, Chem 1 and 2, PB 2, Mol Bio 1"
+        },
+        {
+          "code": "V. Anat 123",
+          "name": "Microscopic Veterinary Anatomy (Veterinary Embryology)",
+          "lecHrs": 2,
+          "labHrs": 3,
+          "units": 3,
+          "vmleSubject": "Anatomy",
+          "prereq": "Zoo 1, AS 100"
+        },
+        {
+          "code": "V. Micro 151",
+          "name": "General Veterinary Microbiology",
+          "lecHrs": 3,
+          "labHrs": 3,
+          "units": 4,
+          "vmleSubject": "Microbiology and Public Health",
+          "prereq": "Zoo 1, AS 100, Chem 1, Chem 2"
+        },
+        {
+          "code": "AS 110",
+          "name": "Animal Welfare and Ethology",
+          "lecHrs": 1,
+          "labHrs": 3,
+          "units": 2,
+          "vmleSubject": "Zootechnics",
+          "prereq": "AS 100",
+          "note": "Mixed topic: animal behavior (Zootechnics) and animal welfare (Veterinary Medicine per RA 9268)"
+        }
+      ],
+      "2": [
+        {
+          "code": "V. Anat 122",
+          "name": "Macroscopic Veterinary Anatomy",
+          "lecHrs": 2,
+          "labHrs": 6,
+          "units": 4,
+          "vmleSubject": "Anatomy",
+          "prereq": "V. Anat 121"
+        },
+        {
+          "code": "V. Anat 124",
+          "name": "Microscopic Veterinary Anatomy",
+          "lecHrs": 2,
+          "labHrs": 6,
+          "units": 4,
+          "vmleSubject": "Anatomy",
+          "prereq": "V. Anat 123"
+        },
+        {
+          "code": "V. Physio 132",
+          "name": "Systemic Veterinary Physiology",
+          "lecHrs": 3,
+          "labHrs": 3,
+          "units": 4,
+          "vmleSubject": "Physiology",
+          "prereq": "V. Physio 131"
+        },
+        {
+          "code": "V. Micro 152",
+          "name": "Veterinary Bacteriology and Mycology",
+          "lecHrs": 2,
+          "labHrs": 3,
+          "units": 3,
+          "vmleSubject": "Microbiology and Public Health",
+          "prereq": "V. Micro 151"
+        },
+        {
+          "code": "V. Micro 153",
+          "name": "Veterinary Virology",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Microbiology and Public Health",
+          "prereq": "V. Micro 151"
+        },
+        {
+          "code": "AS 105",
+          "name": "Equine Production and Health",
+          "lecHrs": 2,
+          "labHrs": 3,
+          "units": 3,
+          "vmleSubject": "Zootechnics",
+          "prereq": "AS 100"
+        }
+      ]
+    },
+    "4": {
+      "1": [
+        {
+          "code": "V. Patho 141",
+          "name": "General Veterinary Pathology",
+          "lecHrs": 3,
+          "labHrs": 3,
+          "units": 4,
+          "vmleSubject": "Pathology",
+          "prereq": "Anat 122 and 124, Physio 131, Physio 132, Micro 151, Micro 152, Micro 153"
+        },
+        {
+          "code": "V. Pharma 181",
+          "name": "Basic Veterinary Pharmacology",
+          "lecHrs": 3,
+          "labHrs": 3,
+          "units": 4,
+          "vmleSubject": "Pharmacology",
+          "prereq": "Chem 1, Chem 2, V. Physio 131, V. Physio 132, Mol Bio 1"
+        },
+        {
+          "code": "V. Micro 154",
+          "name": "Fundamentals of Veterinary Immunology",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Microbiology and Public Health",
+          "prereq": "V Micro 151, Mol Bio 1"
+        },
+        {
+          "code": "V. Physio 133",
+          "name": "Veterinary Reproductive Physiology and Endocrinology",
+          "lecHrs": 2,
+          "labHrs": 3,
+          "units": 3,
+          "vmleSubject": "Physiology",
+          "prereq": "Zoo 1, AS 100, Physio 131, V Physio 132"
+        },
+        {
+          "code": "VPH 171",
+          "name": "Veterinary Epidemiology",
+          "lecHrs": 2,
+          "labHrs": 3,
+          "units": 3,
+          "vmleSubject": "Microbiology and Public Health",
+          "prereq": "V Micro 151, 152 and 153, Research 101, FS, Biostat"
+        },
+        {
+          "code": "V. Para 161",
+          "name": "Veterinary Entomology and Protozoology",
+          "lecHrs": 3,
+          "labHrs": 6,
+          "units": 5,
+          "vmleSubject": "Parasitology",
+          "prereq": "Zoo 1, AS 100"
+        }
+      ],
+      "2": [
+        {
+          "code": "V. Patho 142",
+          "name": "Systemic Veterinary Pathology",
+          "lecHrs": 3,
+          "labHrs": 3,
+          "units": 4,
+          "vmleSubject": "Pathology",
+          "prereq": "V. Patho 141"
+        },
+        {
+          "code": "V. Patho 143",
+          "name": "Veterinary Clinical Pathology",
+          "lecHrs": 2,
+          "labHrs": 3,
+          "units": 3,
+          "vmleSubject": "Pathology",
+          "prereq": "Concurrent with Patho 142 and V. Para 162 only; V. Micro 151, 152 and 153; V. Para 161 and ... (text cut off in the image)",
+          "note": "Student must pass Patho 142 and Para 162 for the Patho 143 grade to count."
+        },
+        {
+          "code": "V. Pharma 182",
+          "name": "Veterinary Clinical Pharmacology",
+          "lecHrs": 3,
+          "labHrs": 3,
+          "units": 4,
+          "vmleSubject": "Pharmacology",
+          "prereq": "V. Pharma 181"
+        },
+        {
+          "code": "VPH 172",
+          "name": "Environmental Animal Health and Biosafety",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Zootechnics",
+          "prereq": "VPH 171, V Micro 151, 152, 153 and 154, all AS subjects"
+        },
+        {
+          "code": "V. Para 162",
+          "name": "Veterinary Helminthology",
+          "lecHrs": 2,
+          "labHrs": 6,
+          "units": 4,
+          "vmleSubject": "Parasitology",
+          "prereq": "V. Para 161"
+        }
+      ],
+      "midyear": [
+        {
+          "code": "V. Med 200",
+          "name": "General Principles of Veterinary Medicine",
+          "lecHrs": 9,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "Veterinary Medicine",
+          "prereq": "All 3rd and 4th year subjects"
+        },
+        {
+          "code": "V. Clinics 231",
+          "name": "Introduction to Veterinary Clinics (in-campus)",
+          "lecHrs": 8,
+          "labHrs": 16,
+          "units": 2,
+          "vmleSubject": "clinics",
+          "prereq": "All 3rd and 4th year subjects"
+        }
+      ]
+    },
+    "5": {
+      "1": [
+        {
+          "code": "V. Med 201",
+          "name": "Canine Medicine",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine",
+          "prereq": "V. Med 200"
+        },
+        {
+          "code": "V. Med 202",
+          "name": "Feline Medicine",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine",
+          "prereq": "V. Med 200"
+        },
+        {
+          "code": "V. Med 203",
+          "name": "Ruminant Medicine",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine",
+          "prereq": "V. Med 200"
+        },
+        {
+          "code": "V. Med 204",
+          "name": "Equine Medicine",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine",
+          "prereq": "V. Med 200"
+        },
+        {
+          "code": "V. Sur 221",
+          "name": "Principles of Veterinary Surgery and Anesthesiology",
+          "lecHrs": 2,
+          "labHrs": 3,
+          "units": 3,
+          "vmleSubject": "Surgery",
+          "prereq": "V. Anat 122 and 124, V. Pharma 182, V Patho 142, Patho 143"
+        },
+        {
+          "code": "V. Sur 222",
+          "name": "Diagnostic Imaging",
+          "lecHrs": 1,
+          "labHrs": 6,
+          "units": 3,
+          "vmleSubject": "Surgery",
+          "prereq": "V. Anat 122 and 124, V. Pharma 182, V Patho 142, Patho 143"
+        },
+        {
+          "code": "VPH 173",
+          "name": "Veterinary Food Safety and Hygiene",
+          "lecHrs": 3,
+          "labHrs": 3,
+          "units": 4,
+          "vmleSubject": "Microbiology and Public Health",
+          "prereq": "VPH 171, VPH 172, V. Micro 151, 152, 153 and 154, V. Patho 141 and 142, V. Para 161 and 162"
+        },
+        {
+          "code": "VPH 174",
+          "name": "Zoonoses, Emerging/Re-emerging Diseases and One Health",
+          "lecHrs": 3,
+          "labHrs": 0,
+          "units": 3,
+          "vmleSubject": "Microbiology and Public Health",
+          "prereq": "VPH 171, VPH 172, V. Micro 151, 152, 153 and 154, V. Para 161 and 162, V. Pharma 182"
+        },
+        {
+          "code": "Clinics 232",
+          "name": "Veterinary Clerkship (in-campus)",
+          "lecHrs": 0,
+          "labHrs": 6,
+          "units": 2,
+          "vmleSubject": "clinics",
+          "prereq": "V Med 200, Clinics 231"
+        }
+      ],
+      "2": [
+        {
+          "code": "V Med 205",
+          "name": "Poultry Medicine",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine",
+          "prereq": "V Med 200"
+        },
+        {
+          "code": "V Med 207",
+          "name": "Aquatic Animal Medicine",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine",
+          "prereq": "V Med 200"
+        },
+        {
+          "code": "V Med 208",
+          "name": "Wildlife Conservation, Zoo and Bee Medicine",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine",
+          "prereq": "V Med 200"
+        },
+        {
+          "code": "V Med 209",
+          "name": "Laboratory Animal Medicine",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine",
+          "prereq": "V Med 200"
+        },
+        {
+          "code": "V Med 211",
+          "name": "Veterinary Jurisprudence and Ethics",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine",
+          "prereq": "V Med 200"
+        },
+        {
+          "code": "V Med 212",
+          "name": "Veterinary Practice Management and Entrepreneurship",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine",
+          "prereq": "V Med 200"
+        },
+        {
+          "code": "V Med 206",
+          "name": "Swine Medicine",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine",
+          "prereq": "V Med 200"
+        },
+        {
+          "code": "V Med 210",
+          "name": "Veterinary Theriogenology",
+          "lecHrs": 2,
+          "labHrs": 0,
+          "units": 2,
+          "vmleSubject": "Veterinary Medicine",
+          "prereq": "V Med 200"
+        },
+        {
+          "code": "V Sur 224",
+          "name": "Large Animal Surgery",
+          "lecHrs": 1,
+          "labHrs": 6,
+          "units": 3,
+          "vmleSubject": "Surgery",
+          "prereq": "V Sur 221 and 222"
+        },
+        {
+          "code": "V Sur 223",
+          "name": "Small Animal Surgery",
+          "lecHrs": 1,
+          "labHrs": 6,
+          "units": 3,
+          "vmleSubject": "Surgery",
+          "prereq": "V Sur 221 and 222"
+        }
+      ],
+      "midyear": [
+        {
+          "code": "V Clinics 233",
+          "name": "Veterinary Internship (off-campus)",
+          "lecHrs": 0,
+          "labHrs": 24,
+          "units": 6,
+          "vmleSubject": "clinics",
+          "prereq": "V Clinics 232"
+        },
+        {
+          "code": "Thesis 10",
+          "name": "Thesis Proposal, Outline Defense and Comprehensive Examination",
+          "lecHrs": 0,
+          "labHrs": 6,
+          "units": 2,
+          "vmleSubject": "clinics",
+          "prereq": "Senior standing, all 3rd, 4th and 5th year subjects",
+          "note": "Units cut off in image 3; 2 inferred from the printed midyear total of 9."
+        },
+        {
+          "code": "V Clinics 234",
+          "name": "Clinico-Pathological Conference 1",
+          "lecHrs": 0,
+          "labHrs": 3,
+          "units": 1,
+          "vmleSubject": "clinics",
+          "prereq": "V Clinics 232 and 233 (concurrent)"
+        },
+        {
+          "code": "TA-NCII-AHCM",
+          "name": "Training and Assessment for National Certificate II on Animal Health Care and Management",
+          "lecHrs": 0,
+          "labHrs": 0,
+          "units": 0,
+          "vmleSubject": "clinics",
+          "prereq": "All fifth year subjects",
+          "note": "No units shown."
+        }
+      ]
+    },
+    "6": {
+      "1": [
+        {
+          "code": "V Clinics 235",
+          "name": "Veterinary Internship (off-campus)",
+          "lecHrs": 0,
+          "labHrs": 32,
+          "units": 12,
+          "vmleSubject": "clinics",
+          "prereq": "V Clinics 233 and 234"
+        },
+        {
+          "code": "Thesis 11",
+          "name": "Thesis Conduct and Defense",
+          "lecHrs": 0,
+          "labHrs": 6,
+          "units": 2,
+          "vmleSubject": "clinics",
+          "prereq": "Senior standing"
+        }
+      ],
+      "2": [
+        {
+          "code": "V Clinics 236",
+          "name": "Clinico-Pathological Conference 2",
+          "lecHrs": 0,
+          "labHrs": 3,
+          "units": 1,
+          "vmleSubject": "clinics",
+          "prereq": "V Clinics 235"
+        },
+        {
+          "code": "V Clinics 237",
+          "name": "Veterinary Internship (off-campus)",
+          "lecHrs": 0,
+          "labHrs": 36,
+          "units": 12,
+          "vmleSubject": "clinics",
+          "prereq": "V Clinics 235 and 236 (concurrent)"
+        }
+      ]
+    }
+  }
+}

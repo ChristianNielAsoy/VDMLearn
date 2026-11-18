@@ -44,33 +44,53 @@ export function validateCase(def: CaseDef): CaseValidationResult {
 
     if (node.kind === 'decision') {
       if (!node.choices || node.choices.length < 2) {
-        errors.push(err('DECISION_FEW_CHOICES', `Decision node "${node.id}" must have at least 2 choices`));
+        errors.push(
+          err('DECISION_FEW_CHOICES', `Decision node "${node.id}" must have at least 2 choices`),
+        );
       } else {
         const hasCorrect = node.choices.some((c) => c.correct);
         if (!hasCorrect) warnings.push(`Decision node "${node.id}" has no correct choice marked`);
         for (const choice of node.choices) {
-          if (!choice.id) errors.push(err('CHOICE_MISSING_ID', `A choice in node "${node.id}" is missing an id`));
+          if (!choice.id)
+            errors.push(err('CHOICE_MISSING_ID', `A choice in node "${node.id}" is missing an id`));
           if (!choice.next) {
-            errors.push(err('CHOICE_MISSING_NEXT', `Choice "${choice.id}" in node "${node.id}" is missing next`));
+            errors.push(
+              err(
+                'CHOICE_MISSING_NEXT',
+                `Choice "${choice.id}" in node "${node.id}" is missing next`,
+              ),
+            );
           } else if (!nodeMap.has(choice.next)) {
-            errors.push(err('CHOICE_BAD_NEXT', `Choice "${choice.id}" in node "${node.id}" points to non-existent node "${choice.next}"`));
+            errors.push(
+              err(
+                'CHOICE_BAD_NEXT',
+                `Choice "${choice.id}" in node "${node.id}" points to non-existent node "${choice.next}"`,
+              ),
+            );
           }
           if (choice.correct && choice.points <= 0) {
             warnings.push(`Correct choice "${choice.id}" in node "${node.id}" has 0 points`);
           }
         }
       }
-      if (node.next) warnings.push(`Decision node "${node.id}" has a "next" field which will be ignored`);
+      if (node.next)
+        warnings.push(`Decision node "${node.id}" has a "next" field which will be ignored`);
     } else if (node.kind === 'outcome') {
-      if (node.next) warnings.push(`Outcome node "${node.id}" has a "next" field which will be ignored`);
-      if (node.choices) warnings.push(`Outcome node "${node.id}" has choices which will be ignored`);
+      if (node.next)
+        warnings.push(`Outcome node "${node.id}" has a "next" field which will be ignored`);
+      if (node.choices)
+        warnings.push(`Outcome node "${node.id}" has choices which will be ignored`);
       if (!node.finalDiagnosis) warnings.push(`Outcome node "${node.id}" has no finalDiagnosis`);
     } else {
       // signalment, history, exam, labs, imaging
       if (!node.next) {
-        errors.push(err('NODE_MISSING_NEXT', `Node "${node.id}" (${node.kind}) must have a "next" field`));
+        errors.push(
+          err('NODE_MISSING_NEXT', `Node "${node.id}" (${node.kind}) must have a "next" field`),
+        );
       } else if (!nodeMap.has(node.next)) {
-        errors.push(err('NODE_BAD_NEXT', `Node "${node.id}" points to non-existent node "${node.next}"`));
+        errors.push(
+          err('NODE_BAD_NEXT', `Node "${node.id}" points to non-existent node "${node.next}"`),
+        );
       }
     }
   }

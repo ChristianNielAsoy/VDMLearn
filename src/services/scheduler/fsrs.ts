@@ -79,7 +79,16 @@ export const fsrsScheduler: Scheduler = {
   toSrsProgress(state: SchedulerState): SrsProgress {
     const data = isFSRSData(state.data)
       ? state.data
-      : ({ stability: 0, difficulty: 0, elapsedDays: 0, scheduledDays: 0, reps: 0, lapses: 0, state: State.New, learningSteps: 0 } satisfies FSRSData);
+      : ({
+          stability: 0,
+          difficulty: 0,
+          elapsedDays: 0,
+          scheduledDays: 0,
+          reps: 0,
+          lapses: 0,
+          state: State.New,
+          learningSteps: 0,
+        } satisfies FSRSData);
     return {
       questionId: state.objectId,
       attempts: data.reps,
@@ -100,9 +109,10 @@ export const fsrsScheduler: Scheduler = {
 
   computeNextState(prev, event, now = Date.now()): SchedulerState {
     const nowDate = new Date(now);
-    const card: Card = prev && isFSRSData(prev.data)
-      ? fsrsDataToCard(prev.data, prev.dueAt, prev.lastSeenAt)
-      : createEmptyCard(nowDate);
+    const card: Card =
+      prev && isFSRSData(prev.data)
+        ? fsrsDataToCard(prev.data, prev.dueAt, prev.lastSeenAt)
+        : createEmptyCard(nowDate);
 
     const fsrsRating = RATING_MAP[event.rating];
     const scheduling = f.repeat(card, nowDate);

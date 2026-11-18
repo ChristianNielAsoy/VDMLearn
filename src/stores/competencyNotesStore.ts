@@ -82,8 +82,18 @@ export const useCompetencyNotesStore = defineStore('competencyNotes', () => {
     return clozeCards.value.get(competencyId) ?? [];
   }
 
-  async function addManualClozeCard(competencyId: string, front: string, back: string): Promise<void> {
-    const card: Omit<ClozeCard, 'id'> = { competencyId, front, back, source: 'manual', createdAt: Date.now() };
+  async function addManualClozeCard(
+    competencyId: string,
+    front: string,
+    back: string,
+  ): Promise<void> {
+    const card: Omit<ClozeCard, 'id'> = {
+      competencyId,
+      front,
+      back,
+      source: 'manual',
+      createdAt: Date.now(),
+    };
     const id = await localRepository.appendClozeCard(card);
     const arr = clozeCards.value.get(competencyId) ?? [];
     arr.push({ ...card, id });
@@ -117,10 +127,18 @@ export const useCompetencyNotesStore = defineStore('competencyNotes', () => {
     return blurtSessions.value.get(competencyId) ?? [];
   }
 
-  function getReviewSheet(competencyId: string, mistakeEntries: MistakeEntry[]): ReviewSheet | null {
+  function getReviewSheet(
+    competencyId: string,
+    mistakeEntries: MistakeEntry[],
+  ): ReviewSheet | null {
     const note = getNote(competencyId);
     if (!note) return null;
-    return buildReviewSheet(note, getClozeCards(competencyId), mistakeEntries, getBlurtSessions(competencyId));
+    return buildReviewSheet(
+      note,
+      getClozeCards(competencyId),
+      mistakeEntries,
+      getBlurtSessions(competencyId),
+    );
   }
 
   return {

@@ -56,11 +56,7 @@ describe('FSRS-5 reference vectors — multi-review sequence', () => {
     let state: SchedulerState | null = null;
     const history: SchedulerState[] = [];
     for (const { rating, day } of steps) {
-      state = fsrsScheduler.computeNextState(
-        state,
-        { objectId: 'q', rating },
-        NOW + day * DAY,
-      );
+      state = fsrsScheduler.computeNextState(state, { objectId: 'q', rating }, NOW + day * DAY);
       history.push(state);
     }
     return history;

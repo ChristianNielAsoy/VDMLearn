@@ -1,6 +1,5 @@
 <template>
   <q-page class="column items-stretch" style="max-width: 600px; margin: 0 auto">
-
     <!-- Header -->
     <div class="row items-center q-px-md q-pt-md q-pb-sm">
       <q-btn flat round dense icon="arrow_back" color="grey-7" @click="router.back()" />
@@ -17,9 +16,15 @@
     <div v-if="cards.length === 0" class="text-center q-pa-xl">
       <q-icon name="flash_on" size="3rem" color="grey-3" />
       <div class="q-mt-sm text-grey-5">No cloze cards for this competency.</div>
-      <div class="text-caption q-mt-xs text-grey-4">Add ==highlights== in your notes to generate cards.</div>
+      <div class="text-caption q-mt-xs text-grey-4">
+        Add ==highlights== in your notes to generate cards.
+      </div>
       <q-btn
-        outline color="primary" no-caps label="Open Notes" class="q-mt-md"
+        outline
+        color="primary"
+        no-caps
+        label="Open Notes"
+        class="q-mt-md"
         @click="router.push(`/notes/${encodeURIComponent(competencyId)}`)"
       />
     </div>
@@ -28,13 +33,16 @@
     <div v-else-if="finished" class="text-center q-pa-xl">
       <q-icon name="check_circle" color="positive" size="3rem" class="q-mb-md" />
       <div class="text-h6 text-weight-semibold q-mb-xs">Drill complete!</div>
-      <div class="text-body2 text-grey-6 q-mb-xl">
-        {{ correct }}/{{ cards.length }} correct
-      </div>
+      <div class="text-body2 text-grey-6 q-mb-xl">{{ correct }}/{{ cards.length }} correct</div>
       <div class="q-gutter-sm">
         <q-btn color="primary" unelevated no-caps label="Drill Again" @click="restart" />
-        <q-btn outline color="primary" no-caps label="Back to Notes"
-          @click="router.push(`/notes/${encodeURIComponent(competencyId)}`)" />
+        <q-btn
+          outline
+          color="primary"
+          no-caps
+          label="Back to Notes"
+          @click="router.push(`/notes/${encodeURIComponent(competencyId)}`)"
+        />
       </div>
     </div>
 
@@ -42,7 +50,7 @@
     <template v-else-if="currentCard">
       <!-- Progress bar -->
       <q-linear-progress
-        :value="(currentIndex) / cards.length"
+        :value="currentIndex / cards.length"
         color="primary"
         track-color="grey-2"
         class="q-mb-sm"
@@ -73,15 +81,22 @@
 
         <!-- Revealed answer -->
         <template v-if="revealed">
-          <q-card class="dvmr-card q-mb-md" :class="isCorrectAnswer ? 'correct-card' : 'incorrect-card'">
+          <q-card
+            class="dvmr-card q-mb-md"
+            :class="isCorrectAnswer ? 'correct-card' : 'incorrect-card'"
+          >
             <q-card-section class="q-py-sm">
               <div class="row items-center q-mb-xs">
                 <q-icon
                   :name="isCorrectAnswer ? 'check_circle' : 'cancel'"
                   :color="isCorrectAnswer ? 'positive' : 'negative'"
-                  size="sm" class="q-mr-xs"
+                  size="sm"
+                  class="q-mr-xs"
                 />
-                <span class="text-caption text-weight-medium" :class="isCorrectAnswer ? 'text-positive' : 'text-negative'">
+                <span
+                  class="text-caption text-weight-medium"
+                  :class="isCorrectAnswer ? 'text-positive' : 'text-negative'"
+                >
                   {{ isCorrectAnswer ? 'Correct!' : 'Incorrect' }}
                 </span>
               </div>
@@ -90,7 +105,10 @@
           </q-card>
 
           <q-btn
-            color="primary" unelevated no-caps class="full-width"
+            color="primary"
+            unelevated
+            no-caps
+            class="full-width"
             style="min-height: 48px; border-radius: 8px; font-weight: 600"
             :label="currentIndex + 1 < cards.length ? 'Next Card →' : 'Finish'"
             @click="advance"
@@ -99,7 +117,10 @@
 
         <q-btn
           v-else
-          color="primary" unelevated no-caps class="full-width"
+          color="primary"
+          unelevated
+          no-caps
+          class="full-width"
           style="min-height: 48px; border-radius: 8px; font-weight: 600"
           label="Reveal Answer"
           @click="reveal"

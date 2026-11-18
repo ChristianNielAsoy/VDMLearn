@@ -1,6 +1,5 @@
 <template>
   <q-page class="column" style="max-width: 720px; margin: 0 auto">
-
     <q-tabs
       v-model="activeTab"
       dense
@@ -10,27 +9,20 @@
       class="q-px-md"
       style="border-bottom: 1px solid var(--dvmr-border)"
     >
-      <q-tab name="quickref"  label="Quick Ref"   no-caps />
-      <q-tab name="skilltree" label="Skill Tree"  no-caps />
+      <q-tab name="quickref" label="Quick Ref" no-caps />
+      <q-tab name="skilltree" label="Skill Tree" no-caps />
     </q-tabs>
 
     <q-tab-panels v-model="activeTab" animated class="col">
-
       <!-- ── Quick Reference ───────────────────────────────────── -->
       <q-tab-panel name="quickref" class="q-pa-md">
         <div class="text-caption text-grey-6 q-mb-md">
-          Reference values for study only. Values may vary by source and method.
-          Always check the cited source for clinical use.
+          Reference values for study only. Values may vary by source and method. Always check the
+          cited source for clinical use.
         </div>
 
         <!-- Search -->
-        <q-input
-          v-model="search"
-          dense outlined
-          placeholder="Search…"
-          clearable
-          class="q-mb-md"
-        >
+        <q-input v-model="search" dense outlined placeholder="Search…" clearable class="q-mb-md">
           <template #prepend><q-icon name="search" /></template>
         </q-input>
 
@@ -45,11 +37,15 @@
               <q-item v-for="row in card.rows" :key="row.label">
                 <q-item-section>
                   <q-item-label class="text-body2">{{ row.label }}</q-item-label>
-                  <q-item-label v-if="row.note" caption class="text-grey-5">{{ row.note }}</q-item-label>
+                  <q-item-label v-if="row.note" caption class="text-grey-5">{{
+                    row.note
+                  }}</q-item-label>
                 </q-item-section>
                 <q-item-section side class="text-right">
                   <q-item-label class="text-body2 text-weight-bold">{{ row.value }}</q-item-label>
-                  <q-item-label v-if="row.unit" caption class="text-grey-6">{{ row.unit }}</q-item-label>
+                  <q-item-label v-if="row.unit" caption class="text-grey-6">{{
+                    row.unit
+                  }}</q-item-label>
                 </q-item-section>
               </q-item>
             </q-list>
@@ -67,8 +63,8 @@
       <!-- ── Skill Tree ─────────────────────────────────────────── -->
       <q-tab-panel name="skilltree" class="q-pa-md">
         <div class="text-caption text-grey-6 q-mb-md">
-          Prerequisite chain for DVM coursework — based on CMO No. 1 s.2018 and PSAU curriculum.
-          Tap a node to see what it unlocks.
+          Prerequisite chain for DVM coursework — based on CMO No. 1 s.2018 and PSAU curriculum. Tap
+          a node to see what it unlocks.
         </div>
 
         <div v-for="year in [0, 1, 2, 3, 4]" :key="year" class="q-mb-md">
@@ -84,8 +80,17 @@
               @click="selectNode(node)"
             >
               <div class="text-body2 text-weight-medium">{{ node.label }}</div>
-              <div v-if="node.description" class="text-caption text-grey-6" style="font-size: 0.7rem">{{ node.description }}</div>
-              <div v-if="node.prerequisites.length > 0" class="q-mt-xs row items-center q-gutter-xs">
+              <div
+                v-if="node.description"
+                class="text-caption text-grey-6"
+                style="font-size: 0.7rem"
+              >
+                {{ node.description }}
+              </div>
+              <div
+                v-if="node.prerequisites.length > 0"
+                class="q-mt-xs row items-center q-gutter-xs"
+              >
                 <q-icon name="arrow_upward" size="xs" color="grey-5" />
                 <span class="text-caption text-grey-5" style="font-size: 0.65rem">
                   {{ node.prerequisites.join(', ') }}
@@ -102,17 +107,32 @@
           <template v-if="prereqs.length > 0">
             <div class="text-caption text-grey-5 q-mb-xs">Prerequisites:</div>
             <div class="row q-gutter-xs q-mb-sm">
-              <q-chip v-for="p in prereqs" :key="p.id" dense color="grey-2" text-color="grey-7" size="sm">{{ p.label }}</q-chip>
+              <q-chip
+                v-for="p in prereqs"
+                :key="p.id"
+                dense
+                color="grey-2"
+                text-color="grey-7"
+                size="sm"
+                >{{ p.label }}</q-chip
+              >
             </div>
           </template>
           <template v-if="dependents.length > 0">
             <div class="text-caption text-grey-5 q-mb-xs">Unlocks:</div>
             <div class="row q-gutter-xs">
-              <q-chip v-for="d in dependents" :key="d.id" dense color="primary" text-color="white" size="sm">{{ d.label }}</q-chip>
+              <q-chip
+                v-for="d in dependents"
+                :key="d.id"
+                dense
+                color="primary"
+                text-color="white"
+                size="sm"
+                >{{ d.label }}</q-chip
+              >
             </div>
           </template>
         </q-card>
-
       </q-tab-panel>
     </q-tab-panels>
   </q-page>
@@ -121,7 +141,12 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { QUICK_REF_CARDS } from '@/data/quickref/index';
-import { SKILL_TREE_NODES, getPrerequisites, getDependents, getNodesByYear } from '@/services/skillTree';
+import {
+  SKILL_TREE_NODES,
+  getPrerequisites,
+  getDependents,
+  getNodesByYear,
+} from '@/services/skillTree';
 import type { SkillNode } from '@/services/skillTree';
 
 const activeTab = ref('quickref');
@@ -141,8 +166,8 @@ const filteredCards = computed(() => {
 // ── Skill tree ────────────────────────────────────────────────────────
 void SKILL_TREE_NODES; // keep import alive
 const selectedNode = ref<SkillNode | null>(null);
-const prereqs = computed(() => selectedNode.value ? getPrerequisites(selectedNode.value.id) : []);
-const dependents = computed(() => selectedNode.value ? getDependents(selectedNode.value.id) : []);
+const prereqs = computed(() => (selectedNode.value ? getPrerequisites(selectedNode.value.id) : []));
+const dependents = computed(() => (selectedNode.value ? getDependents(selectedNode.value.id) : []));
 
 function nodesByYear(year: number) {
   return getNodesByYear(year);
@@ -162,7 +187,9 @@ function selectNode(node: SkillNode) {
   min-width: 140px;
   max-width: 200px;
   flex: 0 0 auto;
-  transition: border-color 0.15s, background 0.15s;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
 }
 
 .skill-node:hover {

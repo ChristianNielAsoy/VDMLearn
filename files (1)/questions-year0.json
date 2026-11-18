@@ -1,0 +1,422 @@
+[
+  {
+    "id": "acid-001",
+    "year": 0,
+    "vmleSubject": null,
+    "competencyId": "PRE:GENCHEM:E.1",
+    "stem": "A solution has [H+] = 1 x 10^-3 M. Its pH is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3"
+      },
+      {
+        "key": "B",
+        "text": "11"
+      },
+      {
+        "key": "C",
+        "text": "-3"
+      },
+      {
+        "key": "D",
+        "text": "0.001"
+      }
+    ],
+    "answer": "A",
+    "explanation": "pH = -log10(1 x 10^-3) = 3.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general chemistry text (pH, buffers) and a veterinary physiology text (acid-base) (lesson-acid-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "acid-002",
+    "year": 0,
+    "vmleSubject": null,
+    "competencyId": "PRE:GENCHEM:E.1",
+    "stem": "How does the [H+] of a pH 3 solution compare with that of a pH 5 solution?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2 times higher"
+      },
+      {
+        "key": "B",
+        "text": "20 times higher"
+      },
+      {
+        "key": "C",
+        "text": "100 times higher"
+      },
+      {
+        "key": "D",
+        "text": "100 times lower"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Each pH unit is a 10-fold change; two units is 100-fold, and lower pH means more H+.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general chemistry text (pH, buffers) and a veterinary physiology text (acid-base) (lesson-acid-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "acid-003",
+    "year": 0,
+    "vmleSubject": null,
+    "competencyId": "PRE:GENCHEM:E.2",
+    "stem": "A buffer is best described as:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "A strong acid with a strong base"
+      },
+      {
+        "key": "B",
+        "text": "Any salt solution"
+      },
+      {
+        "key": "C",
+        "text": "A weak acid with its conjugate base"
+      },
+      {
+        "key": "D",
+        "text": "Pure water"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Buffers contain a weak acid and its conjugate base (or a weak base and its conjugate acid) and resist pH change.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general chemistry text (pH, buffers) and a veterinary physiology text (acid-base) (lesson-acid-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "acid-004",
+    "year": 0,
+    "vmleSubject": null,
+    "competencyId": "PRE:GENCHEM:C.2",
+    "stem": "How many mL of a 2 M stock are needed to prepare 100 mL of 0.5 M solution?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "10 mL"
+      },
+      {
+        "key": "B",
+        "text": "25 mL"
+      },
+      {
+        "key": "C",
+        "text": "50 mL"
+      },
+      {
+        "key": "D",
+        "text": "4 mL"
+      }
+    ],
+    "answer": "B",
+    "explanation": "C1V1 = C2V2: V1 = (0.5 x 100)/2 = 25 mL.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: a general chemistry text (pH, buffers) and a veterinary physiology text (acid-base) (lesson-acid-001)",
+    "status": "unverified"
+  },
+  {
+    "id": "pre-stat-001",
+    "year": 0,
+    "vmleSubject": null,
+    "competencyId": "PRE:STAT:A.1",
+    "stem": "For the data 4, 6, 8, 10, 12 the mean is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "6"
+      },
+      {
+        "key": "B",
+        "text": "8"
+      },
+      {
+        "key": "C",
+        "text": "10"
+      },
+      {
+        "key": "D",
+        "text": "40"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Sum = 40; 40/5 = 8.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: your biostatistics notes; recompute each answer by hand (year0 mini-set)",
+    "status": "unverified"
+  },
+  {
+    "id": "pre-stat-002",
+    "year": 0,
+    "vmleSubject": null,
+    "competencyId": "PRE:STAT:A.1",
+    "stem": "For the data 3, 5, 5, 7, 10 the median is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "5"
+      },
+      {
+        "key": "B",
+        "text": "6"
+      },
+      {
+        "key": "C",
+        "text": "7"
+      },
+      {
+        "key": "D",
+        "text": "10"
+      }
+    ],
+    "answer": "A",
+    "explanation": "The middle value of the ordered five numbers is 5 (the mean is 6).",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: your biostatistics notes; recompute each answer by hand (year0 mini-set)",
+    "status": "unverified"
+  },
+  {
+    "id": "pre-stat-003",
+    "year": 0,
+    "vmleSubject": null,
+    "competencyId": "PRE:STAT:A.2",
+    "stem": "For the data 4, 6, 8, 10, 12 the sample standard deviation is closest to:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2.0"
+      },
+      {
+        "key": "B",
+        "text": "2.8"
+      },
+      {
+        "key": "C",
+        "text": "3.2"
+      },
+      {
+        "key": "D",
+        "text": "4.0"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Deviations from 8 are -4, -2, 0, 2, 4; squares sum to 40; sample variance 40/4 = 10; SD = 3.16.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: your biostatistics notes; recompute each answer by hand (year0 mini-set)",
+    "status": "unverified"
+  },
+  {
+    "id": "pre-stat-004",
+    "year": 0,
+    "vmleSubject": null,
+    "competencyId": "PRE:STAT:A.2",
+    "stem": "If 5 is added to every value in a data set, the standard deviation will:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Increase by 5"
+      },
+      {
+        "key": "B",
+        "text": "Stay the same"
+      },
+      {
+        "key": "C",
+        "text": "Double"
+      },
+      {
+        "key": "D",
+        "text": "Become 0"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Adding a constant shifts the mean but does not change spread.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: your biostatistics notes; recompute each answer by hand (year0 mini-set)",
+    "status": "unverified"
+  },
+  {
+    "id": "pre-org-001",
+    "year": 0,
+    "vmleSubject": null,
+    "competencyId": "PRE:ORGCHEM:B.1",
+    "stem": "Which functional group is a hydroxyl (-OH) attached to a saturated carbon?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Alcohol"
+      },
+      {
+        "key": "B",
+        "text": "Ketone"
+      },
+      {
+        "key": "C",
+        "text": "Carboxylic acid"
+      },
+      {
+        "key": "D",
+        "text": "Amine"
+      }
+    ],
+    "answer": "A",
+    "explanation": "An -OH on an sp3 carbon defines an alcohol.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: any organic chemistry text (year0 mini-set)",
+    "status": "unverified"
+  },
+  {
+    "id": "pre-org-002",
+    "year": 0,
+    "vmleSubject": null,
+    "competencyId": "PRE:ORGCHEM:B.1",
+    "stem": "The -COOH functional group is a:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Aldehyde"
+      },
+      {
+        "key": "B",
+        "text": "Ester"
+      },
+      {
+        "key": "C",
+        "text": "Ether"
+      },
+      {
+        "key": "D",
+        "text": "Carboxylic acid"
+      }
+    ],
+    "answer": "D",
+    "explanation": "-COOH is the carboxyl group of a carboxylic acid.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: any organic chemistry text (year0 mini-set)",
+    "status": "unverified"
+  },
+  {
+    "id": "pre-org-003",
+    "year": 0,
+    "vmleSubject": null,
+    "competencyId": "PRE:ORGCHEM:B.1",
+    "stem": "Which compound is an aldehyde?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Ethanol"
+      },
+      {
+        "key": "B",
+        "text": "Ethanal"
+      },
+      {
+        "key": "C",
+        "text": "Propanone"
+      },
+      {
+        "key": "D",
+        "text": "Ethanoic acid"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Ethanal (acetaldehyde) has a terminal C=O with a hydrogen; propanone is a ketone, ethanol an alcohol, ethanoic acid a carboxylic acid.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: any organic chemistry text (year0 mini-set)",
+    "status": "unverified"
+  },
+  {
+    "id": "pre-bchm-001",
+    "year": 0,
+    "vmleSubject": null,
+    "competencyId": "PRE:BIOCHEM:C.1",
+    "stem": "A competitive enzyme inhibitor:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Lowers Vmax and leaves Km unchanged"
+      },
+      {
+        "key": "B",
+        "text": "Lowers both Km and Vmax"
+      },
+      {
+        "key": "C",
+        "text": "Raises Vmax"
+      },
+      {
+        "key": "D",
+        "text": "Raises the apparent Km and leaves Vmax unchanged"
+      }
+    ],
+    "answer": "D",
+    "explanation": "A competitive inhibitor competes for the active site; enough substrate can overcome it, so Vmax is unchanged while apparent Km rises.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: any biochemistry text (year0 mini-set)",
+    "status": "unverified"
+  },
+  {
+    "id": "pre-bchm-002",
+    "year": 0,
+    "vmleSubject": null,
+    "competencyId": "PRE:BIOCHEM:C.1",
+    "stem": "Enzymes speed up reactions by:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Lowering the activation energy"
+      },
+      {
+        "key": "B",
+        "text": "Changing the equilibrium constant"
+      },
+      {
+        "key": "C",
+        "text": "Raising the temperature"
+      },
+      {
+        "key": "D",
+        "text": "Being consumed in the reaction"
+      }
+    ],
+    "answer": "A",
+    "explanation": "Enzymes lower activation energy; they do not shift equilibrium and are not consumed.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: any biochemistry text (year0 mini-set)",
+    "status": "unverified"
+  },
+  {
+    "id": "pre-bchm-003",
+    "year": 0,
+    "vmleSubject": null,
+    "competencyId": "PRE:BIOCHEM:B.1",
+    "stem": "A peptide bond joins two amino acids by linking:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Two R groups"
+      },
+      {
+        "key": "B",
+        "text": "Two amino groups"
+      },
+      {
+        "key": "C",
+        "text": "The amino group of one to the carboxyl group of the other"
+      },
+      {
+        "key": "D",
+        "text": "Two carboxyl groups"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Dehydration synthesis joins a carboxyl carbon to an amino nitrogen.",
+    "sourceType": "ai-draft",
+    "source": "Author draft by Claude (2026-11-18), unverified. Verify against: any biochemistry text (year0 mini-set)",
+    "status": "unverified"
+  }
+]

@@ -6,16 +6,36 @@ import type { ReviewEvent } from '@/types/review';
 
 const NOW = 1_720_000_000_000;
 
-function makeQ(id: string, bloom?: BloomLevel, subject: VmleSubject = 'Veterinary Anatomy'): Question {
+function makeQ(
+  id: string,
+  bloom?: BloomLevel,
+  subject: VmleSubject = 'Veterinary Anatomy',
+): Question {
   const q: Question = {
-    id, type: 'question', competencyIds: ['Veterinary Anatomy:A.1'],
-    courseRefs: [], links: [], origin: { type: 'ai-draft', ref: 'test' },
-    status: 'unverified', updatedAt: 0, version: 1, year: 2,
-    subject: 'Gross Anatomy', vmleSubject: subject,
+    id,
+    type: 'question',
+    competencyIds: ['Veterinary Anatomy:A.1'],
+    courseRefs: [],
+    links: [],
+    origin: { type: 'ai-draft', ref: 'test' },
+    status: 'unverified',
+    updatedAt: 0,
+    version: 1,
+    year: 2,
+    subject: 'Gross Anatomy',
+    vmleSubject: subject,
     competencyId: 'Veterinary Anatomy:A.1',
     stem: 'Test stem that is long enough for validation',
-    choices: [{ key: 'A', text: 'A' }, { key: 'B', text: 'B' }, { key: 'C', text: 'C' }, { key: 'D', text: 'D' }],
-    answer: 'A', explanation: 'A.', sourceType: 'ai-draft', source: 'test',
+    choices: [
+      { key: 'A', text: 'A' },
+      { key: 'B', text: 'B' },
+      { key: 'C', text: 'C' },
+      { key: 'D', text: 'D' },
+    ],
+    answer: 'A',
+    explanation: 'A.',
+    sourceType: 'ai-draft',
+    source: 'test',
   };
   if (bloom !== undefined) q.bloomLevel = bloom;
   return q;
@@ -23,9 +43,15 @@ function makeQ(id: string, bloom?: BloomLevel, subject: VmleSubject = 'Veterinar
 
 function makeEvent(objectId: string, correct: boolean): ReviewEvent {
   return {
-    objectId, activityType: 'mcq', correct,
-    rating: correct ? 3 : 1, confidence: 2, responseMs: 3000,
-    mode: 'competency', sessionId: 's1', ts: NOW,
+    objectId,
+    activityType: 'mcq',
+    correct,
+    rating: correct ? 3 : 1,
+    confidence: 2,
+    responseMs: 3000,
+    mode: 'competency',
+    sessionId: 's1',
+    ts: NOW,
   };
 }
 
@@ -53,8 +79,10 @@ describe('computeBloomPerformance', () => {
       ['q2', makeQ('q2', 'U')],
     ]);
     const events: ReviewEvent[] = [
-      makeEvent('q1', true), makeEvent('q1', false), // R: 1/2 = 0.5
-      makeEvent('q2', true), makeEvent('q2', true),  // U: 2/2 = 1.0
+      makeEvent('q1', true),
+      makeEvent('q1', false), // R: 1/2 = 0.5
+      makeEvent('q2', true),
+      makeEvent('q2', true), // U: 2/2 = 1.0
     ];
     const result = computeBloomPerformance(events, questions, undefined, TOS_TARGETS);
     const r = result.find((x) => x.level === 'R')!;

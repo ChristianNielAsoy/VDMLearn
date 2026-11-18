@@ -87,7 +87,10 @@ export function parseBundle(text: string): {
   try {
     parsed = JSON.parse(text);
   } catch (e) {
-    errors.push({ code: 'INVALID_JSON', message: `Not valid JSON: ${e instanceof Error ? e.message : String(e)}` });
+    errors.push({
+      code: 'INVALID_JSON',
+      message: `Not valid JSON: ${e instanceof Error ? e.message : String(e)}`,
+    });
     return { bundle: null, errors };
   }
 
@@ -99,7 +102,10 @@ export function parseBundle(text: string): {
   const obj = parsed as Record<string, unknown>;
 
   if (obj['bundleVersion'] !== 1) {
-    errors.push({ code: 'BAD_BUNDLE_VERSION', message: `bundleVersion must be 1, got ${String(obj['bundleVersion'])}` });
+    errors.push({
+      code: 'BAD_BUNDLE_VERSION',
+      message: `bundleVersion must be 1, got ${String(obj['bundleVersion'])}`,
+    });
     return { bundle: null, errors };
   }
 
@@ -128,7 +134,10 @@ export function parseBundle(text: string): {
 }
 
 /** Build an InstalledPack record from a manifest + question count. */
-export function manifestToInstalledPack(manifest: ContentPackManifest, questionCount: number): InstalledPack {
+export function manifestToInstalledPack(
+  manifest: ContentPackManifest,
+  questionCount: number,
+): InstalledPack {
   return {
     packId: manifest.packId,
     version: manifest.version,

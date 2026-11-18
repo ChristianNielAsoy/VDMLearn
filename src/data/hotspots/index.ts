@@ -10,7 +10,8 @@ export const HOTSPOT_DIAGRAMS: HotspotDiagram[] = [
     title: 'Heart Chambers and Great Vessels (Schematic)',
     competencyId: 'Veterinary Anatomy:D.1',
     description: 'Identify the four chambers and major vessels of the mammalian heart.',
-    source: 'Original schematic. Cf. Dyce KM, Sack WO, Wensing CJG. Textbook of Veterinary Anatomy, 4th ed. (Saunders, 2010), Ch. 7.',
+    source:
+      'Original schematic. Cf. Dyce KM, Sack WO, Wensing CJG. Textbook of Veterinary Anatomy, 4th ed. (Saunders, 2010), Ch. 7.',
     viewBox: '0 0 300 280',
     svgContent: `
 <rect x="0" y="0" width="300" height="280" fill="#f8fafc" rx="8"/>
@@ -41,14 +42,62 @@ export const HOTSPOT_DIAGRAMS: HotspotDiagram[] = [
 <path d="M 55 165 L 30 180" stroke="#e74c3c" stroke-width="8" stroke-linecap="round" fill="none"/>
 `,
     regions: [
-      { id: 'ra',  label: 'Right Atrium',      cx: 200, cy:  95, description: 'Receives deoxygenated blood from SVC and IVC; thin-walled.' },
-      { id: 'la',  label: 'Left Atrium',       cx: 100, cy:  95, description: 'Receives oxygenated blood from pulmonary veins; thin-walled.' },
-      { id: 'rv',  label: 'Right Ventricle',   cx: 200, cy: 185, description: 'Pumps blood to lungs via pulmonary artery; thinner wall than LV.' },
-      { id: 'lv',  label: 'Left Ventricle',    cx: 100, cy: 185, description: 'Pumps blood to systemic circulation via aorta; thickest wall (3× RV).' },
-      { id: 'ao',  label: 'Aorta',             cx:  95, cy:  18, description: 'Largest systemic artery, arising from left ventricle.' },
-      { id: 'pa',  label: 'Pulmonary Artery',  cx: 180, cy:  18, description: 'Carries deoxygenated blood from RV to lungs.' },
-      { id: 'svc', label: 'Cranial Vena Cava', cx: 272, cy:  72, description: 'Returns blood from head, neck, and forelimbs to RA.' },
-      { id: 'ivc', label: 'Caudal Vena Cava',  cx: 272, cy: 188, description: 'Returns blood from abdomen, hindlimbs to RA.' },
+      {
+        id: 'ra',
+        label: 'Right Atrium',
+        cx: 200,
+        cy: 95,
+        description: 'Receives deoxygenated blood from SVC and IVC; thin-walled.',
+      },
+      {
+        id: 'la',
+        label: 'Left Atrium',
+        cx: 100,
+        cy: 95,
+        description: 'Receives oxygenated blood from pulmonary veins; thin-walled.',
+      },
+      {
+        id: 'rv',
+        label: 'Right Ventricle',
+        cx: 200,
+        cy: 185,
+        description: 'Pumps blood to lungs via pulmonary artery; thinner wall than LV.',
+      },
+      {
+        id: 'lv',
+        label: 'Left Ventricle',
+        cx: 100,
+        cy: 185,
+        description: 'Pumps blood to systemic circulation via aorta; thickest wall (3× RV).',
+      },
+      {
+        id: 'ao',
+        label: 'Aorta',
+        cx: 95,
+        cy: 18,
+        description: 'Largest systemic artery, arising from left ventricle.',
+      },
+      {
+        id: 'pa',
+        label: 'Pulmonary Artery',
+        cx: 180,
+        cy: 18,
+        description: 'Carries deoxygenated blood from RV to lungs.',
+      },
+      {
+        id: 'svc',
+        label: 'Cranial Vena Cava',
+        cx: 272,
+        cy: 72,
+        description: 'Returns blood from head, neck, and forelimbs to RA.',
+      },
+      {
+        id: 'ivc',
+        label: 'Caudal Vena Cava',
+        cx: 272,
+        cy: 188,
+        description: 'Returns blood from abdomen, hindlimbs to RA.',
+      },
     ],
   },
   {
@@ -56,7 +105,8 @@ export const HOTSPOT_DIAGRAMS: HotspotDiagram[] = [
     title: 'Ruminant Forestomach Compartments (Schematic)',
     competencyId: 'Veterinary Anatomy:C.3',
     description: 'Identify the four compartments of the ruminant stomach.',
-    source: 'Original schematic. Cf. Dyce KM, Sack WO, Wensing CJG. Textbook of Veterinary Anatomy, 4th ed. (Saunders, 2010), Ch. 20.',
+    source:
+      'Original schematic. Cf. Dyce KM, Sack WO, Wensing CJG. Textbook of Veterinary Anatomy, 4th ed. (Saunders, 2010), Ch. 20.',
     viewBox: '0 0 320 260',
     svgContent: `
 <rect x="0" y="0" width="320" height="260" fill="#f8fafc" rx="8"/>
@@ -79,10 +129,38 @@ export const HOTSPOT_DIAGRAMS: HotspotDiagram[] = [
 <path d="M 300 215 L 318 215" stroke="#888" stroke-width="3" stroke-linecap="round" fill="none"/>
 `,
     regions: [
-      { id: 'rum', label: 'Rumen',      cx:  70, cy: 145, description: 'Largest compartment; primary fermentation vat. Contains papillae for absorption of VFAs. ~80–100 L in adult cattle.' },
-      { id: 'ret', label: 'Reticulum',  cx: 145, cy:  60, description: 'Honeycomb-lined; communication with rumen; traps hardware. Site of traumatic reticuloperitonitis (hardware disease).' },
-      { id: 'oma', label: 'Omasum',     cx: 215, cy: 105, description: 'Many muscular laminae (leaves) → water and VFA absorption, grinding of ingesta.' },
-      { id: 'abo', label: 'Abomasum',   cx: 248, cy: 210, description: 'True stomach; glandular, secretes HCl and pepsin. Left displacement (LDA) is common periparturient condition.' },
+      {
+        id: 'rum',
+        label: 'Rumen',
+        cx: 70,
+        cy: 145,
+        description:
+          'Largest compartment; primary fermentation vat. Contains papillae for absorption of VFAs. ~80–100 L in adult cattle.',
+      },
+      {
+        id: 'ret',
+        label: 'Reticulum',
+        cx: 145,
+        cy: 60,
+        description:
+          'Honeycomb-lined; communication with rumen; traps hardware. Site of traumatic reticuloperitonitis (hardware disease).',
+      },
+      {
+        id: 'oma',
+        label: 'Omasum',
+        cx: 215,
+        cy: 105,
+        description:
+          'Many muscular laminae (leaves) → water and VFA absorption, grinding of ingesta.',
+      },
+      {
+        id: 'abo',
+        label: 'Abomasum',
+        cx: 248,
+        cy: 210,
+        description:
+          'True stomach; glandular, secretes HCl and pepsin. Left displacement (LDA) is common periparturient condition.',
+      },
     ],
   },
   {
@@ -90,7 +168,8 @@ export const HOTSPOT_DIAGRAMS: HotspotDiagram[] = [
     title: 'Neuron Structure (Schematic)',
     competencyId: 'Veterinary Anatomy:E.1',
     description: 'Identify the structural components of a typical multipolar neuron.',
-    source: 'Original schematic. Cf. de Lahunta A, Glass EN. Veterinary Neuroanatomy and Clinical Neurology, 3rd ed. (Saunders, 2009), Ch. 1.',
+    source:
+      'Original schematic. Cf. de Lahunta A, Glass EN. Veterinary Neuroanatomy and Clinical Neurology, 3rd ed. (Saunders, 2009), Ch. 1.',
     viewBox: '0 0 320 200',
     svgContent: `
 <rect x="0" y="0" width="320" height="200" fill="#f8fafc" rx="8"/>
@@ -114,12 +193,54 @@ export const HOTSPOT_DIAGRAMS: HotspotDiagram[] = [
 <path d="M 80 100 L 60 90 M 80 100 L 60 110" stroke="#2980b9" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 `,
     regions: [
-      { id: 'soma',    label: 'Cell body (soma)',   cx: 150, cy: 100, description: 'Contains nucleus and organelles. Nissl substance (rough ER) synthesises proteins.' },
-      { id: 'nucleus', label: 'Nucleus',            cx: 150, cy: 100, description: 'Large, pale, with prominent nucleolus. Loss indicates chromatolysis (axon injury response).' },
-      { id: 'axon',    label: 'Axon',               cx: 245, cy:  88, description: 'Single long process conducting impulses away from cell body. Originates at axon hillock.' },
-      { id: 'myelin',  label: 'Myelin sheath',      cx: 250, cy: 108, description: 'Lipid-rich insulation laid down by Schwann cells (PNS) or oligodendrocytes (CNS). Saltatory conduction.' },
-      { id: 'dendrite',label: 'Dendrites',          cx:  85, cy:  85, description: 'Multiple branching processes receiving input from other neurons via synapses.' },
-      { id: 'terminal',label: 'Axon terminal',      cx: 285, cy:  98, description: 'Contains synaptic vesicles with neurotransmitters. Releases NT into synaptic cleft.' },
+      {
+        id: 'soma',
+        label: 'Cell body (soma)',
+        cx: 150,
+        cy: 100,
+        description:
+          'Contains nucleus and organelles. Nissl substance (rough ER) synthesises proteins.',
+      },
+      {
+        id: 'nucleus',
+        label: 'Nucleus',
+        cx: 150,
+        cy: 100,
+        description:
+          'Large, pale, with prominent nucleolus. Loss indicates chromatolysis (axon injury response).',
+      },
+      {
+        id: 'axon',
+        label: 'Axon',
+        cx: 245,
+        cy: 88,
+        description:
+          'Single long process conducting impulses away from cell body. Originates at axon hillock.',
+      },
+      {
+        id: 'myelin',
+        label: 'Myelin sheath',
+        cx: 250,
+        cy: 108,
+        description:
+          'Lipid-rich insulation laid down by Schwann cells (PNS) or oligodendrocytes (CNS). Saltatory conduction.',
+      },
+      {
+        id: 'dendrite',
+        label: 'Dendrites',
+        cx: 85,
+        cy: 85,
+        description:
+          'Multiple branching processes receiving input from other neurons via synapses.',
+      },
+      {
+        id: 'terminal',
+        label: 'Axon terminal',
+        cx: 285,
+        cy: 98,
+        description:
+          'Contains synaptic vesicles with neurotransmitters. Releases NT into synaptic cleft.',
+      },
     ],
   },
 ];

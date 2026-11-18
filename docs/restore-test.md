@@ -45,9 +45,9 @@ Use when bumping the Dexie version or touching the upgrade callbacks.
 
 ## Expected results
 
-| Step | Pass criterion |
-|---|---|
-| v8 upgrade | All `importedQuestions` rows have `competencyIds`, `updatedAt`, `version` |
-| Backup export | JSON contains `version:2`, `reviewEvents[]`, `flags[]`, `contentPacks[]` |
-| Backup import (v2) | Questions and progress appear in app after import |
-| Backup import (v1) | Accepted without error; missing tables default to `[]` |
+| Step               | Pass criterion                                                            |
+| ------------------ | ------------------------------------------------------------------------- |
+| v8 upgrade         | All `importedQuestions` rows have `competencyIds`, `updatedAt`, `version` |
+| Backup export      | JSON contains `version:2`, `reviewEvents[]`, `flags[]`, `contentPacks[]`  |
+| Backup import (v2) | Questions and progress appear in app after import                         |
+| Backup import (v1) | Accepted without error; missing tables default to `[]`                    |

@@ -1,0 +1,67 @@
+{
+  "svg": "diagrams/ruminant_stomach.svg",
+  "viewBox": "0 0 800 535",
+  "competencyIds": ["Zootechnics:B.1", "Veterinary Physiology:B.1"],
+  "status": "unverified",
+  "regions": [
+    {
+      "id": "rumen",
+      "label": "Rumen",
+      "shape": "ellipse",
+      "cx": 290,
+      "cy": 295,
+      "rx": 215,
+      "ry": 160,
+      "description": "Largest compartment; fermentation vat where microbes make VFAs, CO2 and methane; papillae enlarge the absorptive surface."
+    },
+    {
+      "id": "reticulum",
+      "label": "Reticulum",
+      "shape": "circle",
+      "cx": 548,
+      "cy": 222,
+      "r": 60,
+      "description": "Honeycomb lining; heavy foreign objects settle here (hardware disease); contractions mix ingesta and start regurgitation."
+    },
+    {
+      "id": "omasum",
+      "label": "Omasum",
+      "shape": "ellipse",
+      "cx": 645,
+      "cy": 350,
+      "rx": 62,
+      "ry": 68,
+      "description": "Leaf-like laminae; absorbs water and some minerals and VFAs."
+    },
+    {
+      "id": "abomasum",
+      "label": "Abomasum",
+      "shape": "ellipse",
+      "cx": 510,
+      "cy": 452,
+      "rx": 108,
+      "ry": 42,
+      "description": "Glandular (true) stomach; secretes HCl and pepsinogen."
+    },
+    {
+      "id": "esophagus",
+      "label": "Esophagus",
+      "shape": "rect",
+      "x": 412,
+      "y": 26,
+      "w": 104,
+      "h": 170,
+      "description": "Carries feed down and regurgitated cud back up; enters at the reticulorumen."
+    },
+    {
+      "id": "duodenum",
+      "label": "To duodenum",
+      "shape": "rect",
+      "x": 612,
+      "y": 436,
+      "w": 150,
+      "h": 48,
+      "description": "Beginning of the small intestine, receiving ingesta from the abomasum."
+    }
+  ]
+}
