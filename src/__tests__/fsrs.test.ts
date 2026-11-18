@@ -67,19 +67,22 @@ describe('FSRS-5 reference vectors — multi-review sequence', () => {
   }
 
   it('after G→G→G: stability≈19.83, difficulty≈2.10', () => {
-    const [, , s3] = buildSequence();
+    const seq = buildSequence();
+    const s3 = seq[2]!;
     expect(getFsrsData(s3).stability).toBeCloseTo(19.833, 2);
     expect(getFsrsData(s3).difficulty).toBeCloseTo(2.104, 2);
   });
 
   it('after G→G→G→A: stability collapses to ≈1.91, difficulty increases to ≈7.39', () => {
-    const [, , , s4] = buildSequence();
+    const seq = buildSequence();
+    const s4 = seq[3]!;
     expect(getFsrsData(s4).stability).toBeCloseTo(1.912, 2);
     expect(getFsrsData(s4).difficulty).toBeCloseTo(7.39, 1);
   });
 
   it('after G→G→G→A→G: recovery: stability≈3.94, scheduledDays=4', () => {
-    const [, , , , s5] = buildSequence();
+    const seq = buildSequence();
+    const s5 = seq[4]!;
     expect(getFsrsData(s5).stability).toBeCloseTo(3.944, 2);
     expect(getFsrsData(s5).scheduledDays).toBe(4);
   });

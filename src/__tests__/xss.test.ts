@@ -29,7 +29,7 @@ describe('DOMPurify — XSS payload removal', () => {
   it('script opening tag is stripped by FORBID_TAGS (text content may remain as inert text)', () => {
     // DOMPurify strips the <script> element; text content becomes an inert text
     // node (not executed). The critical property: no executable <script> tag.
-    const result = DOMPurify.sanitize('<script>alert(1)<\/script><p>safe</p>', {
+    const result = DOMPurify.sanitize('<script>alert(1)</script><p>safe</p>', {
       FORBID_TAGS: ['script'],
     });
     expect(result).not.toContain('<script');
@@ -41,7 +41,7 @@ describe('DOMPurify — XSS payload removal', () => {
   });
 
   it('data: URI with script is not present in sanitized output', () => {
-    const result = sanitize('<image href="data:text/html,<script>alert(1)<\/script>" />');
+    const result = sanitize('<image href="data:text/html,<script>alert(1)</script>" />');
     expect(result).not.toContain('<script');
     expect(result).not.toContain('alert(1)');
   });
