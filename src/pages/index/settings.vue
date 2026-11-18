@@ -22,6 +22,67 @@
       </q-item>
     </q-card>
 
+    <!-- Study behaviour -->
+    <div class="text-overline text-grey-6 q-mb-xs">STUDY BEHAVIOUR</div>
+    <q-card flat bordered class="q-mb-lg">
+      <q-item tag="label" class="cursor-pointer">
+        <q-item-section avatar>
+          <q-icon name="psychology" color="primary" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Confidence tap before answer</q-item-label>
+          <q-item-label caption>
+            Rate confidence after choosing but before seeing feedback (recommended)
+          </q-item-label>
+        </q-item-section>
+        <q-item-section side>
+          <q-toggle
+            :model-value="onboardingStore.showConfidenceTap"
+            color="primary"
+            @update:model-value="(v) => void onboardingStore.saveProfile({ showConfidenceTap: v })"
+          />
+        </q-item-section>
+      </q-item>
+
+      <q-separator inset />
+
+      <q-item tag="label" class="cursor-pointer">
+        <q-item-section avatar>
+          <q-icon name="edit_note" color="primary" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Self-explanation prompt</q-item-label>
+          <q-item-label caption>Show "explain why" box after each answer (optional, ungraded)</q-item-label>
+        </q-item-section>
+        <q-item-section side>
+          <q-toggle
+            :model-value="onboardingStore.selfExplanation"
+            color="primary"
+            @update:model-value="(v) => void onboardingStore.saveProfile({ selfExplanation: v })"
+          />
+        </q-item-section>
+      </q-item>
+
+      <q-separator inset />
+
+      <q-item tag="label" class="cursor-pointer">
+        <q-item-section avatar>
+          <q-icon name="shuffle" color="primary" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Mix new-material sessions</q-item-label>
+          <q-item-label caption>Interleave new items across subjects (due reviews always mixed)</q-item-label>
+        </q-item-section>
+        <q-item-section side>
+          <q-toggle
+            :model-value="onboardingStore.forceMixedSessions"
+            color="primary"
+            @update:model-value="(v) => void onboardingStore.saveProfile({ forceMixedSessions: v })"
+          />
+        </q-item-section>
+      </q-item>
+    </q-card>
+
     <!-- Data -->
     <div class="text-overline text-grey-6 q-mb-xs">DATA</div>
     <q-card flat bordered class="q-mb-lg">
@@ -58,6 +119,18 @@
         style="display: none"
         @change="handleFile"
       />
+
+      <q-separator inset />
+
+      <q-item clickable v-ripple @click="doExportUsageLog">
+        <q-item-section avatar>
+          <q-icon name="bar_chart" color="primary" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Export usage log</q-item-label>
+          <q-item-label caption>Download feature-open and session events as JSON (no external analytics)</q-item-label>
+        </q-item-section>
+      </q-item>
 
       <q-separator inset />
 
@@ -144,8 +217,11 @@
 import { ref, onMounted } from 'vue';
 import { useQuasar } from 'quasar';
 import { exportBackup, importBackup, clearAllLocalData } from '@/services/backup';
+import { exportUsageLogJson } from '@/services/usageLog';
+import { useOnboardingStore } from '@/stores/onboardingStore';
 
 const $q = useQuasar();
+const onboardingStore = useOnboardingStore();
 
 const isDark = ref($q.dark.isActive);
 const exporting = ref(false);
@@ -156,6 +232,7 @@ const fileInput = ref<HTMLInputElement | null>(null);
 
 onMounted(() => {
   isDark.value = $q.dark.isActive;
+  void onboardingStore.load();
 });
 
 function applyDark(val: boolean) {
@@ -202,6 +279,22 @@ async function doClearAll() {
     showStatus('All local data cleared.', false);
   } catch {
     showStatus('Clear failed — please try again.', true);
+  }
+}
+
+async function doExportUsageLog() {
+  try {
+    const json = await exportUsageLogJson();
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `dvmr-usage-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    showStatus('Usage log downloaded.', false);
+  } catch (e) {
+    showStatus(`Export failed: ${e instanceof Error ? e.message : String(e)}`, true);
   }
 }
 

@@ -25,10 +25,12 @@ export const ITEMS_PER_DURATION: Record<SessionLength, number> = {
 
 export interface SessionConfig {
   durationMinutes: SessionLength;
-  includeNew?: boolean;      // default true
-  includeWeak?: boolean;     // default true
-  includeDue?: boolean;      // default true
-  newItemBudget?: number;    // max new items (already filtered by scoreItems)
+  includeNew?: boolean; // default true
+  includeWeak?: boolean; // default true
+  includeDue?: boolean; // default true
+  newItemBudget?: number; // max new items (already filtered by scoreItems)
+  /** Interleave items across subjects. Due-queue sessions always interleave; new-material sessions respect this flag. Default true. */
+  interleave?: boolean;
 }
 
 export interface SessionPlan {
@@ -51,6 +53,7 @@ export function buildSession(config: SessionConfig, scored: ScoredItem[]): Sessi
     includeNew = true,
     includeWeak = true,
     includeDue = true,
+    interleave = true,
   } = config;
 
   const targetCount = ITEMS_PER_DURATION[durationMinutes];
@@ -65,7 +68,9 @@ export function buildSession(config: SessionConfig, scored: ScoredItem[]): Sessi
     return false;
   });
 
-  const questions = buildInterleaved(filtered, targetCount);
+  const questions = interleave
+    ? buildInterleaved(filtered, targetCount)
+    : filtered.slice(0, targetCount).map((s) => s.question);
 
   // Counts based on the selected items (a question can be both weak and overdue)
   const selectedIds = new Set(questions.map((q) => q.id));

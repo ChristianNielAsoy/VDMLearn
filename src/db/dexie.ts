@@ -10,6 +10,7 @@ import type { MistakeEntry, CompetencyNote, ClozeCard, BlurtSession } from '@/ty
 import type { ResourceEntry } from '@/types/resource';
 import type { ChecklistProgress } from '@/types/checklist';
 import type { CaseSession } from '@/types/case';
+import type { UsageLogEntry } from '@/types/usageLog';
 
 interface Bookmark {
   questionId: string;
@@ -39,6 +40,7 @@ class DvmReviewerDb extends Dexie {
   resources!: Table<ResourceEntry, number>;
   checklistProgress!: Table<ChecklistProgress, string>;
   caseSessions!: Table<CaseSession, number>;
+  usageLog!: Table<UsageLogEntry, number>;
 
   constructor() {
     super('dvm-reviewer');
@@ -113,6 +115,10 @@ class DvmReviewerDb extends Dexie {
 
     this.version(13).stores({
       caseSessions: '++id, caseId, startedAt, completedAt',
+    });
+
+    this.version(14).stores({
+      usageLog: '++id, feature, ts',
     });
   }
 }

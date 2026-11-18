@@ -3,7 +3,13 @@ import type { SrsProgress } from '@/types/progress';
 import type { LessonStatus, UserLessonStatus, LessonNote } from '@/types/lesson';
 import type { SchoolTask, PlannerSettings } from '@/types/task';
 import type { ReviewEvent } from '@/types/review';
-import type { InstalledPack, InstallResult, UpdateResult, RemoveResult, ContentPackManifest } from '@/types/contentPack';
+import type {
+  InstalledPack,
+  InstallResult,
+  UpdateResult,
+  RemoveResult,
+  ContentPackManifest,
+} from '@/types/contentPack';
 import type { OnboardingProfile } from '@/types/onboarding';
 import type { MistakeEntry, CompetencyNote, ClozeCard, BlurtSession } from '@/types/notes';
 import type { ResourceEntry } from '@/types/resource';
@@ -316,7 +322,11 @@ export const localRepository: QuestionRepository = {
     await db.importedQuestions.bulkPut(toUpdate);
     const existing = await db.contentPacks.get(manifest.packId);
     if (existing) {
-      await db.contentPacks.put({ ...existing, version: manifest.version, questionCount: toUpdate.length + skipped });
+      await db.contentPacks.put({
+        ...existing,
+        version: manifest.version,
+        questionCount: toUpdate.length + skipped,
+      });
     }
     return { packId: manifest.packId, updated: toUpdate.length, skipped };
   },
@@ -456,28 +466,58 @@ export const localRepository: QuestionRepository = {
   },
 
   async exportAll(): Promise<BackupData> {
-    const [attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks, onboardingArr, mistakeEntries, competencyNotes, clozeCards, blurtSessions, resources, caseSessions] =
-      await Promise.all([
-        db.attempts.toArray(),
-        db.progress.toArray(),
-        db.bookmarks.toArray(),
-        db.flags.toArray(),
-        db.importedQuestions.toArray(),
-        db.lessonStatus.toArray(),
-        db.lessonNotes.toArray(),
-        db.tasks.toArray(),
-        db.plannerSettings.toArray(),
-        db.reviewEvents.toArray(),
-        db.contentPacks.toArray(),
-        db.onboardingProfile.toArray(),
-        db.mistakeEntries.toArray(),
-        db.competencyNotes.toArray(),
-        db.clozeCards.toArray(),
-        db.blurtSessions.toArray(),
-        db.resources.toArray(),
-        db.caseSessions.toArray(),
-      ]);
-    const result: BackupData = { attempts, progress, bookmarks, flags, importedQuestions, lessonStatus, lessonNotes, tasks, plannerSettings, reviewEvents, contentPacks };
+    const [
+      attempts,
+      progress,
+      bookmarks,
+      flags,
+      importedQuestions,
+      lessonStatus,
+      lessonNotes,
+      tasks,
+      plannerSettings,
+      reviewEvents,
+      contentPacks,
+      onboardingArr,
+      mistakeEntries,
+      competencyNotes,
+      clozeCards,
+      blurtSessions,
+      resources,
+      caseSessions,
+    ] = await Promise.all([
+      db.attempts.toArray(),
+      db.progress.toArray(),
+      db.bookmarks.toArray(),
+      db.flags.toArray(),
+      db.importedQuestions.toArray(),
+      db.lessonStatus.toArray(),
+      db.lessonNotes.toArray(),
+      db.tasks.toArray(),
+      db.plannerSettings.toArray(),
+      db.reviewEvents.toArray(),
+      db.contentPacks.toArray(),
+      db.onboardingProfile.toArray(),
+      db.mistakeEntries.toArray(),
+      db.competencyNotes.toArray(),
+      db.clozeCards.toArray(),
+      db.blurtSessions.toArray(),
+      db.resources.toArray(),
+      db.caseSessions.toArray(),
+    ]);
+    const result: BackupData = {
+      attempts,
+      progress,
+      bookmarks,
+      flags,
+      importedQuestions,
+      lessonStatus,
+      lessonNotes,
+      tasks,
+      plannerSettings,
+      reviewEvents,
+      contentPacks,
+    };
     const onboarding = onboardingArr[0];
     if (onboarding) result.onboardingProfile = onboarding;
     if (mistakeEntries.length > 0) result.mistakeEntries = mistakeEntries;
@@ -495,7 +535,8 @@ export const localRepository: QuestionRepository = {
     if (data.progress?.length) ops.push(db.progress.bulkPut(data.progress));
     if (data.bookmarks?.length) ops.push(db.bookmarks.bulkPut(data.bookmarks));
     if (data.flags?.length) ops.push(db.flags.bulkPut(data.flags));
-    if (data.importedQuestions?.length) ops.push(db.importedQuestions.bulkPut(data.importedQuestions));
+    if (data.importedQuestions?.length)
+      ops.push(db.importedQuestions.bulkPut(data.importedQuestions));
     if (data.lessonStatus?.length) ops.push(db.lessonStatus.bulkPut(data.lessonStatus));
     if (data.lessonNotes?.length) ops.push(db.lessonNotes.bulkPut(data.lessonNotes));
     if (data.tasks?.length) ops.push(db.tasks.bulkPut(data.tasks));

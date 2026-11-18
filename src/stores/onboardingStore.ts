@@ -18,6 +18,15 @@ export const useOnboardingStore = defineStore('onboarding', () => {
   const mockDurationMinutes = computed(
     () => profile.value?.mockDurationMinutes ?? DEFAULT_MOCK_DURATION_MINUTES,
   );
+  const showConfidenceTap = computed(
+    () => profile.value?.showConfidenceTap ?? DEFAULT_ONBOARDING_PROFILE.showConfidenceTap,
+  );
+  const selfExplanation = computed(
+    () => profile.value?.selfExplanation ?? DEFAULT_ONBOARDING_PROFILE.selfExplanation,
+  );
+  const forceMixedSessions = computed(
+    () => profile.value?.forceMixedSessions ?? DEFAULT_ONBOARDING_PROFILE.forceMixedSessions,
+  );
 
   async function load() {
     if (loaded.value) return;
@@ -50,6 +59,9 @@ export const useOnboardingStore = defineStore('onboarding', () => {
     passRuleOverallPct,
     passRuleSubjectMinPct,
     mockDurationMinutes,
+    showConfidenceTap,
+    selfExplanation,
+    forceMixedSessions,
     load,
     saveProfile,
     completeOnboarding,
