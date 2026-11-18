@@ -28,6 +28,7 @@ npm install
 
 1. Generate questions using the prompt in `docs/generate-questions-prompt.md`
 2. Go to **Import** tab in the app (upload icon in the header)
-3. Paste or upload the JSON; all questions are saved as `unverified`
+3. Paste the JSON → **Validate** → **Import**; all questions are saved as `unverified`
+4. Return after 24 hours → Import → Pending Verification to mark each question verified
 
 See [VDMLearn.md](VDMLearn.md) for the full system overview, folder structure, and feature documentation.

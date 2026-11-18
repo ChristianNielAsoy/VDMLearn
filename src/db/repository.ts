@@ -69,6 +69,7 @@ export interface QuestionRepository {
 
   importQuestions(questions: Question[]): Promise<{ added: number; updated: number }>;
   getImportedQuestions(): Promise<Question[]>;
+  setImportedQuestionStatus(id: string, status: Question['status']): Promise<void>;
   deleteImported(id: string): Promise<void>;
   clearImported(): Promise<void>;
 
@@ -235,6 +236,11 @@ export const localRepository: QuestionRepository = {
 
   async getImportedQuestions() {
     return db.importedQuestions.toArray();
+  },
+
+  async setImportedQuestionStatus(id, status) {
+    const q = await db.importedQuestions.get(id);
+    if (q) await db.importedQuestions.put({ ...q, status });
   },
 
   async deleteImported(id) {

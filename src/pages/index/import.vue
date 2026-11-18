@@ -9,8 +9,39 @@
       <template #avatar>
         <q-icon name="info" color="amber-7" />
       </template>
-      All imported questions are saved as <strong>unverified</strong>. Review before use.
+      All imported questions are saved as <strong>unverified</strong>. Return in 24 h to verify
+      each one against its cited source.
     </q-banner>
+
+    <!-- Pending verification -->
+    <template v-if="verifiable.length > 0">
+      <div class="text-subtitle2 text-grey-7 q-mb-xs row items-center">
+        <q-icon name="verified" color="positive" size="xs" class="q-mr-xs" />
+        Ready to verify ({{ verifiable.length }})
+      </div>
+      <q-card flat bordered class="q-mb-lg">
+        <q-list dense separator>
+          <q-item v-for="q in verifiable" :key="q.id" class="q-py-sm">
+            <q-item-section>
+              <q-item-label class="text-caption ellipsis">{{ q.stem }}</q-item-label>
+              <q-item-label caption class="text-grey-6">{{ q.source }}</q-item-label>
+            </q-item-section>
+            <q-item-section side>
+              <q-btn
+                unelevated
+                dense
+                no-caps
+                size="sm"
+                color="positive"
+                label="Verify"
+                :loading="verifying === q.id"
+                @click="markVerified(q.id)"
+              />
+            </q-item-section>
+          </q-item>
+        </q-list>
+      </q-card>
+    </template>
 
     <!-- JSON input -->
     <q-input
@@ -57,7 +88,7 @@
         </q-item>
       </q-list>
 
-      <!-- Duplicate warnings -->
+      <!-- Duplicate ID warnings -->
       <q-banner
         v-if="result.duplicateIds.length > 0"
         rounded
@@ -69,6 +100,19 @@
         </template>
         Duplicate IDs found (will overwrite existing):
         {{ result.duplicateIds.join(', ') }}
+      </q-banner>
+
+      <!-- Stem warnings -->
+      <q-banner
+        v-if="result.warnings.length > 0"
+        rounded
+        dense
+        class="text-caption bg-blue-1 text-blue-9 q-mb-md"
+      >
+        <template #avatar>
+          <q-icon name="info" color="blue-7" />
+        </template>
+        <div v-for="(w, i) in result.warnings" :key="i">{{ w }}</div>
       </q-banner>
 
       <!-- Valid preview -->
@@ -126,8 +170,8 @@
       <template #avatar>
         <q-icon name="check_circle" color="white" />
       </template>
-      Imported {{ lastImportCount }} question{{ lastImportCount !== 1 ? 's' : '' }}. Browse and Mock
-      now include them.
+      Imported {{ lastImportCount }} question{{ lastImportCount !== 1 ? 's' : '' }}. Return in 24 h
+      to verify them in the panel above.
       <template #action>
         <q-btn flat color="white" label="Browse" to="/" no-caps @click="$emit('imported')" />
       </template>
@@ -136,10 +180,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import { validateImport, type ImportResult } from '@/services/importer';
+import { ref, computed, onMounted } from 'vue';
+import { validateImport, isVerifiable, type ImportResult } from '@/services/importer';
 import { localRepository } from '@/db/repository';
 import { useQuestionStore } from '@/stores/questionStore';
+import type { Question } from '@/types/question';
 
 const questionStore = useQuestionStore();
 
@@ -149,6 +194,16 @@ const result = ref<ImportResult | null>(null);
 const importing = ref(false);
 const importSuccess = ref(false);
 const lastImportCount = ref(0);
+const importedQuestions = ref<Question[]>([]);
+const verifying = ref<string | null>(null);
+
+const verifiable = computed(() => importedQuestions.value.filter(isVerifiable));
+
+async function loadImported() {
+  importedQuestions.value = await localRepository.getImportedQuestions();
+}
+
+onMounted(() => void loadImported());
 
 function validate() {
   parseError.value = '';
@@ -173,11 +228,23 @@ async function doImport() {
     const { added, updated } = await localRepository.importQuestions(result.value.valid);
     lastImportCount.value = added + updated;
     await questionStore.reload();
+    await loadImported();
     importSuccess.value = true;
     rawJson.value = '';
     result.value = null;
   } finally {
     importing.value = false;
+  }
+}
+
+async function markVerified(id: string) {
+  verifying.value = id;
+  try {
+    await localRepository.setImportedQuestionStatus(id, 'verified');
+    await loadImported();
+    await questionStore.reload();
+  } finally {
+    verifying.value = null;
   }
 }
 

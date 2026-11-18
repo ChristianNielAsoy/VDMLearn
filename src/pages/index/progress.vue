@@ -259,6 +259,74 @@
           Coverage = distinct questions seen ÷ TOS items per subject.
         </div>
 
+        <!-- Pilot targets -->
+        <div class="text-subtitle2 text-grey-7 q-mt-lg q-mb-xs">Pilot Targets</div>
+        <q-card class="dvmr-card q-mb-md">
+          <q-list dense separator>
+            <q-item class="q-py-sm">
+              <q-item-section>
+                <div class="row items-center q-mb-xs">
+                  <span class="text-body2 col">VMLE questions</span>
+                  <span class="text-caption text-grey-6"
+                    >{{ vmleQuestionCount }} / 180 (20 per subject)</span
+                  >
+                </div>
+                <q-linear-progress
+                  :value="Math.min(vmleQuestionCount / 180, 1)"
+                  color="primary"
+                  track-color="grey-2"
+                  rounded
+                  size="5px"
+                />
+              </q-item-section>
+            </q-item>
+            <q-item class="q-py-sm">
+              <q-item-section>
+                <div class="row items-center q-mb-xs">
+                  <span class="text-body2 col">Pre-DVM questions (Year 0)</span>
+                  <span class="text-caption text-grey-6"
+                    >{{ preDvmQuestionCount }} / 100</span
+                  >
+                </div>
+                <q-linear-progress
+                  :value="Math.min(preDvmQuestionCount / 100, 1)"
+                  color="teal"
+                  track-color="grey-2"
+                  rounded
+                  size="5px"
+                />
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-card>
+
+        <!-- Top VMLE gaps -->
+        <div class="text-subtitle2 text-grey-7 q-mb-xs">Top Gaps (VMLE)</div>
+        <div class="text-caption text-grey-6 q-mb-sm">
+          Highest-weight competencies with no questions yet — write these first.
+        </div>
+        <q-card v-if="topGaps.length > 0" class="dvmr-card q-mb-md">
+          <q-list dense separator>
+            <q-item v-for="gap in topGaps" :key="gap.competencyId" class="q-py-sm">
+              <q-item-section>
+                <q-item-label class="text-caption">{{ gap.text }}</q-item-label>
+                <q-item-label caption class="text-grey-6">
+                  {{ gap.subject }} · {{ gap.competencyId.split(':')[1] }} ·
+                  {{ gap.examSharePct.toFixed(1) }}% of exam
+                </q-item-label>
+              </q-item-section>
+              <q-item-section side>
+                <q-chip dense size="sm" color="orange-2" text-color="orange-9" style="font-size:0.7rem; height:20px">
+                  0 Q
+                </q-chip>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-card>
+        <div v-else class="text-caption text-grey-5 q-mb-md">
+          All VMLE competencies have at least one question.
+        </div>
+
         <!-- Pre-DVM coverage -->
         <div class="text-subtitle2 text-grey-7 q-mt-lg q-mb-xs">Pre-DVM Courses</div>
         <div class="text-caption text-grey-6 q-mb-md">
@@ -317,6 +385,7 @@ import { computeBloomPerformance, BLOOM_LABELS } from '@/services/bloomAnalytics
 import { localRepository } from '@/db/repository';
 import { loadAllQuestions } from '@/data/loaders/questions';
 import { loadPreDvmCourses } from '@/data/loaders/preDvmTaxonomy';
+import { loadTos } from '@/data/loaders/tos';
 import type { PreDvmCourse, PreDvmTopic } from '@/types/preDvmTaxonomy';
 import type { SubjectAccuracy } from '@/stores/progressStore';
 import type { SubjectReadiness } from '@/services/mastery';
@@ -337,6 +406,63 @@ const masteryStore = useMasteryStore();
 const quizStore = useQuizStore();
 const questionStore = useQuestionStore();
 const router = useRouter();
+
+// ── Pilot targets + gap list ───────────────────────────────────────────
+const tosData = loadTos();
+
+const vmleQuestionCount = computed(() =>
+  questionStore.questions.filter((q) => !q.competencyId.startsWith('PRE:')).length,
+);
+
+const preDvmQuestionCount = computed(() =>
+  questionStore.questions.filter((q) => q.competencyId.startsWith('PRE:')).length,
+);
+
+interface GapEntry {
+  competencyId: string;
+  subject: string;
+  text: string;
+  examSharePct: number;
+}
+
+const topGaps = computed((): GapEntry[] => {
+  const covered = new Set(questionStore.questions.map((q) => q.competencyId));
+  const gaps: GapEntry[] = [];
+
+  for (const subject of tosData.subjects) {
+    const shareBase = subject.examWeightPct / 100;
+    for (const section of subject.sections) {
+      for (const topic of section.topics) {
+        const leafItems = topic.items ?? 0;
+        if (!topic.sub || topic.sub.length === 0) {
+          const id = `${subject.name}:${section.id}.${topic.id}`;
+          if (!covered.has(id) && leafItems > 0) {
+            gaps.push({
+              competencyId: id,
+              subject: subject.name,
+              text: topic.text,
+              examSharePct: shareBase * leafItems,
+            });
+          }
+        } else {
+          for (const sub of topic.sub) {
+            const id = `${subject.name}:${section.id}.${sub.id}`;
+            if (!covered.has(id) && (sub.items ?? 0) > 0) {
+              gaps.push({
+                competencyId: id,
+                subject: subject.name,
+                text: `${topic.text} — ${sub.text}`,
+                examSharePct: shareBase * (sub.items ?? 0),
+              });
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return gaps.sort((a, b) => b.examSharePct - a.examSharePct).slice(0, 10);
+});
 
 // ── Pre-DVM coverage ───────────────────────────────────────────────────
 const preDvmCourses: PreDvmCourse[] = loadPreDvmCourses();

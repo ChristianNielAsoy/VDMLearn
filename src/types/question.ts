@@ -62,6 +62,7 @@ export interface Question {
   source: string; // kept for backward compat; mirrors origin.ref
   status: QuestionStatus;
   bloomLevel?: BloomLevel; // optional; set during content authoring
+  importedAt?: number; // Unix ms; set by importer; used for the 24-h verification workflow
   notes?: string;
   approvals?: { userId: string; source: string; at: number }[];
 }

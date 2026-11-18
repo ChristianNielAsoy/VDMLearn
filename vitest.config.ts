@@ -9,6 +9,11 @@ export default defineConfig({
   test: {
     environment: 'happy-dom',
     include: ['src/__tests__/**/*.test.ts'],
+    coverage: {
+      provider: 'v8',
+      include: ['src/services/**', 'src/stores/**', 'src/activities/**', 'src/data/loaders/**'],
+      thresholds: { lines: 80, functions: 80, branches: 70, statements: 80 },
+    },
   },
   resolve: {
     alias: {
