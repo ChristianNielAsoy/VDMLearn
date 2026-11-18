@@ -15,13 +15,23 @@ vi.mock('@/db/dexie', () => {
         orderBy: vi.fn(() => ({
           toArray: vi.fn(() => Promise.resolve([...store])),
         })),
-        clear: vi.fn(() => { store.splice(0); return Promise.resolve(); }),
+        clear: vi.fn(() => {
+          store.splice(0);
+          return Promise.resolve();
+        }),
       },
     },
   };
 });
 
-import { logFeatureOpen, logSessionStart, logSessionEnd, getAllLogEntries, exportUsageLogJson, clearUsageLog } from '@/services/usageLog';
+import {
+  logFeatureOpen,
+  logSessionStart,
+  logSessionEnd,
+  getAllLogEntries,
+  exportUsageLogJson,
+  clearUsageLog,
+} from '@/services/usageLog';
 
 describe('usageLog service', () => {
   beforeEach(async () => {

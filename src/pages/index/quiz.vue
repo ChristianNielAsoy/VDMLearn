@@ -279,7 +279,9 @@
 
           <!-- Self-explanation (opt-in setting) -->
           <div v-if="onboardingStore.selfExplanation" class="self-explain-row q-mt-sm">
-            <div class="text-caption text-grey-6 q-mb-xs">Why is this answer correct? (optional)</div>
+            <div class="text-caption text-grey-6 q-mb-xs">
+              Why is this answer correct? (optional)
+            </div>
             <q-input
               v-model="selfExplainText"
               type="textarea"

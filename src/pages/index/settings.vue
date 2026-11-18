@@ -52,7 +52,9 @@
         </q-item-section>
         <q-item-section>
           <q-item-label>Self-explanation prompt</q-item-label>
-          <q-item-label caption>Show "explain why" box after each answer (optional, ungraded)</q-item-label>
+          <q-item-label caption
+            >Show "explain why" box after each answer (optional, ungraded)</q-item-label
+          >
         </q-item-section>
         <q-item-section side>
           <q-toggle
@@ -71,7 +73,9 @@
         </q-item-section>
         <q-item-section>
           <q-item-label>Mix new-material sessions</q-item-label>
-          <q-item-label caption>Interleave new items across subjects (due reviews always mixed)</q-item-label>
+          <q-item-label caption
+            >Interleave new items across subjects (due reviews always mixed)</q-item-label
+          >
         </q-item-section>
         <q-item-section side>
           <q-toggle
@@ -128,7 +132,9 @@
         </q-item-section>
         <q-item-section>
           <q-item-label>Export usage log</q-item-label>
-          <q-item-label caption>Download feature-open and session events as JSON (no external analytics)</q-item-label>
+          <q-item-label caption
+            >Download feature-open and session events as JSON (no external analytics)</q-item-label
+          >
         </q-item-section>
       </q-item>
 

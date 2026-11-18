@@ -14,15 +14,13 @@ import type {
   ParamValueZeroOrMore,
   ParamValueZeroOrOne,
 } from 'vue-router'
-import type {
-  _ExtractParamParserType,
-} from 'vue-router/experimental'
+import type { _ExtractParamParserType } from 'vue-router/experimental';
 
 declare module 'vue-router' {
   interface TypesConfig {
-    _ParamParsers: {}
-    RouteNamedMap: import('vue-router/auto-routes').RouteNamedMap
-    _RouteFileInfoMap: import('vue-router/auto-routes')._RouteFileInfoMap
+    _ParamParsers: {};
+    RouteNamedMap: import('vue-router/auto-routes').RouteNamedMap;
+    _RouteFileInfoMap: import('vue-router/auto-routes')._RouteFileInfoMap;
   }
 }
 
@@ -66,225 +64,206 @@ declare module 'vue-router/auto-routes' {
       | '//settings'
       | '//today'
       | '//visual'
-    >,
+    >;
     '//(index)': RouteRecordInfo<
       '//(index)',
       '/',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
+      never
+    >;
     '//blurt/[competencyId]': RouteRecordInfo<
       '//blurt/[competencyId]',
       '/blurt/:competencyId',
       { competencyId: ParamValue<true> },
       { competencyId: ParamValue<false> },
-      | never
-    >,
+      never
+    >;
     '//calculators/(index)': RouteRecordInfo<
       '//calculators/(index)',
       '/calculators',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
+      never
+    >;
     '//calculators/[id]': RouteRecordInfo<
       '//calculators/[id]',
       '/calculators/:id',
       { id: ParamValue<true> },
       { id: ParamValue<false> },
-      | never
-    >,
+      never
+    >;
     '//cases/(index)': RouteRecordInfo<
       '//cases/(index)',
       '/cases',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
+      never
+    >;
     '//cases/[id]': RouteRecordInfo<
       '//cases/[id]',
       '/cases/:id',
       { id: ParamValue<true> },
       { id: ParamValue<false> },
-      | never
-    >,
+      never
+    >;
     '//checklists/(index)': RouteRecordInfo<
       '//checklists/(index)',
       '/checklists',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
+      never
+    >;
     '//checklists/[id]': RouteRecordInfo<
       '//checklists/[id]',
       '/checklists/:id',
       { id: ParamValue<true> },
       { id: ParamValue<false> },
-      | never
-    >,
+      never
+    >;
     '//cloze/[competencyId]': RouteRecordInfo<
       '//cloze/[competencyId]',
       '/cloze/:competencyId',
       { competencyId: ParamValue<true> },
       { competencyId: ParamValue<false> },
-      | never
-    >,
+      never
+    >;
     '//flashcards': RouteRecordInfo<
       '//flashcards',
       '/flashcards',
       Record<never, never>,
       Record<never, never>,
-      | '//flashcards/[lessonId]'
-    >,
+      '//flashcards/[lessonId]'
+    >;
     '//flashcards/[lessonId]': RouteRecordInfo<
       '//flashcards/[lessonId]',
       '/flashcards/:lessonId',
       { lessonId: ParamValue<true> },
       { lessonId: ParamValue<false> },
-      | never
-    >,
+      never
+    >;
     '//hotspot/[id]': RouteRecordInfo<
       '//hotspot/[id]',
       '/hotspot/:id',
       { id: ParamValue<true> },
       { id: ParamValue<false> },
-      | never
-    >,
+      never
+    >;
     '//hub/[competencyId]': RouteRecordInfo<
       '//hub/[competencyId]',
       '/hub/:competencyId',
       { competencyId: ParamValue<true> },
       { competencyId: ParamValue<false> },
-      | never
-    >,
+      never
+    >;
     '//import': RouteRecordInfo<
       '//import',
       '/import',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
+      never
+    >;
     '//interop': RouteRecordInfo<
       '//interop',
       '/interop',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
+      never
+    >;
     '//lessons': RouteRecordInfo<
       '//lessons',
       '/lessons',
       Record<never, never>,
       Record<never, never>,
-      | '//lessons/(index)'
-      | '//lessons/[id]'
-    >,
+      '//lessons/(index)' | '//lessons/[id]'
+    >;
     '//lessons/(index)': RouteRecordInfo<
       '//lessons/(index)',
       '/lessons',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
+      never
+    >;
     '//lessons/[id]': RouteRecordInfo<
       '//lessons/[id]',
       '/lessons/:id',
       { id: ParamValue<true> },
       { id: ParamValue<false> },
-      | never
-    >,
-    '//mock': RouteRecordInfo<
-      '//mock',
-      '/mock',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '//more': RouteRecordInfo<
-      '//more',
-      '/more',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
+      never
+    >;
+    '//mock': RouteRecordInfo<'//mock', '/mock', Record<never, never>, Record<never, never>, never>;
+    '//more': RouteRecordInfo<'//more', '/more', Record<never, never>, Record<never, never>, never>;
     '//notes/(index)': RouteRecordInfo<
       '//notes/(index)',
       '/notes',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
+      never
+    >;
     '//notes/[competencyId]': RouteRecordInfo<
       '//notes/[competencyId]',
       '/notes/:competencyId',
       { competencyId: ParamValue<true> },
       { competencyId: ParamValue<false> },
-      | never
-    >,
+      never
+    >;
     '//onboarding': RouteRecordInfo<
       '//onboarding',
       '/onboarding',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
+      never
+    >;
     '//planner': RouteRecordInfo<
       '//planner',
       '/planner',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
+      never
+    >;
     '//progress': RouteRecordInfo<
       '//progress',
       '/progress',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
-    '//quiz': RouteRecordInfo<
-      '//quiz',
-      '/quiz',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
+      never
+    >;
+    '//quiz': RouteRecordInfo<'//quiz', '/quiz', Record<never, never>, Record<never, never>, never>;
     '//reference': RouteRecordInfo<
       '//reference',
       '/reference',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
+      never
+    >;
     '//settings': RouteRecordInfo<
       '//settings',
       '/settings',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
+      never
+    >;
     '//today': RouteRecordInfo<
       '//today',
       '/today',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
+      never
+    >;
     '//visual': RouteRecordInfo<
       '//visual',
       '/visual',
       Record<never, never>,
       Record<never, never>,
-      | never
-    >,
+      never
+    >;
     '/[...path]': RouteRecordInfo<
       '/[...path]',
       '/:path(.*)',
       { path: ParamValue<true> },
       { path: ParamValue<false> },
-      | never
-    >,
+      never
+    >;
   }
 
   /**
@@ -330,263 +309,165 @@ declare module 'vue-router/auto-routes' {
         | '//reference'
         | '//settings'
         | '//today'
-        | '//visual'
-      views:
-        | 'default'
-      pathParamNames:
-        | never
-    }
+        | '//visual';
+      views: 'default';
+      pathParamNames: never;
+    };
     'src/pages/index/(index).vue': {
-      routes:
-        | '//(index)'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//(index)';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/blurt/[competencyId].vue': {
-      routes:
-        | '//blurt/[competencyId]'
-      views:
-        | never
-      pathParamNames:
-        | 'competencyId'
-    }
+      routes: '//blurt/[competencyId]';
+      views: never;
+      pathParamNames: 'competencyId';
+    };
     'src/pages/index/calculators/(index).vue': {
-      routes:
-        | '//calculators/(index)'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//calculators/(index)';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/calculators/[id].vue': {
-      routes:
-        | '//calculators/[id]'
-      views:
-        | never
-      pathParamNames:
-        | 'id'
-    }
+      routes: '//calculators/[id]';
+      views: never;
+      pathParamNames: 'id';
+    };
     'src/pages/index/cases/(index).vue': {
-      routes:
-        | '//cases/(index)'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//cases/(index)';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/cases/[id].vue': {
-      routes:
-        | '//cases/[id]'
-      views:
-        | never
-      pathParamNames:
-        | 'id'
-    }
+      routes: '//cases/[id]';
+      views: never;
+      pathParamNames: 'id';
+    };
     'src/pages/index/checklists/(index).vue': {
-      routes:
-        | '//checklists/(index)'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//checklists/(index)';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/checklists/[id].vue': {
-      routes:
-        | '//checklists/[id]'
-      views:
-        | never
-      pathParamNames:
-        | 'id'
-    }
+      routes: '//checklists/[id]';
+      views: never;
+      pathParamNames: 'id';
+    };
     'src/pages/index/cloze/[competencyId].vue': {
-      routes:
-        | '//cloze/[competencyId]'
-      views:
-        | never
-      pathParamNames:
-        | 'competencyId'
-    }
+      routes: '//cloze/[competencyId]';
+      views: never;
+      pathParamNames: 'competencyId';
+    };
     'src/pages/index/flashcards.vue': {
-      routes:
-        | '//flashcards'
-        | '//flashcards/[lessonId]'
-      views:
-        | 'default'
-      pathParamNames:
-        | never
-    }
+      routes: '//flashcards' | '//flashcards/[lessonId]';
+      views: 'default';
+      pathParamNames: never;
+    };
     'src/pages/index/flashcards/[lessonId].vue': {
-      routes:
-        | '//flashcards/[lessonId]'
-      views:
-        | never
-      pathParamNames:
-        | 'lessonId'
-    }
+      routes: '//flashcards/[lessonId]';
+      views: never;
+      pathParamNames: 'lessonId';
+    };
     'src/pages/index/hotspot/[id].vue': {
-      routes:
-        | '//hotspot/[id]'
-      views:
-        | never
-      pathParamNames:
-        | 'id'
-    }
+      routes: '//hotspot/[id]';
+      views: never;
+      pathParamNames: 'id';
+    };
     'src/pages/index/hub/[competencyId].vue': {
-      routes:
-        | '//hub/[competencyId]'
-      views:
-        | never
-      pathParamNames:
-        | 'competencyId'
-    }
+      routes: '//hub/[competencyId]';
+      views: never;
+      pathParamNames: 'competencyId';
+    };
     'src/pages/index/import.vue': {
-      routes:
-        | '//import'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//import';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/interop.vue': {
-      routes:
-        | '//interop'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//interop';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/lessons.vue': {
-      routes:
-        | '//lessons'
-        | '//lessons/(index)'
-        | '//lessons/[id]'
-      views:
-        | 'default'
-      pathParamNames:
-        | never
-    }
+      routes: '//lessons' | '//lessons/(index)' | '//lessons/[id]';
+      views: 'default';
+      pathParamNames: never;
+    };
     'src/pages/index/lessons/(index).vue': {
-      routes:
-        | '//lessons/(index)'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//lessons/(index)';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/lessons/[id].vue': {
-      routes:
-        | '//lessons/[id]'
-      views:
-        | never
-      pathParamNames:
-        | 'id'
-    }
+      routes: '//lessons/[id]';
+      views: never;
+      pathParamNames: 'id';
+    };
     'src/pages/index/mock.vue': {
-      routes:
-        | '//mock'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//mock';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/more.vue': {
-      routes:
-        | '//more'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//more';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/notes/(index).vue': {
-      routes:
-        | '//notes/(index)'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//notes/(index)';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/notes/[competencyId].vue': {
-      routes:
-        | '//notes/[competencyId]'
-      views:
-        | never
-      pathParamNames:
-        | 'competencyId'
-    }
+      routes: '//notes/[competencyId]';
+      views: never;
+      pathParamNames: 'competencyId';
+    };
     'src/pages/index/onboarding.vue': {
-      routes:
-        | '//onboarding'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//onboarding';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/planner.vue': {
-      routes:
-        | '//planner'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//planner';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/progress.vue': {
-      routes:
-        | '//progress'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//progress';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/quiz.vue': {
-      routes:
-        | '//quiz'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//quiz';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/reference.vue': {
-      routes:
-        | '//reference'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//reference';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/settings.vue': {
-      routes:
-        | '//settings'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//settings';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/today.vue': {
-      routes:
-        | '//today'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//today';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/index/visual.vue': {
-      routes:
-        | '//visual'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
+      routes: '//visual';
+      views: never;
+      pathParamNames: never;
+    };
     'src/pages/[...path].vue': {
-      routes:
-        | '/[...path]'
-      views:
-        | never
-      pathParamNames:
-        | 'path'
-    }
+      routes: '/[...path]';
+      views: never;
+      pathParamNames: 'path';
+    };
   }
 
   /**
@@ -596,9 +477,7 @@ declare module 'vue-router/auto-routes' {
    * @internal
    */
   export type _RouteNamesForFilePath<FilePath extends string> =
-    _RouteFileInfoMap extends Record<FilePath, infer Info>
-      ? Info['routes']
-      : keyof RouteNamedMap
+    _RouteFileInfoMap extends Record<FilePath, infer Info> ? Info['routes'] : keyof RouteNamedMap;
 }
 
-export {}
+export {};

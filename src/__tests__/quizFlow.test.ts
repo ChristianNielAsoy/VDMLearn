@@ -119,7 +119,10 @@ describe('quizStore — confidence-before-feedback flow', () => {
 
   it('next() resets awaitingConfidence', async () => {
     const store = useQuizStore();
-    store.startQuiz([makeQuestion('q1'), makeQuestion('q2')], { type: 'competency', label: 'Test' });
+    store.startQuiz([makeQuestion('q1'), makeQuestion('q2')], {
+      type: 'competency',
+      label: 'Test',
+    });
 
     store.selectChoice('A', true);
     await store.confirmWithConfidence(2);
